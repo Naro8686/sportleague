@@ -1,0 +1,89 @@
+@extends('layouts.admin')
+@section('content')
+    @canany(['races_manage'])
+        <div class="card">
+            <div class="card-header">
+                Create race
+            </div>
+
+            <div class="card-body">
+                <form action="{{ route("admin.races.store") }}" method="POST" enctype="multipart/form-data">
+                    @csrf
+                    <div class="form-group {{ $errors->has('date') ? 'has-error' : '' }}">
+                        <label for="race_date">Start date</label>
+                        <div class="input-group date datepicker" id="race_date">
+                            <input type="text" class="form-control" name="date" value="{{ old('date', isset($data) ? $data->date : '') }}" required>
+                            <span class="input-group-addon"><i data-feather="calendar"></i></span>
+                        </div>
+                        @if($errors->has('date'))
+                            <em class="invalid-feedback">
+                                {{ $errors->first('date') }}
+                            </em>
+                        @endif
+                        <p class="helper-block">
+
+                        </p>
+                    </div>
+
+                    <div class="form-group {{ $errors->has('name') ? 'has-error' : '' }}">
+                        <label for="name">Name</label>
+                        <input type="text" id="name" name="name" class="form-control" value="{{ old('name', isset($data) ? $data->name : '') }}" required>
+                        @if($errors->has('name'))
+                            <em class="invalid-feedback">
+                                {{ $errors->first('name') }}
+                            </em>
+                        @endif
+                        <p class="helper-block">
+
+                        </p>
+                    </div>
+
+                    <div class="form-group {{ $errors->has('location') ? 'has-error' : '' }}">
+                        <label for="location">Location</label>
+                        <input type="text" id="location" name="location" class="form-control" value="{{ old('location', isset($data) ? $data->location : '') }}" required>
+                        @if($errors->has('location'))
+                            <em class="invalid-feedback">
+                                {{ $errors->first('location') }}
+                            </em>
+                        @endif
+                        <p class="helper-block">
+
+                        </p>
+                    </div>
+
+                    <div class="form-group {{ $errors->has('start_time') ? 'has-error' : '' }}">
+                        <label for="start_time">Start time</label>
+                        <input type="text" id="start_time" name="start_time" class="form-control" value="{{ old('start_time', isset($data) ? $data->start_time : '') }}" required>
+                        @if($errors->has('start_time'))
+                            <em class="invalid-feedback">
+                                {{ $errors->first('start_time') }}
+                            </em>
+                        @endif
+                        <p class="helper-block">
+
+                        </p>
+                    </div>
+
+                    <div class="form-group {{ $errors->has('max_marshals') ? 'has-error' : '' }}">
+                        <label for="max_marshals">Max marshals</label>
+                        <input type="text" id="max_marshals" name="max_marshals" class="form-control" value="{{ old('max_marshals', isset($data) ? $data->max_marshals : '') }}">
+                        @if($errors->has('max_marshals'))
+                            <em class="invalid-feedback">
+                                {{ $errors->first('max_marshals') }}
+                            </em>
+                        @endif
+                        <p class="helper-block">
+
+                        </p>
+                    </div>
+
+                    <div>
+                        <input class="btn btn-danger" type="submit" value="Save">
+                    </div>
+                </form>
+
+
+            </div>
+        </div>
+    @endcanany
+@endsection

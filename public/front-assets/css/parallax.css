@@ -1,0 +1,67 @@
+.parallax{
+	width: 100%;
+	height: 100%;
+	position: absolute;
+	top: 0;
+	left: 0;
+	overflow: hidden;}
+.parallax > .bg-parallex-et{
+	width: 100%;
+	height: 100%;
+	position: relative;
+	left: calc(50% - 50%);
+	top:calc(50% - 50%);
+	z-index: 100;
+	-webkit-transition: 2.5s;
+	-o-transition: 2.5s;
+	transition: 2.5s;}
+.parallax > .bg-parallex-et > img{
+	width: 100%;
+	opacity: .5;}
+.parallax > .box-left-et{
+	position: absolute;
+	border-radius: 100%;
+	background: linear-gradient( 210deg,#A9F0C5,rgba(84, 199, 244,.1));
+	box-shadow: 1px -5px 5px rgba(0,0,0,.05);
+	left: -20%;
+	top: 10%;
+	-webkit-transition: 7s;
+	-o-transition: 7s;
+	transition: 7s; opacity: .7}
+.parallax > .box-right-et{
+	position: absolute;
+	border-radius: 100%;
+	background: linear-gradient( 45deg,#54C7F4,rgba(169, 240, 197, .1));
+	box-shadow: -1px -5px 5px rgba(0,0,0,.05);
+	right: -10%;
+	top: 10%;
+	-webkit-transition: 7s;
+	-o-transition: 7s;
+	transition: 7s; opacity: .7}
+
+@media (min-width: 1400px) {
+	.parallax > .box-left-et{
+		width: 987px;
+		height: 987px;
+	}
+	.parallax > .box-right-et{
+		width: 797px;
+		height: 797px;
+	}
+}
+@media (max-width: 1400px) {
+	.parallax > .box-left-et{
+		width: 687px;
+		height: 687px;
+	}
+	.parallax > .box-right-et{
+		width: 497px;
+		height: 497px;
+	}
+}
+
+@media (max-width: 992px) {
+	.parallax{
+		display: none;
+	}
+}
