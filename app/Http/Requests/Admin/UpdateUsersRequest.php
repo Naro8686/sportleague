@@ -24,7 +24,9 @@ class UpdateUsersRequest extends FormRequest
     {
         $user_id = \Request::segment(3);
         return [
-            'name' => 'required',
+            'first_name' => 'required',
+            'last_name' => 'required',
+            'phone' => 'required',
             'email' => 'required|email|unique:users,email,'.$user_id,
             'roles' => 'required',
         ];

@@ -40,7 +40,49 @@
                 </a>
             </div>
 
+            <div class="mb-2">
+                <h4 class="my-3">Race marshals</h4>
+                <div class="table-responsive">
+                    <table class=" table table-bordered table-striped table-hover datatable race_users">
+                        <thead>
+                        <tr>
+                            <th>ID</th>
+                            <th>First name</th>
+                            <th>Last name</th>
+                            <th>Phone</th>
+                            <th>Email</th>
+                        </tr>
+                        </thead>
+                        <tbody>
+                        @foreach($race->users as $key => $user)
+                            <tr data-entry-id="{{ $user->id }}">
+                                <td>{{ $user->id ?? '' }}</td>
+                                <td>{{ $user->first_name ?? '' }}</td>
+                                <td>{{ $user->last_name ?? '' }}</td>
+                                <td>{{ $user->phone ?? '' }}</td>
+                                <td>{{ $user->email ?? '' }}</td>
+                            </tr>
+                        @endforeach
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+
 
         </div>
     </div>
+@endsection
+
+@section('javascript')
+    @parent
+    <script>
+        $(function () {
+            $('.race_users').DataTable({
+                dom: 'Bfrtip',
+                buttons: [
+                    'pdf'
+                ]
+            })
+        })
+    </script>
 @endsection

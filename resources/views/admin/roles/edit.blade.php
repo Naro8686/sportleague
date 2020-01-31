@@ -34,7 +34,7 @@
                         <span class="btn btn-info btn-xs">{{ $permission['name'] }}</span>
                     @endforeach
                 </label>
-                <select name="permission[]" id="permission" class="form-control select2" multiple="multiple" required>
+                <select name="permission[]" id="permission" class="form-control select2" multiple="multiple">
                     @foreach($permissions as $id => $permission)
                         <option value="{{ $id }}" {{ (in_array($id, old('permissions', [])) || isset($role) && $role->permissions()->get()->contains('name', $id)) ? 'selected' : '' }}>{{ $permission }}</option>
                     @endforeach

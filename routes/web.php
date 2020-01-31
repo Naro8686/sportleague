@@ -1,11 +1,18 @@
 <?php
-Route::redirect('/', '/admin');
+
+Route::get('/', 'HomeController@index')->name('home');
+Route::get('privacy', 'Admin\PrivacyPolicyController@privacy_page')->name('privacy.page');
 
 Auth::routes();
-
+Route::get('register', 'Auth\RegisterController@registerPage')->name('register');
 // Change Password Routes...
 Route::get('change_password', 'Auth\ChangePasswordController@showChangePasswordForm')->name('auth.change_password');
 Route::patch('change_password', 'Auth\ChangePasswordController@changePassword')->name('auth.change_password');
+
+// Payment routes
+Route::get('payment', 'PaymentController@payment')->name('payment');
+Route::get('cancel', 'PaymentController@cancel')->name('payment.cancel');
+Route::get('payment/success', 'PaymentController@success')->name('payment.success');
 
 Route::group(['middleware' => ['auth'], 'prefix' => 'admin', 'as' => 'admin.'], function () {
     Route::get('/', 'Admin\AdminController@index')->name('home');
@@ -22,11 +29,5 @@ Route::group(['middleware' => ['auth'], 'prefix' => 'admin', 'as' => 'admin.'], 
     Route::resource('league', 'Admin\LeagueController');
     Route::resource('clubs', 'Admin\ClubsController');
     Route::resource('races', 'Admin\RacesController');
+    Route::resource('privacy-policy', 'Admin\PrivacyPolicyController');
 });
-
-
-// api
-/*Route::group(['prefix' => LaravelLocalization::setLocale()], function () {
-    Route::get('/', 'HomeController@index')->name('index');
-    
-});*/

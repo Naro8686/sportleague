@@ -2,8 +2,11 @@
 
 namespace App\Http\Controllers\Auth;
 
+use App\Models\Clubs;
+use App\Models\Races;
 use App\User;
 use App\Http\Controllers\Controller;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Validator;
 use Illuminate\Foundation\Auth\RegistersUsers;
 use App\Mail\WelcomeMail;
@@ -29,7 +32,7 @@ class RegisterController extends Controller
      *
      * @var string
      */
-    protected $redirectTo = '/admin/home';
+    protected $redirectTo = '/admin';
 
     /**
      * Create a new controller instance.
@@ -50,7 +53,9 @@ class RegisterController extends Controller
     protected function validator(array $data)
     {
         return Validator::make($data, [
-            'name' => 'required|string|max:255',
+            'first_name' => 'required|string|max:255',
+            'last_name' => 'required|string|max:255',
+            'phone' => 'required|string|max:15',
             'email' => 'required|string|email|max:255|unique:users',
             'password' => 'required|string|min:8|confirmed',
         ]);
@@ -65,11 +70,34 @@ class RegisterController extends Controller
     protected function create(array $data)
     {
         $user = User::create([
-            'name' => $data['name'],
+            'first_name' => $data['first_name'],
+            'last_name' => $data['last_name'],
+            'phone' => $data['phone'],
             'email' => $data['email'],
             'password' => bcrypt($data['password']),
         ]);
 
+        $user->assignRole('participants');
+
+        $club = Clubs::find($data['club']);
+        $club->users()->attach([
+            'user_id' => $user->id
+        ]);
+
+        foreach ($data['event'] as $event){
+            $race = Races::find($event);
+            $race->users()->attach([
+                'user_id' => $user->id
+            ]);
+        }
+
         return $user;
+    }
+
+    public function registerPage(){
+        $races = Races::all();
+        $clubs = Clubs::all();
+
+        return view('auth.register', compact('races', 'clubs'));
     }
 }

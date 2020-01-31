@@ -113,3 +113,55 @@ a.btn.buttons-columnVisibility.active {
 div.dt-button-collection{
     width: 250px;
 }
+.helper-block{
+    margin-top: 5px;
+    font-size: 12px;
+}
+.nav_items{
+    position: relative;
+    cursor: pointer;
+}
+.nav_items .nav-link {
+    display: -webkit-box;
+    display: flex;
+    -webkit-box-align: center;
+    align-items: center;
+    padding: 0;
+    height: 32px;
+    white-space: nowrap;
+    color: #000;
+}
+.nav_items .nav-link .link-icon {
+    width: 16px;
+    height: 16px;
+    fill: rgba(233,236,239,.21);
+    position: absolute;
+    color: inherit;
+}
+.nav_items .nav-link .link-title {
+    margin-left: 30px;
+    font-size: 14px;
+    -webkit-transition: all .3s ease;
+    transition: all .3s ease;
+}
+.nav_items.active .nav-link {
+    color: #727cf5;
+}
+.nav_items.active .nav-link:before {
+    content: "";
+    width: 3px;
+    height: 26px;
+    background: #727cf5;
+    position: absolute;
+    left: -25px;
+}
+.nav_items:hover .nav-link {
+    color: #727cf5;
+}
+.nav_items:hover .nav-link .link-title {
+    margin-left: 31px;
+}
+.nav_items:hover .nav-link .link-icon {
+    color: #727cf5;
+    fill: rgba(239,243,255,.5);
+}

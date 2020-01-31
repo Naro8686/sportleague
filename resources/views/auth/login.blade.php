@@ -7,14 +7,13 @@
                 <div class="card">
                     <div class="row">
                         <div class="col-md-4 pr-md-0">
-                            <div class="auth-left-wrapper"
-                                 style="background-image: url({{asset('admin-assets/assets/images/carousel/img6.jpg')}}">
+                            <div class="auth-left-wrapper" style="background-image: url({{asset('admin-assets/assets/images/carousel/img6.jpg')}}">
 
                             </div>
                         </div>
                         <div class="col-md-8 pl-md-0">
                             <div class="auth-form-wrapper px-4 py-5">
-                                <a href="#" class="noble-ui-logo d-block mb-2">Name</a>
+                                <a href="#" class="noble-ui-logo d-block mb-2">Sport League</a>
                                 <h5 class="text-muted font-weight-normal mb-4">Welcome to login page</h5>
                                 <form class="forms-sample" method="POST" action="{{ route('login') }}">
                                     {{ csrf_field() }}

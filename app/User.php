@@ -1,6 +1,8 @@
 <?php
 namespace App;
 
+use App\Models\Clubs;
+use App\Models\Races;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
 use Spatie\Permission\Models\Role;
@@ -21,7 +23,7 @@ class User extends Authenticatable
     use Notifiable;
     use HasRoles;
 
-    protected $fillable = ['name', 'email', 'password', 'remember_token'];
+    protected $fillable = ['first_name', 'last_name', 'phone', 'email', 'password', 'remember_token'];
     
     
     /**
@@ -39,7 +41,5 @@ class User extends Authenticatable
     {
         return $this->belongsToMany(Role::class, 'role_user');
     }
-    
-    
     
 }

@@ -15,6 +15,7 @@
 <link media="all" type="text/css" rel="stylesheet" href="{{ asset('admin-assets/assets/fonts/feather-font/css/iconfont.css') }}">
 <link media="all" type="text/css" rel="stylesheet" href="{{ asset('admin-assets/assets/plugins/flag-icon-css/css/flag-icon.min.css') }}">
 <link media="all" type="text/css" rel="stylesheet" href="{{ asset('admin-assets/assets/plugins/perfect-scrollbar/perfect-scrollbar.css') }}">
+<link media="all" type="text/css" rel="stylesheet" href="{{ asset('admin-assets/assets/plugins/select2/select2.min.css')}}">
 <!-- end plugin css -->
 
 <link media="all" type="text/css" rel="stylesheet" href="{{ asset('admin-assets/assets/plugins/bootstrap-datepicker/css/bootstrap-datepicker.min.css')}}">

@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
+use App\Models\Clubs;
 use App\Models\Races;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Gate;
@@ -20,7 +21,7 @@ class RacesController extends Controller
      */
     public function index()
     {
-        if (! Gate::allows('races_manage')) {
+        if (! Gate::allows('races_manage') && ! Gate::allows('view_races') ) {
             return abort(401);
         }
 
@@ -66,7 +67,7 @@ class RacesController extends Controller
      */
     public function show(Races $race)
     {
-        if (! Gate::allows('races_manage') ) {
+        if (! Gate::allows('races_manage') && ! Gate::allows('view_races') ) {
             return abort(401);
         }
         return view($this->view_path.'show', compact('race'));

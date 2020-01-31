@@ -1,27 +1,4 @@
 $(document).ready(function () {
-  $('#card_number').keyup(function () {
-    var card_type = $("#card_type").val();
-    var cur_val = $(this).val();
-    if(card_type == "American Express"){
-      if(($(this).val().length) == 6){
-        $('#card_number').val(cur_val+'*****');
-      }
-    }else{
-      if(($(this).val().length) == 6) {
-        $('#card_number').val(cur_val + '******');
-      }
-    }
-  })
-  $("#card_type").change(function () {
-    $('#card_number').val("");
-    if($(this).val() !== ""){
-      $('#card_number').prop("disabled", false)
-    }else{
-      $('#card_number').prop("disabled", true)
-    }
-  })
-
-
   window._token = $('meta[name="csrf-token"]').attr('content')
 
   var allEditors = document.querySelectorAll('.ckeditor');
@@ -36,22 +13,7 @@ $(document).ready(function () {
 
   moment.updateLocale('en', {
     week: {dow: 1} // Monday is the first day of the week
-  })
-
-  $('.date').datetimepicker({
-    format: 'YYYY-MM-DD',
-    locale: 'en'
-  })
-
-  $('.datetime').datetimepicker({
-    format: 'YYYY-MM-DD HH:mm:ss',
-    locale: 'en',
-    sideBySide: true
-  })
-
-  $('.timepicker').datetimepicker({
-    format: 'HH:mm:ss'
-  })
+  });
 
   $('.select-all').click(function () {
     let $select2 = $(this).parent().siblings('.select2')
@@ -64,7 +26,10 @@ $(document).ready(function () {
     $select2.trigger('change')
   })
 
-  $('.select2').select2()
+  $('.select2').select2();
+  $(".register_events").select2({
+    maximumSelectionLength: 2
+  });
 
   $('.treeview').each(function () {
     var shouldExpand = false
@@ -77,4 +42,4 @@ $(document).ready(function () {
       $(this).addClass('active')
     }
   })
-})
+});

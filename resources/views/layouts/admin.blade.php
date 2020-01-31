@@ -16,7 +16,6 @@
         </form>
         @include('partials.admin.menu')
 
-        {{--@include('partials.admin.settings')--}}
     @endif
     <div class="page-wrapper  @if(!Auth::check()) full-page @endif">
         @if(Auth::check())
@@ -42,7 +41,13 @@
                 </div>
             @endif
         </div>
-        @yield('content')
+
+        <div class="page-content">
+            <div class="panel panel-default">
+                @yield('content')
+            </div>
+        </div>
+
         @include('partials.admin.footer')
     </div>
 </div>

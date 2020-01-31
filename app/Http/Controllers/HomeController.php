@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Http\Requests;
+use App\Models\League;
 use Illuminate\Http\Request;
 
 class HomeController extends Controller
@@ -26,6 +27,7 @@ class HomeController extends Controller
      */
     public function index()
     {
-        return view($this->view_path.'index');
+        $league = League::first();
+        return view($this->view_path.'index', compact('league'));
     }
 }

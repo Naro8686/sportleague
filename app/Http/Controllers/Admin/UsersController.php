@@ -3,6 +3,8 @@
 namespace App\Http\Controllers\Admin;
 
 use App\User;
+use Illuminate\Http\Response;
+use Illuminate\Support\Facades\Auth;
 use Spatie\Permission\Models\Role;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Gate;
@@ -17,11 +19,11 @@ class UsersController extends Controller
     /**
      * Display a listing of User.
      *
-     * @return \Illuminate\Http\Response
+     * @return Response
      */
     public function index()
     {
-        if (! Gate::allows('users_manage')) {
+        if (! Gate::allows('users_manage') && ! Gate::allows('view_users')) {
             return abort(401);
         }
 
@@ -33,7 +35,7 @@ class UsersController extends Controller
     /**
      * Show the form for creating new User.
      *
-     * @return \Illuminate\Http\Response
+     * @return Response
      */
     public function create()
     {
@@ -48,8 +50,8 @@ class UsersController extends Controller
     /**
      * Store a newly created User in storage.
      *
-     * @param  \App\Http\Requests\StoreUsersRequest  $request
-     * @return \Illuminate\Http\Response
+     * @param StoreUsersRequest $request
+     * @return Response
      */
     public function store(StoreUsersRequest $request)
     {
@@ -61,8 +63,6 @@ class UsersController extends Controller
         $roles = $request->input('roles') ? $request->input('roles') : [];
         $user->assignRole($roles);
 
-        Mail::to($data['email'])->send(new WelcomeMail($data));
-
         return redirect()->route('admin.users.index');
     }
 
@@ -70,12 +70,12 @@ class UsersController extends Controller
     /**
      * Show the form for editing User.
      *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
+     * @param User $user
+     * @return Response
      */
     public function edit(User $user)
     {
-        if (! Gate::allows('users_manage')) {
+        if (! Gate::allows('users_manage') && Auth::user()->id != $user->id) {
             return abort(401);
         }
         $roles = Role::get()->pluck('name', 'name');
@@ -86,21 +86,21 @@ class UsersController extends Controller
     /**
      * Update User in storage.
      *
-     * @param  \App\Http\Requests\UpdateUsersRequest  $request
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
+     * @param UpdateUsersRequest $request
+     * @param User $user
+     * @return Response
      */
     public function update(UpdateUsersRequest $request, User $user)
     {
-        if (! Gate::allows('users_manage')) {
+        if (! Gate::allows('users_manage') && Auth::user()->id != $user->id) {
             return abort(401);
         }
         $data = $request->all();
         $user->update($request->all());
         $roles = $request->input('roles') ? $request->input('roles') : [];
-        $user->syncRoles($roles);
-
-        Mail::to($data['email'])->send(new WelcomeMail($data));
+        if($roles){
+            $user->syncRoles($roles);
+        }
 
         return redirect()->route('admin.users.index');
     }
@@ -119,8 +119,9 @@ class UsersController extends Controller
     /**
      * Remove User from storage.
      *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
+     * @param User $user
+     * @return Response
+     * @throws \Exception
      */
     public function destroy(User $user)
     {
@@ -137,6 +138,7 @@ class UsersController extends Controller
      * Delete all selected User at once.
      *
      * @param Request $request
+     * @return \Illuminate\Contracts\Routing\ResponseFactory|Response|void
      */
     public function massDestroy(Request $request)
     {
@@ -147,5 +149,6 @@ class UsersController extends Controller
 
         return response(null, Response::HTTP_NO_CONTENT);
     }
+
 
 }

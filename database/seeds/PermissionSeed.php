@@ -19,5 +19,7 @@ class PermissionSeed extends Seeder
         Permission::create(['name' => 'league_manage']);
         Permission::create(['name' => 'clubs_manage']);
         Permission::create(['name' => 'races_manage']);
+        Permission::create(['name' => 'view_users']);
+        Permission::create(['name' => 'view_races']);
     }
 }
