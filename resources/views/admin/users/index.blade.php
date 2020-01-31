@@ -73,7 +73,11 @@
             $('.datatable-User:not(.ajaxTable)').DataTable({
                 dom: 'lBfrtip',
                 buttons: [
-                    'csv', 'excel', 'pdf', 'print'
+                    {
+                        extend: 'pdf',
+                        text: 'PDF',
+                        title: 'Users list',
+                    }
                 ]
             })
         })

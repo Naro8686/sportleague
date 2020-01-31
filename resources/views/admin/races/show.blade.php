@@ -80,7 +80,11 @@
             $('.race_users').DataTable({
                 dom: 'Bfrtip',
                 buttons: [
-                    'pdf'
+                    {
+                        extend: 'pdf',
+                        text: 'PDF',
+                        title: 'Race marshals',
+                    }
                 ]
             })
         })
