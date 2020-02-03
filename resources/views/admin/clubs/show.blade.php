@@ -22,6 +22,10 @@
                         <td>{{ $club->website }}</td>
                     </tr>
                     <tr>
+                        <th>Contact person</th>
+                        <td>{{ $club->person }}</td>
+                    </tr>
+                    <tr>
                         <th>Email</th>
                         <td>{{ $club->email }}</td>
                     </tr>

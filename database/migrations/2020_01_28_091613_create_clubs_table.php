@@ -17,6 +17,7 @@ class CreateClubsTable extends Migration
             $table->bigIncrements('id');
             $table->string('name');
             $table->string('website');
+            $table->string('person');
             $table->string('email');
             $table->string('phone');
             $table->timestamps();

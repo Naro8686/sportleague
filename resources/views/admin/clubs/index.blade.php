@@ -22,6 +22,7 @@
                             <th>ID</th>
                             <th>Name</th>
                             <th>Website</th>
+                            <th>Contact person</th>
                             <th>Email</th>
                             <th>Phone</th>
                             <th>Actions</th>
@@ -34,6 +35,7 @@
                                 <td>{{ $item->id ?? '' }}</td>
                                 <td>{{ $item->name ?? '' }}</td>
                                 <td>{{ $item->website ?? '' }}</td>
+                                <td>{{ $item->person ?? '' }}</td>
                                 <td>{{ $item->email ?? '' }}</td>
                                 <td>{{ $item->phone ?? '' }}</td>
                                 <td>

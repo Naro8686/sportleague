@@ -57,7 +57,7 @@
                     </div>
 
                     <div class="form-group {{ $errors->has('min_users') ? 'has-error' : '' }}">
-                        <label for="min_users">Min participants</label>
+                        <label for="min_users">Min marshals</label>
                         <input type="number" id="min_users" name="min_users" class="form-control" value="{{ old('min_users', isset($league) ? $league->min_users : '') }}" required>
                         @if($errors->has('min_users'))
                             <em class="invalid-feedback">
@@ -70,16 +70,14 @@
                     </div>
 
                     <div class="form-group {{ $errors->has('max_users') ? 'has-error' : '' }}">
-                        <label for="max_users">Max participants</label>
+                        <label for="max_users">Max marshals</label>
                         <input type="number" id="max_users" name="max_users" class="form-control" value="{{ old('max_users', isset($league) ? $league->max_users : '') }}" required>
                         @if($errors->has('max_users'))
                             <em class="invalid-feedback">
                                 {{ $errors->first('max_users') }}
                             </em>
                         @endif
-                        <p class="helper-block">
-
-                        </p>
+                        <p class="helper-block"></p>
                     </div>
 
                     <div>

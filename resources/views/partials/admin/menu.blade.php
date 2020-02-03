@@ -1,7 +1,6 @@
 <nav class="sidebar">
     <div class="sidebar-header">
         <a href="#" class="sidebar-brand">
-{{--            <img width="125" src="{{ asset('admin-assets/future-systems-logo.png') }}" alt="profile">--}}
             <h5>Sport League</h5>
             <span></span>
         </a>
@@ -14,7 +13,7 @@
     <div class="sidebar-body">
         <ul class="nav">
             <li class="nav-item nav-category">Main</li>
-            <li class="nav-item {{ request()->is('admin') ? 'active' : '' }}">
+            <li class="nav_items {{ request()->is('admin') ? 'active' : '' }}">
                 <a href="{{ route("admin.home") }}" class="nav-link">
                     <i class="link-icon" data-feather="box"></i>
                     <span class="link-title">Dashboard</span>
@@ -33,8 +32,7 @@
 {{--                            <li class="nav-item ">--}}
 {{--                                <a class="nav-link" data-toggle="collapse" href="#home_pages" role="button" aria-expanded="{{ request()->is('admin/contacts') || request()->is('admin/services') || request()->is('admin/home-page') || request()->is('admin/home-page/*') ? 'true' : 'false' }}" aria-controls="home_pages">--}}
 {{--                                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-book link-icon"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"></path><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"></path></svg>--}}
-{{--                                    <span class="link-title">Home page</span>--}}
-{{--                                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-chevron-down link-arrow"></svg>--}}
+{{--                                    <span class="link-title">Home</span>--}}
 {{--                                </a>--}}
 {{--                            </li>--}}
 {{--                            <li class="nav-item {{ request()->is('admin/privacy-policy') ? 'active' : '' }}">--}}

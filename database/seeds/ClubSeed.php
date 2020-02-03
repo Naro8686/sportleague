@@ -16,6 +16,7 @@ class ClubSeed extends Seeder
             Clubs::create([
                 'name' => 'Club '. $c,
                 'website' => 'https://club-'. $c . '.com',
+                'person' => 'Person '. $c,
                 'email' => 'club-'. $c . '@gmail.com',
                 'phone' => '12345678'. $c
             ]);

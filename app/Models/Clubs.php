@@ -7,7 +7,7 @@ use Illuminate\Database\Eloquent\Model;
 
 class Clubs extends Model
 {
-    protected $fillable = ['name', 'website', 'email', 'phone'];
+    protected $fillable = ['name', 'website', 'person', 'email', 'phone'];
 
     public function users()
     {

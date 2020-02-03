@@ -31,9 +31,18 @@
                                 {{ $errors->first('website') }}
                             </em>
                         @endif
-                        <p class="helper-block">
+                        <p class="helper-block"></p>
+                    </div>
 
-                        </p>
+                    <div class="form-group {{ $errors->has('person') ? 'has-error' : '' }}">
+                        <label for="person">Website</label>
+                        <input type="text" id="person" name="person" class="form-control" value="{{ old('person', isset($club) ? $club->person : '') }}" required>
+                        @if($errors->has('person'))
+                            <em class="invalid-feedback">
+                                {{ $errors->first('person') }}
+                            </em>
+                        @endif
+                        <p class="helper-block"></p>
                     </div>
 
                     <div class="form-group {{ $errors->has('email') ? 'has-error' : '' }}">
