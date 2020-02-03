@@ -3,8 +3,12 @@
 namespace App\Http\Controllers\Admin;
 
 use App\Models\Clubs;
+use App\Models\League;
 use App\Models\Races;
 use App\User;
+use Exception;
+use Illuminate\Contracts\Routing\ResponseFactory;
+use Illuminate\Http\RedirectResponse;
 use Illuminate\Http\Response;
 use Illuminate\Support\Facades\Auth;
 use Spatie\Permission\Models\Role;
@@ -13,8 +17,7 @@ use Illuminate\Support\Facades\Gate;
 use App\Http\Controllers\Controller;
 use App\Http\Requests\Admin\StoreUsersRequest;
 use App\Http\Requests\Admin\UpdateUsersRequest;
-use App\Mail\WelcomeMail;
-use Illuminate\Support\Facades\Mail;
+use App\Http\Requests\Admin\StoreSelectRaceRequest;
 
 class UsersController extends Controller
 {
@@ -47,8 +50,9 @@ class UsersController extends Controller
         $roles = Role::get()->pluck('name', 'name');
         $races = Races::all();
         $clubs = Clubs::all();
+        $league = League::find(1);
 
-        return view('admin.users.create', compact('roles', 'races', 'clubs'));
+        return view('admin.users.create', compact('roles', 'races', 'clubs', 'league'));
     }
 
     /**
@@ -72,11 +76,13 @@ class UsersController extends Controller
             'user_id' => $user->id
         ]);
 
-        foreach ($data['event'] as $event){
-            $race = Races::find($event);
-            $race->users()->attach([
-                'user_id' => $user->id
-            ]);
+        if(isset($data['event'])){
+            foreach ($data['event'] as $event){
+                $race = Races::find($event);
+                $race->users()->attach([
+                    'user_id' => $user->id
+                ]);
+            }
         }
 
         return redirect()->route('admin.users.index');
@@ -144,7 +150,7 @@ class UsersController extends Controller
      *
      * @param User $user
      * @return Response
-     * @throws \Exception
+     * @throws Exception
      */
     public function destroy(User $user)
     {
@@ -161,7 +167,7 @@ class UsersController extends Controller
      * Delete all selected User at once.
      *
      * @param Request $request
-     * @return \Illuminate\Contracts\Routing\ResponseFactory|Response|void
+     * @return ResponseFactory|Response|void
      */
     public function massDestroy(Request $request)
     {
@@ -173,5 +179,19 @@ class UsersController extends Controller
         return response(null, Response::HTTP_NO_CONTENT);
     }
 
+    /**
+     * @param StoreSelectRaceRequest $request
+     * @return RedirectResponse
+     */
+    public function selectRaces(StoreSelectRaceRequest $request){
+        foreach ($request['event'] as $event){
+            $race = Races::find($event);
+            $race->users()->attach([
+                'user_id' => Auth::user()->id
+            ]);
+        }
+
+        return redirect()->route('admin.home');
+    }
 
 }

@@ -10,7 +10,7 @@
                         </div>
                         <div class="col-md-8 pl-md-0">
                             <div class="auth-form-wrapper px-4 py-5">
-                                <a href="#" class="noble-ui-logo d-block mb-2">Sport League</a>
+                                <a href="{{ route('home') }}" class="noble-ui-logo d-block mb-2">Sport League</a>
                                 <h5 class="text-muted font-weight-normal mb-4">Welcome to registration page</h5>
                                 <form class="forms-sample" method="POST" action="{{ route('register') }}">
                                     {{ csrf_field() }}
@@ -64,18 +64,6 @@
                                     </div>
 
                                     <div class="form-group">
-                                        <label>Event to marshal</label>
-                                        <select class="register_events" name="event[]" multiple required>
-                                            @foreach($races as $race)
-                                                <option value="{{ $race->id }}">{{ $race->name }}</option>
-                                            @endforeach
-                                        </select>
-                                        <div class="helper-block">
-                                            Select 2 events to marshal
-                                        </div>
-                                    </div>
-
-                                    <div class="form-group">
                                         <label>Password</label>
                                         <input name="password" type="password" class="form-control{{ $errors->has('password') ? ' is-invalid' : '' }}" required placeholder="Password">
                                         @if($errors->has('password'))
@@ -104,7 +92,7 @@
                                         <a href="{{ route('privacy.page') }}" target="_blank">privacy policy</a>
                                     </div>
                                     <div class="mt-3">
-                                        <button type="submit" class="btn btn-primary mr-2 mb-2 mb-md-0">Register</button>
+                                        <button type="submit" class="btn btn-primary mr-2 mb-2 mb-md-0">Next step</button>
                                     </div>
                                 </form>
                             </div>
@@ -114,18 +102,4 @@
             </div>
         </div>
     </div>
-@endsection
-
-@section('javascript')
-    @parent
-    <script>
-        $(function () {
-            $(document).on('submit', '.forms-sample', function (e) {
-                if($(".register_events option:selected").length < 2) {
-                    e.preventDefault();
-                    alert('Select 2 events')
-                }
-            });
-        })
-    </script>
 @endsection

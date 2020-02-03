@@ -17,7 +17,8 @@ class RaceSeed extends Seeder
                 'date' => '0'. $c . '.05.2020',
                 'name' => 'Race '. $c,
                 'location' => 'Location '. $c,
-                'start_time' => '1'. $c . '.00'
+                'start_time' => '1'. $c . '.00',
+                'max_marshals' => $c
             ]);
         }
     }

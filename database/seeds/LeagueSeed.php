@@ -15,7 +15,7 @@ class LeagueSeed extends Seeder
         League::create([
             'start_date' => '28.01.2020',
             'end_date' => '28.05.2020',
-            'price' => '99',
+            'price' => '10',
             'min_users' => '2',
             'max_users' => '6'
         ]);

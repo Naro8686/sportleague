@@ -18,7 +18,6 @@
                     <table class=" table table-bordered table-striped table-hover datatable datatable-User">
                         <thead>
                         <tr>
-                            <th width="10"></th>
                             <th>ID</th>
                             <th>Name</th>
                             <th>Website</th>
@@ -31,7 +30,6 @@
                         <tbody>
                         @foreach($data as $key => $item)
                             <tr data-entry-id="{{ $item->id }}">
-                                <td></td>
                                 <td>{{ $item->id ?? '' }}</td>
                                 <td>{{ $item->name ?? '' }}</td>
                                 <td>{{ $item->website ?? '' }}</td>
@@ -65,55 +63,4 @@
             </div>
         </div>
     @endcanany
-@endsection
-@section('scripts')
-    @parent
-    <script>
-        $(function () {
-            let dtButtons = $.extend(true, [], $.fn.dataTable.defaults.buttons)
-                    @can('users_manage')
-            let deleteButtonTrans = 'Delete',
-                deleteButton = {
-                text: deleteButtonTrans,
-                url: "{{ route('admin.clients.mass_destroy') }}",
-                className: 'btn-danger',
-                action: function (e, dt, node, config) {
-                    var ids = $.map(dt.rows({selected: true}).nodes(), function (entry) {
-                        return $(entry).data('entry-id')
-                    });
-
-                    if (ids.length === 0) {
-                        alert('Not selected')
-
-                        return
-                    }
-
-                    if (confirm('Are you sure?')) {
-                        $.ajax({
-                            headers: {'x-csrf-token': _token},
-                            method: 'POST',
-                            url: config.url,
-                            data: {ids: ids, _method: 'DELETE'}
-                        })
-                            .done(function () {
-                                location.reload()
-                            })
-                    }
-                }
-            }
-            dtButtons.push(deleteButton)
-            @endcan
-
-            $.extend(true, $.fn.dataTable.defaults, {
-                order: [[1, 'desc']],
-                pageLength: 100,
-            });
-            $('.datatable-User:not(.ajaxTable)').DataTable({buttons: dtButtons})
-            $('a[data-toggle="tab"]').on('shown.bs.tab', function (e) {
-                $($.fn.dataTable.tables(true)).DataTable()
-                    .columns.adjust();
-            });
-        })
-
-    </script>
 @endsection

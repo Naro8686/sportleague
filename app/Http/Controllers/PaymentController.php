@@ -2,7 +2,14 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\League;
+use App\Models\Races;
+use Carbon\Carbon;
+use Cassandra\Date;
+use Exception;
 use Illuminate\Http\Request;
+use Illuminate\Http\Response as ResponseAlias;
+use Illuminate\Support\Facades\Auth;
 use Srmklive\PayPal\Services\ExpressCheckout;
 
 class PaymentController extends Controller
@@ -10,41 +17,40 @@ class PaymentController extends Controller
     /**
      * Responds with a welcome message with instructions
      *
-     * @return \Illuminate\Http\Response
-     * @throws \Exception
+     * @return ResponseAlias
+     * @throws Exception
      */
     public function payment()
     {
+        $league = League::find(1);
         $data = [];
         $data['items'] = [
             [
-                'name' => 'ItSolutionStuff.com',
-                'price' => 100,
-                'desc'  => 'Description for ItSolutionStuff.com',
+                'name' => 'Sport League',
+                'price' => $league->price,
+                'desc'  => 'Registration payment for sport league',
                 'qty' => 1
             ]
         ];
 
-        $data['invoice_id'] = 1;
+        $date = Carbon::now();
+        $data['invoice_id'] = strtotime($date->toDateTimeString()) . Auth::user()->id;
         $data['invoice_description'] = "Order #{$data['invoice_id']} Invoice";
         $data['return_url'] = route('payment.success');
         $data['cancel_url'] = route('payment.cancel');
-        $data['total'] = 100;
+        $data['total'] = $league->price;
 
         $provider = new ExpressCheckout;
 
-        $response = $provider->setExpressCheckout($data);
-
         $response = $provider->setExpressCheckout($data, true);
 
-        dd($response);
         return redirect($response['paypal_link']);
     }
 
     /**
      * Responds with a welcome message with instructions
      *
-     * @return \Illuminate\Http\Response
+     * @return void
      */
     public function cancel()
     {
@@ -54,16 +60,17 @@ class PaymentController extends Controller
     /**
      * Responds with a welcome message with instructions
      *
-     * @return \Illuminate\Http\Response
+     * @param Request $request
+     * @return ResponseAlias
+     * @throws Exception
      */
     public function success(Request $request)
     {
+        $provider = new ExpressCheckout;
         $response = $provider->getExpressCheckoutDetails($request->token);
 
-        if (in_array(strtoupper($response['ACK']), ['SUCCESS', 'SUCCESSWITHWARNING'])) {
-            dd('Your payment was successfully. You can create success page here.');
-        }
-
-        dd('Something is wrong.');
+        $races = Races::all();
+        $league = League::find(1);
+        return view('auth.payment-success', compact('races', 'league'));
     }
 }

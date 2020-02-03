@@ -46,5 +46,10 @@ class User extends Authenticatable
     {
         return $this->belongsToMany(Clubs::class, 'user_clubs','user_id', 'club_id');
     }
+
+    public function races()
+    {
+        return $this->belongsToMany(Races::class, 'user_races','user_id', 'race_id');
+    }
     
 }

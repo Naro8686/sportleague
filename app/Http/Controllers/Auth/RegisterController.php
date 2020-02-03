@@ -32,7 +32,7 @@ class RegisterController extends Controller
      *
      * @var string
      */
-    protected $redirectTo = '/admin';
+    protected $redirectTo = '/payment';
 
     /**
      * Create a new controller instance.
@@ -79,17 +79,9 @@ class RegisterController extends Controller
 
         $user->assignRole('participants');
 
-        $club = Clubs::find($data['club']);
-        $club->users()->attach([
-            'user_id' => $user->id
+        $user->club()->attach([
+            'club_id' => $data['club']
         ]);
-
-        foreach ($data['event'] as $event){
-            $race = Races::find($event);
-            $race->users()->attach([
-                'user_id' => $user->id
-            ]);
-        }
 
         return $user;
     }

@@ -66,9 +66,12 @@
 
             <div class="form-group">
                 <label>Event to marshal</label>
-                <select class="register_events" name="event[]" multiple required>
+                <select class="register_events" name="event[]" multiple>
                     @foreach($races as $race)
-                        <option value="{{ $race->id }}">{{ $race->name }}</option>
+                        @if($race->max_marshals && $race->max_marshals <= $race->users->count() || $league->max_users <= $race->users->count() )
+                        @else
+                            <option value="{{ $race->id }}">{{ $race->name }}</option>
+                        @endif
                     @endforeach
                 </select>
                 <div class="helper-block">
@@ -113,12 +116,10 @@
                         {{ $errors->first('roles') }}
                     </em>
                 @endif
-                <p class="helper-block">
-                    {{ trans('cruds.user.fields.roles_helper') }}
-                </p>
+                <p class="helper-block"></p>
             </div>
             <div>
-                <input class="btn btn-danger" type="submit" value="{{ trans('global.save') }}">
+                <input class="btn btn-danger" type="submit" value="Save">
             </div>
         </form>
 
