@@ -104,7 +104,7 @@
                                         <a href="{{ route('privacy.page') }}" target="_blank">privacy policy</a>
                                     </div>
                                     <div class="mt-3">
-                                        <button type="submit" class="btn btn-primary mr-2 mb-2 mb-md-0">Login</button>
+                                        <button type="submit" class="btn btn-primary mr-2 mb-2 mb-md-0">Register</button>
                                     </div>
                                 </form>
                             </div>

@@ -10,7 +10,7 @@
         <form action="{{ route("admin.users.store") }}" method="POST" enctype="multipart/form-data">
             @csrf
             <div class="form-group {{ $errors->has('first_name') ? 'has-error' : '' }}">
-                <label for="first_name">First name*</label>
+                <label for="first_name">First name</label>
                 <input type="text" id="first_name" name="first_name" class="form-control" value="{{ old('first_name', isset($user) ? $user->first_name : '') }}" required>
                 @if($errors->has('first_name'))
                     <em class="invalid-feedback">
@@ -20,7 +20,7 @@
             </div>
 
             <div class="form-group {{ $errors->has('last_name') ? 'has-error' : '' }}">
-                <label for="last_name">Last name*</label>
+                <label for="last_name">Last name</label>
                 <input type="text" id="last_name" name="last_name" class="form-control" value="{{ old('last_name', isset($user) ? $user->last_name : '') }}" required>
                 @if($errors->has('last_name'))
                     <em class="invalid-feedback">
@@ -40,7 +40,7 @@
             </div>
 
             <div class="form-group {{ $errors->has('email') ? 'has-error' : '' }}">
-                <label for="email">{{ trans('cruds.user.fields.email') }}*</label>
+                <label for="email">Email</label>
                 <input type="email" id="email" name="email" class="form-control" value="{{ old('email', isset($user) ? $user->email : '') }}" required>
                 @if($errors->has('email'))
                     <em class="invalid-feedback">
@@ -49,9 +49,36 @@
                 @endif
             </div>
 
+            <div class="form-group {{ $errors->has('club') ? 'has-error' : '' }}">
+                <label for="club">Club</label>
+                <select name="club">
+                    @foreach($clubs as $club)
+                        <option value="{{ $club->id }}">{{ $club->name }}</option>
+                    @endforeach
+                </select>
+                @if($errors->has('club'))
+                    <em class="invalid-feedback">
+                        {{ $errors->first('club') }}
+                    </em>
+                @endif
+                <p class="helper-block"></p>
+            </div>
+
+            <div class="form-group">
+                <label>Event to marshal</label>
+                <select class="register_events" name="event[]" multiple required>
+                    @foreach($races as $race)
+                        <option value="{{ $race->id }}">{{ $race->name }}</option>
+                    @endforeach
+                </select>
+                <div class="helper-block">
+                    Select 2 events to marshal
+                </div>
+            </div>
+
             <div class="form-group {{ $errors->has('password') ? 'has-error' : '' }}">
-                <label for="password">{{ trans('cruds.user.fields.password') }}</label>
-                <input type="text" id="password" name="password" class="form-control" required>
+                <label for="password">Password</label>
+                <input type="password" id="password" name="password" class="form-control" required>
                 @if($errors->has('password'))
                     <em class="invalid-feedback">
                         {{ $errors->first('password') }}
@@ -64,7 +91,7 @@
 
             <div class="form-group {{ $errors->has('password_confirmation') ? 'has-error' : '' }}">
                 <label for="password_confirmation">Confirm password</label>
-                <input type="text" id="password_confirmation" name="password_confirmation" class="form-control" required>
+                <input type="password" id="password_confirmation" name="password_confirmation" class="form-control" required>
                 @if($errors->has('password_confirmation'))
                     <em class="invalid-feedback">
                         {{ $errors->first('password_confirmation') }}

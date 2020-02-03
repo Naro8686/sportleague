@@ -50,6 +50,21 @@
                 @endif
             </div>
 
+            <div class="form-group {{ $errors->has('club') ? 'has-error' : '' }}">
+                <label for="club">Club</label>
+                <select name="club">
+                    @foreach($clubs as $club)
+                        <option value="{{ $club->id }}" {{ ($user->club->count() && $user->club[0]->id == $club->id) ? 'selected' : '' }}>{{ $club->name }}</option>
+                    @endforeach
+                </select>
+                @if($errors->has('club'))
+                    <em class="invalid-feedback">
+                        {{ $errors->first('club') }}
+                    </em>
+                @endif
+                <p class="helper-block"></p>
+            </div>
+
             @if(Auth::user()->hasRole('administrator'))
                 <div class="form-group {{ $errors->has('roles') ? 'has-error' : '' }}">
                 <label for="roles">{{ trans('cruds.user.fields.roles') }}*
@@ -73,9 +88,7 @@
                         {{ $errors->first('roles') }}
                     </em>
                 @endif
-                <p class="helper-block">
-                    {{ trans('cruds.user.fields.roles_helper') }}
-                </p>
+                <p class="helper-block"></p>
             </div>
             @endif
             <div>

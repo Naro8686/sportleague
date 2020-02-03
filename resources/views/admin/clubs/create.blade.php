@@ -36,7 +36,7 @@
                     </div>
 
                     <div class="form-group {{ $errors->has('person') ? 'has-error' : '' }}">
-                        <label for="person">Website</label>
+                        <label for="person">Contact person</label>
                         <input type="text" id="person" name="person" class="form-control" value="{{ old('person', isset($data) ? $data->website : '') }}" required>
                         @if($errors->has('person'))
                             <em class="invalid-feedback">

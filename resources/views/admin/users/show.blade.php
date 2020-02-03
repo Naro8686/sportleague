@@ -24,10 +24,12 @@
                         <th>Phone</th>
                         <td>{{ $user->phone }}</td>
                     </tr>
+                    @if($user->club->count())
                     <tr>
                         <th>Club</th>
                         <td>{{ $user->club[0]->name }}</td>
                     </tr>
+                    @endif
                     <tr>
                         <th>Roles</th>
                         <td>

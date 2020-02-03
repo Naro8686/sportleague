@@ -2,6 +2,8 @@
 
 namespace App\Http\Controllers\Admin;
 
+use App\Models\Clubs;
+use App\Models\Races;
 use App\User;
 use Illuminate\Http\Response;
 use Illuminate\Support\Facades\Auth;
@@ -43,8 +45,10 @@ class UsersController extends Controller
             return abort(401);
         }
         $roles = Role::get()->pluck('name', 'name');
+        $races = Races::all();
+        $clubs = Clubs::all();
 
-        return view('admin.users.create', compact('roles'));
+        return view('admin.users.create', compact('roles', 'races', 'clubs'));
     }
 
     /**
@@ -63,6 +67,18 @@ class UsersController extends Controller
         $roles = $request->input('roles') ? $request->input('roles') : [];
         $user->assignRole($roles);
 
+        $club = Clubs::find($data['club']);
+        $club->users()->attach([
+            'user_id' => $user->id
+        ]);
+
+        foreach ($data['event'] as $event){
+            $race = Races::find($event);
+            $race->users()->attach([
+                'user_id' => $user->id
+            ]);
+        }
+
         return redirect()->route('admin.users.index');
     }
 
@@ -79,8 +95,10 @@ class UsersController extends Controller
             return abort(401);
         }
         $roles = Role::get()->pluck('name', 'name');
+        $races = Races::all();
+        $clubs = Clubs::all();
 
-        return view('admin.users.edit', compact('user', 'roles'));
+        return view('admin.users.edit', compact('user', 'roles', 'races', 'clubs'));
     }
 
     /**
@@ -101,6 +119,11 @@ class UsersController extends Controller
         if($roles){
             $user->syncRoles($roles);
         }
+
+        $user->club()->detach();
+        $user->club()->attach([
+            'club_id' => $data['club']
+        ]);
 
         return redirect()->route('admin.users.index');
     }
