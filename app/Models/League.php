@@ -14,8 +14,7 @@ class League extends Model
      * @property string $end_date
      * @property string $price
      * @property string $min_users
-     * @property string $max_users
      */
 
-    protected $fillable = ['start_date', 'end_date', 'price', 'min_users', 'max_users'];
+    protected $fillable = ['start_date', 'end_date', 'price', 'min_users'];
 }

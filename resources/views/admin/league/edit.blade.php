@@ -69,17 +69,6 @@
                         </p>
                     </div>
 
-                    <div class="form-group {{ $errors->has('max_users') ? 'has-error' : '' }}">
-                        <label for="max_users">Max marshals</label>
-                        <input type="number" id="max_users" name="max_users" class="form-control" value="{{ old('max_users', isset($league) ? $league->max_users : '') }}" required>
-                        @if($errors->has('max_users'))
-                            <em class="invalid-feedback">
-                                {{ $errors->first('max_users') }}
-                            </em>
-                        @endif
-                        <p class="helper-block"></p>
-                    </div>
-
                     <div>
                         <input class="btn btn-danger" type="submit" value="Save">
                     </div>

@@ -19,7 +19,6 @@ class CreateLeaguesTable extends Migration
             $table->string('end_date');
             $table->integer('price');
             $table->integer('min_users');
-            $table->integer('max_users');
             $table->timestamps();
         });
     }

@@ -11,6 +11,6 @@
 <h1>Register price - {{ $league->price }}</h1>
 <p>Start date: {{ $league->start_date }}</p>
 <p>End date: {{ $league->end_date }}</p>
-<p>Max participants {{ $league->max_users }}</p>
+<p>Min participants {{ $league->min_users }}</p>
 </body>
 </html>

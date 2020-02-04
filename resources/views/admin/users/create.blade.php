@@ -68,7 +68,7 @@
                 <label>Event to marshal</label>
                 <select class="register_events" name="event[]" multiple>
                     @foreach($races as $race)
-                        @if($race->max_marshals && $race->max_marshals <= $race->users->count() || $league->max_users <= $race->users->count() )
+                        @if($race->max_marshals && $race->max_marshals <= $race->users->count() )
                         @else
                             <option value="{{ $race->id }}">{{ $race->name }}</option>
                         @endif
