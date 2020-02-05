@@ -23,7 +23,7 @@ class User extends Authenticatable
     use Notifiable;
     use HasRoles;
 
-    protected $fillable = ['first_name', 'last_name', 'phone', 'email', 'password', 'remember_token'];
+    protected $fillable = ['first_name', 'last_name', 'phone', 'email', 'race_category', 'password', 'remember_token'];
     
     
     /**
@@ -49,7 +49,7 @@ class User extends Authenticatable
 
     public function races()
     {
-        return $this->belongsToMany(Races::class, 'user_races','user_id', 'race_id');
+        return $this->belongsToMany(Races::class, 'user_races','user_id', 'race_id')->withTimestamps();
     }
     
 }

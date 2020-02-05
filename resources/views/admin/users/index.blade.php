@@ -22,6 +22,7 @@
                         <th>Last name</th>
                         <th>Phone</th>
                         <th>Email</th>
+                        <th>Race category</th>
                         @canany('users_manage')
                             <th>Type</th>
                             <th></th>
@@ -36,6 +37,7 @@
                             <td>{{ $user->last_name ?? '' }}</td>
                             <td>{{ $user->phone ?? '' }}</td>
                             <td>{{ $user->email ?? '' }}</td>
+                            <td>{{ $user->race_category ?? '' }}</td>
                             @canany('users_manage')
                                 <td>
                                     @foreach($user->roles()->pluck('name') as $role)

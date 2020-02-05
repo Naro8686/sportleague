@@ -3,7 +3,7 @@ namespace App\Http\Requests\Admin;
 
 use Illuminate\Foundation\Http\FormRequest;
 
-class StoreOrUpdateRacesRequest extends FormRequest
+class StoreOrUpdateRaceCategoryRequest extends FormRequest
 {
     /**
      * Determine if the user is authorized to make this request.
@@ -23,11 +23,7 @@ class StoreOrUpdateRacesRequest extends FormRequest
     public function rules()
     {
         return [
-            'date' => 'required',
             'name' => 'required',
-            'location' => 'required',
-            'start_time' => 'required',
-            'max_marshals' => 'required',
         ];
     }
 }

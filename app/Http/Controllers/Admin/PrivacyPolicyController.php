@@ -6,6 +6,7 @@ use App\Http\Controllers\Controller;
 use App\Models\PrivacyPolicy;
 use Illuminate\Http\Request;
 use Illuminate\Http\Response;
+use Illuminate\Support\Facades\Gate;
 
 class PrivacyPolicyController extends Controller
 {
@@ -17,6 +18,10 @@ class PrivacyPolicyController extends Controller
      */
     public function index()
     {
+        if (! Gate::allows('privacy_manage')) {
+            return abort(401);
+        }
+
         $data = PrivacyPolicy::first();
 
         if(!$data){
@@ -33,6 +38,10 @@ class PrivacyPolicyController extends Controller
      */
     public function create()
     {
+        if (! Gate::allows('privacy_manage')) {
+            return abort(401);
+        }
+
         return view($this->view_path.'create');
     }
 
@@ -44,6 +53,10 @@ class PrivacyPolicyController extends Controller
      */
     public function store(Request $request)
     {
+        if (! Gate::allows('privacy_manage')) {
+            return abort(401);
+        }
+
         PrivacyPolicy::create([
             'title' => $request->input('title'),
             'text' => $request->input('text'),
@@ -61,6 +74,10 @@ class PrivacyPolicyController extends Controller
      */
     public function edit($id)
     {
+        if (! Gate::allows('privacy_manage')) {
+            return abort(401);
+        }
+
         $data = PrivacyPolicy::findOrFail($id);
 
         return view($this->view_path.'.edit', compact('data'));
@@ -75,6 +92,10 @@ class PrivacyPolicyController extends Controller
      */
     public function update(Request $request, $id)
     {
+        if (! Gate::allows('privacy_manage')) {
+            return abort(401);
+        }
+
         $data = PrivacyPolicy::findOrFail($id);
         $data->update([
             'title' => $request->input('title'),
@@ -93,6 +114,10 @@ class PrivacyPolicyController extends Controller
      */
     public function show($id)
     {
+        if (! Gate::allows('privacy_manage')) {
+            return abort(401);
+        }
+
         $data = PrivacyPolicy::findOrFail($id);
 
         return view($this->view_path.'show', compact('data'));
@@ -107,6 +132,9 @@ class PrivacyPolicyController extends Controller
      */
     public function destroy($id)
     {
+        if (! Gate::allows('privacy_manage')) {
+            return abort(401);
+        }
 
         $data = PrivacyPolicy::findOrFail($id);
         $data->delete();

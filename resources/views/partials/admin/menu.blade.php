@@ -21,29 +21,23 @@
             </li>
 
             @if(Auth::user()->hasRole('administrator'))
-{{--                <li class="nav_items ">--}}
-{{--                    <a class="nav-link" data-toggle="collapse" href="#general" role="button" aria-expanded="{{ request()->is('admin/contacts') || request()->is('admin/services') || request()->is('admin/home-page') || request()->is('admin/home-page/*') ? 'true' : 'false' }}" aria-controls="general">--}}
-{{--                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-book link-icon"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"></path><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"></path></svg>--}}
-{{--                        <span class="link-title">{{ trans('global.pages') }}</span>--}}
-{{--                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-chevron-down link-arrow"><polyline points="6 9 12 15 18 9"></polyline></svg>--}}
-{{--                    </a>--}}
-{{--                    <div class="collapse {{ request()->is('admin/contacts') || request()->is('admin/services') ||  request()->is('admin/home-page') || request()->is('admin/home-page/*') || request()->is('admin/portfolio-page') ? 'show' : '' }}" id="general">--}}
-{{--                        <ul class="nav-item">--}}
-{{--                            <li class="nav-item ">--}}
-{{--                                <a class="nav-link" data-toggle="collapse" href="#home_pages" role="button" aria-expanded="{{ request()->is('admin/contacts') || request()->is('admin/services') || request()->is('admin/home-page') || request()->is('admin/home-page/*') ? 'true' : 'false' }}" aria-controls="home_pages">--}}
-{{--                                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-book link-icon"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"></path><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"></path></svg>--}}
-{{--                                    <span class="link-title">Home</span>--}}
-{{--                                </a>--}}
-{{--                            </li>--}}
-{{--                            <li class="nav-item {{ request()->is('admin/privacy-policy') ? 'active' : '' }}">--}}
-{{--                                <a href="{{ route('admin.privacy-policy.index') }}" class="nav-link">--}}
-{{--                                    <i class="link-icon" data-feather="alert-triangle"></i>--}}
-{{--                                    <span class="link-title">Privacy policy</span>--}}
-{{--                                </a>--}}
-{{--                            </li>--}}
-{{--                        </ul>--}}
-{{--                    </div>--}}
-{{--                </li>--}}
+                {{--                <li class="nav_items ">--}}
+                {{--                    <a class="nav-link" data-toggle="collapse" href="#general" role="button" aria-expanded="{{ request()->is('admin/contacts') || request()->is('admin/services') || request()->is('admin/home-page') || request()->is('admin/home-page/*') ? 'true' : 'false' }}" aria-controls="general">--}}
+                {{--                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-book link-icon"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"></path><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"></path></svg>--}}
+                {{--                        <span class="link-title">{{ trans('global.pages') }}</span>--}}
+                {{--                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-chevron-down link-arrow"><polyline points="6 9 12 15 18 9"></polyline></svg>--}}
+                {{--                    </a>--}}
+                {{--                    <div class="collapse {{ request()->is('admin/contacts') || request()->is('admin/services') ||  request()->is('admin/home-page') || request()->is('admin/home-page/*') || request()->is('admin/portfolio-page') ? 'show' : '' }}" id="general">--}}
+                {{--                        <ul class="nav-item">--}}
+                {{--                            <li class="nav-item ">--}}
+                {{--                                <a class="nav-link" data-toggle="collapse" href="#home_pages" role="button" aria-expanded="{{ request()->is('admin/contacts') || request()->is('admin/services') || request()->is('admin/home-page') || request()->is('admin/home-page/*') ? 'true' : 'false' }}" aria-controls="home_pages">--}}
+                {{--                                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-book link-icon"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"></path><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"></path></svg>--}}
+                {{--                                    <span class="link-title">Home</span>--}}
+                {{--                                </a>--}}
+                {{--                            </li>--}}
+                {{--                        </ul>--}}
+                {{--                    </div>--}}
+                {{--                </li>--}}
                 <li class="nav_items {{ request()->is('admin/roles') || request()->is('admin/roles/*') ? 'active' : '' }}">
                     <a href="{{ route('admin.roles.index') }}" class="nav-link">
                         <i class="link-icon" data-feather="box"></i>
@@ -77,12 +71,21 @@
             @endcanany
 
             @canany(['races_manage', 'view_races'])
-{{--                <li class="nav_items {{ request()->is('admin/races') || request()->is('admin/races/*') ? 'active' : '' }}">--}}
-{{--                    <a href="{{ route('admin.races.index') }}" class="nav-link">--}}
-{{--                        <i class="link-icon" data-feather="truck"></i>--}}
-{{--                        <span class="link-title">Races</span>--}}
-{{--                    </a>--}}
-{{--                </li>--}}
+                <li class="nav_items {{ request()->is('admin/races') || request()->is('admin/races/*') ? 'active' : '' }}">
+                    <a href="{{ route('admin.races.index') }}" class="nav-link">
+                        <i class="link-icon" data-feather="truck"></i>
+                        <span class="link-title">Races</span>
+                    </a>
+                </li>
+            @endcanany
+
+            @canany(['race_categories_manage'])
+                <li class="nav_items {{ request()->is('admin/race-categories') || request()->is('admin/race-categories/*') ? 'active' : '' }}">
+                    <a href="{{ route('admin.race-categories.index') }}" class="nav-link">
+                        <i class="link-icon" data-feather="list"></i>
+                        <span class="link-title">Race categories</span>
+                    </a>
+                </li>
             @endcanany
 
             @canany(['users_manage', 'view_users'])
@@ -94,12 +97,30 @@
                 </li>
             @endcanany
 
-{{--            <li class="nav_items {{ request()->is('admin/settings') || request()->is('admin/settings/*') ? 'active' : '' }}">--}}
-{{--                <a href="{{ route('admin.users.edit', \Illuminate\Support\Facades\Auth::user()->id) }}" class="nav-link">--}}
-{{--                    <i class="link-icon" data-feather="settings"></i>--}}
-{{--                    <span class="link-title">Profile</span>--}}
-{{--                </a>--}}
-{{--            </li>--}}
+            {{--            @if(Auth::user()->races->count())--}}
+            {{--            <li class="nav_items {{ request()->is('admin/my-races') || request()->is('admin/my-races/*') ? 'active' : '' }}">--}}
+            {{--                <a href="{{ route('admin.my-races') }}" class="nav-link">--}}
+            {{--                    <i class="link-icon" data-feather="truck"></i>--}}
+            {{--                    <span class="link-title">My Races</span>--}}
+            {{--                </a>--}}
+            {{--            </li>--}}
+            {{--            @endif--}}
+
+            {{--            <li class="nav_items {{ request()->is('admin/settings') || request()->is('admin/settings/*') ? 'active' : '' }}">--}}
+            {{--                <a href="{{ route('admin.users.edit', \Illuminate\Support\Facades\Auth::user()->id) }}" class="nav-link">--}}
+            {{--                    <i class="link-icon" data-feather="settings"></i>--}}
+            {{--                    <span class="link-title">Profile</span>--}}
+            {{--                </a>--}}
+            {{--            </li>--}}
+
+            @canany(['privacy_manage'])
+                <li class="nav_items {{ request()->is('admin/privacy-policy') ? 'active' : '' }}">
+                    <a href="{{ route('admin.privacy-policy.index') }}" class="nav-link">
+                        <i class="link-icon" data-feather="alert-triangle"></i>
+                        <span class="link-title">Privacy policy</span>
+                    </a>
+                </li>
+            @endcanany
 
         </ul>
     </div>

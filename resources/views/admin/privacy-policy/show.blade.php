@@ -30,11 +30,10 @@
                                 </tr>
                                 <tr>
                                     <th>Text</th>
-                                    <td>{{ $data->text }}</td>
+                                    <td style="white-space: pre-wrap">{{ $data->text }}</td>
                                 </tr>
                                 </tbody>
                             </table>
-                            <a style="margin-top:20px;" class="btn btn-default" href="{{ url()->previous() }}">Back</a>
                         </div>
                     </div>
                 </div>

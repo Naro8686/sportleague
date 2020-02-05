@@ -30,7 +30,11 @@
                         <td>{{ $race->start_time }}</td>
                     </tr>
                     <tr>
-                        <th>Max marshals</th>
+                        <th>Min marshals</th>
+                        <td>{{ $race->min_marshals }}</td>
+                    </tr>
+                    <tr>
+                        <th>Max participants</th>
                         <td>{{ $race->max_marshals }}</td>
                     </tr>
                     </tbody>
@@ -46,7 +50,6 @@
                     <table class=" table table-bordered table-striped table-hover datatable race_users">
                         <thead>
                         <tr>
-                            <th>ID</th>
                             <th>First name</th>
                             <th>Last name</th>
                             <th>Phone</th>
@@ -56,7 +59,6 @@
                         <tbody>
                         @foreach($race->users as $key => $user)
                             <tr data-entry-id="{{ $user->id }}">
-                                <td>{{ $user->id ?? '' }}</td>
                                 <td>{{ $user->first_name ?? '' }}</td>
                                 <td>{{ $user->last_name ?? '' }}</td>
                                 <td>{{ $user->phone ?? '' }}</td>

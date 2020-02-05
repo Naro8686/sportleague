@@ -13,9 +13,9 @@ class RoleSeed extends Seeder
     public function run()
     {
         $admin = Role::create(['name' => 'administrator']);
-        $admin->givePermissionTo(['users_manage', 'league_manage', 'clubs_manage', 'races_manage']);
+        $admin->givePermissionTo(['users_manage', 'league_manage', 'clubs_manage', 'races_manage', 'privacy_manage', 'race_categories_manage']);
         $la = Role::create(['name' => 'league_admin']);
-        $la->givePermissionTo('league_manage', 'view_users', 'view_races');
+        $la->givePermissionTo('view_users', 'view_races');
         Role::create(['name' => 'participants']);
     }
 }

@@ -16,7 +16,7 @@ class LeagueSeed extends Seeder
             'start_date' => '28.01.2020',
             'end_date' => '28.05.2020',
             'price' => '10',
-            'min_users' => '6'
+            'min_marshals' => '6'
         ]);
     }
 }

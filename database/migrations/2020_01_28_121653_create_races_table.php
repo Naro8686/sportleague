@@ -19,7 +19,8 @@ class CreateRacesTable extends Migration
             $table->string('name');
             $table->string('location');
             $table->string('start_time');
-            $table->string('max_marshals')->nullable();
+            $table->string('max_marshals');
+            $table->string('min_marshals')->nullable();
             $table->timestamps();
         });
     }

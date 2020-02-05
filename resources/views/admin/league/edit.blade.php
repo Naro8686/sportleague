@@ -56,12 +56,12 @@
                         </p>
                     </div>
 
-                    <div class="form-group {{ $errors->has('min_users') ? 'has-error' : '' }}">
-                        <label for="min_users">Min marshals</label>
-                        <input type="number" id="min_users" name="min_users" class="form-control" value="{{ old('min_users', isset($league) ? $league->min_users : '') }}" required>
-                        @if($errors->has('min_users'))
+                    <div class="form-group {{ $errors->has('min_marshals') ? 'has-error' : '' }}">
+                        <label for="min_marshals">Min marshals</label>
+                        <input type="number" id="min_marshals" name="min_marshals" class="form-control" value="{{ old('min_marshals', isset($league) ? $league->min_marshals : '') }}" required>
+                        @if($errors->has('min_marshals'))
                             <em class="invalid-feedback">
-                                {{ $errors->first('min_users') }}
+                                {{ $errors->first('min_marshals') }}
                             </em>
                         @endif
                         <p class="helper-block">

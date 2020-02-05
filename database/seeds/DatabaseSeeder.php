@@ -17,5 +17,7 @@ class DatabaseSeeder extends Seeder
         $this->call(LeagueSeed::class);
         $this->call(ClubSeed::class);
         $this->call(RaceSeed::class);
+        $this->call(PrivacySeed::class);
+        $this->call(RaceCategorySeed::class);
     }
 }

@@ -6,6 +6,7 @@ use App\Http\Controllers\Controller;
 use App\Models\Clubs;
 use App\Models\Races;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Gate;
 use App\Http\Requests\Admin\StoreOrUpdateRacesRequest;
 
@@ -114,12 +115,17 @@ class RacesController extends Controller
      */
     public function destroy(Races $race)
     {
-        if (! Gate::allows('clubs_manage')) {
+        if (! Gate::allows('races_manage')) {
             return abort(401);
         }
 
         $race->delete();
 
-        return redirect()->route('admin.clubs.index');
+        return redirect()->route('admin.races.index');
+    }
+
+    public function myRaces() {
+        $user = Auth::user();
+        return view('admin.races.my-races', compact('user'));
     }
 }

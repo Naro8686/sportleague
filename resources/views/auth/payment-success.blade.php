@@ -16,6 +16,7 @@
                                         <select class="register_events" name="event[]" multiple required>
                                             @foreach($races as $race)
                                                 @if($race->max_marshals && $race->max_marshals <= $race->users->count() )
+
                                                 @else
                                                     <option value="{{ $race->id }}">{{ $race->name }}</option>
                                                 @endif

@@ -44,6 +44,15 @@
                                     </div>
 
                                     <div class="form-group">
+                                        <label>Race category</label>
+                                        <select name="race_category">
+                                            @foreach($race_categories as $race_category)
+                                                <option value="{{ $race_category->name }}">{{ $race_category->name }}</option>
+                                            @endforeach
+                                        </select>
+                                    </div>
+
+                                    <div class="form-group">
                                         <label>Phone</label>
                                         <input name="phone" type="text" class="form-control{{ $errors->has('phone') ? ' is-invalid' : '' }}" required placeholder="Phone" value="{{ old('phone', null) }}">
                                         @if($errors->has('phone'))

@@ -18,7 +18,8 @@ class RaceSeed extends Seeder
                 'name' => 'Race '. $c,
                 'location' => 'Location '. $c,
                 'start_time' => '1'. $c . '.00',
-                'max_marshals' => $c
+                'max_marshals' => '1'.$c,
+                'min_marshals' => '6',
             ]);
         }
     }

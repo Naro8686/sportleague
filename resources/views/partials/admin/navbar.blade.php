@@ -3,7 +3,7 @@
         <i data-feather="menu"></i>
     </a>
     <div class="navbar-content">
-        <a class="btn btn-info mt-3" target="_blank" style="max-height: 30px" href="#">Go to web</a>
+        <a class="btn btn-info mt-3" target="_blank" style="max-height: 30px" href="{{ route('home') }}">Go to web</a>
         <ul class="navbar-nav">
             <li class="nav-item dropdown nav-profile">
                 <a class="nav-link dropdown-toggle" href="#" id="profileDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">

@@ -4,6 +4,7 @@ namespace App\Http\Controllers\Admin;
 
 use App\Models\Clubs;
 use App\Models\League;
+use App\Models\RaceCategory;
 use App\Models\Races;
 use App\User;
 use Exception;
@@ -49,10 +50,11 @@ class UsersController extends Controller
         }
         $roles = Role::get()->pluck('name', 'name');
         $races = Races::all();
+        $race_categories = RaceCategory::all();
         $clubs = Clubs::all();
         $league = League::find(1);
 
-        return view('admin.users.create', compact('roles', 'races', 'clubs', 'league'));
+        return view('admin.users.create', compact('roles', 'races', 'clubs', 'league', 'race_categories'));
     }
 
     /**
@@ -103,8 +105,9 @@ class UsersController extends Controller
         $roles = Role::get()->pluck('name', 'name');
         $races = Races::all();
         $clubs = Clubs::all();
+        $race_categories = RaceCategory::all();
 
-        return view('admin.users.edit', compact('user', 'roles', 'races', 'clubs'));
+        return view('admin.users.edit', compact('user', 'roles', 'races', 'clubs', 'race_categories'));
     }
 
     /**
@@ -131,7 +134,7 @@ class UsersController extends Controller
             'club_id' => $data['club']
         ]);
 
-        return redirect()->route('admin.users.index');
+        return redirect()->route('admin.users.edit', $user->id);
     }
 
     public function show(User $user)
@@ -161,22 +164,6 @@ class UsersController extends Controller
         $user->delete();
 
         return redirect()->route('admin.users.index');
-    }
-
-    /**
-     * Delete all selected User at once.
-     *
-     * @param Request $request
-     * @return ResponseFactory|Response|void
-     */
-    public function massDestroy(Request $request)
-    {
-        if (! Gate::allows('users_manage')) {
-            return abort(401);
-        }
-        User::whereIn('id', request('ids'))->delete();
-
-        return response(null, Response::HTTP_NO_CONTENT);
     }
 
     /**

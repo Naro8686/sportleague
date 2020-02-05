@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Auth;
 
 use App\Models\Clubs;
+use App\Models\RaceCategory;
 use App\Models\Races;
 use App\User;
 use App\Http\Controllers\Controller;
@@ -74,6 +75,7 @@ class RegisterController extends Controller
             'last_name' => $data['last_name'],
             'phone' => $data['phone'],
             'email' => $data['email'],
+            'race_category' => $data['race_category'],
             'password' => bcrypt($data['password']),
         ]);
 
@@ -89,7 +91,8 @@ class RegisterController extends Controller
     public function registerPage(){
         $races = Races::all();
         $clubs = Clubs::all();
+        $race_categories = RaceCategory::all();
 
-        return view('auth.register', compact('races', 'clubs'));
+        return view('auth.register', compact('races', 'clubs', 'race_categories'));
     }
 }

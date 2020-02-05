@@ -27,8 +27,7 @@ class UpdateLeagueRequest extends FormRequest
             'start_date' => 'required',
             'end_date' => 'required',
             'price' => 'required|numeric',
-            'min_users' => 'required|numeric',
-            'max_users' => 'required|numeric',
+            'min_marshals' => 'required|numeric'
         ];
     }
 }

@@ -62,7 +62,20 @@
                         {{ $errors->first('club') }}
                     </em>
                 @endif
-                <p class="helper-block"></p>
+            </div>
+
+            <div class="form-group {{ $errors->has('race_category') ? 'has-error' : '' }}">
+                <label for="race_category">Race category</label>
+                <select name="race_category">
+                    @foreach($race_categories as $category)
+                        <option value="{{ $category->name }}" {{ ($user->race_category == $category->name) ? 'selected' : '' }}>{{ $category->name }}</option>
+                    @endforeach
+                </select>
+                @if($errors->has('race_category'))
+                    <em class="invalid-feedback">
+                        {{ $errors->first('race_category') }}
+                    </em>
+                @endif
             </div>
 
             @if(Auth::user()->hasRole('administrator'))

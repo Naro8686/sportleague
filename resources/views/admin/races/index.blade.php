@@ -19,35 +19,30 @@
                 <table class=" table table-bordered table-striped table-hover datatable datatable-User">
                     <thead>
                     <tr>
-                        <th width="10"></th>
                         <th>ID</th>
                         <th>Date</th>
                         <th>Name</th>
                         <th>Location</th>
                         <th>Start time</th>
-                        <th>Max marshals</th>
+                        <th>Min marshals</th>
+                        <th>Max participants</th>
                         <th>Actions</th>
                     </tr>
                     </thead>
                     <tbody>
                     @foreach($data as $key => $item)
                         <tr data-entry-id="{{ $item->id }}">
-                            <td></td>
                             <td>{{ $item->id ?? '' }}</td>
                             <td>{{ $item->date ?? '' }}</td>
                             <td>{{ $item->name ?? '' }}</td>
                             <td>{{ $item->location ?? '' }}</td>
                             <td>{{ $item->start_time ?? '' }}</td>
+                            <td>{{ $item->min_marshals ?? '' }}</td>
                             <td>{{ $item->max_marshals ?? '' }}</td>
                             <td>
-                                <a class="btn btn-xs btn-primary"
-                                   href="{{ route('admin.races.show', $item->id) }}">
-                                    View
-                                </a>
+                                <a class="btn btn-xs btn-primary" href="{{ route('admin.races.show', $item->id) }}">View</a>
                                 @canany(['races_manage'])
-                                    <a class="btn btn-xs btn-info" href="{{ route('admin.races.edit', $item->id) }}">
-                                        Edit
-                                    </a>
+                                    <a class="btn btn-xs btn-info" href="{{ route('admin.races.edit', $item->id) }}">Edit</a>
                                 @endcanany
                                 @canany(['races_manage'])
                                     <form action="{{ route('admin.races.destroy', $item->id) }}" method="POST" onsubmit="return confirm('Are you sure?');" style="display: inline-block;">
@@ -57,7 +52,6 @@
                                     </form>
                                 @endcanany
                             </td>
-
                         </tr>
                     @endforeach
                     </tbody>
