@@ -21,6 +21,7 @@ class PermissionSeed extends Seeder
         Permission::create(['name' => 'races_manage']);
         Permission::create(['name' => 'privacy_manage']);
         Permission::create(['name' => 'race_categories_manage']);
+        Permission::create(['name' => 'texts_manage']);
         Permission::create(['name' => 'view_users']);
         Permission::create(['name' => 'view_races']);
     }

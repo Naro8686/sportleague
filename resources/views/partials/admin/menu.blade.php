@@ -40,7 +40,7 @@
                 {{--                </li>--}}
                 <li class="nav_items {{ request()->is('admin/roles') || request()->is('admin/roles/*') ? 'active' : '' }}">
                     <a href="{{ route('admin.roles.index') }}" class="nav-link">
-                        <i class="link-icon" data-feather="box"></i>
+                        <i class="link-icon" data-feather="eye"></i>
                         <span class="link-title">Roles</span>
                     </a>
                 </li>
@@ -121,6 +121,15 @@
                     </a>
                 </li>
             @endcanany
+
+{{--            @canany(['texts_manage'])--}}
+{{--                <li class="nav_items {{ request()->is('admin/texts') || request()->is('admin/texts/*') ? 'active' : '' }}">--}}
+{{--                    <a href="{{ route('admin.texts.index') }}" class="nav-link">--}}
+{{--                        <i class="link-icon" data-feather="type"></i>--}}
+{{--                        <span class="link-title">Texts</span>--}}
+{{--                    </a>--}}
+{{--                </li>--}}
+{{--            @endcanany--}}
 
         </ul>
     </div>

@@ -37,6 +37,10 @@
                         <th>Max participants</th>
                         <td>{{ $race->max_marshals }}</td>
                     </tr>
+                    <tr>
+                        <th>No. of marshals</th>
+                        <td>{{ $race->users->count() }}</td>
+                    </tr>
                     </tbody>
                 </table>
                 <a style="margin-top:20px;" class="btn btn-default" href="{{ url()->previous() }}">
@@ -45,13 +49,14 @@
             </div>
 
             <div class="mb-2">
-                <h4 class="my-3">Race marshals</h4>
+                <h4 class="my-3">Marshals ({{ $race->users->count() }})</h4>
                 <div class="table-responsive">
                     <table class=" table table-bordered table-striped table-hover datatable race_users">
                         <thead>
                         <tr>
-                            <th>First name</th>
-                            <th>Last name</th>
+                            <th>Full name</th>
+                            <th>Club</th>
+                            <th>Category</th>
                             <th>Phone</th>
                             <th>Email</th>
                         </tr>
@@ -59,8 +64,9 @@
                         <tbody>
                         @foreach($race->users as $key => $user)
                             <tr data-entry-id="{{ $user->id }}">
-                                <td>{{ $user->first_name ?? '' }}</td>
-                                <td>{{ $user->last_name ?? '' }}</td>
+                                <td>{{ $user->first_name ?? '' }} {{ $user->last_name ?? '' }}</td>
+                                <td>{{ $user->club->first()->name ?? '' }}</td>
+                                <td>{{ $user->race_category ?? '' }}</td>
                                 <td>{{ $user->phone ?? '' }}</td>
                                 <td>{{ $user->email ?? '' }}</td>
                             </tr>
@@ -69,8 +75,6 @@
                     </table>
                 </div>
             </div>
-
-
         </div>
     </div>
 @endsection

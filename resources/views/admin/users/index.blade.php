@@ -17,14 +17,13 @@
                 <table class=" table table-bordered table-striped table-hover datatable datatable-User">
                     <thead>
                     <tr>
-                        <th>ID</th>
-                        <th>First name</th>
-                        <th>Last name</th>
+                        <th>Full name</th>
                         <th>Phone</th>
                         <th>Email</th>
+                        <th>Club</th>
                         <th>Race category</th>
+                        <th>Type</th>
                         @canany('users_manage')
-                            <th>Type</th>
                             <th></th>
                         @endcanany
                     </tr>
@@ -32,18 +31,17 @@
                     <tbody>
                     @foreach($users as $key => $user)
                         <tr data-entry-id="{{ $user->id }}">
-                            <td>{{ $user->id ?? '' }}</td>
-                            <td>{{ $user->first_name ?? '' }}</td>
-                            <td>{{ $user->last_name ?? '' }}</td>
+                            <td>{{ $user->first_name ?? '' }} {{ $user->last_name ?? '' }}</td>
                             <td>{{ $user->phone ?? '' }}</td>
                             <td>{{ $user->email ?? '' }}</td>
+                            <td>{{ $user->club->first()->name ?? '' }}</td>
                             <td>{{ $user->race_category ?? '' }}</td>
+                            <td>
+                                @foreach($user->roles()->pluck('name') as $role)
+                                    <span class="badge badge-info">{{ $role }}</span>
+                                @endforeach
+                            </td>
                             @canany('users_manage')
-                                <td>
-                                    @foreach($user->roles()->pluck('name') as $role)
-                                        <span class="badge badge-info">{{ $role }}</span>
-                                    @endforeach
-                                </td>
                                 <td>
                                 <a class="btn btn-xs btn-primary" href="{{ route('admin.users.show', $user->id) }}">
                                     View
