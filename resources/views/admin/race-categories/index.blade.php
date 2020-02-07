@@ -15,7 +15,6 @@
                 <table class=" table table-bordered table-striped table-hover datatable datatable-User">
                     <thead>
                     <tr>
-                        <th>ID</th>
                         <th>Name</th>
                         <th>Actions</th>
                     </tr>
@@ -23,7 +22,6 @@
                     <tbody>
                     @foreach($data as $key => $item)
                         <tr data-entry-id="{{ $item->id }}">
-                            <td>{{ $item->id ?? '' }}</td>
                             <td>{{ $item->name ?? '' }}</td>
                             <td>
                                 <a class="btn btn-xs btn-primary"

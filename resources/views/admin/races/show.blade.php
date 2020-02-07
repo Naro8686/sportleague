@@ -26,6 +26,10 @@
                         <td>{{ $race->location }}</td>
                     </tr>
                     <tr>
+                        <th>Location link</th>
+                        <td><a href="{{ $item->location_link ?? '' }}" target="_blank">Link</a></td>
+                    </tr>
+                    <tr>
                         <th>Start time</th>
                         <td>{{ $race->start_time }}</td>
                     </tr>
@@ -85,13 +89,27 @@
         $(function () {
             $('.race_users').DataTable({
                 dom: 'Bfrtip',
-                buttons: [
-                    {
-                        extend: 'pdf',
-                        text: 'PDF',
-                        title: 'Race marshals',
+                "buttons": [
+                {
+                    text: 'PDF',
+                    extend: 'pdfHtml5',
+                    title: '',
+                    filename: 'race-marshals',
+                    customize: function (doc) {
+                        doc['header']=(function() {
+                            return {
+                                columns: [
+                                    {
+                                        alignment: 'left',
+                                        text: '{{ $race->name }} Race marshals',
+                                        fontSize: 18,
+                                        margin: [40,10]
+                                    },
+                                ]
+                            }
+                        });
                     }
-                ]
+                }],
             })
         })
     </script>

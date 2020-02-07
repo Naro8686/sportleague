@@ -46,9 +46,16 @@
                                 {{ $errors->first('location') }}
                             </em>
                         @endif
-                        <p class="helper-block">
+                    </div>
 
-                        </p>
+                    <div class="form-group {{ $errors->has('location_link') ? 'has-error' : '' }}">
+                        <label for="location_link">Location link</label>
+                        <input type="text" id="location_link" name="location_link" class="form-control" value="{{ old('location_link', isset($data) ? $data->location_link : '') }}" required>
+                        @if($errors->has('location_link'))
+                            <em class="invalid-feedback">
+                                {{ $errors->first('location_link') }}
+                            </em>
+                        @endif
                     </div>
 
                     <div class="form-group {{ $errors->has('start_time') ? 'has-error' : '' }}">

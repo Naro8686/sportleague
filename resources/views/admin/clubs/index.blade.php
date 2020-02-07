@@ -18,7 +18,6 @@
                     <table class=" table table-bordered table-striped table-hover datatable datatable-User">
                         <thead>
                         <tr>
-                            <th>ID</th>
                             <th>Name</th>
                             <th>Website</th>
                             <th>Contact person</th>
@@ -30,7 +29,6 @@
                         <tbody>
                         @foreach($data as $key => $item)
                             <tr data-entry-id="{{ $item->id }}">
-                                <td>{{ $item->id ?? '' }}</td>
                                 <td>{{ $item->name ?? '' }}</td>
                                 <td>{{ $item->website ?? '' }}</td>
                                 <td>{{ $item->person ?? '' }}</td>

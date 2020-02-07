@@ -3,26 +3,22 @@
     @canany(['races_manage'])
         <div style="margin-bottom: 10px;" class="row">
             <div class="col-lg-12">
-                <a class="btn btn-success" href="{{ route("admin.races.create") }}">
-                    Add Race
-                </a>
+                <a class="btn btn-success" href="{{ route("admin.races.create") }}">Add Race</a>
             </div>
         </div>
     @endcanany
     <div class="card">
-        <div class="card-header">
-            Races list
-        </div>
+        <div class="card-header">Races list</div>
 
         <div class="card-body">
             <div class="table-responsive">
                 <table class=" table table-bordered table-striped table-hover datatable datatable-User">
                     <thead>
                     <tr>
-                        <th>ID</th>
                         <th>Date</th>
                         <th>Name</th>
                         <th>Location</th>
+                        <th>Location link</th>
                         <th>Start time</th>
                         <th>Min marshals</th>
                         <th>Max participants</th>
@@ -32,10 +28,10 @@
                     <tbody>
                     @foreach($data as $key => $item)
                         <tr data-entry-id="{{ $item->id }}">
-                            <td>{{ $item->id ?? '' }}</td>
                             <td>{{ $item->date ?? '' }}</td>
                             <td>{{ $item->name ?? '' }}</td>
                             <td>{{ $item->location ?? '' }}</td>
+                            <td><a href="{{ $item->location_link ?? '' }}" target="_blank">Link</a></td>
                             <td>{{ $item->start_time ?? '' }}</td>
                             <td>{{ $item->min_marshals ?? '' }}</td>
                             <td>{{ $item->max_marshals ?? '' }}</td>

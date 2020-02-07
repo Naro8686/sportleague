@@ -71,7 +71,7 @@
     <table class=" table table-bordered table-striped table-hover">
         <thead>
         <tr>
-            <th>Registrations by Club</th>
+            <th width="250">Registrations by Club</th>
             @foreach($clubs as $club)
                 <th>{{ $club->name }}</th>
             @endforeach
@@ -93,7 +93,7 @@
         <table class=" table table-bordered table-striped table-hover">
             <thead>
             <tr>
-                <th>Registrations by Category</th>
+                <th width="250">Registrations by Category</th>
                 @foreach($categories as $category)
                     <th>{{ $category->name }}</th>
                 @endforeach
@@ -116,7 +116,7 @@
         <table class=" table table-bordered table-striped table-hover">
             <thead>
             <tr>
-                <th>Breakdown by Club</th>
+                <th width="250">Breakdown by Club</th>
                 @foreach($categories as $category)
                     <th>{{ $category->name }}</th>
                 @endforeach

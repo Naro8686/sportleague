@@ -26,6 +26,7 @@ class StoreOrUpdateRacesRequest extends FormRequest
             'date' => 'required',
             'name' => 'required',
             'location' => 'required',
+            'location_link' => 'required',
             'start_time' => 'required',
             'max_marshals' => 'required',
         ];
