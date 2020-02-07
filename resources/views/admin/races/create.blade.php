@@ -73,7 +73,7 @@
 
                     <div class="form-group {{ $errors->has('max_marshals') ? 'has-error' : '' }}">
                         <label for="max_marshals">Max participants</label>
-                        <input type="text" id="max_marshals" name="max_marshals" class="form-control" value="{{ old('max_marshals', isset($data) ? $data->max_marshals : '') }}">
+                        <input type="number" id="max_marshals" name="max_marshals" class="form-control" value="{{ old('max_marshals', isset($data) ? $data->max_marshals : '') }}">
                         @if($errors->has('max_marshals'))
                             <em class="invalid-feedback">
                                 {{ $errors->first('max_marshals') }}
@@ -83,7 +83,7 @@
 
                     <div class="form-group {{ $errors->has('min_marshals') ? 'has-error' : '' }}">
                         <label for="min_marshals">Min marshals</label>
-                        <input type="text" id="min_marshals" name="min_marshals" class="form-control" value="{{ old('min_marshals', isset($data) ? $data->min_marshals : '') }}">
+                        <input type="number" id="min_marshals" name="min_marshals" class="form-control" value="{{ old('min_marshals', isset($data) ? $data->min_marshals : '') }}">
                         @if($errors->has('min_marshals'))
                             <em class="invalid-feedback">
                                 {{ $errors->first('min_marshals') }}

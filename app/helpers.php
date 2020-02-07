@@ -3,6 +3,6 @@
 use App\Models\Texts;
 
 function _e($key) {
-//    $data = Texts::all()->pluck('key');
-//    return $data;
+    $data = Texts::where('key', $key)->pluck('key');
+    return $data;
 }

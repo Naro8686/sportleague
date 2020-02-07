@@ -38,7 +38,7 @@ class AdminController extends Controller
             ->unique('id');
         $clubs = Clubs::all();
         $categories = RaceCategory::all();
-        if (! Gate::allows('view_users') && ! Gate::allows('manage_users') ) {
+        if (! Gate::allows('view_users') && ! Gate::allows('users_manage') ) {
             return view('admin.home');
         }else{
             return view('admin.reports.index', compact('users', 'clubs', 'categories'));

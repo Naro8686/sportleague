@@ -3,12 +3,16 @@
 namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
-use App\Models\Clubs;
 use App\Models\Races;
+use Exception;
+use Illuminate\Http\RedirectResponse;
 use Illuminate\Http\Request;
+use Illuminate\Http\Response;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Gate;
 use App\Http\Requests\Admin\StoreOrUpdateRacesRequest;
+use PDF;
 
 class RacesController extends Controller
 {
@@ -18,7 +22,7 @@ class RacesController extends Controller
     /**
      * Display a listing of the resource.
      *
-     * @return \Illuminate\Http\Response
+     * @return Response
      */
     public function index()
     {
@@ -33,7 +37,7 @@ class RacesController extends Controller
     /**
      * Show the form for creating a new resource.
      *
-     * @return \Illuminate\Http\Response
+     * @return Response
      */
     public function create()
     {
@@ -48,7 +52,7 @@ class RacesController extends Controller
      * Store a newly created resource in storage.
      *
      * @param StoreOrUpdateRacesRequest $request
-     * @return \Illuminate\Http\Response
+     * @return Response
      */
     public function store(StoreOrUpdateRacesRequest $request)
     {
@@ -63,8 +67,8 @@ class RacesController extends Controller
     /**
      * Display the specified resource.
      *
-     * @param  object  $race
-     * @return \Illuminate\Http\Response
+     * @param Races $race
+     * @return Response
      */
     public function show(Races $race)
     {
@@ -78,7 +82,7 @@ class RacesController extends Controller
      * Show the form for editing the specified resource.
      *
      * @param Races $race
-     * @return \Illuminate\Http\Response
+     * @return Response
      */
     public function edit(Races $race)
     {
@@ -94,7 +98,7 @@ class RacesController extends Controller
      *
      * @param StoreOrUpdateRacesRequest $request
      * @param Races $race
-     * @return \Illuminate\Http\RedirectResponse|void
+     * @return RedirectResponse|void
      */
     public function update(StoreOrUpdateRacesRequest $request, Races $race)
     {
@@ -110,8 +114,8 @@ class RacesController extends Controller
      * Remove the specified resource from storage.
      *
      * @param Races $race
-     * @return \Illuminate\Http\RedirectResponse|void
-     * @throws \Exception
+     * @return RedirectResponse|void
+     * @throws Exception
      */
     public function destroy(Races $race)
     {
@@ -128,4 +132,34 @@ class RacesController extends Controller
         $user = Auth::user();
         return view('admin.races.my-races', compact('user'));
     }
+
+    public function pdf($id) {
+        if (! Gate::allows('races_manage') && ! Gate::allows('view_races') ) {
+            return abort(401);
+        }
+        $race = Races::find($id);
+
+        $pdf = PDF::loadView('admin.races.marshals-pdf', compact('race'));
+
+        return $pdf->download('marshals.pdf');
+    }
+
+    public function present(Request $request){
+        $present = DB::table('user_races')
+            ->where('user_id', $request->user_id)
+            ->where('race_id', $request->race_id)
+            ->first();
+        if($present->present == 'no'){
+            DB::table('user_races')
+                ->where('user_id', $request->user_id)
+                ->where('race_id', $request->race_id)
+                ->update(['present' => 'yes']);
+        }else{
+            DB::table('user_races')
+                ->where('user_id', $request->user_id)
+                ->where('race_id', $request->race_id)
+                ->update(['present' => 'no']);
+        }
+    }
+
 }

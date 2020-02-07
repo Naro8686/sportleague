@@ -21,12 +21,18 @@ Route::group(['middleware' => ['auth'], 'prefix' => 'admin', 'as' => 'admin.'], 
     Route::resource('users', 'Admin\UsersController');
     Route::resource('league', 'Admin\LeagueController');
     Route::resource('clubs', 'Admin\ClubsController');
-    Route::resource('races', 'Admin\RacesController');
     Route::resource('texts', 'Admin\TextsController');
     Route::resource('race-categories', 'Admin\RaceCategoryController');
-    Route::get('my-races', 'Admin\RacesController@myRaces')->name('my-races');
-    Route::post('select-races', 'Admin\UsersController@selectRaces')->name('select-races');
     Route::resource('privacy-policy', 'Admin\PrivacyPolicyController');
+
+    /* Reports */
     Route::get('reports', 'Admin\ReportsController@index')->name('reports');
     Route::get('registration-pdf', 'Admin\ReportsController@registrationPDF')->name('registration-pdf');
+
+    /* Races */
+    Route::resource('races', 'Admin\RacesController');
+    Route::get('my-races', 'Admin\RacesController@myRaces')->name('my-races');
+    Route::post('/present', 'Admin\RacesController@present');
+    Route::get('marshals-pdf/{id}', 'Admin\RacesController@pdf')->name('marshals-pdf');
+    Route::post('select-races', 'Admin\UsersController@selectRaces')->name('select-races');
 });

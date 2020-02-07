@@ -2,19 +2,21 @@
 
 namespace App\Http\Controllers\Admin;
 
+use Exception;
+use Illuminate\Contracts\Routing\ResponseFactory;
+use Illuminate\Http\Response;
 use Spatie\Permission\Models\Permission;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Gate;
 use App\Http\Controllers\Controller;
-use App\Http\Requests\Admin\StorePermissionsRequest;
-use App\Http\Requests\Admin\UpdatePermissionsRequest;
+use App\Http\Requests\Admin\StoreOrUpdatePermissionsRequest;
 
 class PermissionsController extends Controller
 {
     /**
      * Display a listing of Permission.
      *
-     * @return \Illuminate\Http\Response
+     * @return Response
      */
     public function index()
     {
@@ -30,7 +32,7 @@ class PermissionsController extends Controller
     /**
      * Show the form for creating new Permission.
      *
-     * @return \Illuminate\Http\Response
+     * @return Response
      */
     public function create()
     {
@@ -43,10 +45,10 @@ class PermissionsController extends Controller
     /**
      * Store a newly created Permission in storage.
      *
-     * @param  \App\Http\Requests\StorePermissionsRequest  $request
-     * @return \Illuminate\Http\Response
+     * @param StoreOrUpdatePermissionsRequest $request
+     * @return Response
      */
-    public function store(StorePermissionsRequest $request)
+    public function store(StoreOrUpdatePermissionsRequest $request)
     {
         if (! Gate::allows('users_manage')) {
             return abort(401);
@@ -60,8 +62,8 @@ class PermissionsController extends Controller
     /**
      * Show the form for editing Permission.
      *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
+     * @param Permission $permission
+     * @return Response
      */
     public function edit(Permission $permission)
     {
@@ -75,11 +77,11 @@ class PermissionsController extends Controller
     /**
      * Update Permission in storage.
      *
-     * @param  \App\Http\Requests\UpdatePermissionsRequest  $request
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
+     * @param StoreOrUpdatePermissionsRequest $request
+     * @param Permission $permission
+     * @return Response
      */
-    public function update(UpdatePermissionsRequest $request, Permission $permission)
+    public function update(StoreOrUpdatePermissionsRequest $request, Permission $permission)
     {
         if (! Gate::allows('users_manage')) {
             return abort(401);
@@ -94,8 +96,9 @@ class PermissionsController extends Controller
     /**
      * Remove Permission from storage.
      *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
+     * @param int $id
+     * @return Response
+     * @throws Exception
      */
     public function destroy(Permission $permission)
     {
@@ -121,6 +124,7 @@ class PermissionsController extends Controller
      * Delete all selected Permission at once.
      *
      * @param Request $request
+     * @return ResponseFactory|Response
      */
     public function massDestroy(Request $request)
     {

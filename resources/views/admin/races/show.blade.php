@@ -53,11 +53,17 @@
             </div>
 
             <div class="mb-2">
-                <h4 class="my-3">Marshals ({{ $race->users->count() }})</h4>
+                <div class="d-flex justify-content-between align-items-center">
+                    <h4 class="my-3">Marshals ({{ $race->users->count() }})</h4>
+                    <a href="{{ route('admin.marshals-pdf', $race->id)}}">
+                        <img src="{{ asset('pdf.png') }}" alt="Download PDF" width="40">
+                    </a>
+                </div>
                 <div class="table-responsive">
                     <table class=" table table-bordered table-striped table-hover datatable race_users">
                         <thead>
                         <tr>
+                            <th>Present</th>
                             <th>Full name</th>
                             <th>Club</th>
                             <th>Category</th>
@@ -67,7 +73,10 @@
                         </thead>
                         <tbody>
                         @foreach($race->users as $key => $user)
-                            <tr data-entry-id="{{ $user->id }}">
+                            <tr data-user-id="{{ $user->id }}">
+                                <td>
+                                    <input type="checkbox" class="marshal_present" value="{{$race->id}}" {{ ( \Illuminate\Support\Facades\DB::table('user_races')->where('user_id', $user->id)->where('race_id', $race->id)->first()->present == 'yes' ) ? 'checked' : '' }}>
+                                </td>
                                 <td>{{ $user->first_name ?? '' }} {{ $user->last_name ?? '' }}</td>
                                 <td>{{ $user->club->first()->name ?? '' }}</td>
                                 <td>{{ $user->race_category ?? '' }}</td>
@@ -87,30 +96,52 @@
     @parent
     <script>
         $(function () {
-            $('.race_users').DataTable({
-                dom: 'Bfrtip',
-                "buttons": [
-                {
-                    text: 'PDF',
-                    extend: 'pdfHtml5',
-                    title: '',
-                    filename: 'race-marshals',
-                    customize: function (doc) {
-                        doc['header']=(function() {
-                            return {
-                                columns: [
-                                    {
-                                        alignment: 'left',
-                                        text: '{{ $race->name }} Race marshals',
-                                        fontSize: 18,
-                                        margin: [40,10]
-                                    },
-                                ]
-                            }
-                        });
+            {{--$('.race_users').DataTable({--}}
+            {{--    dom: 'Bfrtip',--}}
+            {{--    "buttons": [--}}
+            {{--    {--}}
+            {{--        text: 'PDF',--}}
+            {{--        extend: 'pdfHtml5',--}}
+            {{--        title: '',--}}
+            {{--        filename: 'race-marshals',--}}
+            {{--        customize: function (doc) {--}}
+            {{--            doc['header']=(function() {--}}
+            {{--                return {--}}
+            {{--                    columns: [--}}
+            {{--                        {--}}
+            {{--                            alignment: 'left',--}}
+            {{--                            text: '{{ $race->name }} Race marshals',--}}
+            {{--                            fontSize: 18,--}}
+            {{--                            margin: [40,10]--}}
+            {{--                        },--}}
+            {{--                    ]--}}
+            {{--                }--}}
+            {{--            });--}}
+            {{--        }--}}
+            {{--    }],--}}
+            {{--})--}}
+
+            $(document).on('click', ".marshal_present", function(){
+
+                let race_id = $(this).val();
+                let user_id = $(this).parent().parent().data('user-id');
+
+                $.ajax({
+                    type:'POST',
+                    url:'/admin/present',
+                    headers: {
+                        'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+                    },
+                    data:{
+                        race_id: race_id,
+                        user_id: user_id
+                    },
+                    success:function(data){
+
                     }
-                }],
-            })
+                });
+
+            });
         })
     </script>
 @endsection

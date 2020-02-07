@@ -2,20 +2,20 @@
 
 namespace App\Http\Controllers\Admin;
 
+use Exception;
+use Illuminate\Http\Response;
 use Spatie\Permission\Models\Role;
 use Spatie\Permission\Models\Permission;
-use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Gate;
 use App\Http\Controllers\Controller;
-use App\Http\Requests\Admin\StoreRolesRequest;
-use App\Http\Requests\Admin\UpdateRolesRequest;
+use App\Http\Requests\Admin\StoreOrUpdateRolesRequest;
 
 class RolesController extends Controller
 {
     /**
      * Display a listing of Role.
      *
-     * @return \Illuminate\Http\Response
+     * @return Response
      */
     public function index()
     {
@@ -31,7 +31,7 @@ class RolesController extends Controller
     /**
      * Show the form for creating new Role.
      *
-     * @return \Illuminate\Http\Response
+     * @return Response
      */
     public function create()
     {
@@ -46,10 +46,10 @@ class RolesController extends Controller
     /**
      * Store a newly created Role in storage.
      *
-     * @param  \App\Http\Requests\StoreRolesRequest  $request
-     * @return \Illuminate\Http\Response
+     * @param StoreOrUpdateRolesRequest $request
+     * @return Response
      */
-    public function store(StoreRolesRequest $request)
+    public function store(StoreOrUpdateRolesRequest $request)
     {
         if (! Gate::allows('users_manage')) {
             return abort(401);
@@ -65,8 +65,8 @@ class RolesController extends Controller
     /**
      * Show the form for editing Role.
      *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
+     * @param Role $role
+     * @return Response
      */
     public function edit(Role $role)
     {
@@ -81,11 +81,11 @@ class RolesController extends Controller
     /**
      * Update Role in storage.
      *
-     * @param  \App\Http\Requests\UpdateRolesRequest  $request
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
+     * @param StoreOrUpdateRolesRequest $request
+     * @param Role $role
+     * @return Response
      */
-    public function update(UpdateRolesRequest $request, Role $role)
+    public function update(StoreOrUpdateRolesRequest $request, Role $role)
     {
         if (! Gate::allows('users_manage')) {
             return abort(401);
@@ -113,8 +113,9 @@ class RolesController extends Controller
     /**
      * Remove Role from storage.
      *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
+     * @param Role $role
+     * @return Response
+     * @throws Exception
      */
     public function destroy(Role $role)
     {
@@ -125,18 +126,6 @@ class RolesController extends Controller
         $role->delete();
 
         return redirect()->route('admin.roles.index');
-    }
-
-    /**
-     * Delete all selected Role at once.
-     *
-     * @param Request $request
-     */
-    public function massDestroy(Request $request)
-    {
-        Role::whereIn('id', request('ids'))->delete();
-
-        return response(null, Response::HTTP_NO_CONTENT);
     }
 
 }

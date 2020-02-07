@@ -18,6 +18,7 @@ class CreateUserRacesTable extends Migration
             $table->foreign('user_id')->references( 'id')->on('users');
             $table->unsignedBigInteger('race_id');
             $table->foreign('race_id')->references( 'id')->on('races');
+            $table->string('present')->default('no');
             $table->timestamps();
         });
     }
