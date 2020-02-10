@@ -51,3 +51,16 @@
     </div>
 </div>
 @endsection
+@section('javascript')
+    @parent
+    <script>
+        $(function () {
+            $('.datatable-Role').DataTable({
+                dom: 'lBfrtip',
+                buttons: [
+                    'colvis'
+                ]
+            })
+        })
+    </script>
+@endsection

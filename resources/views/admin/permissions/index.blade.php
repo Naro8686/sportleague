@@ -48,3 +48,16 @@
     </div>
 </div>
 @endsection
+@section('javascript')
+    @parent
+    <script>
+        $(function () {
+            $('.datatable-Permission').DataTable({
+                dom: 'lBfrtip',
+                buttons: [
+                    'colvis'
+                ]
+            })
+        })
+    </script>
+@endsection

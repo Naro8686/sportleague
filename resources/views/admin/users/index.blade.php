@@ -38,7 +38,11 @@
                             <td>{{ $user->race_category ?? '' }}</td>
                             <td>
                                 @foreach($user->roles()->pluck('name') as $role)
-                                    <span class="badge badge-info">{{ $role }}</span>
+                                    @if( $role == 'league_admin')
+                                        <span class="badge badge-info">League Admin</span>
+                                    @else
+                                        <span class="badge badge-info">Participant</span>
+                                    @endif
                                 @endforeach
                             </td>
                             @canany('users_manage')

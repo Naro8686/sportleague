@@ -12,7 +12,7 @@
 
         <div class="card-body">
             <div class="table-responsive">
-                <table class=" table table-bordered table-striped table-hover datatable datatable-User">
+                <table class=" table table-bordered table-striped table-hover datatable datatable-races">
                     <thead>
                     <tr>
                         <th>Date</th>
@@ -55,4 +55,17 @@
             </div>
         </div>
     </div>
+@endsection
+@section('javascript')
+    @parent
+    <script>
+        $(function () {
+            $('.datatable-races').DataTable({
+                dom: 'lBfrtip',
+                buttons: [
+                    'colvis'
+                ]
+            })
+        })
+    </script>
 @endsection
