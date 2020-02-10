@@ -8,10 +8,6 @@
                 <table class="table table-bordered table-striped">
                     <tbody>
                     <tr>
-                        <th>ID</th>
-                        <td>{{ $raceCategory->id }}</td>
-                    </tr>
-                    <tr>
                         <th>Name</th>
                         <td>{{ $raceCategory->name }}</td>
                     </tr>

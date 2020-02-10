@@ -33,7 +33,7 @@
                             <td>{{ $item->location ?? '' }}</td>
                             <td><a href="{{ $item->location_link ?? '' }}" target="_blank">Link</a></td>
                             <td>{{ $item->start_time ?? '' }}</td>
-                            <td>{{ $item->min_marshals ?? '' }}</td>
+                            <td>{{ $item->min_marshals ?? '' }} ( {{ $item->users->count() }} Registered )</td>
                             <td>{{ $item->max_marshals ?? '' }}</td>
                             <td>
                                 <a class="btn btn-xs btn-primary" href="{{ route('admin.races.show', $item->id) }}">View</a>

@@ -10,10 +10,6 @@
                 <table class="table table-bordered table-striped">
                     <tbody>
                     <tr>
-                        <th>ID</th>
-                        <td>{{ $race->id }}</td>
-                    </tr>
-                    <tr>
                         <th>Date</th>
                         <td>{{ $race->date }}</td>
                     </tr>

@@ -10,10 +10,6 @@
                 <table class="table table-bordered table-striped">
                     <tbody>
                     <tr>
-                        <th>ID</th>
-                        <td>{{ $club->id }}</td>
-                    </tr>
-                    <tr>
                         <th>Name</th>
                         <td>{{ $club->name }}</td>
                     </tr>

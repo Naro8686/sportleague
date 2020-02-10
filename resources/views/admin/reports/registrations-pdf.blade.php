@@ -67,6 +67,7 @@
     </style>
 </head>
 <body>
+<h4>Total Registrations: {{ $users->count() }}</h4>
 <div class="table-responsive">
     <table class=" table table-bordered table-striped table-hover">
         <thead>
