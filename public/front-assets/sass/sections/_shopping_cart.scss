@@ -1,0 +1,167 @@
+#cart-modal {
+    padding-right: 0px !important;
+    margin: 0;
+    border: 0;
+    z-index: 99999;
+    
+    .modal-body {
+        padding: 0;
+    }
+
+    .modal-dialog {
+        margin: 0;
+        float: right;
+        width: 40%;
+    }
+    .invoice {
+        box-shadow: 0px 0px 15px $gray80;
+    
+        .invoice-top {
+            background: #E5E5E5;
+            padding: 50px 45px;
+            display: flex;
+    
+            h1 {
+                color: var(--heading-color);
+                font-family: var(--body-font);
+                font-size: 35px;
+                letter-spacing: 0.01em;
+                text-transform: uppercase;
+                width: 80%;
+            }
+            
+            .close {
+                font-size: 20px;
+                font-weight: 400;
+                font-family: var(--body-font);
+                color: var(--main-color);
+                opacity: 1;
+            }
+        }
+    
+        .invoice-bottom {
+            .item-title {
+                color: var(--main-color);
+                padding: 45px;
+                font-family: var(--body-font);
+            } 
+            .single-item {
+                margin: 0;
+                padding: 0;
+                margin: 0px 45px;
+                border-bottom: 1px solid var(--heading-color);
+    
+                .single-cart-item {
+                    display: flex;
+                    position: relative;
+                    padding-bottom: 50px;
+    
+                    .thumb {
+                        border: 1px solid var(--heading-color);
+                        width: 100px; 
+                        height: 100px;
+                        display: flex;
+                        align-items: center;
+    
+                        img {
+                            padding: 10px
+                        }
+                    }
+    
+                    .content {
+                        padding-left: 25px;
+                        h3 {
+                            font-family: var(--body-font);
+                            font-weight: 600;
+                            font-size: 22px;
+                            letter-spacing: 0;
+                            line-height: 25px;
+                            color: var(--paragraph-color);
+    
+                            span {
+                                font-weight: 400;
+                            }
+                        }
+                        span {
+                            font-family: var(--body-font);
+                            font-weight: 400;
+                            font-size: 22px;
+                            letter-spacing: 0;
+                            line-height: 35px;
+                            color: var(--paragraph-color);
+                            padding-right: 15px;
+                        }
+                    }
+    
+                    .close {
+                        position: absolute;
+                        right: 0;
+                        font-weight: 400;
+                        color: var(--main-color);
+                        top: 15%;
+                    }
+                }
+            }
+            .total {
+                display: flex;
+                padding: 30px 45px;
+    
+                h3 {
+                    width: 100%;
+                    color: var(--heading-color);
+                    font-family: var(--body-font);
+                    font-weight: 600;
+                    letter-spacing: 0;
+                    line-height: 35px;
+                    font-size: 28px;
+                }
+                
+                p {
+                    color: var(--heading-color);
+                    font-family: var(--body-font);
+                    font-weight: 600;
+                    letter-spacing: 0;
+                    line-height: 35px;
+                    font-size: 28px;
+                }
+            }
+    
+            .btn-checkout {
+                padding: 0px 45px 35px 45px;
+    
+                .btn {
+                    background: var(--main-color);
+                    border-color: var(--main-color);
+                    font-size: 28px;
+                    font-family: var(--body-font);
+                    font-weight: 600;
+                    letter-spacing: 0;
+                    line-height: 35px;
+                    border-radius: 8px;
+
+                    &:hover {
+                        background: $black;
+                        border-color: $black;
+                    }
+                }
+            }
+    
+            .btn-invoice {
+                color: $gray;
+                font-size: 22px;
+                letter-spacing: 0;
+                font-family: var(--body-font);
+                font-weight: 500;
+                margin-bottom: 50px;
+    
+                i {
+                    color: var(--main-color);
+
+                    &:hover {
+                        color: $black;
+                    }
+                }
+            }
+        } 
+    }
+}

@@ -1,0 +1,107 @@
+/*-----------------------
+    Error 404 Page
+-----------------------*/
+.content-404 {
+    background: url(../img/bg/404.png);
+    background-size: cover;
+    height: 100vh;
+    position: relative;
+
+    .social-icon {
+        position: absolute;
+        top: 40%;
+        right: 0%; 
+        margin: 0;
+        padding: 0;
+        list-style: none; 
+
+        .icon-list {
+            margin-right: 2rem;
+            width: 40px;
+            height: 25px;
+            line-height: 16px;
+            background: transparent;
+            text-align: right;
+            margin-bottom: 10px;
+            border-bottom: 1px solid $white;
+
+            &:last-child {
+                border-bottom: 0px;
+            }
+        }
+    
+        .icon-list:last-child {
+            margin-right: 0;
+        }
+        
+        .icon-text {
+            font-size: 16px;
+            -webkit-transition: all 0.3s ease;
+            -o-transition: all 0.3s ease;
+            transition: all 0.3s ease;
+            color: $white;
+        }
+    
+        .icon-text:hover {
+            color: var(--main-color); 
+        }
+    }
+
+    .images {
+        .error-text {
+            width: 80%;
+            position: absolute;
+            top: 35%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            text-align: center;
+            z-index: 1;
+            color: $white;
+            font-size: 350px;
+            font-weight: 900;
+        }
+
+        .img3 {
+            width: 30%;
+            position: absolute;
+            top: 65%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            z-index: 1;
+        }
+    }
+
+    .content-bottom {
+        position: absolute;
+        bottom: 8%;
+        left: 0%;
+        padding-left: 3%;
+        padding-right: 3%;
+        
+        .left {
+            h3 {
+                font-family: var(--body-font);
+                font-weight: 100;
+                font-size: 35px;
+                color: $white;
+                letter-spacing: 0.88px;
+            }
+        }
+
+        .right {
+            a {
+                border: 1px solid $white;
+                padding: 22px 71px;
+                font-size: 22px;
+                font-weight: 300;
+                font-family: var(--body-font);
+                border-radius: 4px;
+
+                &:hover {
+                    background: var(--main-color);
+                    border-color: var(--main-color);
+                }
+            }
+        }
+    }
+}

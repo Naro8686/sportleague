@@ -71,6 +71,20 @@
                         </p>
                     </div>
 
+                    <div class="form-group {{ $errors->has('club') ? 'has-error' : '' }}">
+                        <label for="club">Club</label>
+                        <select name="club_id">
+                            @foreach($clubs as $club)
+                                <option value="{{ $club->id }}">{{ $club->name }}</option>
+                            @endforeach
+                        </select>
+                        @if($errors->has('club'))
+                            <em class="invalid-feedback">
+                                {{ $errors->first('club') }}
+                            </em>
+                        @endif
+                    </div>
+
                     <div class="form-group {{ $errors->has('max_marshals') ? 'has-error' : '' }}">
                         <label for="max_marshals">Max participants</label>
                         <input type="number" id="max_marshals" name="max_marshals" class="form-control" value="{{ old('max_marshals', isset($data) ? $data->max_marshals : '') }}">

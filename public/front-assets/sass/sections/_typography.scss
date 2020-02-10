@@ -1,0 +1,222 @@
+.typography-bg {
+    background: url(../img/breadcrumb/typography.png);
+    background-size: cover;
+    background-position: center center;
+    min-height: 350px;
+}
+
+.typography-title {
+    text-align: center;
+    margin-top: 98px;
+    margin-bottom: 50px;
+
+    .title {
+        font-size: 25px;
+        font-family: var(--main-color);
+        color: var(--heading-color);
+        font-size: 50px;
+        font-weight: 500;
+        display: block;
+    }
+
+    .subtitle {
+        font-size: 25px;
+        font-family: var(--main-color);
+        color: var(--heading-color);
+        font-size: 20px;
+        font-weight: 400;
+    }
+}
+
+.typography-font {
+    .box-title {
+        font-size: 20px;
+        font-family: var(--body-font);
+        font-weight: 400;
+        letter-spacing: 0.025;
+        color: #646464;
+    }
+    .font-box {
+        background: $gray99;
+        outline: 10px solid $gray99;
+        border: 1px solid #C5C5C5;
+        padding: 35px;
+        width: 90%;
+        color: var(--secondary-color);
+        margin-top: 25px;
+        text-align: center;
+        font-weight: 600;
+        font-size: 20px;
+        font-family: var(--body-font);
+    }
+    .font-weight {
+        margin-top: 38px;
+        color: #646464;
+        font-family: var(--body-font);
+    
+        span:first-child {
+            font-size: 20px;
+        }
+    
+        .regular {
+            font-weight: 400;
+        }
+    
+        .semibold {
+            font-weight: 600;
+        }
+    
+        .bold {
+            font-weight: 700;
+        }
+    
+        .extra-bold {
+            font-weight: 900;
+        }
+    }
+}
+
+.typography-heading {
+    background: $gray99;
+    margin-top: 120px;
+    padding-bottom: 80px;
+
+    .heading-title {
+        font-weight: 400;
+        font-size: 30px;
+        letter-spacing: 0.025em;
+        color: #646464;
+    }
+    .weight {
+        font-size: 30px;
+        font-weight: 400;
+        right: 0;
+        position: absolute;
+    }
+    p {
+        color: #646464;
+    }
+    .p1 {
+        font-size: 25px;
+        font-weight: 500;
+        letter-spacing: 0.010em;
+        color: var(--heading-color);
+    }
+    .p2 {
+        font-size: 18px;
+        font-weight: 600;
+        letter-spacing: 0.025em;
+        color: #646464;
+    }
+    .p3 {
+        font-size: 18px;
+        font-weight: 400;
+        letter-spacing: 0.01em;
+        color: var(--heading-color);
+    }
+}
+
+.heading1 {
+    font-size: 100px;
+    font-weight: 900;
+    color: #646464;
+    letter-spacing: 0.025em;
+    font-family: var(--body-font);
+}
+
+.heading2 {
+    font-size: 90px;
+    font-weight: 900;
+    color: #646464;
+    letter-spacing: 0.025;
+    font-family: var(--body-font);
+}
+
+.heading3 {
+    font-size: 75px;
+    font-weight: 900;
+    color: #646464;
+    letter-spacing: 0.025;
+    font-family: var(--body-font);
+}
+
+.heading4 {
+    font-size: 55px;
+    font-weight: 900;
+    color: #646464;
+    letter-spacing: 0.025;
+    font-family: var(--body-font);
+}
+
+.typoquote-area {
+    position: relative;
+
+    .count {
+        font-size: 71px;
+        font-weight: 700;
+        color: $gray;
+        margin-top: 150px;
+    }
+    .quote-slider {
+        .single-item {
+            i {
+                color: var(--main-color);
+                font-size: 34px;
+                text-align: center;
+                width: 100%;
+                margin-bottom: 100px;
+            }
+            .image {
+                float: left;
+                width: 142px;
+                height: 141px;
+                border: 5px solid #F1F1F1;
+                margin-right: 20px;
+
+                img {
+                    width: 132px;
+                    height: 131px;
+                }
+            }
+            .content {
+                display: grid;
+                p {
+                    color: var(--paragraph-color);
+                    font-size: 18px;
+                    font-weight: 400;
+                }
+
+                .quote-name {
+                    font-size: 20px;
+                    font-weight: 600;
+                    color: var(--heading-color);
+                    margin-top: 50px;
+                }
+            } 
+        }
+
+        .slick-prev {
+            display: none !important;
+        }
+
+        .slick-next {
+            left: 0;
+            top: 300px;
+
+            &:before {
+                color: var(--heading-color);
+                font-size: 50px;
+            }
+        }
+    }
+
+    &:before {
+        position: absolute;
+        content: '\A';
+        background: $gray;
+        width: 16%;
+        top: 73%;
+        left: 0;
+        height: 10px;
+    }
+}

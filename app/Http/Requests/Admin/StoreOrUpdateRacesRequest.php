@@ -28,6 +28,7 @@ class StoreOrUpdateRacesRequest extends FormRequest
             'location' => 'required',
             'location_link' => 'required',
             'start_time' => 'required',
+            'club_id' => 'required',
             'max_marshals' => 'required|integer|max:150'
         ];
     }

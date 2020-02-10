@@ -1,0 +1,146 @@
+/*
+Theme Name: Bausins
+Theme URI: 
+Author: 
+Author URI: 
+Description: Bausins is a business website template
+Version: 1.0.0
+*/
+
+
+/*--------------------------------------------------------------
+>>> TABLE OF CONTENTS:
+----------------------------------------------------------------
+
+# Typography
+# Normalize
+# Accessibility
+# Globals
+# Alignments
+# Clearings
+# Posts and pages
+# Captions
+# Galleries
+# Unit test
+# guterberg
+# Gutenberg	Default Style
+# Block Color Palette Colors
+# Sections
+    ## Breadcrumb
+    ## Comments
+    ## Widgets
+    ## Nav Bar
+    ## Top Bar
+    ## Info Bar
+    ## Header
+    ## Header Bottom Area
+    ## Call To Action
+    ## Our Work Area
+    ## Testimonial Area
+    ## Footer Area
+    ## Abous Us Area
+    ## Our Cover Area
+    ## Counterup Area
+    ## Who We Are Area
+    ## Product Area
+    ## Error 404 Area
+
+# Elements
+    ## Back Top
+    ## Preloader
+    ## Search Popup
+    ## Video Popup
+    ## Button
+    ## Section Title
+    ## Icon Box One
+    ## Icon Box Two
+    ## Icon Box Three
+    ## Work Item
+    ## Team
+    ## Testimonial
+    ## Blog Grid Item
+    ## Featured Box One
+    ## Counterup Item
+    ## Request Call Form
+    ## Accordion Item
+    ## Experience Item
+    ## Service Item
+    ## Portfolio Item
+    ## Product Item
+    ## Contact Form Item
+    ## Contact Info Item
+
+--------------------------------------------------------------*/
+
+//== Global Design
+@import "global/_mixins";
+@import "global/_variables";
+@import "global/_global";
+@import "global/_gutenberg";
+@import "global/_theme";
+//== Pages
+//== Sections 
+@import "sections/_breadcrumb";
+@import "sections/_breadcrumb_two";
+@import "sections/_breadcrumb_three";
+@import "sections/_breadcrumb_four";
+@import "sections/_breadcrumb_five";
+@import "sections/_breadcrumb_six";
+@import "sections/_breadcrumb_seventh";
+@import "sections/_comments";
+@import "sections/_contact";
+@import "sections/_widgets";
+@import "sections/_navbar";
+@import "sections/_banner";
+@import "sections/_experience";
+@import "sections/_about_video";
+@import "sections/_explore";
+@import "sections/_fun_facts";
+@import "sections/_trail";
+@import "sections/_typography";
+@import "sections/_error_404";
+@import "sections/_icon";
+@import "sections/_home2";
+@import "sections/_home3";
+
+// home page section
+@import "sections/_home_about";
+@import "sections/_home_rolling";
+@import "sections/_home_package";
+@import "sections/_home_blog";
+@import "sections/_home_contact";
+@import "sections/_tour";
+@import "sections/_customer";
+@import "sections/_discovery";
+@import "sections/_shopping";
+@import "sections/_pricing";
+@import "sections/_discount";
+// blog page section
+@import "sections/_blog";
+@import "sections/_blog_details";
+
+@import "sections/_event";
+@import "sections/_product_details";
+@import "sections/_checkout";
+@import "sections/_shopping_cart";
+@import "sections/_payment";
+@import "sections/_coming_soon";
+@import "sections/_signin_signup";
+
+@import "sections/_brand_area";
+@import "sections/_header";
+@import "sections/_footer";
+
+//== Elements
+@import "elements/_back_top";
+@import "elements/_preloader";
+@import "elements/_search_popup";
+@import "elements/_button";
+@import "elements/_section_title";
+@import "elements/_animation";
+@import "elements/_humberger";
+@import "elements/_form";
+@import "elements/_accordion";
+@import "elements/_element";
+@import "elements/_floating-icon";
+@import "elements/_flaticon";

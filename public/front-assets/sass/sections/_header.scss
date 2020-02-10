@@ -1,0 +1,34 @@
+/*--------------------------------------------------------------
+	## Header
+--------------------------------------------------------------*/
+
+.header-style {
+    background: #fff;
+
+    h1 {
+        font-size: 50px;
+        font-family: var(--body-font);
+        font-weight: 500;
+        letter-spacing: 0.25em;
+        text-transform: capitalize;
+        text-align: center;
+        padding-top: 107px;
+        padding-bottom: 60px;
+    }
+} 
+
+.breadcrumb-bg {
+    width: 100%;
+    min-height: 513px;
+    background: url(../img/trails/breadcrumb.png);
+    background-size: cover;
+    background-position: center center;
+}
+
+.header-5 .left {
+    min-height: 573px;
+
+    @media only screen and (max-width: 1400px) {
+        min-height: 415px;
+    }
+}

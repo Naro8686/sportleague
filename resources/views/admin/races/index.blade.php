@@ -17,8 +17,8 @@
                     <tr>
                         <th>Date</th>
                         <th>Name</th>
+                        <th>Club</th>
                         <th>Location</th>
-                        <th>Location link</th>
                         <th>Start time</th>
                         <th>Min marshals</th>
                         <th>Max participants</th>
@@ -30,8 +30,8 @@
                         <tr data-entry-id="{{ $item->id }}">
                             <td>{{ $item->date ?? '' }}</td>
                             <td>{{ $item->name ?? '' }}</td>
-                            <td>{{ $item->location ?? '' }}</td>
-                            <td><a href="{{ $item->location_link ?? '' }}" target="_blank">Link</a></td>
+                            <td>{{ $item->club->name ?? '' }} ( Phone: {{ $item->club->phone ?? '' }} )</td>
+                            <td><a href="{{ $item->location_link ?? '' }}" target="_blank">{{ $item->location ?? '' }}</a></td>
                             <td>{{ $item->start_time ?? '' }}</td>
                             <td>{{ $item->min_marshals ?? '' }} ( {{ $item->users->count() }} Registered )</td>
                             <td>{{ $item->max_marshals ?? '' }}</td>

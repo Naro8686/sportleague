@@ -1,0 +1,51 @@
+ .experience-area {
+    .single-experience {
+      margin-bottom: 30px;
+      
+      .icon {
+        width: 79px;
+        height: 79px;
+        margin: 0 auto;
+        position: relative;
+        background: var(--main-color);
+        transition: all 0.5s ease;
+        border-radius: 50%;
+        transition: all .3s;
+
+        &:before {
+          position: absolute;
+          background: rgba(227, 5, 26, 0.3);
+          width: 100px;
+          height: 100px;
+          content: "";
+          z-index: -1;
+          left: -10px;
+          top: -10px;
+          transition: all 0.5s ease;
+          border-radius: 50%;
+        }
+
+        i {
+          line-height: 80px;
+          font-size: 35px;
+          transition: all .3s;
+
+          &:hover {
+            opacity: 0.8;
+          }
+        }
+      }
+
+      .content {
+        margin-top: 38px;
+      }
+
+      .title {
+        font-size: 25px;
+        font-family: var(--body-font);
+        font-weight: 400;
+      }
+    }
+  }
+  
+  

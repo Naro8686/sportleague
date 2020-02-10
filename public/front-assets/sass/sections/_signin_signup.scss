@@ -1,0 +1,128 @@
+.signinup-area {
+    background: url("../img/bg/signin.png");
+    background-size: cover;
+    background-position: center center;
+    height: 100vh;
+    position: relative;
+    min-height: 620px;
+
+    .content {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        text-align: center;
+
+        .login-panel {
+            border: 1px solid $white;
+            border-radius: 10px;
+
+            .panel-heading {
+                padding: 39px 0px;
+                background: rgba($white, 0.95);
+                border-radius: 10px 10px 0px 0px;
+            }
+
+            .panel-body {
+                background: rgba($white, 0.75);
+                padding: 0px 60px;
+                border-bottom: 15px solid rgba($white, 0.95);
+                border-radius: 0px 0px 10px 10px;
+                padding-top: 80px;
+
+                .form-group {
+                    margin-bottom: 30px;
+                }
+
+                input {
+                    font-family: var(--body-font);
+                    font-weight: 500;
+                    color: var(--paragraph-color);
+                    font-size: 24px;
+                    letter-spacing: 0;
+                    border-radius: 4px;
+                    border: 1px solid var(--paragraph-color);
+                    padding: 15px 15px;
+                    background: transparent;
+                }
+
+                .action {
+                    width: 100%;
+                    border-bottom: 1px solid var(--main-color);
+                    padding-bottom: 10%;
+                    padding-top: 6%;
+
+                    &-left {
+                        float: left;
+                        display: flex;
+                        margin-top: 20px;
+
+                        p {
+                            font-family: var(--body-font);
+                            font-weight: 400;
+                            font-size: 18px;
+                            letter-spacing: 0;
+                            color: var(--paragraph-color);
+                            padding: 0px 10px;
+
+                            .facebook {
+                                color: #218BDC;
+                            }
+
+                            .gmail {
+                                color: #E36D05;
+                            }
+                        }
+
+                        .or {
+                            color: var(--main-color);
+                        }
+                    }
+                }
+
+                .bottom {
+                    font-family: var(--body-font);
+                    font-weight: 400;
+                    font-size: 18px;
+                    letter-spacing: 0;
+                    color: var(--paragraph-color);
+                    padding: 50px 0px 40px 0px;
+
+                    .signup {
+                        color: var(--main-color);
+                    }
+                }
+            }
+        }
+    }
+}
+
+.signup-area {
+    background: url("../img/bg/signup.png");
+    background-size: cover;
+    background-position: center center;
+    height: 100vh;
+    position: relative;
+
+    .login-panel {
+        border: 0px !important;
+
+        .panel-heading {
+            background: var(--paragraph-color) !important;
+        }
+
+        .panel-body {
+            border-bottom: 15px solid rgba($black, 0.75) !important;
+        }
+
+        .sm-btn {
+            background: $black;
+            box-shadow: none;
+
+            &:hover {
+                box-shadow: 0px 0px 15px #333 !important;
+            }
+        }
+    }
+}
+

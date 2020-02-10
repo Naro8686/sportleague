@@ -1,0 +1,54 @@
+.breadcrumb-style-5 {
+    width: 100%;
+    background: #E5E5E5;
+    position: absolute;
+    min-height: 100%;
+
+    .breadcrumb-inner {
+      position: absolute;
+      background: $gray99;
+      right: 0;
+      height: auto;
+      text-align: center;
+      left: 50%;
+      top: 50%;
+      transform: translate(-37%, -50%);
+      width: 100%;
+      padding: 25px;
+      padding-right: 35%;
+
+        h1 {
+            font-size: 90px;
+            font-family: var(--body-font);
+            font-weight: 700;
+            letter-spacing: 2.38px;
+        }
+
+        .page-list {
+          display: inline-table;
+
+          li {
+            list-style: none;
+            padding-right: 20px;
+            position: relative;
+            display: inline;
+            font-size: 25px;
+            font-family: var(--body-font);
+            font-weight: 400;
+            color: var(--paragraph-color);
+
+            &:last-child:after {
+              position: absolute;
+              top: 0px;
+              left: -15px;
+              content: "/";
+              font-family: 'fontawesome';
+            }
+
+            a:hover {
+              color: var(--main-color);
+            }
+          }
+        }
+    }
+  }

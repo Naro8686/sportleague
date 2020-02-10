@@ -1,0 +1,97 @@
+.coming-soon-area {
+    background: url("../img/bg/coming-soon.png");
+    background-size: cover;
+    background-position: center center;
+    height: 100vh;
+    position: relative;
+
+    .content {
+        position: absolute;
+        width: 80%;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        text-align: center;
+
+        img {
+            margin-bottom: 80px;
+        }
+
+        h1 {
+            font-family: var(--body-font);
+            font-weight: 300;
+            font-size: 46px;
+            letter-spacing: 13.8px;
+            color: var(--paragraph-color);
+            margin-bottom: 50px;
+        }
+
+        p {
+            font-size: 18px;
+            font-family: var(--body-font);
+            font-weight: 400;
+            letter-spacing: 0.45px;
+            line-height: 35px;
+            color: var(--paragraph-color);
+            padding: 0% 25%;
+
+            @media only screen and (max-width: 1400px) {
+                padding: 0% 10%;
+            }
+        }
+
+        .countdown {
+            display: flex;
+            justify-content: center;
+            padding-top: 15%;
+
+            @media only screen and (max-width: 1400px) {
+                padding-top: 7%;
+            }
+
+            &__item {
+                margin-right: 60px;
+
+                &:last-child {
+                    margin-right: 0;
+                    padding-right: 0;
+                }
+            }
+            &__lg-text {
+                font-size: 69px;
+                line-height: 200px;
+                font-weight: 700;
+                color: $white;
+                font-family: var(--body-font);
+                width: 200px;
+                height: 200px;
+                background: var(--main-color);
+                border-radius: 50%;
+                position: relative;
+                margin-bottom: 33px;
+
+                &:before {
+                    position: absolute;
+                    content: '';
+                    width:230px;
+                    height: 230px;
+                    background: rgba($white, 0.7);
+                    top: -15px;
+                    left: -15px;
+                    border-radius: 50%;
+                    z-index: -1;
+                }
+            }
+            &__sm-text {
+                font-size: 28px;
+                line-height: 35px;
+                color: $white;
+                font-family: var(--body-font);
+                font-weight: 700;
+                text-transform: uppercase;
+                letter-spacing: 0;
+            }
+        }
+    }
+    
+}

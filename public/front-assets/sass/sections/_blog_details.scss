@@ -1,0 +1,101 @@
+.blog-single-content {
+    .blog-details-item {
+        margin-top: 120px;
+        
+        .border-thumb {
+            border-left: 10px solid var(--main-color);
+        }
+    
+        .content {
+            h5 {
+                font-weight: 600;
+                font-family: var(--body-font);
+                color: $gray;
+            } 
+            span {
+                font-size: 22px;
+                font-weight: 400;
+                font-family: var(--body-font);
+                color: var(--main-color);
+            }
+    
+            p {
+                color: var(--paragraph-color);
+                font-weight: 400;
+            }
+    
+            .post-meta {
+                padding-left: 0px;
+    
+                li {
+                    color: $gray;
+                    font-size: 15px;
+                    list-style: none;
+                    float: left;
+                    margin-right: 20px;
+    
+                    i {
+                        margin-right: 5px;
+                    }
+                }
+            }
+        }
+    }
+    
+    .comment-area {
+        margin-top: 75px;
+        background: #F8F8F8;
+        float: left;
+        width: 100%;
+        padding: 35px 50px 50px 50px;
+    
+        .comment-list {
+        
+            .single-comment-wrap {
+                display: flex;
+        
+                img {
+                    max-width: 80px;
+                    border-radius: 5px;
+                    margin-right: 30px;
+                }
+        
+                .content {
+                    .title {
+                        color: $gray;
+                        font-size: 16px;
+                        font-weight: 600;
+                        font-family: var(--body-font);
+                    }
+        
+                    p {
+                        color: $gray;
+                        font-size: 15px;
+                        font-weight: 400;
+                    }
+                }
+            }
+            .parent, .children {
+                margin-top: 30px;
+            }
+        
+            .children {
+                padding-left: 50px;
+            }
+        }
+    
+        .form-group {
+            input {
+                border: 1px solid #C9C9C9;
+                background: #E9E9E9;
+                font-size: 15px;
+                font-weight: 400;
+                font-family: var(--body-font);
+                text-transform: capitalize;
+                letter-spacing: 0.10em;
+                padding: 35px;
+            }
+        }
+    }
+}
+

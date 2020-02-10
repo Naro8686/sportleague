@@ -1,0 +1,61 @@
+.tour-area {
+    margin-bottom: 104px;
+    margin-top: 107px;
+    
+    .content {
+        margin-bottom: 75px;
+        text-align: center;
+        h1 {
+            font-family: var(--body-font);
+            font-size: 50px;
+            font-weight: 900;
+            text-align: center;
+            letter-spacing: 0.025em;
+            color: var(--heading-color);
+            text-transform: uppercase;
+        }
+        span {
+            font-family: var(--body-font);
+            font-size: 22px;
+            font-weight: 500;
+            letter-spacing: 0.025em;
+            color: var(--heading-color);
+        }
+    
+    }
+
+    .content-bottom {
+        margin-top: 40px;
+
+        .title {
+            font-size: 30px;
+            font-family: var(--body-font);
+            font-weight: 600;
+            color: var(--heading-color);
+            text-align: left;
+            margin-bottom: 40px;
+            position: relative;
+
+            &:before {
+                content: '';
+                height: 3px;
+                background: var(--main-color);
+                width: 100%;
+                bottom: -40%;
+                position: absolute;
+            }
+        }
+        .text {
+            font-size: 18px;
+            font-family: var(--body-font);
+            font-weight: 400;
+            color: var(--heading-color);
+            text-align: left;
+            letter-spacing: 0.025em;
+        }
+    }
+
+    img {
+        box-shadow: 0px 0px 6px $gray80;
+    }
+}

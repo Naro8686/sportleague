@@ -1,0 +1,54 @@
+.icon-area {
+    padding: 73px 0px;
+
+    .icon-box {
+        text-align: center;
+        margin: 25px 0px;
+        
+        i {
+            color: $black;
+
+            &:before {
+                font-size: 90px;
+                margin-left: 0px;
+            }
+        }
+    } 
+
+    span {
+        position: absolute;
+        font-weight: 500;
+        font-size: var(--body-font);
+        letter-spacing: 0.55px;
+        color: var(--paragraph-color);
+        top:0;
+        left: 10%;
+        transform: rotate(270deg);
+        top: 45%;
+        left: 5%;
+    }
+}
+
+.icon-bottom {
+    padding: 73px 0px 155px 0px;
+    background: #363636;
+
+    .icon-box {
+        text-align: center;
+        margin: 25px 0px;
+        
+        i {
+            color: $white;
+
+            &:before {
+                font-size: 90px;
+                margin-left: 0px;
+            }
+        }
+    } 
+}
+
+.icon-bottom-bg {
+    min-height: 100px !important;
+    margin-top: -102px
+}

@@ -1,0 +1,302 @@
+.discovery-area {
+    .discovery-title {
+        margin-bottom: 58px;
+
+        .title {
+            font-size: 50px;
+            color: var(--heading-color);
+            font-family: var(--body-font);
+            font-weight: 900;
+            letter-spacing: 0.025em;
+            margin-bottom: 0px;
+        }
+        h1 {
+            font-size: 100px;
+            color: var(--heading-color);
+            font-family: var(--body-font);
+            font-weight: 900;
+            letter-spacing: 0.025em;
+
+            span {
+                color: var(--main-color);
+            }
+        }
+    }
+    .discovery-video {
+        width: 100%;
+        min-height: 410px;
+        background: url(../img/home1/discovery.png);
+        background-size: cover;
+        position: relative;
+    
+        .video-content {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            z-index: 99;
+    
+            .video-btn {
+                width: 102px;
+                height: 102px;
+                border-radius: 50%;
+                line-height: 72px;
+                text-align:center;
+                border: 10px solid var(--heading-color);
+                background: var(--main-color);
+                color: $white;
+                font-size: 23px;
+                font-weight: 500;
+                font-family: var(--body-font);
+                transition: all 0.5s ease;
+                
+                &:hover {
+                    box-shadow: 10px 0px 20px rgba(227,5,26,0.6);
+                    transition: all 0.5s ease;
+                }
+            }
+        }
+
+        .page-title {
+            font-size: 21px;
+            font-weight: 300;
+            font-family: var(--body-font);
+            color: $white;
+            text-transform: none;
+            bottom: 8px;
+            position: absolute;
+            left: 23px;
+            z-index: 99;
+        }
+
+        &:after {
+            content: '';
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            background: rgba(227,5,26,0.5);
+            top: 0;
+            bottom: 0;
+            z-index: 9;
+        }
+    }  
+    .discovery-slider {
+        margin-top: -175px;
+
+        @media only screen and (max-width: 1500px) {
+            margin-top: -150px;
+        }
+
+        .single-item {
+            padding-top: 15px;
+            padding-right: 0px;
+            width: 40%;
+            margin-right: 15px;
+
+            .item-left {
+                height: 366px;
+                box-shadow: 0px 0px 6px $gray80;
+                margin-bottom: 20px;
+                margin-left: 4px;
+                position: relative;
+
+                @media only screen and (max-width: 1500px) {
+                    height: 300px;
+                }
+
+                .icon {
+                    position: absolute;
+                    top: 50%;
+                    left: 50%;
+                    transform: translate(-50%, -50%);
+                    z-index: 99;
+                    width: 96px;
+                    height: 96px;
+                    border-radius: 50%;
+                    line-height: 60px;
+                    text-align:center;
+                    border: 10px solid $tutu;
+                    background: var(--main-color);
+                    color: $white;
+                    font-size: 23px;
+                    font-weight: 500;
+                    font-family: var(--body-font);
+                    transition: all 0.5s ease;
+
+                    i {
+                        &:before {
+                            font-size: 40px;
+                            margin-left: 0px;
+                        }
+                    }
+                    
+                    &:hover {
+                        box-shadow: 10px 0px 20px rgba(227,5,26,0.6);
+                        transition: all 0.5s ease;
+                    }
+                }
+            }
+
+            .item-right {
+                height: 366px;
+                box-shadow: 0px 0px 6px $gray80;
+                margin-bottom: 80px;
+                margin-left: 4px;
+                position: relative;
+
+                @media only screen and (max-width: 1500px) {
+                    height: 300px;
+                }
+
+                .icon {
+                    position: absolute;
+                    top: 50%;
+                    left: 50%;
+                    transform: translate(-50%, -50%);
+                    z-index: 99;
+                    width: 96px;
+                    height: 96px;
+                    border-radius: 50%;
+                    line-height: 60px;
+                    text-align:center;
+                    border: 10px solid $tutu;
+                    background: var(--main-color);
+                    color: $white;
+                    font-size: 23px;
+                    font-weight: 500;
+                    font-family: var(--body-font);
+                    transition: all 0.5s ease;
+
+                    i {
+                        &:before {
+                            font-size: 40px;
+                            margin-left: 0px;
+                        }
+                    }
+                    
+                    &:hover {
+                        box-shadow: 10px 0px 20px rgba(227,5,26,0.6);
+                        transition: all 0.5s ease;
+                    }
+                }
+            }
+
+            h3 {
+                position: relative;
+                bottom: -15px;
+                text-align: center;
+                font-size: 18px;
+                font-weight: 500;
+                letter-spacing: 0.025em;
+                color: var(--heading-color);
+            }
+
+            .text-bottom {
+                top: 85%;
+            }
+            
+            .top-90 {
+                top: 90% !important;
+            }
+
+            img {
+                max-height: 366px;
+                position: relative;
+            }
+        }
+        .slick-prev, .slick-next {
+            background: var(--main-color);
+            width: 35px;
+            height: 35px;
+    
+            &:hover {
+                background: var(--main-color);
+    
+                &:before {
+                    color: $white;
+                }
+            }
+        }
+    
+        .slick-prev {
+            position: absolute;
+            z-index: 999;
+            left: 36%;
+            top: -45px;
+    
+            &:before {
+                content: "\f104";
+                font-family: 'fontawesome';
+            }
+        }
+    
+        .slick-next {
+            position: absolute;
+            right: 45%;
+            top: -45px;
+            z-index: 999;
+    
+            &:before {
+                content: "\f105";
+                font-family: 'fontawesome';
+            }
+        }
+    } 
+}
+
+.billa-discover-item {
+    box-shadow: 0px 0px 6px $gray80; 
+    min-height: 200px;
+    margin-bottom: 25px;
+
+    h3 {
+        position: absolute;
+        bottom: 47%;
+        right: 0px;
+        font-size: 18px;
+        font-weight: 600;
+        letter-spacing: 0.025em;
+        color: var(--heading-color);
+        transform: rotate(90deg);
+    }
+
+    .icon {
+        position: absolute;
+        top: 46%;
+        left: 50%;
+        padding-left: 17px;
+        transform: translate(-50%, -50%);
+        z-index: 99;
+        width: 96px;
+        height: 96px;
+        border-radius: 50%;
+        line-height: 67px;
+        text-align:center;
+        border: 10px solid $tutu;
+        background: var(--main-color);
+        color: $white;
+        font-size: 23px;
+        font-weight: 500;
+        font-family: var(--body-font);
+        transition: all 0.5s ease;
+
+        i {
+            &:before {
+                font-size: 40px;
+                margin-left: 0px;
+            }
+        }
+        
+        &:hover {
+            box-shadow: 10px 0px 20px rgba(227,5,26,0.6);
+            transition: all 0.5s ease;
+        }
+    }
+}
+
+.discovery-area .col-xl-7 .col-md-6:nth-child(3), .discovery-area .col-xl-7 .col-md-6:nth-child(4) {
+    .billa-discover-item h3 {
+        left: 0;
+        right: auto;
+    }
+}

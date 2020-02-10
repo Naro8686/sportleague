@@ -1,0 +1,197 @@
+.humberger-wrapper {
+
+    .canvas-icon {
+        position: absolute;
+        color: $white;
+        z-index: 9999;
+        right: 100px;
+        top: 52px;
+        cursor: pointer;
+        display: inline-block;
+        -webkit-transition: all .5s ease;
+        -o-transition: all .5s ease;
+        transition: all .5s ease;
+        width: 20px;
+
+        &-bar {
+            width: 20px;
+            height: 3px;
+            position: relative;
+            display: block;
+            background: $white;
+            -webkit-transition: all .5s ease;
+            -o-transition: all .5s ease;
+            transition: all .5s ease;
+
+            &::before, &::after {
+                content: "";
+                display: inline-block;
+                height: 3px;
+                width: 28px;
+                position: absolute;
+                bottom: 8px;
+                right: 0;
+                background: $white;
+            }
+
+            &::after {
+                width: 35px;
+                bottom: 16px;
+            }
+            
+        }
+
+        .icon-style-2 {
+            top: 23px;
+        }
+    }
+}
+
+@media only screen and (max-width: 1400px) {
+    .canvas-icon {
+        top: 53px !important;
+    }
+}
+ 
+.humberger-menu {
+    a {
+      text-decoration: none;
+      color: $white;
+      transition: color 0.3s ease;
+
+      &:hover {
+        color: var(--main-color);
+      }
+    }
+    
+    #menuToggle {
+        display: block;
+        position: relative;
+        top: 8px;
+        right: 0;
+        z-index: 9999999;
+        -webkit-user-select: none;
+        user-select: none;
+        width: 40px;
+
+        input {
+            display: block;
+            width: 40px;
+            height: 32px;
+            position: absolute;
+            top: -7px;
+            left: -5px;
+            cursor: pointer;
+            opacity: 0; 
+            z-index: 2; 
+            -webkit-touch-callout: none;
+        }
+
+        span {
+            display: block;
+            width: 33px;
+            height: 3px;
+            margin-bottom: 5px;
+            position: relative;
+            background: $white;
+            border-radius: 3px;
+            z-index: 1;
+            transform-origin: 4px 0px;
+            transition: transform 0.5s cubic-bezier(0.77,0.2,0.05,1.0),
+                        background 0.5s cubic-bezier(0.77,0.2,0.05,1.0),
+                        opacity 0.55s ease;
+
+            &.second {
+                width: 25px;
+                margin-left: 8px;
+                height: 3px;
+            }
+
+            &:nth-last-child(2) {
+                transform-origin: 0% 100%;
+                width: 19px;
+                margin-left: 14px;
+                height: 3px;
+            }
+
+            &.black-bg {
+                background: #000 !important;
+            }
+        }
+
+        input:checked ~ ul {
+            transform: none;
+        }
+
+        input:checked ~ span {
+            opacity: 1;
+            transform: rotate(45deg) translate(-2px, -9px);
+            background: $white;
+            top: 10px;
+
+            &:nth-last-child(3) {
+                opacity: 0;
+                transform: rotate(0deg) scale(0.2, 0.2);
+            }
+
+            &:nth-last-child(2) {
+                transform: rotate(-45deg) translate(0, -11px);
+                width: 33px;
+                top: 14px;
+                height: 3px;
+            }
+        }
+    }
+    
+    #menu {
+      position: absolute;
+      width: 228px;
+      margin-top: 23px;
+      margin-left: -363%;
+      padding: 40px;
+      background: rgba(0,0,0,0.5);
+      list-style-type: none;
+      -webkit-font-smoothing: antialiased;
+      transform-origin: 0% 0%;
+      transform: translate(150%, 0%);
+      transition: transform 0.5s cubic-bezier(0.77,0.2,0.05,1.0);
+
+      &:before {
+        content: "\A";
+        border-style: solid;
+        border-width: 14px 14px 14px 10px;
+        border-color: transparent rgba(0, 0, 0, 0.5) transparent transparent;
+        position: absolute;
+        right: 24%;
+        top: -26px;
+        transform: rotate(90deg);
+      }
+
+      li {
+        padding: 8px 0;
+        font-size: 20px;
+        font-family: var(--body-font);
+        font-weight: 400;
+        letter-spacing: 0.5px;
+        color: $white;
+        width: 100%;
+
+        ul {
+            padding-left: 0px;
+
+            li {
+                list-style: none;
+                font-size: 16px;
+                font-family: var(--body-font);
+                font-weight: 400;
+                letter-spacing: 0.4px;
+                margin-left: 0px;
+            }
+        } 
+      }
+
+      .dropdown {
+          display: none;
+      }
+    }
+}

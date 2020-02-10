@@ -1,0 +1,420 @@
+.banner-area {
+    min-height: 620px;
+    position: relative;
+
+    .title1,  .title2 {
+        color: $white;
+        font-size: 120px;
+        text-transform: capitalize;
+        font-family: var(--body-font);
+        font-weight: 900;
+        margin-bottom: 0px;
+    }
+
+    .banner-bg {
+        background-size: cover;
+        height: 100vh;
+        min-height: 620px;
+
+        .banner-inner {
+            position: absolute;
+            top: 46%;
+            left: 30%;
+            transform: translate(-50%, -50%);
+
+            p {
+                margin-bottom: 15px;
+                font-size: 20px;
+
+                @media only screen and (max-width: 1400px) {
+                    font-size: 16px;
+                }
+            }
+            
+        }
+
+        .biking {
+            position: absolute;
+            margin-top: 75%;
+        }
+
+        .row.h-100vh {
+            min-height: 620px;
+        }
+    } 
+
+    .banner-slider1 .banner-bg {
+        position: relative;
+
+        &::before {
+            position: absolute;
+            content: '';
+            width: 100%;
+            height: 100%;
+            top: 0;
+            background: rgba(0,0,0,0.3);
+        }
+    }
+
+    .banner-slider2 .banner-bg {
+        position: relative;
+
+        &::before {
+            position: absolute;
+            content: '';
+            width: 100%;
+            height: 100%;
+            top: 0;
+            background: rgba(0,0,0,0.2);
+        }
+    }
+
+    .animated {
+        transition: all 0.5s ease;
+    }
+
+    .banner-slider [data-animation-in] {
+        opacity: 0;
+        animation-duration: 1s;
+        transition: opacity 0.5s ease 0.3s;
+    }
+
+    .social-icon {
+        position: absolute;
+        top: 40%;
+        left: 3%; 
+        margin: 0;
+        padding: 0;
+        list-style: none; 
+
+        .icon-list {
+            margin-right: 2rem;
+            width: 30px;
+            height: 30px;
+            background: rgba(0,0,0,0.65);
+            border-radius: 50%;
+            text-align: center;
+            margin-bottom: 10px;
+            transition: all .3s;
+    
+            &:hover {
+                background: var(--main-color); 
+            }
+        }
+    
+        .icon-list:last-child {
+            margin-right: 0;
+        }
+        
+        .icon-text {
+            font-size: 12px;
+            line-height: 30px;
+            -webkit-transition: all 0.3s ease;
+            -o-transition: all 0.3s ease;
+            transition: all 0.3s ease;
+            color: $white;
+        }
+    }
+
+    .video-btn {
+        position: absolute;
+        top: 73%;
+        left: 3%; 
+        margin: 0;
+        padding: 0;
+        list-style: none; 
+        width: 35.41px;
+        height: 35.41px;
+        background: var(--main-color); 
+        text-align: center;
+        border-radius: 50%;
+        border: 5px solid var(--main-color); 
+        animation: pulse1 1s infinite;
+        line-height: 19px;
+
+        a {
+            font-size: 9px;
+        }
+        
+        @keyframes pulse1 {
+            0% {
+                box-shadow: 0 0 0 0 rgba(227,5,26,0.6);
+            }
+            70% {
+                box-shadow: 0 0 0 15px rgba(227,5,26,0);
+            }
+            100% {
+                box-shadow: 0 0 0 0 rgba(227,5,26,0);
+            }
+        }
+    }
+
+    .scroll {
+        position: absolute;
+        top: 79%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+
+        .scroll-btn {
+            width: 19px;
+            height: 42px;
+            border-radius: 9px;
+            border: 1px solid $white;
+            margin-left: 58px;
+            margin-bottom: 10px;
+
+            @media only screen and (max-width: 1400px) {
+                margin-left: 40%;
+                margin-bottom: 0px;
+            }
+
+            .inside-bg {
+                background: $white;
+                height: 18px;
+                position: absolute;
+                width: 9px;
+                top: 5px;
+                margin-left: 4px;
+                border-radius: 5px;
+                animation: scroll 2s infinite;
+
+                @keyframes scroll {
+                    from {
+                        transform: translate3d( 0, 0px, 0);
+                        filter: alpha(opacity=0);
+                        opacity: 0;
+                        -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=0)";
+                    }
+                    10% {
+                        transform: translate3d( 0, 3px, 0);
+                        filter: alpha(opacity=100);
+                        opacity: 1;
+                        -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=100)";
+                    }
+                    to {
+                        transform: translate3d( 0, 15px, 0);
+                        filter: alpha(opacity=0);
+                        opacity: 0;
+                        -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=0)";
+                    }
+                }
+
+            }
+        }
+    
+        span {
+            font-size: 14px;
+            line-height: 25px;
+            font-family: var(--secondary-font);
+            text-transform: uppercase;
+
+            @media only screen and (max-width: 1400px) {
+                font-size: 10px;
+            }
+        }
+    }
+
+    .banner-btn {
+        position: absolute;
+        top: 50%;
+        left: auto;
+        margin: 0;
+        padding: 0;
+        list-style: none; 
+        right: calc(2% - 60px);
+
+        a {
+            background: var(--main-color); 
+            font-size: 12px;
+            text-transform: uppercase;
+            padding: 2px 50px 2px 25px;
+            border-right: 7px solid $white;
+            border-radius: 0;
+            // transform: rotate(90deg);
+
+            &:before {
+                content: "\A";
+                border-style: solid;
+                border-width: 5px 5px 5px 0;
+                border-color: transparent $white transparent transparent;
+                position: absolute;
+                right: -1px;
+                top: 6px;
+            }
+        }
+    }
+
+    .banner-bottom {
+        width: 100%;
+        position: absolute;
+        bottom: 20px;
+
+        .controler-wrapper {
+            margin-top: 33px;
+            padding-left: 10px;
+
+            .active-controler {
+                width: 10%;
+                font-size: 40px;
+                margin-top: -20px;
+                float: left;
+                font-weight: 900;
+                letter-spacing: 0.025em;
+            }
+            .progressbar {
+                width: 80%;
+                float: left;
+                height: 5px;
+                position: relative;
+                top: 10px;
+    
+                .home-slider-progress {
+                    background-color: $white;
+                    position: absolute;
+                    width: 100%;
+                    height: 1px;
+                }                        
+                .home-slider-progress-active {
+                    background-color: var(--main-color);
+                    position: absolute;
+                    width: 20%;
+                    height: 2px;
+                    top: -1px;
+                }
+            }
+            .total-controler {
+                width: 10%;
+                float: left;
+                text-align: right;
+                font-size: 40px;
+                margin-top: -20px;
+                font-weight: 900;
+                letter-spacing: 0.025em;
+            }
+        }
+    }
+
+    .banner-sm-slider {
+
+        img {
+            width: 75px;
+            height: 75px;
+            border-radius: 50%;
+            border: 2px solid #fff;
+            margin: 5px;
+
+            @media only screen and (max-width:1400px){
+                width: 55px;
+                height: 55px;
+                margin-top: 18px;
+            }
+
+        }
+
+        .slick-current img {
+            border: 5px solid var(--main-color);
+        }
+
+       
+    }
+
+    .slick-prev, .slick-next {
+        background: $white;
+        border-radius: 50%;
+        width: 35px;
+        height: 35px;
+        z-index: 9;
+        top: 55%;
+        transition: all .3s;
+
+        @media only screen and (max-width:1400px){
+            top: 60%;
+        }
+
+        &:hover {
+            background: var(--main-color);
+
+            &:before {
+                color: $white;
+            }
+        }
+
+        &::before {
+            font-family: 'fontawesome';
+            color: var(--main-color);
+        }
+    }
+
+    .slick-prev {
+        position: absolute;
+        left: auto;
+        right: -24%;
+
+        @media only screen and (max-width: 1400px) {
+            left: auto;
+            right: -18%;
+        }
+
+        &:before {
+            content: "\f104";
+        }
+    }
+
+    .slick-next {
+        right: -35%;
+
+        &:before {
+            content: "\f105";
+        }
+    }
+
+    .container {
+        max-width: 97%;
+    }
+
+    .banner-slider1 {
+        .slick-dots {
+            display: none;
+        }
+    }
+
+    .banner-slider2 {
+        .slick-dots {
+            bottom: 5%;
+            text-align: right;
+            right: 3%;
+
+            li {
+                margin: 0 0;
+
+                button {
+                    width: 9px;
+                    height: 9px;
+                    border-radius: 50%;
+                    border: 2px solid $white;
+                    background: var(--heading-color);
+                }
+
+                &.slick-active button {
+                    background: var(--main-color);
+                }
+            }
+        }
+    }
+
+    .banner-slider2 [data-animation-in] {
+        opacity: 0;
+        animation-duration: 1s;
+        transition: opacity 0.5s ease 0.3s;
+    }
+}
+
+.home-banner1 .banner-slider1 .slick-prev {
+    display: none !important;
+}
+
+.home-banner1 .banner-slider1 .slick-next {
+    display: none !important;
+}
+
+

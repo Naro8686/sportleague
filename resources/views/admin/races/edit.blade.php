@@ -39,6 +39,20 @@
                         </p>
                     </div>
 
+                    <div class="form-group {{ $errors->has('club') ? 'has-error' : '' }}">
+                        <label for="club">Club</label>
+                        <select name="club_id">
+                            @foreach($clubs as $club)
+                                <option value="{{ $club->id }}" {{ ($race->club->count() && $race->club->id == $club->id) ? 'selected' : '' }}>{{ $club->name }}</option>
+                            @endforeach
+                        </select>
+                        @if($errors->has('club'))
+                            <em class="invalid-feedback">
+                                {{ $errors->first('club') }}
+                            </em>
+                        @endif
+                    </div>
+
                     <div class="form-group {{ $errors->has('location') ? 'has-error' : '' }}">
                         <label for="location">Location</label>
                         <input type="text" id="location" name="location" class="form-control" value="{{ old('location', isset($race) ? $race->location : '') }}" required>

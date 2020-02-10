@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
+use App\Models\Clubs;
 use App\Models\Races;
 use Exception;
 use Illuminate\Http\RedirectResponse;
@@ -45,7 +46,9 @@ class RacesController extends Controller
             return abort(401);
         }
 
-        return view($this->view_path.'create');
+        $clubs = Clubs::all();
+
+        return view($this->view_path.'create', compact('clubs'));
     }
 
     /**
@@ -89,8 +92,9 @@ class RacesController extends Controller
         if (! Gate::allows('races_manage') ) {
             return abort(401);
         }
+        $clubs = Clubs::all();
 
-        return view($this->view_path.'edit', compact('race'));
+        return view($this->view_path.'edit', compact('race', 'clubs'));
     }
 
     /**

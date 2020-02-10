@@ -1,0 +1,248 @@
+.trail-video {
+    width: 100%;
+    min-height: 500px;
+    background: url(../img/about-page/about.png);
+    background-size: cover;
+    position: relative;
+
+    .video-content {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        width: 100%;
+        text-align: center;
+        
+        .page-title {
+            font-size: 45px;
+            font-weight: 500;
+            font-family: var(--body-font);
+            color: $white;
+            text-transform: none;
+            margin-bottom: 50px;
+        }
+
+        .video-btn {
+            width: 130px;
+            height: 50px;
+            border-radius: 3px solid var(--main-color);
+            background: var(--main-color);
+            color: $white;
+            font-size: 18px;
+            font-weight: 500;
+            font-family: var(--body-font);
+            line-height: 27px;
+            text-transform: uppercase;
+            padding: 10px 25px;
+            transition: all 0.5s ease;
+            
+            &:hover {
+                box-shadow: 10px 0px 20px rgba(227,5,26,0.6);
+                transition: all 0.5s ease;
+            }
+
+            i {
+                padding-right: 18px;
+            }
+        }
+    }
+}
+
+
+.trail-slider {
+    width: 100%;
+
+    .slider-item {
+        width: 50%;
+        float: left;
+
+        .img-part {
+            position: relative;
+
+            .hover-element {
+                position: absolute;
+                top: 50%;
+                left: 50%;
+                transform: translate(-50%, -50%);
+                text-align: center;
+                transition: all 0.5s ease;
+                opacity: 0;
+
+                span {
+                    color: $white;
+                    font-size: 45px;
+                    letter-spacing: 0;
+                    font-weight: 300;
+                    font-family: var(--body-font);
+                    text-transform: capitalize;
+                }
+
+                a {
+                    width: 66px;
+                    height: 66px;
+                    border-radius: 50%;
+                    line-height: 66px;
+                    text-align: center;
+                    background: $white;
+                    font-size: 25px;
+                    padding: 10px 11px;
+                    color: var(--main-color);
+                    transition: all .4s ease-in;
+
+                    &:hover {
+                        color: $white;
+                        background: var(--main-color);
+                        transition: all .4s ease-in;
+                    }
+                }
+            }
+
+            &:hover {
+                &:before {
+                    position: absolute;
+                    content: '';
+                    top: 0;
+                    bottom: 0;
+                    width: 100%;
+                    height: 100%;
+                    background: rgba(0, 0, 0, 0.4);
+                    -webkit-transition: all 0.5s ease;
+                    -o-transition: all 0.5s ease;
+                    transition: all 0.5s ease;
+                }
+                .hover-element {
+                    opacity: 1;
+                    transition: all 0.5s ease;
+                }
+            }
+        } 
+
+        .text-part {
+            font-family: var(--body-font);
+            font-weight: 400;
+            font-size: 18px;
+            line-height: 29px;
+            letter-spacing: 0.025;
+
+            p {
+                color: var(--heading-color);
+                text-align: center;
+                padding: 20px 0px;
+            }
+        }
+    }
+    .slick-prev {
+        left: -76px;
+
+        &:before {
+            content: "\f104";
+            font-family: 'fontawesome';
+        }
+    }
+
+    .slick-next {
+        right: -76px;
+
+        &:before {
+            content: "\f105";
+            font-family: 'fontawesome';
+        }
+        
+    }
+    .slick-prev, .slick-next {
+        background: var(--paragraph-color);
+        top: 38%;
+        width: 76px;
+        height: 76px;
+
+        &:hover {
+            background: var(--main-color);
+        }
+    }
+    .slick-prev:before, .slick-next:before {
+        font-size: 34px;
+        opacity: 1;
+    }
+    .slick-slide {
+        margin: 0 5px;
+    }
+    .slick-list {
+        margin: 0 -5px;
+    }
+}
+
+.gallery {
+    margin-top: 92px;
+
+    .gallery-title {
+        font-size: 65px;
+        font-weight: 700;
+        font-family: var(--body-font);
+        line-height: 94px;
+        color: var(--paragraph-color);
+        text-align: center;
+    }
+    .portfolio-masonry-wrapper {
+        
+        .portfolio-menu {
+            list-style: none;
+            padding: 40px 0;
+            text-align: center;
+
+            li {
+                display: inline;
+                padding: 10px 25px 12px 25px;
+                cursor: pointer;
+                text-transform: uppercase;
+                letter-spacing: .02em;
+                font-family: var(--body-font);
+                color: var(--paragraph-color);
+                font-size: 18px;
+                font-weight: 400;
+
+                &:hover {
+                    color: #a6a6a6;
+                }
+
+                &.active {
+                    background: #FFE8E8;
+                    border-radius: 20px;
+                    color: var(--main-color);
+                }
+            }
+        }
+        
+        .portfolio-masonry { 
+            width: 100%;
+            margin: 0 auto;
+            padding: 0px;
+            text-align: center;
+
+            .masonry-item {
+                height: 559px;
+                display: flex;
+
+                img {
+                    width: 100%;
+                    padding: 10px;
+                    padding-bottom: 10px;
+                    transition: all 0.5s ease;
+                    height: 100%;
+
+                    &:hover {
+                        filter: grayscale(1);
+                        transition: all 0.5s ease;
+                    }
+                }
+            } 
+        }
+    }
+
+    .width-25 {
+        width: 25%;
+    }
+
+    .width-50 {
+        width: 50%;
+    }
+}
