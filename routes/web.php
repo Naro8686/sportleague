@@ -3,8 +3,8 @@
 Route::get('/', 'HomeController@index')->name('home');
 Route::get('privacy', 'Admin\PrivacyPolicyController@privacy_page')->name('privacy.page');
 
-Auth::routes(['register' => false]);
-//Route::get('register', 'Auth\RegisterController@registerPage')->name('register');
+Auth::routes();
+Route::get('register', 'Auth\RegisterController@registerPage')->name('register');
 // Payment routes
 Route::get('payment', 'PaymentController@payment')->name('payment');
 Route::get('cancel', 'PaymentController@cancel')->name('payment.cancel');

@@ -63,8 +63,28 @@
             $('.datatable-races').DataTable({
                 dom: 'lBfrtip',
                 buttons: [
+                    {
+                        text: 'PDF',
+                        extend: 'pdfHtml5',
+                        title: '',
+                        filename: 'races',
+                        customize: function (doc) {
+                            doc['header'] = (function () {
+                                return {
+                                    columns: [
+                                        {
+                                            alignment: 'left',
+                                            text: 'Races list',
+                                            fontSize: 18,
+                                            margin: [40, 10]
+                                        },
+                                    ]
+                                }
+                            });
+                        }
+                    },
                     'colvis'
-                ]
+                ],
             })
         })
     </script>

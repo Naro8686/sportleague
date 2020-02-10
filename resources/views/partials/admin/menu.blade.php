@@ -97,21 +97,21 @@
                 </li>
             @endcanany
 
-{{--            @if(Auth::user()->races->count())--}}
-{{--            <li class="nav_items {{ request()->is('admin/my-races') || request()->is('admin/my-races/*') ? 'active' : '' }}">--}}
-{{--                <a href="{{ route('admin.my-races') }}" class="nav-link">--}}
-{{--                    <i class="link-icon" data-feather="truck"></i>--}}
-{{--                    <span class="link-title">My Races</span>--}}
-{{--                </a>--}}
-{{--            </li>--}}
-{{--            @endif--}}
+            @if(Auth::user()->races->count())
+            <li class="nav_items {{ request()->is('admin/my-races') || request()->is('admin/my-races/*') ? 'active' : '' }}">
+                <a href="{{ route('admin.my-races') }}" class="nav-link">
+                    <i class="link-icon" data-feather="truck"></i>
+                    <span class="link-title">My Races</span>
+                </a>
+            </li>
+            @endif
 
-{{--            <li class="nav_items {{ request()->is('admin/settings') || request()->is('admin/settings/*') ? 'active' : '' }}">--}}
-{{--                <a href="{{ route('admin.users.edit', \Illuminate\Support\Facades\Auth::user()->id) }}" class="nav-link">--}}
-{{--                    <i class="link-icon" data-feather="settings"></i>--}}
-{{--                    <span class="link-title">Profile</span>--}}
-{{--                </a>--}}
-{{--            </li>--}}
+            <li class="nav_items {{ request()->is('admin/settings') || request()->is('admin/settings/*') ? 'active' : '' }}">
+                <a href="{{ route('admin.users.edit', \Illuminate\Support\Facades\Auth::user()->id) }}" class="nav-link">
+                    <i class="link-icon" data-feather="settings"></i>
+                    <span class="link-title">Profile</span>
+                </a>
+            </li>
 
             @canany(['privacy_manage'])
                 <li class="nav_items {{ request()->is('admin/privacy-policy') ? 'active' : '' }}">
@@ -122,14 +122,14 @@
                 </li>
             @endcanany
 
-{{--            @canany(['texts_manage'])--}}
-{{--                <li class="nav_items {{ request()->is('admin/texts') || request()->is('admin/texts/*') ? 'active' : '' }}">--}}
-{{--                    <a href="{{ route('admin.texts.index') }}" class="nav-link">--}}
-{{--                        <i class="link-icon" data-feather="type"></i>--}}
-{{--                        <span class="link-title">Texts</span>--}}
-{{--                    </a>--}}
-{{--                </li>--}}
-{{--            @endcanany--}}
+            @canany(['texts_manage'])
+                <li class="nav_items {{ request()->is('admin/texts') || request()->is('admin/texts/*') ? 'active' : '' }}">
+                    <a href="{{ route('admin.texts.index') }}" class="nav-link">
+                        <i class="link-icon" data-feather="type"></i>
+                        <span class="link-title">Texts</span>
+                    </a>
+                </li>
+            @endcanany
         </ul>
     </div>
 </nav>
