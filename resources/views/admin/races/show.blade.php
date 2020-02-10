@@ -92,30 +92,12 @@
     @parent
     <script>
         $(function () {
-            {{--$('.race_users').DataTable({--}}
-            {{--    dom: 'Bfrtip',--}}
-            {{--    "buttons": [--}}
-            {{--    {--}}
-            {{--        text: 'PDF',--}}
-            {{--        extend: 'pdfHtml5',--}}
-            {{--        title: '',--}}
-            {{--        filename: 'race-marshals',--}}
-            {{--        customize: function (doc) {--}}
-            {{--            doc['header']=(function() {--}}
-            {{--                return {--}}
-            {{--                    columns: [--}}
-            {{--                        {--}}
-            {{--                            alignment: 'left',--}}
-            {{--                            text: '{{ $race->name }} Race marshals',--}}
-            {{--                            fontSize: 18,--}}
-            {{--                            margin: [40,10]--}}
-            {{--                        },--}}
-            {{--                    ]--}}
-            {{--                }--}}
-            {{--            });--}}
-            {{--        }--}}
-            {{--    }],--}}
-            {{--})--}}
+            $('.race_users').DataTable({
+                dom: 'lBfrtip',
+                buttons: [
+                    'colvis'
+                ]
+            })
 
             $(document).on('click', ".marshal_present", function(){
 

@@ -15,7 +15,7 @@
 
             <div class="card-body">
                 <div class="table-responsive">
-                    <table class=" table table-bordered table-striped table-hover datatable datatable-User">
+                    <table class=" table table-bordered table-striped table-hover datatable clubs_table">
                         <thead>
                         <tr>
                             <th>Name</th>
@@ -61,4 +61,17 @@
             </div>
         </div>
     @endcanany
+@endsection
+@section('javascript')
+    @parent
+    <script>
+        $(function () {
+            $('.clubs_table').DataTable({
+                dom: 'lBfrtip',
+                buttons: [
+                    'colvis'
+                ]
+            })
+        })
+    </script>
 @endsection

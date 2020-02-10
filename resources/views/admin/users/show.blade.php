@@ -52,7 +52,7 @@
 
         <div class="card-body">
             <div class="mb-2">
-                <table class=" table table-bordered table-striped table-hover">
+                <table class=" table table-bordered table-striped table-hover user_races_table">
                     <thead>
                     <tr>
                         <th>Name</th>
@@ -79,4 +79,18 @@
             </div>
         </div>
     </div>
+@endsection
+
+@section('javascript')
+    @parent
+    <script>
+        $(function () {
+            $('.user_races_table').DataTable({
+                dom: 'lBfrtip',
+                buttons: [
+                    'colvis'
+                ]
+            });
+        })
+    </script>
 @endsection

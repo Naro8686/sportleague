@@ -70,31 +70,13 @@
 @section('javascript')
     @parent
     <script>
-        // $(function () {
-        //     $('.datatable-User:not(.ajaxTable)').DataTable({
-        //         dom: 'lBfrtip',
-        //         "buttons": [
-        //             {
-        //                 text: 'PDF',
-        //                 extend: 'pdfHtml5',
-        //                 title: '',
-        //                 filename: 'users',
-        //                 customize: function (doc) {
-        //                     doc['header'] = (function () {
-        //                         return {
-        //                             columns: [
-        //                                 {
-        //                                     alignment: 'left',
-        //                                     text: 'Users list',
-        //                                     fontSize: 18,
-        //                                     margin: [40, 10]
-        //                                 },
-        //                             ]
-        //                         }
-        //                     });
-        //                 }
-        //             }],
-        //     })
-        // })
+        $(function () {
+            $('.datatable-User:not(.ajaxTable)').DataTable({
+                dom: 'lBfrtip',
+                buttons: [
+                    'colvis'
+                ]
+            })
+        })
     </script>
 @endsection
