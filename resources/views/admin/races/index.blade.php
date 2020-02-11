@@ -8,7 +8,12 @@
         </div>
     @endcanany
     <div class="card">
-        <div class="card-header">Races list</div>
+        <div class="card-header w-100 d-flex justify-content-between align-items-center">
+            Races list
+            <a href="{{action('Admin\RacesController@races_pdf')}}">
+                <img src="{{ asset('pdf.png') }}" alt="Download PDF" width="40">
+            </a>
+        </div>
 
         <div class="card-body">
             <div class="table-responsive">
@@ -63,26 +68,26 @@
             $('.datatable-races').DataTable({
                 dom: 'lBfrtip',
                 buttons: [
-                    {
-                        text: 'PDF',
-                        extend: 'pdfHtml5',
-                        title: '',
-                        filename: 'races',
-                        customize: function (doc) {
-                            doc['header'] = (function () {
-                                return {
-                                    columns: [
-                                        {
-                                            alignment: 'left',
-                                            text: 'Races list',
-                                            fontSize: 18,
-                                            margin: [40, 10]
-                                        },
-                                    ]
-                                }
-                            });
-                        }
-                    },
+                    // {
+                    //     text: 'PDF',
+                    //     extend: 'pdfHtml5',
+                    //     title: '',
+                    //     filename: 'races',
+                    //     customize: function (doc) {
+                    //         doc['header'] = (function () {
+                    //             return {
+                    //                 columns: [
+                    //                     {
+                    //                         alignment: 'left',
+                    //                         text: 'Races list',
+                    //                         fontSize: 18,
+                    //                         margin: [40, 10]
+                    //                     },
+                    //                 ]
+                    //             }
+                    //         });
+                    //     }
+                    // },
                     'colvis'
                 ],
             })

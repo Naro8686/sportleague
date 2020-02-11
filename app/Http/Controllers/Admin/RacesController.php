@@ -166,4 +166,15 @@ class RacesController extends Controller
         }
     }
 
+    public function races_pdf() {
+        if (! Gate::allows('races_manage') && ! Gate::allows('view_races') ) {
+            return abort(401);
+        }
+        $data = Races::all();
+
+        $pdf = PDF::loadView('admin.races.races-pdf', compact('data'));
+
+        return $pdf->download('races.pdf');
+    }
+
 }

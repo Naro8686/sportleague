@@ -49,65 +49,7 @@
             <a href="index.html"> <img src="{{ asset('front-assets/img/logo.png') }}" alt="logo"></a>
         </div>
         <div class="collapse navbar-collapse" id="billatrail_main_menu">
-            <ul class="navbar-nav">
-                <li class="menu-item-has-children">
-                    <a href="#">Home</a>
-                    <ul class="sub-menu">
-                        <li><a href="index.html">Home 01</a></li>
-                        <li><a href="index-2.html">Home 02</a></li>
-                        <li><a href="index-3.html">Home 03</a></li>
-                    </ul>
-                </li>
-                <li class="current-menu-item"><a href="about.html">About</a></li>
-                <li class="menu-item-has-children">
-                    <a href="#">Blog</a>
-                    <ul class="sub-menu">
-                        <li><a href="blog.html">Blog</a></li>
-                        <li><a href="blog-details.html">Blog Details</a></li>
-                    </ul>
-                </li>
-                <li class="menu-item-has-children">
-                    <a href="#">Pages</a>
-                    <ul class="sub-menu">
-                        <li><a href="trails.html">Trails</a></li>
-                        <li><a href="event.html">Event</a></li>
-                        <li><a href="signin.html">Sign In</a></li>
-                        <li><a href="signup.html">Sign Up</a></li>
-                        <li><a href="404.html">404</a></li>
-                        <li><a href="coming-soon.html">Coming Soon</a></li>
-                    </ul>
-                </li>
-                <li class="menu-item-has-children">
-                    <a href="#">Ui Elements</a>
-                    <ul class="sub-menu">
-                        <li><a href="form.html">Form</a>
-                        <li><a href="button.html">Button</a>
-                        <li><a href="header-style.html">Header Style</a>
-                        <li><a href="typography.html">Typography</a></li>
-                        <li><a href="icon.html">Icon</a></li>
-                        <li><a href="accordion.html">Accordion</a></li>
-                        <li><a href="tables.html">Table</a></li>
-                        <li><a href="alert-cookie.html">Alert & Cookie</a></li>
-                        <li><a href="countdown-menu.html">Countdown & Menu</a></li>
-                        <li><a href="card.html">Card</a></li>
-                        <li><a href="modals.html">Modals</a></li>
-                        <li><a href="popover-list.html">Popover & List</a></li>
-                        <li><a href="footer.html">Footer Style</a></li>
-                        <li><a href="pagination-progressbar.html">Pagination & Progressbar</a></li>
-                    </ul>
-                </li>
-                <li class="menu-item-has-children">
-                    <a href="#">Shop</a>
-                    <ul class="sub-menu">
-                        <li><a href="shop.html">Shop</a></li>
-                        <li><a href="product-details.html">Product Details</a></li>
-                        <li><a href="shopping-cart.html">Shopping Cart</a></li>
-                        <li><a href="payment.html">Payment</a></li>
-                        <li><a href="checkout.html">Checkout</a></li>
-                    </ul>
-                </li>
-                <li><a href="contact.html">Contact</a></li>
-            </ul>
+            @include('partials.front.navbar')
         </div>
         <div class="nav-right-content">
             <ul class="nav-right-menu">

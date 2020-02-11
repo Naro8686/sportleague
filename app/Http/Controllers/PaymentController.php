@@ -2,7 +2,9 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Clubs;
 use App\Models\League;
+use App\Models\RaceCategory;
 use App\Models\Races;
 use Carbon\Carbon;
 use Cassandra\Date;
@@ -67,6 +69,8 @@ class PaymentController extends Controller
     public function success(Request $request)
     {
         $races = Races::all();
+        $clubs = Clubs::all();
+        $race_categories = RaceCategory::all();
         $league = League::find(1);
 
         if(!Auth::user()->invoice){
@@ -177,6 +181,6 @@ class PaymentController extends Controller
             $user->save();
         }
 
-        return view('auth.payment-success', compact('races', 'league'));
+        return view('auth.payment-success', compact('races', 'league', 'clubs', 'race_categories'));
     }
 }

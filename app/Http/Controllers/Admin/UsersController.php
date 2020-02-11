@@ -170,7 +170,15 @@ class UsersController extends Controller
      * @param StoreSelectRaceRequest $request
      * @return RedirectResponse
      */
-    public function selectRaces(StoreSelectRaceRequest $request){
+    public function selectRaces(StoreSelectRaceRequest $request)
+    {
+        $user = Auth::user();
+        $user->club()->attach([
+            'club_id' => $request->club
+        ]);
+        $user->race_category = $request->race_category;
+        $user->save();
+
         foreach ($request['event'] as $event){
             $race = Races::find($event);
             $race->users()->attach([

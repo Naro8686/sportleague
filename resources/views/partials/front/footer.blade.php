@@ -1,3 +1,48 @@
+<!-- brand-area start -->
+<div class="brand-area">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-12">
+                <div class="brand-slider">
+                    <div class="brant-item">
+                        <img src="{{ asset('front-assets/img/about-page/brand1.png') }}" alt="brand">
+                    </div>
+                    <div class="brant-item">
+                        <img src="{{ asset('front-assets/img/about-page/brand2.png') }}" alt="brand">
+                    </div>
+                    <div class="brant-item">
+                        <img src="{{ asset('front-assets/img/about-page/brand3.png') }}" alt="brand">
+                    </div>
+                    <div class="brant-item">
+                        <img src="{{ asset('front-assets/img/about-page/brand4.png') }}" alt="brand">
+                    </div>
+                    <div class="brant-item">
+                        <img src="{{ asset('front-assets/img/about-page/brand5.png') }}" alt="brand">
+                    </div>
+                    <div class="brant-item">
+                        <img src="{{ asset('front-assets/img/about-page/brand1.png') }}" alt="brand">
+                    </div>
+                    <div class="brant-item">
+                        <img src="{{ asset('front-assets/img/about-page/brand2.png') }}" alt="brand">
+                    </div>
+                    <div class="brant-item">
+                        <img src="{{ asset('front-assets/img/about-page/brand3.png') }}" alt="brand">
+                    </div>
+                    <div class="brant-item">
+                        <img src="{{ asset('front-assets/img/about-page/brand4.png') }}" alt="brand">
+                    </div>
+                    <div class="brant-item">
+                        <img src="{{ asset('front-assets/img/about-page/brand5.png') }}" alt="brand">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- brand-area end -->
+
+<div class="bottom-bg"></div>
+
 <!-- footer area start -->
 <footer class="footer-area footer-style-2">
     <div class="footer-top padding-top-40 padding-bottom-0">
@@ -15,13 +60,10 @@
                 <div class="col-lg-7 col-md-6">
                     <div class="footer-widget widget widget_nav_menu">
                         <ul>
-                            <li><a href="#">Home</a></li>
-                            <li><a href="#">About</a></li>
-                            <li><a href="#">Blog</a></li>
-                            <li><a href="#">Trails</a></li>
-                            <li><a href="#">Event</a></li>
-                            <li><a href="#">Shop</a></li>
-                            <li><a href="#">Contact</a></li>
+                            <li><a href="{{ route('home') }}">Home</a></li>
+                            <li><a href="{{ route('login') }}">Login</a></li>
+                            <li><a href="{{ route('register') }}">Register</a></li>
+                            <li><a href="{{ route('privacy.page') }}">Privacy policy</a></li>
                         </ul>
                     </div>
                 </div>

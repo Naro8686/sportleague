@@ -75,15 +75,10 @@ class RegisterController extends Controller
             'last_name' => $data['last_name'],
             'phone' => $data['phone'],
             'email' => $data['email'],
-            'race_category' => $data['race_category'],
             'password' => bcrypt($data['password']),
         ]);
 
         $user->assignRole('participants');
-
-        $user->club()->attach([
-            'club_id' => $data['club']
-        ]);
 
         return $user;
     }

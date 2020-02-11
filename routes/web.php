@@ -34,5 +34,6 @@ Route::group(['middleware' => ['auth'], 'prefix' => 'admin', 'as' => 'admin.'], 
     Route::get('my-races', 'Admin\RacesController@myRaces')->name('my-races');
     Route::post('/present', 'Admin\RacesController@present');
     Route::get('marshals-pdf/{id}', 'Admin\RacesController@pdf')->name('marshals-pdf');
+    Route::get('races-pdf', 'Admin\RacesController@races_pdf')->name('races-pdf');
     Route::post('select-races', 'Admin\UsersController@selectRaces')->name('select-races');
 });

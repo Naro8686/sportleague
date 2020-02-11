@@ -11,6 +11,25 @@
                                 <h5 class="text-muted font-weight-normal mb-4">Select 2 events to finish registration</h5>
                                 <form class="forms-sample" method="POST" action="{{ route('admin.select-races') }}">
                                     @csrf
+
+                                    <div class="form-group">
+                                        <label>Club</label>
+                                        <select name="club">
+                                            @foreach($clubs as $club)
+                                                <option value="{{ $club->id }}">{{ $club->name }}</option>
+                                            @endforeach
+                                        </select>
+                                    </div>
+
+                                    <div class="form-group">
+                                        <label>Race category</label>
+                                        <select name="race_category">
+                                            @foreach($race_categories as $race_category)
+                                                <option value="{{ $race_category->name }}">{{ $race_category->name }}</option>
+                                            @endforeach
+                                        </select>
+                                    </div>
+
                                     <div class="form-group">
                                         <label>Events to marshal</label>
                                         <select class="register_events" name="event[]" multiple required>
