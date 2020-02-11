@@ -23,6 +23,9 @@ class StoreSelectRaceRequest extends FormRequest
     public function rules()
     {
         return [
+            'phone' => 'required',
+            'club' => 'required',
+            'race_category' => 'required',
             'event' => 'required',
         ];
     }

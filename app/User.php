@@ -2,6 +2,7 @@
 namespace App;
 
 use App\Models\Clubs;
+use App\Models\Payments;
 use App\Models\Races;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
@@ -50,6 +51,11 @@ class User extends Authenticatable
     public function races()
     {
         return $this->belongsToMany(Races::class, 'user_races','user_id', 'race_id')->withTimestamps();
+    }
+
+    public function payment()
+    {
+        return $this->belongsTo(Payments::class, 'id','user_id');
     }
     
 }

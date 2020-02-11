@@ -13,6 +13,16 @@
                                     @csrf
 
                                     <div class="form-group">
+                                        <label>Phone</label>
+                                        <input name="phone" type="text" class="form-control{{ $errors->has('phone') ? ' is-invalid' : '' }}" required placeholder="Phone" value="{{ old('phone', null) }}">
+                                        @if($errors->has('phone'))
+                                            <div class="invalid-feedback">
+                                                {{ $errors->first('phone') }}
+                                            </div>
+                                        @endif
+                                    </div>
+
+                                    <div class="form-group">
                                         <label>Club</label>
                                         <select name="club">
                                             @foreach($clubs as $club)

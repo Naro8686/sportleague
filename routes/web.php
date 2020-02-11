@@ -6,9 +6,9 @@ Route::get('privacy', 'Admin\PrivacyPolicyController@privacy_page')->name('priva
 Auth::routes();
 Route::get('register', 'Auth\RegisterController@registerPage')->name('register');
 // Payment routes
-Route::get('payment', 'PaymentController@payment')->name('payment');
-Route::get('cancel', 'PaymentController@cancel')->name('payment.cancel');
-Route::get('payment/success', 'PaymentController@success')->name('payment.success');
+Route::get('payment', 'Front\PaymentController@payment')->name('payment');
+Route::get('cancel', 'Front\PaymentController@cancel')->name('payment.cancel');
+Route::get('payment/success', 'Front\PaymentController@success')->name('payment.success');
 
 // Change Password Routes...
 Route::get('change_password', 'Auth\ChangePasswordController@showChangePasswordForm')->name('auth.change_password');
@@ -35,5 +35,9 @@ Route::group(['middleware' => ['auth'], 'prefix' => 'admin', 'as' => 'admin.'], 
     Route::post('/present', 'Admin\RacesController@present');
     Route::get('marshals-pdf/{id}', 'Admin\RacesController@pdf')->name('marshals-pdf');
     Route::get('races-pdf', 'Admin\RacesController@races_pdf')->name('races-pdf');
+    Route::get('step-two', 'Admin\UsersController@stepTwo')->name('step-two');
     Route::post('select-races', 'Admin\UsersController@selectRaces')->name('select-races');
+
+    // Payment routes
+    Route::get('payments', 'Front\PaymentController@payments')->name('payments');
 });

@@ -38,6 +38,12 @@
 {{--                                        </ul>--}}
 {{--                                    </div>--}}
 {{--                                </li>--}}
+                <li class="nav_items {{ request()->is('admin/payments') ? 'active' : '' }}">
+                    <a href="{{ route('admin.payments') }}" class="nav-link">
+                        <i class="link-icon" data-feather="eye"></i>
+                        <span class="link-title">Payments</span>
+                    </a>
+                </li>
                 <li class="nav_items {{ request()->is('admin/roles') || request()->is('admin/roles/*') ? 'active' : '' }}">
                     <a href="{{ route('admin.roles.index') }}" class="nav-link">
                         <i class="link-icon" data-feather="eye"></i>

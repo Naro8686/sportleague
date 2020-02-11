@@ -10,6 +10,7 @@
                         <div class="mb-4 mb-md-3">
                             <h6 class="card-title mb-0">Payment error</h6>
                             <p class="text-muted tx-13 my-3 mb-md-0">Your payment is canceled.</p>
+                            <p class="text-muted tx-13 my-3 mb-md-0"><a href="{{ route('admin.home') }}">Go to dashboard</a></p>
                         </div>
                     </div>
                 </div>
