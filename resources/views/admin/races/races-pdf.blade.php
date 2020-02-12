@@ -79,7 +79,6 @@
             <th>Location</th>
             <th>Time</th>
             <th>Min marshals</th>
-            <th>Max</th>
         </tr>
         </thead>
         <tbody>
@@ -92,7 +91,6 @@
                 <td><a href="{{ $item->location_link ?? '' }}" target="_blank">{{ $item->location ?? '' }}</a></td>
                 <td>{{ $item->start_time ?? '' }}</td>
                 <td>{{ $item->min_marshals ?? '' }} ( {{ $item->users->count() }} Registered)</td>
-                <td>{{ $item->max_marshals ?? '' }}</td>
             </tr>
         @endforeach
         </tbody>

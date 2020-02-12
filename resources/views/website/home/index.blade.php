@@ -3,21 +3,6 @@
 @section('content')
     <!-- home-about start -->
     <div class="home-about" id="about-area">
-        <div class="floating-icon" id="service_info_item">
-            <div class="floating-icon__is floating-icon-info">
-                <i class="flaticon-phone"></i>
-            </div>
-            <!--floating-icon-is-->
-            <div class="floating-icon__is floating-icon-location">
-                <i class="flaticon-pin"></i>
-            </div>
-            <!--floating-icon-is-->
-            <div class="floating-icon__is floating-icon-message">
-                <i class="flaticon-mail"></i>
-            </div>
-            <!--floating-icon-is-->
-        </div>
-        <!--floating-icon-->
 
         <div class="container">
             <div class="row">

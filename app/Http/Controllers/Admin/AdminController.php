@@ -41,7 +41,7 @@ class AdminController extends Controller
         if (! Gate::allows('view_users') && ! Gate::allows('users_manage') ) {
             return view('admin.home');
         }else{
-            return view('admin.reports.index', compact('users', 'clubs', 'categories'));
+            return view('admin.reports.index', compact(['users', 'clubs', 'categories']));
         }
     }
 }

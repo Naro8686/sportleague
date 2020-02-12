@@ -7018,7 +7018,7 @@ ul.wp-block-latest-posts.is-grid.alignwide {
         letter-spacing: 0; }
 
 .signinup-area {
-  background: url("../img/bg/signin.png");
+  background: url("../img/bg/signin.jpg");
   background-size: cover;
   background-position: center center;
   height: 100vh;
@@ -7095,7 +7095,7 @@ ul.wp-block-latest-posts.is-grid.alignwide {
             color: var(--main-color); }
 
 .signup-area {
-  background: url("../img/bg/signup.png");
+  background: url("../img/bg/signup.jpg");
   background-size: cover;
   background-position: center center;
   height: 100%;

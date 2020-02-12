@@ -13,6 +13,7 @@ use Exception;
 use Illuminate\Http\Request;
 use Illuminate\Http\Response as ResponseAlias;
 use Illuminate\Support\Facades\Auth;
+use Srmklive\PayPal\Services\AdaptivePayments;
 use Srmklive\PayPal\Services\ExpressCheckout;
 
 class PaymentController extends Controller
@@ -26,28 +27,31 @@ class PaymentController extends Controller
     public function payment()
     {
         $league = League::find(1);
-        $data = [];
-        $data['items'] = [
-            [
-                'name' => 'Sport League',
-                'price' => $league->price,
-                'desc' => 'Registration payment for sport league',
-                'qty' => 1
-            ]
+        $data = [
+            'receivers'  => [
+                [
+                    'email' => 'sb-wxxdd599761@personal.example.com',
+                    'amount' => $league->price,
+                    'primary' => true,
+                ],
+                [
+                    'email' => 'janedoe@example.com',
+                    'amount' => 5,
+                    'primary' => false
+                ]
+            ],
+            'payer' => 'EACHRECEIVER', // (Optional) Describes who pays PayPal fees. Allowed values are: 'SENDER', 'PRIMARYRECEIVER', 'EACHRECEIVER' (Default), 'SECONDARYONLY'
+            'return_url' => route('payment.success'),
+            'cancel_url' => route('payment.cancel'),
         ];
 
-        $date = Carbon::now();
-        $data['invoice_id'] = strtotime($date->toDateTimeString()) . Auth::user()->id;
-        $data['invoice_description'] = "Order #{$data['invoice_id']} Invoice";
-        $data['return_url'] = route('payment.success');
-        $data['cancel_url'] = route('payment.cancel');
-        $data['total'] = $league->price;
+        $provider = new AdaptivePayments();
 
-        $provider = new ExpressCheckout;
+        $response = $provider->createPayRequest($data);
 
-        $response = $provider->setExpressCheckout($data, true);
+        $redirect_url = $provider->getRedirectUrl('approved', $response['payKey']);
 
-        return redirect($response['paypal_link']);
+        return redirect($redirect_url);
     }
 
     /**
@@ -57,7 +61,18 @@ class PaymentController extends Controller
      */
     public function cancel()
     {
-        return view('errors.payment-error');
+        if(Auth::user()->payment && Auth::user()->payment->status == 'success'){
+            return redirect()->route('admin.home');
+        }else{
+            Payments::updateOrCreate(
+                ['user_id' => Auth::user()->id],
+                [
+                    'status' => 'canceled',
+                    'amount' => 0
+                ]
+            );
+            return view('errors.payment-error');
+        }
     }
 
     /**
@@ -69,19 +84,14 @@ class PaymentController extends Controller
      */
     public function success(Request $request)
     {
-        $provider = new ExpressCheckout;
-        $response = $provider->getExpressCheckoutDetails($request->token);
-        Payments::create([
-            'user_id' => Auth::user()->id,
-            'email' => $response['EMAIL'],
-            'payer_id' => $response['PAYERID'],
-            'first_name' => $response['FIRSTNAME'],
-            'last_name' => $response['LASTNAME'],
-            'country' => $response['COUNTRYCODE'],
-            'invoice_number' => $response['INVNUM'],
-            'amt' => $response['AMT'],
-            'token' => $response['TOKEN'],
-        ]);
+        $league = League::find(1);
+        Payments::updateOrCreate(
+            ['user_id' => Auth::user()->id],
+            [
+                'status' => 'success',
+                'amount' => $league->price
+            ]
+        );
 
         return redirect()->route('admin.step-two');
     }

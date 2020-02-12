@@ -43,9 +43,12 @@
                                 <span></span>
 
                                 <ul id="menu">
-                                    <li><a href="signin.html">Sign In</a></li>
-                                    <li><a href="signup.html">Sign Up</a></li>
-                                    <li><a href="contact.html">Contact Us</a></li>
+                                    @if(Auth::check())
+                                        <li><a href="{{ route('admin.home') }}">Dashboard</a></li>
+                                    @else
+                                        <li><a href="{{ route('login') }}">Sign In</a></li>
+                                        <li><a href="{{ route('register') }}">Sign Up</a></li>
+                                    @endif
                                 </ul>
                             </div>
                         </div>

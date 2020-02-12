@@ -16,7 +16,7 @@ class Paid
      */
     public function handle($request, Closure $next)
     {
-        if (!Auth::user()->payment && Auth::user()->hasRole('participants')) {
+        if (is_null(Auth::user()->payment) || Auth::user()->payment->status != 'success' && Auth::user()->hasRole('participants')) {
             return redirect()->route('admin.home');
         }
         return $next($request);

@@ -30,6 +30,6 @@ class HomeController extends Controller
     {
         $league = League::first();
         $races = Races::all();
-        return view($this->view_path.'index', compact('league', 'races'));
+        return view($this->view_path.'index', compact(['league', 'races']));
     }
 }

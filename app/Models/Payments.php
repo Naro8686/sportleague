@@ -7,9 +7,9 @@ use Illuminate\Database\Eloquent\Model;
 
 class Payments extends Model
 {
-    protected $fillable = ['user_id', 'email', 'payer_id', 'first_name', 'last_name', 'country', 'invoice_number', 'amt', 'token'];
+    protected $fillable = ['user_id', 'status', 'amount', 'token'];
 
-    public function payment()
+    public function user()
     {
         return $this->hasOne(User::class, 'id','user_id');
     }

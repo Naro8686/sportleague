@@ -51,32 +51,34 @@
                 <div class="col-lg-2 col-md-2">
                     <div class="footer-widget widget">
                         <div class="about_us_widget">
-                            <a href="#" class="footer-logo">
+                            <a href="{{ route('home') }}" class="footer-logo">
                                 <img src="{{ 'front-assets/img/footer-logo.png'}}" alt="footer logo">
                             </a>
                         </div>
                     </div>
                 </div>
-                <div class="col-lg-7 col-md-6">
+                <div class="col-lg-10 col-md-10">
                     <div class="footer-widget widget widget_nav_menu">
                         <ul>
                             <li><a href="{{ route('home') }}">Home</a></li>
+                            @if(!Auth::check())
                             <li><a href="{{ route('login') }}">Login</a></li>
                             <li><a href="{{ route('register') }}">Register</a></li>
+                            @endif
                             <li><a href="{{ route('privacy.page') }}">Privacy policy</a></li>
                         </ul>
                     </div>
                 </div>
-                <div class="col-lg-3 col-md-4">
-                    <div class="footer-widget widget widget_nav_menu">
-                        <ul>
-                            <li><a href="https://www.facebook.com/codingeek.net/" target="_blank"><i class="fa fa-facebook-f"></i></a></li>
-                            <li><a href="#" target="_blank"><i class="fa fa-twitter"></i></a></li>
-                            <li><a href="#" target="_blank"><i class="fa fa-instagram"></i></a></li>
-                            <li><a href="#" target="_blank"><i class="fa fa-youtube"></i></a></li>
-                        </ul>
-                    </div>
-                </div>
+{{--                <div class="col-lg-3 col-md-4">--}}
+{{--                    <div class="footer-widget widget widget_nav_menu">--}}
+{{--                        <ul>--}}
+{{--                            <li><a href="https://www.facebook.com/codingeek.net/" target="_blank"><i class="fa fa-facebook-f"></i></a></li>--}}
+{{--                            <li><a href="#" target="_blank"><i class="fa fa-twitter"></i></a></li>--}}
+{{--                            <li><a href="#" target="_blank"><i class="fa fa-instagram"></i></a></li>--}}
+{{--                            <li><a href="#" target="_blank"><i class="fa fa-youtube"></i></a></li>--}}
+{{--                        </ul>--}}
+{{--                    </div>--}}
+{{--                </div>--}}
             </div>
         </div>
     </div>
@@ -85,7 +87,7 @@
             <div class="row">
                 <div class="col-lg-12">
                     <div class="copyright-area-inner">
-                        © Billa Trail 2019 All rights reserved. Powered with <i class="fa fa-heart"></i> by <a href="https://codingeek.net/" target="_blank">Codingeek</a>
+{{--                        © Billa Trail 2019 All rights reserved. Powered with <i class="fa fa-heart"></i> by <a href="https://codingeek.net/" target="_blank">Codingeek</a>--}}
                     </div>
                 </div>
             </div>

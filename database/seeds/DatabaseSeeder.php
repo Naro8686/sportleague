@@ -19,5 +19,6 @@ class DatabaseSeeder extends Seeder
         $this->call(RaceSeed::class);
         $this->call(PrivacySeed::class);
         $this->call(RaceCategorySeed::class);
+        $this->call(TextsSeed::class);
     }
 }

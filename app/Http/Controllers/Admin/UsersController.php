@@ -65,7 +65,7 @@ class UsersController extends Controller
         $clubs = Clubs::all();
         $league = League::find(1);
 
-        return view('admin.users.create', compact('roles', 'races', 'clubs', 'league', 'race_categories'));
+        return view('admin.users.create', compact(['roles', 'races', 'clubs', 'league', 'race_categories']));
     }
 
     /**
@@ -118,7 +118,7 @@ class UsersController extends Controller
         $clubs = Clubs::all();
         $race_categories = RaceCategory::all();
 
-        return view('admin.users.edit', compact('user', 'roles', 'races', 'clubs', 'race_categories'));
+        return view('admin.users.edit', compact(['user', 'roles', 'races', 'clubs', 'race_categories']));
     }
 
     /**
@@ -187,7 +187,7 @@ class UsersController extends Controller
         $race_categories = RaceCategory::all();
         $league = League::find(1);
 
-        return view('admin.users.step-two', compact('races', 'league', 'clubs', 'race_categories'));
+        return view('admin.users.step-two', compact(['races', 'league', 'clubs', 'race_categories']));
     }
 
     /**

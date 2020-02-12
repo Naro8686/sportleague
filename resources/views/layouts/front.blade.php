@@ -11,20 +11,20 @@
 <body>
 
 <!-- preloader area start -->
-<div class="preloader" id="preloader">
-    <div class="preloader-inner">
-        <div class="spinner">
-            <div class="dot1"></div>
-            <div class="dot2"></div>
-        </div>
-    </div>
-</div>
+{{--<div class="preloader" id="preloader">--}}
+{{--    <div class="preloader-inner">--}}
+{{--        <div class="spinner">--}}
+{{--            <div class="dot1"></div>--}}
+{{--            <div class="dot2"></div>--}}
+{{--        </div>--}}
+{{--    </div>--}}
+{{--</div>--}}
 <!-- preloader area end -->
-@if(Request::is('/'))
-    @include('partials.front.home-header')
-@else
+{{--@if(Request::is('/'))--}}
+{{--    @include('partials.front.home-header')--}}
+{{--@else--}}
     @include('partials.front.header')
-@endif
+{{--@endif--}}
 
 @yield('content')
 

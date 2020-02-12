@@ -94,7 +94,7 @@ class RacesController extends Controller
         }
         $clubs = Clubs::all();
 
-        return view($this->view_path.'edit', compact('race', 'clubs'));
+        return view($this->view_path.'edit', compact(['race', 'clubs']));
     }
 
     /**

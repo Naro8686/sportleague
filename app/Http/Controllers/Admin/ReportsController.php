@@ -20,7 +20,7 @@ class ReportsController extends Controller
         $clubs = Clubs::all();
         $categories = RaceCategory::all();
 
-        return view('admin.reports.index', compact('users', 'clubs', 'categories'));
+        return view('admin.reports.index', compact(['users', 'clubs', 'categories']));
     }
 
     public function registrationPDF() {
@@ -31,7 +31,7 @@ class ReportsController extends Controller
             ->unique('id');
         $clubs = Clubs::all();
         $categories = RaceCategory::all();
-        $pdf = PDF::loadView('admin.reports.registrations-pdf', compact('users', 'clubs', 'categories'));
+        $pdf = PDF::loadView('admin.reports.registrations-pdf', compact(['users', 'clubs', 'categories']));
 
         return $pdf->download('registration.pdf');
     }

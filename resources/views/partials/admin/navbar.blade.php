@@ -3,7 +3,7 @@
         <i data-feather="menu"></i>
     </a>
     <div class="navbar-content">
-        <a class="btn btn-info mt-3" target="_blank" style="max-height: 30px" href="{{ route('home') }}">Go to web</a>
+        <a class="btn btn-info mt-3" target="_blank" style="max-height: 30px" href="{{ route('home') }}">{{ _e('Go to web') }}</a>
         <ul class="navbar-nav">
             <li class="nav-item dropdown nav-profile">
                 <a class="nav-link dropdown-toggle" href="#" id="profileDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
@@ -21,20 +21,20 @@
                             <li class="nav-item">
                                 <a href="{{ route('admin.users.edit', Auth::user()->id) }}" class="nav-link">
                                     <i data-feather="user"></i>
-                                    <span>Edit profile</span>
+                                    <span>{{ _e('Edit profile') }}</span>
                                 </a>
                             </li>
                             <li class="nav-item">
                                 <a href="{{ route('auth.change_password') }}" class="nav-link">
                                     <i data-feather="edit"></i>
-                                    <span>Change password</span>
+                                    <span>{{ _e('Change password') }}</span>
                                 </a>
                             </li>
                         
                             <li class="nav-item">
                                 <a href="javascript:;" onclick="event.preventDefault(); document.getElementById('logoutform').submit();" class="nav-link">
                                     <i data-feather="log-out"></i>
-                                    <span>Logout</span>
+                                    <span>{{ _e('Logout') }}</span>
                                 </a>
                             </li>
                         </ul>

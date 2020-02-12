@@ -4,7 +4,9 @@ namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
 use App\Models\Clubs;
+use Exception;
 use Illuminate\Http\Request;
+use Illuminate\Http\Response;
 use Illuminate\Support\Facades\Gate;
 use App\Http\Requests\Admin\StoreOrUpdateClubsRequest;
 
@@ -14,7 +16,7 @@ class ClubsController extends Controller
     /**
      * Display a listing of the resource.
      *
-     * @return \Illuminate\Http\Response
+     * @return Response
      */
     public function index()
     {
@@ -29,7 +31,7 @@ class ClubsController extends Controller
     /**
      * Show the form for creating a new resource.
      *
-     * @return \Illuminate\Http\Response
+     * @return Response
      */
     public function create()
     {
@@ -43,8 +45,8 @@ class ClubsController extends Controller
     /**
      * Store a newly created resource in storage.
      *
-     * @param  \Illuminate\Http\Request  $request
-     * @return \Illuminate\Http\Response
+     * @param StoreOrUpdateClubsRequest $request
+     * @return Response
      */
     public function store(StoreOrUpdateClubsRequest $request)
     {
@@ -59,8 +61,8 @@ class ClubsController extends Controller
     /**
      * Display the specified resource.
      *
-     * @param  object  $club
-     * @return \Illuminate\Http\Response
+     * @param Clubs $club
+     * @return Response
      */
     public function show(Clubs $club)
     {
@@ -73,8 +75,8 @@ class ClubsController extends Controller
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  object  $club
-     * @return \Illuminate\Http\Response
+     * @param Clubs $club
+     * @return Response
      */
     public function edit(Clubs $club)
     {
@@ -88,9 +90,9 @@ class ClubsController extends Controller
     /**
      * Update the specified resource in storage.
      *
-     * @param  StoreOrUpdateClubsRequest  $request
-     * @param  object  $club
-     * @return \Illuminate\Http\Response
+     * @param StoreOrUpdateClubsRequest $request
+     * @param Clubs $club
+     * @return Response
      */
     public function update(StoreOrUpdateClubsRequest $request, Clubs $club)
     {
@@ -105,8 +107,9 @@ class ClubsController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  object  $club
-     * @return \Illuminate\Http\Response
+     * @param Clubs $club
+     * @return Response
+     * @throws Exception
      */
     public function destroy(Clubs $club)
     {

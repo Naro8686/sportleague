@@ -17,14 +17,8 @@ class CreatePaymentsTable extends Migration
             $table->bigIncrements('id');
             $table->unsignedBigInteger('user_id');
             $table->foreign('user_id')->references( 'id')->on('users');
-            $table->string('email');
-            $table->string('payer_id');
-            $table->string('first_name');
-            $table->string('last_name');
-            $table->string('country');
-            $table->string('invoice_number');
-            $table->string('amt');
-            $table->string('token');
+            $table->string('status');
+            $table->string('amount');
             $table->string('invoice_url')->nullable();
             $table->timestamps();
         });
