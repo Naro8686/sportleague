@@ -10,17 +10,6 @@
 </head>
 <body>
 
-<!-- preloader area start -->
-{{--<div class="preloader" id="preloader">--}}
-{{--    <div class="preloader-inner">--}}
-{{--        <div class="spinner">--}}
-{{--            <div class="dot1"></div>--}}
-{{--            <div class="dot2"></div>--}}
-{{--        </div>--}}
-{{--    </div>--}}
-{{--</div>--}}
-<!-- preloader area end -->
-
 <div class="signinup-area signup-area">
     <div class="content col-lg-6 col-md-6">
         <div class="login-panel">

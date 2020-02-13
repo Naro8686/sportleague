@@ -25,7 +25,7 @@
                             <td>{{ $item->name ?? '' }}</td>
                             <td>{{ $item->location ?? '' }}</td>
                             <td>{{ $item->start_time ?? '' }}</td>
-                            <td><a href="{{ $user->invoice ?? '' }}">Open</a></td>
+                            <td><a href="{{ $user->payment->invoice_url ?? '' }}">Open</a></td>
                             <td>{{ $item->pivot->created_at ?? '' }}</td>
                         </tr>
                     @endforeach
