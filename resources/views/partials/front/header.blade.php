@@ -23,7 +23,7 @@
             </button>
         </div>
         <div class="logo">
-            <a href="index.html"> <img src="{{ asset('front-assets/img/logo.png') }}" alt="logo"></a>
+            <a href="{{ route('home') }}"> <img src="{{ asset('front-assets/img/logo.png') }}" alt="logo"></a>
         </div>
         <div class="collapse navbar-collapse" id="billatrail_main_menu">
             @include('partials.front.navbar')

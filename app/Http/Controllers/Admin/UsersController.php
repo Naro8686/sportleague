@@ -31,7 +31,7 @@ class UsersController extends Controller
      */
     public function __construct()
     {
-        $this->middleware('paid');
+        /*$this->middleware('paid');*/
     }
     /**
      * Display a listing of User.

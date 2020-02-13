@@ -52,7 +52,7 @@
                     <div class="footer-widget widget">
                         <div class="about_us_widget">
                             <a href="{{ route('home') }}" class="footer-logo">
-                                <img src="{{ 'front-assets/img/footer-logo.png'}}" alt="footer logo">
+                                <img src="{{ 'front-assets/img/Black_Logo.png'}}" alt="footer logo">
                             </a>
                         </div>
                     </div>

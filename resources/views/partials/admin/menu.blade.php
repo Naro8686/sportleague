@@ -1,7 +1,7 @@
 <nav class="sidebar">
     <div class="sidebar-header">
         <a href="{{ route('home') }}" class="sidebar-brand">
-            <h5>Sport League</h5>
+            <h5>League Manager</h5>
             <span></span>
         </a>
         <div class="sidebar-toggler not-active">
