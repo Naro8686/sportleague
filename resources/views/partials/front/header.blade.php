@@ -33,7 +33,7 @@
                 <li class="search" id="search">
                     <i class="fa fa-search"></i>
                 </li>
-                <li>
+                {{--<li>
                     <div class="humberger-wrapper d-none d-lg-block">
                         <div role="navigation" class="humberger-menu">
                             <div id="menuToggle">
@@ -53,7 +53,7 @@
                             </div>
                         </div>
                     </div>
-                </li>
+                </li>--}}
             </ul>
         </div>
     </div>
