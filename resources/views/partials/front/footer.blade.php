@@ -5,34 +5,25 @@
             <div class="col-lg-12">
                 <div class="brand-slider">
                     <div class="brant-item">
-                        <img src="{{ asset('front-assets/img/about-page/brand1.png') }}" alt="brand">
+                        <img src="{{ asset('front-assets/img/about-page/rossbury.png') }}" alt="brand">
                     </div>
                     <div class="brant-item">
-                        <img src="{{ asset('front-assets/img/about-page/brand2.png') }}" alt="brand">
+                        <img src="{{ asset('front-assets/img/about-page/serc.png') }}" alt="brand">
                     </div>
                     <div class="brant-item">
-                        <img src="{{ asset('front-assets/img/about-page/brand3.png') }}" alt="brand">
+                        <img src="{{ asset('front-assets/img/about-page/scc.png') }}" alt="brand">
                     </div>
                     <div class="brant-item">
-                        <img src="{{ asset('front-assets/img/about-page/brand4.png') }}" alt="brand">
+                        <img src="{{ asset('front-assets/img/about-page/sprint.png') }}" alt="brand">
                     </div>
                     <div class="brant-item">
-                        <img src="{{ asset('front-assets/img/about-page/brand5.png') }}" alt="brand">
+                        <img src="{{ asset('front-assets/img/about-page/wheelers.png') }}" alt="brand">
                     </div>
                     <div class="brant-item">
-                        <img src="{{ asset('front-assets/img/about-page/brand1.png') }}" alt="brand">
+                        <img src="{{ asset('front-assets/img/about-page/barrow.png') }}" alt="brand">
                     </div>
                     <div class="brant-item">
-                        <img src="{{ asset('front-assets/img/about-page/brand2.png') }}" alt="brand">
-                    </div>
-                    <div class="brant-item">
-                        <img src="{{ asset('front-assets/img/about-page/brand3.png') }}" alt="brand">
-                    </div>
-                    <div class="brant-item">
-                        <img src="{{ asset('front-assets/img/about-page/brand4.png') }}" alt="brand">
-                    </div>
-                    <div class="brant-item">
-                        <img src="{{ asset('front-assets/img/about-page/brand5.png') }}" alt="brand">
+                        <img src="{{ asset('front-assets/img/about-page/goreycc.png') }}" alt="brand">
                     </div>
                 </div>
             </div>
@@ -72,7 +63,7 @@
 {{--                <div class="col-lg-3 col-md-4">--}}
 {{--                    <div class="footer-widget widget widget_nav_menu">--}}
 {{--                        <ul>--}}
-{{--                            <li><a href="https://www.facebook.com/codingeek.net/" target="_blank"><i class="fa fa-facebook-f"></i></a></li>--}}
+{{--                            <li><a href="#" target="_blank"><i class="fa fa-facebook-f"></i></a></li>--}}
 {{--                            <li><a href="#" target="_blank"><i class="fa fa-twitter"></i></a></li>--}}
 {{--                            <li><a href="#" target="_blank"><i class="fa fa-instagram"></i></a></li>--}}
 {{--                            <li><a href="#" target="_blank"><i class="fa fa-youtube"></i></a></li>--}}
@@ -87,7 +78,7 @@
             <div class="row">
                 <div class="col-lg-12">
                     <div class="copyright-area-inner">
-{{--                        © Billa Trail 2019 All rights reserved. Powered with <i class="fa fa-heart"></i> by <a href="https://codingeek.net/" target="_blank">Codingeek</a>--}}
+{{--                        © 2020 All rights reserved. Powered with <i class="fa fa-heart"></i> by <a href="#" target="_blank">......</a>--}}
                     </div>
                 </div>
             </div>

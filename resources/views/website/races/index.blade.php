@@ -12,7 +12,7 @@
                             <div class="event-left-content">
                                 @foreach($races as $race)
                                     <div class="img-item row">
-                                        <div class="col-lg-4">
+                                        <div class="col-lg-3">
                                             <div class="row h-100">
                                                 <div class="img-left">
                                                     <img src="{{ asset('front-assets/img/event/event.png') }}" alt="">
@@ -23,11 +23,10 @@
                                                 </div>
                                             </div>
                                         </div>
-                                        <div class="col-lg-7 offset-lg-1 d-flex align-items-center">
+                                        <div class="col-lg-6 offset-lg-1 d-flex align-items-center">
                                             <div class="content">
-                                                <span class="text">{{ $race->name }}</span>
-                                                <h4>Club: {{ $race->club->name }}</h4>
-                                                <p>{{ $race->location }}</p>
+                                                <h3>Race: {{ $race->name }}</h3>
+                                                <h4>Location: <a href="{{ $race->location_link }}" target="_blank"> {{ $race->location }} <img src="{{ asset('front-assets/img/ext_link.png') }}" height="15" width="15" alt=""></a></h4>
                                             </div>
                                         </div>
                                     </div>

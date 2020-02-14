@@ -6,7 +6,7 @@
 
         <div class="container">
             <div class="row">
-                <div class="about-title about-title-1">About league</div>
+                <div class="about-title about-title-1">League Title</div>
             </div>
         </div>
         <div class="container">
@@ -25,16 +25,16 @@
                         </div>
                     </div>
                 </div>
-                <div class="col-lg-4 offset-lg-1">
+                <!--Gianni <div class="col-lg-4 offset-lg-1">
                     <div class="home-about-slider">
-                        @foreach($races as $race)
+                        @foreach($races as $race)test
                         <div class="single-item">
                             <img src="{{ asset('front-assets/img/home1/about-slider1.png') }}" alt="">
                             <h3>{{ $race->name }}</h3>
                         </div>
                         @endforeach
                     </div>
-                </div>
+                </div> Gianni -->
             </div>
         </div>
         <!-- <div class="ceramic animated slideRotateFromRight">Ceramic Speed</div> -->

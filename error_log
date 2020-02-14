@@ -1,0 +1,20 @@
+[13-Feb-2020 13:40:57 UTC] PHP Fatal error:  Uncaught Error: Class 'Illuminate\Foundation\Application' not found in /home/leaguemanager/public_html/demoapp/bootstrap/app.php:14
+Stack trace:
+#0 /home/leaguemanager/public_html/demoapp/artisan(18): require_once()
+#1 {main}
+  thrown in /home/leaguemanager/public_html/demoapp/bootstrap/app.php on line 14
+[13-Feb-2020 13:44:11 UTC] PHP Fatal error:  Uncaught Error: Class 'Illuminate\Foundation\Application' not found in /home/leaguemanager/public_html/demoapp/bootstrap/app.php:14
+Stack trace:
+#0 /home/leaguemanager/public_html/demoapp/artisan(18): require_once()
+#1 {main}
+  thrown in /home/leaguemanager/public_html/demoapp/bootstrap/app.php on line 14
+[13-Feb-2020 13:44:26 UTC] PHP Fatal error:  Uncaught Error: Class 'Illuminate\Foundation\Application' not found in /home/leaguemanager/public_html/demoapp/bootstrap/app.php:14
+Stack trace:
+#0 /home/leaguemanager/public_html/demoapp/artisan(18): require_once()
+#1 {main}
+  thrown in /home/leaguemanager/public_html/demoapp/bootstrap/app.php on line 14
+[13-Feb-2020 13:44:47 UTC] PHP Fatal error:  Uncaught Error: Class 'Illuminate\Foundation\Application' not found in /home/leaguemanager/public_html/demoapp/bootstrap/app.php:14
+Stack trace:
+#0 /home/leaguemanager/public_html/demoapp/artisan(18): require_once()
+#1 {main}
+  thrown in /home/leaguemanager/public_html/demoapp/bootstrap/app.php on line 14
