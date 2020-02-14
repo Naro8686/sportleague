@@ -3,7 +3,7 @@ $(function() {
 
   if($('#league_start_date').length) {
     $('#league_start_date').datepicker({
-      format: "mm/dd/yyyy",
+      format: "dd.mm.yyyy",
       todayHighlight: true,
       autoclose: true
     });
@@ -11,7 +11,7 @@ $(function() {
 
   if($('#league_end_date').length) {
     $('#league_end_date').datepicker({
-      format: "mm/dd/yyyy",
+      format: "dd.mm.yyyy",
       todayHighlight: true,
       autoclose: true
     });
@@ -19,7 +19,7 @@ $(function() {
 
   if($('#race_date').length) {
     $('#race_date').datepicker({
-      format: "mm/dd/yyyy",
+      format: "dd.mm.yyyy",
       todayHighlight: true,
       autoclose: true
     });

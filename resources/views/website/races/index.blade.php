@@ -17,7 +17,7 @@
                                                 <div class="img-left">
                                                     <img src="{{ asset('front-assets/img/event/event.png') }}" alt="">
                                                     <div class="time">
-                                                        <h3>{{ date('Y m.d', strtotime($race->date)) }}</h3>
+                                                        <h3>{{ date('M d', strtotime($race->date)) }}</h3>
                                                         <span>{{ $race->start_time }}</span>
                                                     </div>
                                                 </div>

@@ -20,8 +20,8 @@
                     <tbody>
                     @foreach($payments as $key => $item)
                         <tr data-entry-id="{{ $item->id }}">
-                            <td>{{ $item->user->email ?? '' }}</td>
-                            <td>{{ $item->user->first_name . ' ' . $item->user->last_name  ?? '' }}</td>
+                            <td>{{ $item->email ?? '' }}</td>
+                            <td>{{ $item->full_name ?? '' }}</td>
                             <td>{{ $item->amount ?? '' }}</td>
                             <td><a href="{{ $item->invoice_url ?? '' }}">URL</a></td>
                             <td>{{ $item->created_at ?? '' }}</td>

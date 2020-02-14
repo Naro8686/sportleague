@@ -21,7 +21,7 @@ class CreateRacesTable extends Migration
             $table->longText('location_link');
             $table->string('start_time');
             $table->unsignedBigInteger('club_id');
-            $table->foreign('club_id')->references( 'id')->on('clubs');
+            $table->foreign('club_id')->references( 'id')->on('clubs')->onDelete('cascade');
             $table->string('max_marshals');
             $table->string('min_marshals')->nullable();
             $table->timestamps();

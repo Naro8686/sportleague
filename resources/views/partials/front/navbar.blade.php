@@ -5,5 +5,7 @@
     @if(!Auth::check())
         <li class="{{ (Request::is('login') ) ? 'current-menu-item' : '' }}"><a href="{{ route('login') }}">Sign In</a></li>
         <li class="{{ (Request::is('register') ) ? 'current-menu-item' : '' }}"><a href="{{ route('register') }}">Sign Up</a></li>
+    @else
+    <li><a href="{{ route('admin.home') }}">Dashboard</a></li>
     @endif
 </ul>
