@@ -17,8 +17,13 @@ class CreatePaymentsTable extends Migration
             $table->bigIncrements('id');
             $table->unsignedBigInteger('user_id');
             $table->foreign('user_id')->references( 'id')->on('users');
+            $table->string('order_id')->nullable();
             $table->string('status');
-            $table->string('amount');
+            $table->string('email')->nullable();
+            $table->string('payer_id')->nullable();
+            $table->string('full_name')->nullable();
+            $table->string('amount')->nullable();
+            $table->string('currency_code')->nullable();
             $table->string('invoice_url')->nullable();
             $table->timestamps();
         });

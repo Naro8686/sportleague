@@ -8,6 +8,7 @@ use App\Models\League;
 use App\Models\Payments;
 use App\Models\RaceCategory;
 use App\Models\Races;
+use App\User;
 use Carbon\Carbon;
 use Exception;
 use Illuminate\Http\Request;
@@ -84,21 +85,42 @@ class PaymentController extends Controller
      */
     public function success(Request $request)
     {
-        $league = League::find(1);
         Payments::updateOrCreate(
             ['user_id' => Auth::user()->id],
             [
+                'order_id' => $request->id,
                 'status' => 'success',
-                'amount' => $league->price
+                'email' => $request->payer['email_address'],
+                'payer_id' => $request->payer['payer_id'],
+                'full_name' => $request->payer['name']['given_name'] . ' ' . $request->payer['name']['surname'],
+                'amount' => $request->purchase_units[0]['amount']['value'],
+                'currency_code' => $request->purchase_units[0]['amount']['currency_code'],
             ]
         );
 
-        return redirect()->route('admin.step-two');
+        return 'success';
+    }
+
+    public function pay() {
+        $league = League::find(1);
+        return view('website.payments.index', compact('league'));
     }
 
     public function payments(){
         $payments = Payments::all();
 
         return view('admin.payments.index', compact('payments'));
+    }
+
+    public function paid(Request $request){
+        $payment = Payments::where('user_id', $request->user_id)->first();
+        if (is_null($payment)){
+            Payments::create([
+                'user_id' => $request->user_id,
+                'status' => 'success',
+            ]);
+        }else{
+            $payment->delete();
+        }
     }
 }

@@ -11,6 +11,8 @@ Route::get('register', 'Auth\RegisterController@registerPage')->name('register')
 Route::get('payment', 'Front\PaymentController@payment')->name('payment');
 Route::get('cancel', 'Front\PaymentController@cancel')->name('payment.cancel');
 Route::get('payment/success', 'Front\PaymentController@success')->name('payment.success');
+Route::get('pay', 'Front\PaymentController@pay')->name('pay');
+Route::post('payment-success', 'Front\PaymentController@success')->name('payment.success');
 
 // Change Password Routes...
 Route::get('change_password', 'Auth\ChangePasswordController@showChangePasswordForm')->name('auth.change_password');
@@ -33,7 +35,6 @@ Route::group(['middleware' => ['auth'], 'prefix' => 'admin', 'as' => 'admin.'], 
 
     /* Races */
     Route::resource('races', 'Admin\RacesController');
-    Route::get('my-races', 'Admin\RacesController@myRaces')->name('my-races');
     Route::post('/present', 'Admin\RacesController@present');
     Route::get('marshals-pdf/{id}', 'Admin\RacesController@pdf')->name('marshals-pdf');
     Route::get('races-pdf', 'Admin\RacesController@races_pdf')->name('races-pdf');
@@ -42,4 +43,5 @@ Route::group(['middleware' => ['auth'], 'prefix' => 'admin', 'as' => 'admin.'], 
 
     // Payment routes
     Route::get('payments', 'Front\PaymentController@payments')->name('payments');
+    Route::post('paid', 'Front\PaymentController@paid')->name('paid');
 });

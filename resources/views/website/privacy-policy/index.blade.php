@@ -16,7 +16,7 @@
                     <div class="row">
                         <div class="explore_right">
                             <h1>{{ $policy->title }}</h1>
-                            <p>{{ $policy->text }}</p>
+                            <p>{!! $policy->text !!}</p>
                         </div>
                     </div>
                 </div>

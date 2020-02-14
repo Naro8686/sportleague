@@ -132,11 +132,6 @@ class RacesController extends Controller
         return redirect()->route('admin.races.index');
     }
 
-    public function myRaces() {
-        $user = Auth::user();
-        return view('admin.races.my-races', compact('user'));
-    }
-
     public function pdf($id) {
         if (! Gate::allows('races_manage') && ! Gate::allows('view_races') ) {
             return abort(401);

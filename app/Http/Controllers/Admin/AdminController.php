@@ -4,6 +4,7 @@ namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
 use App\Models\Clubs;
+use App\Models\Payments;
 use App\Models\RaceCategory;
 use App\User;
 use Illuminate\Http\Request;
@@ -31,17 +32,19 @@ class AdminController extends Controller
      */
     public function index()
     {
-        $users = DB::table('users')
-            ->leftJoin('user_races', 'users.id', '=', 'user_races.user_id')
-            ->where('user_id', '!=', null)
-            ->get()
-            ->unique('id');
-        $clubs = Clubs::all();
-        $categories = RaceCategory::all();
         if (! Gate::allows('view_users') && ! Gate::allows('users_manage') ) {
             return view('admin.home');
         }else{
-            return view('admin.reports.index', compact(['users', 'clubs', 'categories']));
+            $users = DB::table('users')
+                ->leftJoin('user_races', 'users.id', '=', 'user_races.user_id')
+                ->where('user_id', '!=', null)
+                ->get()
+                ->unique('id');
+            $clubs = Clubs::all();
+            $categories = RaceCategory::all();
+            $user_ids = Payments::all()->pluck('user_id');
+            $not_paid = User::whereNotIn('id', $user_ids)->where('id', '!=', 1)->get();
+            return view('admin.reports.index', compact(['users', 'clubs', 'categories', 'not_paid']));
         }
     }
 }

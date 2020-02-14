@@ -103,15 +103,6 @@
                 </li>
             @endcanany
 
-            @if(Auth::user()->races->count())
-            <li class="nav_items {{ request()->is('admin/my-races') || request()->is('admin/my-races/*') ? 'active' : '' }}">
-                <a href="{{ route('admin.my-races') }}" class="nav-link">
-                    <i class="link-icon" data-feather="truck"></i>
-                    <span class="link-title">{{ _e('My Races') }}</span>
-                </a>
-            </li>
-            @endif
-
             <li class="nav_items {{ request()->is('admin/settings') || request()->is('admin/settings/*') ? 'active' : '' }}">
                 <a href="{{ route('admin.users.edit', \Illuminate\Support\Facades\Auth::user()->id) }}" class="nav-link">
                     <i class="link-icon" data-feather="settings"></i>

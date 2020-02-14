@@ -6001,7 +6001,7 @@ ul.wp-block-latest-posts.is-grid.alignwide {
               font-size: 22px; }
               @media only screen and (max-width: 1400px) {
                 .event-tab .tab-content .event-left-content .img-item .img-left .time h3 {
-                  font-size: 18px; } }
+                  font-size: 15px; } }
               .event-tab .tab-content .event-left-content .img-item .img-left .time h3:before {
                 position: absolute;
                 content: '';

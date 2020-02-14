@@ -81,6 +81,30 @@
                 </div>
             </div>
 
+            <div class="mt-4">
+                <div class="table-responsive">
+                    <table class=" table table-bordered table-striped table-hover">
+                        <thead>
+                        <tr>
+                            <th>Paid</th>
+                            <th>Full name</th>
+                            <th>Email</th>
+                        </tr>
+                        </thead>
+                        <tbody>
+                        @foreach($not_paid as $key => $user)
+                            <tr>
+                                <td><input type="checkbox" data-id="{{ $user->id }}" class="user_paid"></td>
+                                <td>{{ $user->first_name ?? '' }} {{ $user->last_name ?? '' }}</td>
+                                <td>{{ $user->email ?? '' }}</td>
+                            </tr>
+                        @endforeach
+                        </tbody>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+
         </div>
     </div>
 @endsection
@@ -88,7 +112,20 @@
     @parent
     <script>
         $(function () {
+            $(document).on('click', ".user_paid", function(){
+                let user_id = $(this).data('id');
 
+                $.ajax({
+                    type:'POST',
+                    url:'/admin/paid',
+                    headers: {
+                        'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+                    },
+                    data:{
+                        user_id: user_id
+                    },
+                });
+            });
         })
     </script>
 @endsection
