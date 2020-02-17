@@ -46,7 +46,7 @@
                             <tbody>
                             @foreach(Auth::user()->races as $key => $item)
                                 <tr data-entry-id="{{ $item->id }}">
-                                    <td>{{ $item->date ?? '' }}</td>
+                                    <td>{{ date('Y.m.d', $item->date) ?? '' }}</td>
                                     <td>{{ $item->name ?? '' }}</td>
                                     <td>{{ $item->location ?? '' }}</td>
                                     <td>{{ $item->start_time ?? '' }}</td>

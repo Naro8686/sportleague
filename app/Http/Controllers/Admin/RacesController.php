@@ -14,6 +14,7 @@ use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Gate;
 use App\Http\Requests\Admin\StoreOrUpdateRacesRequest;
 use PDF;
+use function GuzzleHttp\Psr7\str;
 
 class RacesController extends Controller
 {
@@ -31,7 +32,7 @@ class RacesController extends Controller
             return abort(401);
         }
 
-        $data = Races::all();
+        $data = Races::orderBy('date', 'asc')->get();
         return view($this->view_path.'index', compact('data'));
     }
 
@@ -62,6 +63,7 @@ class RacesController extends Controller
         if (! Gate::allows('races_manage') ) {
             return abort(401);
         }
+        $request['date'] = strtotime($request->date);
         Races::create($request->all());
 
         return redirect()->route('admin.races.index');
@@ -110,6 +112,7 @@ class RacesController extends Controller
             return abort(401);
         }
 
+        $request->date = strtotime($request->date);
         $race->update($request->all());
         return redirect()->route('admin.races.index');
     }

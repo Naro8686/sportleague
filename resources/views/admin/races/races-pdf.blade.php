@@ -2,7 +2,7 @@
 <html>
 <head>
     <meta charset="utf-8">
-    <title>Registration details</title>
+    <title>{{ _e('Registration details') }}</title>
     <style>
         .table.table-bordered {
             border-top: 1px solid #e8ebf1;
@@ -72,13 +72,13 @@
     <table class=" table table-bordered table-striped table-hover">
         <thead>
         <tr>
-            <th>Date</th>
-            <th>Name</th>
-            <th>Club</th>
-            <th>Phone</th>
-            <th>Location</th>
-            <th>Time</th>
-            <th>Min marshals</th>
+            <th>{{ _e('Date') }}</th>
+            <th>{{ _e('Name') }}</th>
+            <th>{{ _e('Club') }}</th>
+            <th>{{ _e('Phone') }}</th>
+            <th>{{ _e('Location') }}</th>
+            <th>{{ _e('Time') }}</th>
+            <th>{{ _e('Min marshals') }}</th>
         </tr>
         </thead>
         <tbody>

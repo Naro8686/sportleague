@@ -2,7 +2,7 @@
 <html>
 <head>
     <meta charset="utf-8">
-    <title>Registration details</title>
+    <title>{{ _e('Registration details') }}</title>
     <style>
         .table.table-bordered {
             border-top: 1px solid #e8ebf1;
@@ -72,7 +72,7 @@
     <table class=" table table-bordered table-striped table-hover">
         <thead>
         <tr>
-            <th width="140">Registrations by Club</th>
+            <th width="140">{{ _e('Registrations by Club') }}</th>
             @foreach($clubs as $club)
                 <th>{{ $club->name }}</th>
             @endforeach
@@ -94,7 +94,7 @@
         <table class=" table table-bordered table-striped table-hover">
             <thead>
             <tr>
-                <th width="140">Registrations by Category</th>
+                <th width="140">{{ _e('Registrations by Category') }}</th>
                 @foreach($categories as $category)
                     <th>{{ $category->name }}</th>
                 @endforeach
@@ -117,7 +117,7 @@
         <table class=" table table-bordered table-striped table-hover">
             <thead>
             <tr>
-                <th width="140">Breakdown by Club</th>
+                <th width="140">{{ _e('Breakdown by Club') }}</th>
                 @foreach($categories as $category)
                     <th>{{ $category->name }}</th>
                 @endforeach

@@ -30,9 +30,9 @@
         </div>
         <div class="nav-right-content">
             <ul class="nav-right-menu">
-                <li class="search" id="search">
-                    <i class="fa fa-search"></i>
-                </li>
+{{--                <li class="search" id="search">--}}
+{{--                    <i class="fa fa-search"></i>--}}
+{{--                </li>--}}
                 {{--<li>
                     <div class="humberger-wrapper d-none d-lg-block">
                         <div role="navigation" class="humberger-menu">

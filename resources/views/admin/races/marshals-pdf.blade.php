@@ -2,7 +2,7 @@
 <html>
 <head>
     <meta charset="utf-8">
-    <title>Race marshals</title>
+    <title>{{ _e('Race marshals') }}</title>
     <style>
         .table.table-bordered {
             border-top: 1px solid #e8ebf1;
@@ -72,12 +72,12 @@
     <table class=" table table-bordered table-striped table-hover datatable race_users">
         <thead>
         <tr>
-            <th>Present</th>
-            <th>Full name</th>
-            <th>Club</th>
-            <th>Category</th>
-            <th>Phone</th>
-            <th>Email</th>
+            <th>{{ _e('Present') }}</th>
+            <th>{{ _e('Full name') }}</th>
+            <th>{{ _e('Club') }}</th>
+            <th>{{ _e('Category') }}</th>
+            <th>{{ _e('Phone') }}</th>
+            <th>{{ _e('Email') }}</th>
         </tr>
         </thead>
         <tbody>

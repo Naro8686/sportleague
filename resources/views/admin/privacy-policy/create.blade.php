@@ -21,7 +21,7 @@
                     <div class="card-body">
 
                         <div class="form-group {{ $errors->has('title') ? 'has-error' : '' }}">
-                            <label for="title">Title</label>
+                            <label for="title">{{ _e('Title') }}</label>
                             <input type="text" id="title" name="title" class="form-control"
                                    value="{{ old('title', isset($data) ? $data->title : '') }}" required>
                             @if($errors->has('title'))
@@ -29,22 +29,16 @@
                                 {{ $errors->first('title') }}
                             </em>
                             @endif
-                            <p class="helper-block">
-
-                            </p>
                         </div>
 
                         <div class="form-group {{ $errors->has('text') ? 'has-error' : '' }}">
-                            <label for="text">Text</label>
+                            <label for="text">{{ _e('Text') }}</label>
                             <textarea type="text" id="text" name="text" class="form-control">{{ old('text', isset($data) ? $data->text : '') }}</textarea>
                             @if($errors->has('text'))
                             <em class="invalid-feedback">
                                 {{ $errors->first('text') }}
                             </em>
                             @endif
-                            <p class="helper-block">
-
-                            </p>
                         </div>
 
                     </div>
@@ -53,7 +47,7 @@
 
         </div>
 
-        <input class="btn btn-danger" type="submit" value="Save">
+        <input class="btn btn-danger" type="submit" value="{{ _e('Save') }}">
         </form>
     </div>
 

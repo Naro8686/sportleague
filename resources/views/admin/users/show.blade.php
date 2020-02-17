@@ -2,38 +2,38 @@
 @section('content')
 
     <div class="card">
-        <div class="card-header">Show user</div>
+        <div class="card-header">{{ _e('Show user') }}</div>
 
         <div class="card-body">
             <div class="mb-2">
                 <table class="table table-bordered table-striped">
                     <tbody>
                     <tr>
-                        <th>Name</th>
+                        <th>{{ _e('Name') }}</th>
                         <td>{{ $user->first_name }} {{ $user->last_name }}</td>
                     </tr>
                     <tr>
-                        <th>Email</th>
+                        <th>{{ _e('Email') }}</th>
                         <td>{{ $user->email }}</td>
                     </tr>
                     <tr>
-                        <th>Phone</th>
+                        <th>{{ _e('Phone') }}</th>
                         <td>{{ $user->phone }}</td>
                     </tr>
                     @if($user->race_category)
                         <tr>
-                            <th>Race category</th>
+                            <th>{{ _e('Race category') }}</th>
                             <td>{{ $user->race_category }}</td>
                         </tr>
                     @endif
                     @if($user->club->count())
                         <tr>
-                            <th>Club</th>
+                            <th>{{ _e('Club') }}</th>
                             <td>{{ $user->club[0]->name }}</td>
                         </tr>
                     @endif
                     <tr>
-                        <th>Roles</th>
+                        <th>{{ _e('Roles') }}</th>
                         <td>
                             @foreach($user->roles()->pluck('name') as $role)
                                 <span class="label label-info label-many">{{ $role }}</span>
@@ -42,25 +42,25 @@
                     </tr>
                     </tbody>
                 </table>
-                <a style="margin-top:20px;" class="btn btn-default" href="{{ url()->previous() }}">Back to list</a>
+                <a style="margin-top:20px;" class="btn btn-default" href="{{ url()->previous() }}">{{ _e('Back to list') }}</a>
             </div>
         </div>
     </div>
 
     <div class="card mt-4">
-        <div class="card-header">User races</div>
+        <div class="card-header">{{ _e('User races') }}</div>
 
         <div class="card-body">
             <div class="mb-2">
                 <table class=" table table-bordered table-striped table-hover user_races_table">
                     <thead>
                     <tr>
-                        <th>Name</th>
-                        <th>Location</th>
-                        <th>Location Link</th>
-                        <th>Start time</th>
-                        <th>Min marshals</th>
-                        <th>Max participants</th>
+                        <th>{{ _e('Name') }}</th>
+                        <th>{{ _e('Location') }}</th>
+                        <th>{{ _e('Location Link') }}</th>
+                        <th>{{ _e('Start time') }}</th>
+                        <th>{{ _e('Min marshals') }}</th>
+                        <th>{{ _e('Max participants') }}</th>
                     </tr>
                     </thead>
                     <tbody>
@@ -68,7 +68,7 @@
                         <tr data-entry-id="{{ $race->id }}">
                             <td>{{ $race->name ?? '' }}</td>
                             <td>{{ $race->location ?? '' }}</td>
-                            <td><a href="{{ $race->location_link ?? '' }}">Link</a></td>
+                            <td><a href="{{ $race->location_link ?? '' }}">{{ _e('Link') }}</a></td>
                             <td>{{ $race->start_time ?? '' }}</td>
                             <td>{{ $race->min_marshals ?? '' }} ( {{ $race->users->count() }} Registered )</td>
                             <td>{{ $race->max_marshals ?? '' }}</td>

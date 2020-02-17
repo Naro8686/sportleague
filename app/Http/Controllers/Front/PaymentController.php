@@ -182,7 +182,7 @@ class PaymentController extends Controller
             'detail' => [
                 'invoice_number' => strtotime($date->toDateTimeString()) . Auth::user()->id,
                 'reference' => 'deal-ref',
-                'currency_code' => 'USD',
+                'currency_code' => 'EUR',
             ],
             'invoicer' => [
                 'name' => [
@@ -200,10 +200,10 @@ class PaymentController extends Controller
             'items' => [
                 0 => [
                     "name" => "Sport League",
-                    "description" => "Sport League description.",
+                    "description" => "Wexford Cycling League",
                     "quantity" => "1",
                     "unit_amount" => [
-                        "currency_code" => "USD",
+                        "currency_code" => "EUR",
                         "value" => $league->price . ".00"
                     ],
                     "unit_of_measure" => "QUANTITY"

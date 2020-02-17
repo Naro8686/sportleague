@@ -2,49 +2,47 @@
 @section('content')
 
     <div class="card">
-        <div class="card-header">
-            Show Race
-        </div>
+        <div class="card-header">{{ _e('Show Race') }}</div>
         <div class="card-body">
             <div class="mb-2">
                 <table class="table table-bordered table-striped">
                     <tbody>
                     <tr>
-                        <th>Date</th>
+                        <th>{{ _e('Date') }}</th>
                         <td>{{ $race->date }}</td>
                     </tr>
                     <tr>
-                        <th>Name</th>
+                        <th>{{ _e('Name') }}</th>
                         <td>{{ $race->name }}</td>
                     </tr>
                     <tr>
-                        <th>Location</th>
+                        <th>{{ _e('Location') }}</th>
                         <td>{{ $race->location }}</td>
                     </tr>
                     <tr>
-                        <th>Location link</th>
+                        <th>{{ _e('Location link') }}</th>
                         <td><a href="{{ $item->location_link ?? '' }}" target="_blank">Link</a></td>
                     </tr>
                     <tr>
-                        <th>Start time</th>
+                        <th>{{ _e('Start time') }}</th>
                         <td>{{ $race->start_time }}</td>
                     </tr>
                     <tr>
-                        <th>Min marshals</th>
+                        <th>{{ _e('Min marshals') }}</th>
                         <td>{{ $race->min_marshals }}</td>
                     </tr>
                     <tr>
-                        <th>Max participants</th>
+                        <th>{{ _e('Max participants') }}</th>
                         <td>{{ $race->max_marshals }}</td>
                     </tr>
                     <tr>
-                        <th>No. of marshals</th>
+                        <th>{{ _e('No. of marshals') }}</th>
                         <td>{{ $race->users->count() }}</td>
                     </tr>
                     </tbody>
                 </table>
                 <a style="margin-top:20px;" class="btn btn-default" href="{{ url()->previous() }}">
-                    Back to list
+                    {{ _e('Back to list') }}
                 </a>
             </div>
 
@@ -59,12 +57,12 @@
                     <table class=" table table-bordered table-striped table-hover datatable race_users">
                         <thead>
                         <tr>
-                            <th>Present</th>
-                            <th>Full name</th>
-                            <th>Club</th>
-                            <th>Category</th>
-                            <th>Phone</th>
-                            <th>Email</th>
+                            <th>{{ _e('Present') }}</th>
+                            <th>{{ _e('Full name') }}</th>
+                            <th>{{ _e('Club') }}</th>
+                            <th>{{ _e('Category') }}</th>
+                            <th>{{ _e('Phone') }}</th>
+                            <th>{{ _e('Email') }}</th>
                         </tr>
                         </thead>
                         <tbody>

@@ -2,19 +2,19 @@
 @section('content')
     <div style="margin-bottom: 10px;" class="row">
         <div class="col-lg-12">
-            <a class="btn btn-success" href="{{ route("admin.texts.create") }}">Add text</a>
+            <a class="btn btn-success" href="{{ route("admin.texts.create") }}">{{ _e('Add text') }}</a>
         </div>
     </div>
     <div class="card">
-        <div class="card-header">Texts list</div>
+        <div class="card-header">{{ _e('Texts list') }}</div>
         <div class="card-body">
             <div class="table-responsive">
                 <table class=" table table-bordered table-striped table-hover datatable datatable_text">
                     <thead>
                     <tr>
-                        <th>Key</th>
-                        <th>Value</th>
-                        <th>Actions</th>
+                        <th>{{ _e('Key') }}</th>
+                        <th>{{ _e('Value') }}</th>
+                        <th>{{ _e('Actions') }}</th>
                     </tr>
                     </thead>
                     <tbody>
@@ -23,11 +23,11 @@
                         <td>{{ $item->key ?? '' }}</td>
                         <td>{{ $item->value ?? '' }}</td>
                         <td>
-                            <a class="btn btn-xs btn-info" href="{{ route('admin.texts.edit', $item->id) }}">Edit</a>
+                            <a class="btn btn-xs btn-info" href="{{ route('admin.texts.edit', $item->id) }}">{{ _e('Edit') }}</a>
                             <form action="{{ route('admin.texts.destroy', $item->id) }}" method="POST" onsubmit="return confirm('Are you sure?');" style="display: inline-block;">
                                 <input type="hidden" name="_method" value="DELETE">
                                 <input type="hidden" name="_token" value="{{ csrf_token() }}">
-                                <input type="submit" class="btn btn-xs btn-danger" value="Delete">
+                                <input type="submit" class="btn btn-xs btn-danger" value="{{ _e('Delete') }}">
                             </form>
                         </td>
                     </tr>

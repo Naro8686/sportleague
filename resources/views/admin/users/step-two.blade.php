@@ -7,13 +7,13 @@
                     <div class="row">
                         <div class="col-md-12 pl-md-0">
                             <div class="auth-form-wrapper px-4 py-5">
-                                <a href="#" class="noble-ui-logo d-block mb-2">Your payment was successfully.</a>
-                                <h5 class="text-muted font-weight-normal mb-4">Select 2 events to finish registration</h5>
+                                <a href="#" class="noble-ui-logo d-block mb-2">{{ _e('Your payment was successfully.') }}</a>
+                                <h5 class="text-muted font-weight-normal mb-4">{{ _e('Select 2 events to finish registration') }}</h5>
                                 <form class="forms-sample" method="POST" action="{{ route('select-races') }}">
                                     @csrf
 
                                     <div class="form-group">
-                                        <label>Phone</label>
+                                        <label>{{ _e('Phone') }}</label>
                                         <input name="phone" type="text" class="form-control{{ $errors->has('phone') ? ' is-invalid' : '' }}" required placeholder="Phone" value="{{ old('phone', null) }}">
                                         @if($errors->has('phone'))
                                             <div class="invalid-feedback">
@@ -23,7 +23,7 @@
                                     </div>
 
                                     <div class="form-group">
-                                        <label>Club</label>
+                                        <label>{{ _e('Club') }}</label>
                                         <select name="club">
                                             @foreach($clubs as $club)
                                                 <option value="{{ $club->id }}">{{ $club->name }}</option>
@@ -32,7 +32,7 @@
                                     </div>
 
                                     <div class="form-group">
-                                        <label>Race category</label>
+                                        <label>{{ _e('Race category') }}</label>
                                         <select name="race_category">
                                             @foreach($race_categories as $race_category)
                                                 <option value="{{ $race_category->name }}">{{ $race_category->name }}</option>
@@ -41,7 +41,7 @@
                                     </div>
 
                                     <div class="form-group">
-                                        <label>Events to marshal</label>
+                                        <label>{{ _e('Events to marshal') }}</label>
                                         <select class="register_events" name="event[]" multiple required>
                                             @foreach($races as $race)
                                                 @if($race->max_marshals && $race->max_marshals <= $race->users->count() )
@@ -54,7 +54,7 @@
                                     </div>
 
                                     <div class="mt-3">
-                                        <button type="submit" class="btn btn-primary mr-2 mb-2 mb-md-0">Finish</button>
+                                        <button type="submit" class="btn btn-primary mr-2 mb-2 mb-md-0">{{ _e('Finish') }}</button>
                                     </div>
                                 </form>
                             </div>

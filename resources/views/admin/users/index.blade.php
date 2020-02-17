@@ -3,28 +3,26 @@
     @canany('users_manage')
         <div style="margin-bottom: 10px;" class="row">
             <div class="col-lg-12">
-                <a class="btn btn-success" href="{{ route("admin.users.create") }}">
-                    Add user
-                </a>
+                <a class="btn btn-success" href="{{ route("admin.users.create") }}">{{ _e('Add user') }}</a>
             </div>
         </div>
     @endcanany
     <div class="card">
-        <div class="card-header">Users list</div>
+        <div class="card-header">{{ _e('Users list') }}</div>
 
         <div class="card-body">
             <div class="table-responsive">
                 <table class=" table table-bordered table-striped table-hover datatable datatable-User">
                     <thead>
                     <tr>
-                        <th>Full name</th>
-                        <th>Phone</th>
-                        <th>Email</th>
-                        <th>Club</th>
-                        <th>Race category</th>
-                        <th>Type</th>
+                        <th>{{ _e('Full name') }}</th>
+                        <th>{{ _e('Phone') }}</th>
+                        <th>{{ _e('Email') }}</th>
+                        <th>{{ _e('Club') }}</th>
+                        <th>{{ _e('Race category') }}</th>
+                        <th>{{ _e('Type') }}</th>
                         @canany('users_manage')
-                            <th></th>
+                            <th>Actions</th>
                         @endcanany
                     </tr>
                     </thead>
@@ -48,18 +46,18 @@
                             @canany('users_manage')
                                 <td>
                                     <a class="btn btn-xs btn-primary" href="{{ route('admin.users.show', $user->id) }}">
-                                        View
+                                        {{ _e('View') }}
                                     </a>
                                     <a class="btn btn-xs btn-info" href="{{ route('admin.users.edit', $user->id) }}">
-                                        Edit
+                                        {{ _e('Edit') }}
                                     </a>
                                     <form action="{{ route('admin.users.destroy', $user->id) }}" method="POST"
-                                          onsubmit="return confirm('{{ trans('global.areYouSure') }}');"
+                                          onsubmit="return confirm('Are you sure?');"
                                           style="display: inline-block;">
                                         <input type="hidden" name="_method" value="DELETE">
                                         <input type="hidden" name="_token" value="{{ csrf_token() }}">
                                         <input type="submit" class="btn btn-xs btn-danger"
-                                               value="{{ trans('global.delete') }}">
+                                               value="{{ _e('Delete') }}">
                                     </form>
                                 </td>
                             @endcanany
