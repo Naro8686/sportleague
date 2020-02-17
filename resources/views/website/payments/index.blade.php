@@ -53,7 +53,7 @@
                         url:'/payment-success',
                         data: details,
                         success:function(){
-                            window.location.href = "{{URL::to('admin/step-two')}}"
+                            window.location.href = "{{URL::to('step-two')}}"
                         }
                     });
                 });

@@ -9,7 +9,7 @@
                             <div class="auth-form-wrapper px-4 py-5">
                                 <a href="#" class="noble-ui-logo d-block mb-2">Your payment was successfully.</a>
                                 <h5 class="text-muted font-weight-normal mb-4">Select 2 events to finish registration</h5>
-                                <form class="forms-sample" method="POST" action="{{ route('admin.select-races') }}">
+                                <form class="forms-sample" method="POST" action="{{ route('select-races') }}">
                                     @csrf
 
                                     <div class="form-group">

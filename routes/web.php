@@ -11,14 +11,16 @@ Route::get('register', 'Auth\RegisterController@registerPage')->name('register')
 Route::get('payment', 'Front\PaymentController@payment')->name('payment');
 Route::get('cancel', 'Front\PaymentController@cancel')->name('payment.cancel');
 Route::get('payment/success', 'Front\PaymentController@success')->name('payment.success');
-Route::get('pay', 'Front\PaymentController@pay')->name('pay');
+Route::get('pay', 'Front\PaymentController@pay')->name('pay')->middleware('auth');
 Route::post('payment-success', 'Front\PaymentController@success')->name('payment.success');
+Route::get('step-two', 'Front\PaymentController@stepTwo')->name('step-two')->middleware(['auth', 'paid']);
+Route::post('select-races', 'Front\PaymentController@selectRaces')->name('select-races')->middleware('auth');
 
 // Change Password Routes...
 Route::get('change_password', 'Auth\ChangePasswordController@showChangePasswordForm')->name('auth.change_password');
 Route::patch('change_password', 'Auth\ChangePasswordController@changePassword')->name('auth.change_password');
 
-Route::group(['middleware' => ['auth'], 'prefix' => 'admin', 'as' => 'admin.'], function () {
+Route::group(['middleware' => ['auth', 'profile'], 'prefix' => 'admin', 'as' => 'admin.'], function () {
     Route::get('/', 'Admin\AdminController@index')->name('home');
     Route::resource('permissions', 'Admin\PermissionsController');
     Route::resource('roles', 'Admin\RolesController');
@@ -38,8 +40,6 @@ Route::group(['middleware' => ['auth'], 'prefix' => 'admin', 'as' => 'admin.'], 
     Route::post('/present', 'Admin\RacesController@present');
     Route::get('marshals-pdf/{id}', 'Admin\RacesController@pdf')->name('marshals-pdf');
     Route::get('races-pdf', 'Admin\RacesController@races_pdf')->name('races-pdf');
-    Route::get('step-two', 'Admin\UsersController@stepTwo')->name('step-two');
-    Route::post('select-races', 'Admin\UsersController@selectRaces')->name('select-races');
 
     // Payment routes
     Route::get('payments', 'Front\PaymentController@payments')->name('payments');

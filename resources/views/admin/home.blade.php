@@ -9,16 +9,14 @@
                     <div class="card-body">
                         <div class="mb-4 mb-md-3">
                             <h6 class="card-title mb-0">Hello {{ Auth::user()->first_name }}!</h6>
-                            @if(is_null(Auth::user()->payment) || Auth::user()->payment->status != 'success')
-                                <p class="text-muted tx-13 my-3 mb-md-0"><a href="{{ route('payment')  }}">Pay</a> to fully use the site</p>
-                            @else
-                                <div class="d-flex w-100 justify-content-between align-items-center">
-                                    <p class="text-muted tx-13 my-3 mb-md-0">Welcome to dashboard</p>
-                                    <a href="{{ Auth::user()->payment->invoice_url }}" target="_blank">
-                                        <img src="{{ asset('pdf.png') }}" alt="Download PDF" width="40"> Receipt
-                                    </a>
-                                </div>
-                            @endif
+                            <div class="d-flex w-100 justify-content-between align-items-center">
+                                <p class="text-muted tx-13 my-3 mb-md-0">{{ _e('Welcome to dashboard') }}</p>
+                                @if(!is_null(Auth::user()->payment->invoice_url))
+                                <a href="{{ Auth::user()->payment->invoice_url }}" target="_blank">
+                                    <img src="{{ asset('pdf.png') }}" alt="Download PDF" width="40"> {{ _e('Receipt') }}
+                                </a>
+                                @endif
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -30,7 +28,7 @@
             <div class="col-12 col-xl-12 grid-margin stretch-card">
                 <div class="card">
                 <div class="card-header">
-                    You are registered to marshal the following races
+                    {{ _e('You are registered to marshal the following races') }}
                 </div>
 
                 <div class="card-body">
@@ -38,11 +36,11 @@
                         <table class=" table table-bordered table-striped table-hover datatable datatable-User">
                             <thead>
                             <tr>
-                                <th>Race date</th>
-                                <th>Race name</th>
-                                <th>Location</th>
-                                <th>Start time</th>
-                                <th>Register date</th>
+                                <th>{{ _e('Race date') }}</th>
+                                <th>{{ _e('Race name') }}</th>
+                                <th>{{ _e('Location') }}</th>
+                                <th>{{ _e('Start time') }}</th>
+                                <th>{{ _e('Register date') }}</th>
                             </tr>
                             </thead>
                             <tbody>

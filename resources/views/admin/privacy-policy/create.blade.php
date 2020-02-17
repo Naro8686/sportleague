@@ -3,8 +3,8 @@
 <div class="page-content">
     <nav class="page-breadcrumb">
         <ol class="breadcrumb">
-            <li class="breadcrumb-item"><a href="{{ route('admin.privacy-policy.index') }}">Privacy Policy page</a></li>
-            <li class="breadcrumb-item active" aria-current="page">Create</li>
+            <li class="breadcrumb-item"><a href="{{ route('admin.privacy-policy.index') }}">{{ _e('Privacy Policy page') }}</a></li>
+            <li class="breadcrumb-item active" aria-current="page">{{ _e('Create') }}</li>
         </ol>
     </nav>
     <div class="form-block">
@@ -14,9 +14,7 @@
         <div id="accordion" class="mb-3">
             <div class="card">
                 <div class="card-header" id="headingOne">
-                    <h5 class="mb-0">
-                        Content
-                    </h5>
+                    <h5 class="mb-0">{{ _e('Content') }}</h5>
                 </div>
 
                 <div>

@@ -6,7 +6,7 @@ use Closure;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 
-class Paid
+class EmptyProfile
 {
     /**
      * Handle an incoming request.
@@ -17,8 +17,8 @@ class Paid
      */
     public function handle($request, Closure $next)
     {
-        if (is_null(Auth::user()->payment) && Auth::user()->hasRole('participants')) {
-            return redirect()->route('pay');
+        if (Auth::user()->hasRole('participants') && is_null(Auth::user()->phone) ) {
+            return redirect()->route('step-two');
         }
         return $next($request);
     }

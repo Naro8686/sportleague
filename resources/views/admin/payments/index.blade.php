@@ -1,20 +1,18 @@
 @extends('layouts.admin')
 @section('content')
     <div class="card">
-        <div class="card-header w-100 d-flex justify-content-between align-items-center">
-            Payments
-        </div>
+        <div class="card-header w-100 d-flex justify-content-between align-items-center">{{ _e('Payments') }}</div>
 
         <div class="card-body">
             <div class="table-responsive">
                 <table class=" table table-bordered table-striped table-hover datatable datatable-payments">
                     <thead>
                     <tr>
-                        <th>Email</th>
-                        <th>Full name</th>
-                        <th>Amount</th>
-                        <th>Invoice URL</th>
-                        <th>Date</th>
+                        <th>{{ _e('Email') }}</th>
+                        <th>{{ _e('Full name') }}</th>
+                        <th>{{ _e('Amount') }}</th>
+                        <th>{{ _e('Invoice URL') }}</th>
+                        <th>{{ _e('Date') }}</th>
                     </tr>
                     </thead>
                     <tbody>
@@ -23,7 +21,7 @@
                             <td>{{ $item->email ?? '' }}</td>
                             <td>{{ $item->full_name ?? '' }}</td>
                             <td>{{ $item->amount ?? '' }}</td>
-                            <td><a href="{{ $item->invoice_url ?? '' }}">URL</a></td>
+                            <td><a href="{{ $item->invoice_url ?? '' }}">{{ _e('URL') }}</a></td>
                             <td>{{ $item->created_at ?? '' }}</td>
                         </tr>
                     @endforeach

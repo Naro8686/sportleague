@@ -50,12 +50,12 @@
                         <span class="link-title">{{ _e('Roles') }}</span>
                     </a>
                 </li>
-                <li class="nav_items {{ request()->is('admin/permissions') || request()->is('admin/permissions/*') ? 'active' : '' }}">
-                    <a href="{{ route('admin.permissions.index') }}" class="nav-link">
-                        <i class="link-icon" data-feather="key"></i>
-                        <span class="link-title">{{ _e('Permissions') }}</span>
-                    </a>
-                </li>
+{{--                <li class="nav_items {{ request()->is('admin/permissions') || request()->is('admin/permissions/*') ? 'active' : '' }}">--}}
+{{--                    <a href="{{ route('admin.permissions.index') }}" class="nav-link">--}}
+{{--                        <i class="link-icon" data-feather="key"></i>--}}
+{{--                        <span class="link-title">{{ _e('Permissions') }}</span>--}}
+{{--                    </a>--}}
+{{--                </li>--}}
             @endif
 
             @canany(['league_manage'])
@@ -95,7 +95,7 @@
             @endcanany
 
             @canany(['users_manage', 'view_users'])
-                <li class="nav_items {{ request()->is('admin/users') || request()->is('admin/users/*') ? 'active' : '' }}">
+                <li class="nav_items {{ request()->is('admin/users') || request()->is('admin/users/*') && !request()->is('admin/users/*/edit') ? 'active' : '' }}">
                     <a href="{{ route('admin.users.index') }}" class="nav-link">
                         <i class="link-icon" data-feather="user"></i>
                         <span class="link-title">{{ _e('Users') }}</span>
@@ -103,7 +103,7 @@
                 </li>
             @endcanany
 
-            <li class="nav_items {{ request()->is('admin/settings') || request()->is('admin/settings/*') ? 'active' : '' }}">
+            <li class="nav_items {{ request()->is('admin/users/*/edit') ? 'active' : '' }}">
                 <a href="{{ route('admin.users.edit', \Illuminate\Support\Facades\Auth::user()->id) }}" class="nav-link">
                     <i class="link-icon" data-feather="settings"></i>
                     <span class="link-title">{{ _e('Profile') }}</span>

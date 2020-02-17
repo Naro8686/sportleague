@@ -2,9 +2,7 @@
 @section('content')
     @canany(['league_manage'])
         <div class="card">
-            <div class="card-header">
-                League settings
-            </div>
+            <div class="card-header">{{ _e('League settings') }}</div>
 
             <div class="card-body">
                 <form action="{{ route("admin.league.update", [$league->id]) }}" method="POST">
@@ -22,9 +20,6 @@
                                 {{ $errors->first('start_date') }}
                             </em>
                         @endif
-                        <p class="helper-block">
-
-                        </p>
                     </div>
 
                     <div class="form-group {{ $errors->has('end_date') ? 'has-error' : '' }}">
@@ -38,9 +33,6 @@
                                 {{ $errors->first('end_date') }}
                             </em>
                         @endif
-                        <p class="helper-block">
-
-                        </p>
                     </div>
 
                     <div class="form-group {{ $errors->has('price') ? 'has-error' : '' }}">
@@ -64,16 +56,12 @@
                                 {{ $errors->first('min_marshals') }}
                             </em>
                         @endif
-                        <p class="helper-block">
-
-                        </p>
                     </div>
 
                     <div>
-                        <input class="btn btn-danger" type="submit" value="Save">
+                        <input class="btn btn-danger" type="submit" value="{{ _e('Save') }}">
                     </div>
                 </form>
-
 
             </div>
         </div>
