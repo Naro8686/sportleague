@@ -11,7 +11,7 @@
 </head>
 <body>
 
-<script src="https://www.paypal.com/sdk/js?client-id=AXiFCJAVKRr8CkyUdX_exLrxJ9u_EWVGMSsX4YvdIMP_5hIJoObK7mJoH0pKEfBYA3i__KCW6XXCsX5J"></script>
+<script src="https://www.paypal.com/sdk/js?client-id=AXiFCJAVKRr8CkyUdX_exLrxJ9u_EWVGMSsX4YvdIMP_5hIJoObK7mJoH0pKEfBYA3i__KCW6XXCsX5J&currency=EUR"></script>
 
 <div class="signinup-area signup-area">
     <div class="content col-lg-6 col-md-6">
