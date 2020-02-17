@@ -18,10 +18,16 @@
                     <tbody>
                     @foreach($payments as $key => $item)
                         <tr data-entry-id="{{ $item->id }}">
-                            <td>{{ $item->email ?? '' }}</td>
-                            <td>{{ $item->full_name ?? '' }}</td>
+                            <td>{{ $item->email ?? $item->user->email }}</td>
+                            <td>{{ $item->full_name ?? $item->user->first_name . ' ' . $item->user->first_name }}</td>
                             <td>{{ $item->amount ?? '' }}</td>
-                            <td><a href="{{ $item->invoice_url ?? '' }}">{{ _e('URL') }}</a></td>
+                            <td>
+                                @if(is_null($item->invoice_url))
+                                    {{ _e('Cash') }}
+                                @else
+                                    <a href="{{ $item->invoice_url ?? '' }}">{{ _e('URL') }}</a>
+                                @endif
+                            </td>
                             <td>{{ $item->created_at ?? '' }}</td>
                         </tr>
                     @endforeach

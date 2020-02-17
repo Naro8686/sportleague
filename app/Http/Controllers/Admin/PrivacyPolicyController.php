@@ -102,7 +102,7 @@ class PrivacyPolicyController extends Controller
             'text' => $request->input('text'),
         ]);
 
-        return redirect()->route($this->view_path.'index');
+        return redirect()->back();
     }
 
 

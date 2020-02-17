@@ -121,6 +121,9 @@ class TextsSeed extends Seeder
             ['key' => 'Finish', 'value' => 'Finish'],
             ['key' => 'Race category', 'value' => 'Race category'],
             ['key' => 'Texts list', 'value' => 'Texts list'],
+            ['key' => 'FAQ', 'value' => 'FAQ'],
+            ['key' => 'Pages', 'value' => 'Pages'],
+            ['key' => 'Cash', 'value' => 'Cash'],
         ];
 
         foreach($texts as $text){
