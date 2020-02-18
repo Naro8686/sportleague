@@ -112,7 +112,7 @@ class RacesController extends Controller
             return abort(401);
         }
 
-        $request->date = strtotime($request->date);
+        $request['date'] = strtotime($request->date);
         $race->update($request->all());
         return redirect()->route('admin.races.index');
     }

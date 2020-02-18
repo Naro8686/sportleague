@@ -9,7 +9,7 @@
                     <tbody>
                     <tr>
                         <th>{{ _e('Date') }}</th>
-                        <td>{{ $race->date }}</td>
+                        <td>{{ date('d.m.Y', $race->date) }}</td>
                     </tr>
                     <tr>
                         <th>{{ _e('Name') }}</th>

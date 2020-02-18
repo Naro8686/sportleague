@@ -17,7 +17,7 @@ class EmptyProfile
      */
     public function handle($request, Closure $next)
     {
-        if (Auth::user()->hasRole('participants') && is_null(Auth::user()->phone) ) {
+        if ( Auth::user()->hasRole('participants') && !Auth::user()->races->count() || is_null(Auth::user()->phone) ) {
             return redirect()->route('step-two');
         }
         return $next($request);

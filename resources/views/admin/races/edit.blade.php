@@ -11,7 +11,7 @@
                     <div class="form-group {{ $errors->has('date') ? 'has-error' : '' }}">
                         <label for="race_date">{{ _e('Start date') }}</label>
                         <div class="input-group date datepicker" id="race_date">
-                            <input type="text" class="form-control" name="date" value="{{ old('date', isset($race) ? $race->date : '') }}" required>
+                            <input type="text" class="form-control" name="date" value="{{ old('date', isset($race) ? date('d.m.Y', $race->date) : '') }}" required>
                             <span class="input-group-addon"><i data-feather="calendar"></i></span>
                         </div>
                         @if($errors->has('date'))

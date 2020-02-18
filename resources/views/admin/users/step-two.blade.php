@@ -14,7 +14,7 @@
 
                                     <div class="form-group">
                                         <label>{{ _e('Phone') }}</label>
-                                        <input name="phone" type="text" class="form-control{{ $errors->has('phone') ? ' is-invalid' : '' }}" required placeholder="Phone" value="{{ old('phone', null) }}">
+                                        <input name="phone" type="text" class="form-control{{ $errors->has('phone') ? ' is-invalid' : '' }}" required placeholder="Phone" value="{{ old('phone', isset(Auth::user()->phone) ? Auth::user()->phone : null) }}">
                                         @if($errors->has('phone'))
                                             <div class="invalid-feedback">
                                                 {{ $errors->first('phone') }}

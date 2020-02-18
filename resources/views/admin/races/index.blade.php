@@ -33,7 +33,7 @@
                     <tbody>
                     @foreach($data as $key => $item)
                         <tr data-entry-id="{{ $item->id }}">
-                            <td>{{ date('Y.m.d', $item->date) ?? '' }}</td>
+                            <td>{{ date('d.m.Y', $item->date) ?? '' }}</td>
                             <td>{{ $item->name ?? '' }}</td>
                             <td>{{ $item->club->name ?? '' }} ( Phone: {{ $item->club->phone ?? '' }} )</td>
                             <td><a href="{{ $item->location_link ?? '' }}" target="_blank">{{ $item->location ?? '' }}</a></td>
@@ -70,6 +70,7 @@
                 buttons: [
                     'colvis'
                 ],
+                ordering: false
             })
         })
     </script>

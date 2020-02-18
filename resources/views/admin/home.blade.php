@@ -11,7 +11,7 @@
                             <h6 class="card-title mb-0">Hello {{ Auth::user()->first_name }}!</h6>
                             <div class="d-flex w-100 justify-content-between align-items-center">
                                 <p class="text-muted tx-13 my-3 mb-md-0">{{ _e('Welcome to dashboard') }}</p>
-                                @if(!is_null(Auth::user()->payment->invoice_url))
+                                @if(!is_null(Auth::user()->payment) && !is_null(Auth::user()->payment->invoice_url))
                                 <a href="{{ Auth::user()->payment->invoice_url }}" target="_blank">
                                     <img src="{{ asset('pdf.png') }}" alt="Download PDF" width="40"> {{ _e('Receipt') }}
                                 </a>
