@@ -46,7 +46,7 @@
             onApprove: function(data, actions) {
                 let timerInterval
                 Swal.fire({
-                    title: 'Please wait',
+                    title: 'Transferring you back to League Manager',
                     html: 'I will close in <b></b> milliseconds.',
                     timer: 2000,
                     timerProgressBar: true,
