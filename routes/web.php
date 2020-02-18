@@ -25,12 +25,15 @@ Route::group(['middleware' => ['auth', 'profile'], 'prefix' => 'admin', 'as' => 
     Route::get('/', 'Admin\AdminController@index')->name('home');
     Route::resource('permissions', 'Admin\PermissionsController');
     Route::resource('roles', 'Admin\RolesController');
-    Route::resource('users', 'Admin\UsersController');
     Route::resource('league', 'Admin\LeagueController');
     Route::resource('clubs', 'Admin\ClubsController');
     Route::resource('texts', 'Admin\TextsController');
     Route::resource('race-categories', 'Admin\RaceCategoryController');
     Route::resource('privacy-policy', 'Admin\PrivacyPolicyController');
+
+    /* Users */
+    Route::resource('users', 'Admin\UsersController');
+    Route::get('profile', 'Admin\UsersController@profile')->name('profile');
 
     /* Reports */
     Route::get('reports', 'Admin\ReportsController@index')->name('reports');

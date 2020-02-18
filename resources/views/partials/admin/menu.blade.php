@@ -74,12 +74,14 @@
                 </li>
             @endcanany
 
-            <li class="nav_items {{ request()->is('admin/users/*/edit') ? 'active' : '' }}">
-                <a href="{{ route('admin.users.edit', \Illuminate\Support\Facades\Auth::user()->id) }}" class="nav-link">
-                    <i class="link-icon" data-feather="settings"></i>
-                    <span class="link-title">{{ _e('Profile') }}</span>
-                </a>
-            </li>
+            @if(!Auth::user()->hasRole('administrator'))
+                <li class="nav_items {{ request()->is('admin/profile') ? 'active' : '' }}">
+                    <a href="{{ route('admin.profile') }}" class="nav-link">
+                        <i class="link-icon" data-feather="settings"></i>
+                        <span class="link-title">{{ _e('Profile') }}</span>
+                    </a>
+                </li>
+            @endif
 
             @canany(['privacy_manage'])
                 <li class="nav_items {{ request()->is('admin/privacy-policy') ? 'active' : '' }}">

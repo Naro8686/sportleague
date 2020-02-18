@@ -134,12 +134,14 @@ class UsersController extends Controller
             $user->syncRoles($roles);
         }
 
-        $user->club()->detach();
-        $user->club()->attach([
-            'club_id' => $data['club']
-        ]);
+        if($data['club']){
+            $user->club()->detach();
+            $user->club()->attach([
+                'club_id' => $data['club']
+            ]);
+        }
 
-        return redirect()->route('admin.users.edit', $user->id);
+        return redirect()->back();
     }
 
     public function show(User $user)
@@ -169,5 +171,16 @@ class UsersController extends Controller
         $user->delete();
 
         return redirect()->route('admin.users.index');
+    }
+
+    public function profile()
+    {
+        $user = Auth::user();
+        $roles = Role::get()->pluck('name', 'name');
+        $races = Races::all();
+        $clubs = Clubs::all();
+        $race_categories = RaceCategory::all();
+
+        return view('admin.users.profile', compact(['user', 'roles', 'races', 'clubs', 'race_categories']));
     }
 }
