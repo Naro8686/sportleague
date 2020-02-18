@@ -27,6 +27,18 @@
                         <span class="link-title">{{ _e('Payments') }}</span>
                     </a>
                 </li>
+                <li class="nav_items {{ request()->is('admin/roles') || request()->is('admin/roles/*') ? 'active' : '' }}">
+                    <a href="{{ route('admin.roles.index') }}" class="nav-link">
+                        <i class="link-icon" data-feather="eye"></i>
+                        <span class="link-title">{{ _e('Roles') }}</span>
+                    </a>
+                </li>
+                <li class="nav_items {{ request()->is('admin/permissions') || request()->is('admin/permissions/*') ? 'active' : '' }}">
+                    <a href="{{ route('admin.permissions.index') }}" class="nav-link">
+                        <i class="link-icon" data-feather="key"></i>
+                        <span class="link-title">{{ _e('Permissions') }}</span>
+                    </a>
+                </li>
             @endif
 
             @canany(['league_manage'])

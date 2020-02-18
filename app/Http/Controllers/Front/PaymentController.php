@@ -200,7 +200,7 @@ class PaymentController extends Controller
             ],
             'items' => [
                 0 => [
-                    "name" => "Sport League",
+                    "name" => " ",
                     "description" => "Wexford Cycling League",
                     "quantity" => "1",
                     "unit_amount" => [

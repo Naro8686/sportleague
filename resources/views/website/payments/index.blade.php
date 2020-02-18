@@ -29,6 +29,7 @@
 
 @include('partials.front.js')
 
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@9"></script>
 <script>
     $(document).ready(function () {
 
@@ -43,6 +44,32 @@
                 });
             },
             onApprove: function(data, actions) {
+                let timerInterval
+                Swal.fire({
+                    title: 'Please wait',
+                    html: 'I will close in <b></b> milliseconds.',
+                    timer: 2000,
+                    timerProgressBar: true,
+                    onBeforeOpen: () => {
+                        Swal.showLoading()
+                        timerInterval = setInterval(() => {
+                            const content = Swal.getContent()
+                            if (content) {
+                                const b = content.querySelector('b')
+                                if (b) {
+                                    b.textContent = Swal.getTimerLeft()
+                                }
+                            }
+                        }, 100)
+                    },
+                    onClose: () => {
+                        clearInterval(timerInterval)
+                    }
+                }).then((result) => {
+                    if (result.dismiss === Swal.DismissReason.timer) {
+                        console.log('I was closed by the timer')
+                    }
+                });
                 return actions.order.capture().then(function(details) {
                     $.ajax({
                         type:'POST',
