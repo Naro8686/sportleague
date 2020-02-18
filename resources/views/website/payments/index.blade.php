@@ -47,8 +47,8 @@
                 let timerInterval
                 Swal.fire({
                     title: 'Transferring you back to League Manager',
-                    html: 'I will close in <b></b> milliseconds.',
-                    timer: 2000,
+                    html: 'Thank you for your payment.<br> Please wait while we transfer you back',
+                    timer: 20000,
                     timerProgressBar: true,
                     onBeforeOpen: () => {
                         Swal.showLoading()
