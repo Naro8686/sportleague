@@ -78,19 +78,19 @@ class UsersController extends Controller
         $roles = $request->input('roles') ? $request->input('roles') : [];
         $user->assignRole($roles);
 
-        $club = Clubs::find($data['club']);
-        $club->users()->attach([
-            'user_id' => $user->id
-        ]);
-
-        if(isset($data['event'])){
-            foreach ($data['event'] as $event){
-                $race = Races::find($event);
-                $race->users()->attach([
-                    'user_id' => $user->id
-                ]);
-            }
-        }
+//        $club = Clubs::find($data['club']);
+//        $club->users()->attach([
+//            'user_id' => $user->id
+//        ]);
+//
+//        if(isset($data['event'])){
+//            foreach ($data['event'] as $event){
+//                $race = Races::find($event);
+//                $race->users()->attach([
+//                    'user_id' => $user->id
+//                ]);
+//            }
+//        }
 
         return redirect()->route('admin.users.index');
     }

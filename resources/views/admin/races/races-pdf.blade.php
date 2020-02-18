@@ -84,7 +84,7 @@
         <tbody>
         @foreach($data as $key => $item)
             <tr>
-                <td>{{ $item->date ?? '' }}</td>
+                <td>{{ date('d.m.Y', $item->date) ?? '' }}</td>
                 <td>{{ $item->name ?? '' }}</td>
                 <td>{{ $item->club->name ?? '' }}</td>
                 <td>{{ $item->club->phone ?? '' }}</td>

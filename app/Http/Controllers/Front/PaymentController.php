@@ -129,6 +129,7 @@ class PaymentController extends Controller
     {
         $user = Auth::user();
         $league = League::find(1);
+        $user->club()->detach();
         $user->club()->attach([
             'club_id' => $request->club
         ]);

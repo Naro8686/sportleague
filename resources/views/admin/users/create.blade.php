@@ -27,15 +27,15 @@
                 @endif
             </div>
 
-            <div class="form-group {{ $errors->has('phone') ? 'has-error' : '' }}">
-                <label for="phone">{{ _e('Phone') }}</label>
-                <input type="text" id="phone" name="phone" class="form-control" value="{{ old('phone', isset($user) ? $user->phone : '') }}" required>
-                @if($errors->has('phone'))
-                    <em class="invalid-feedback">
-                        {{ $errors->first('phone') }}
-                    </em>
-                @endif
-            </div>
+{{--            <div class="form-group {{ $errors->has('phone') ? 'has-error' : '' }}">--}}
+{{--                <label for="phone">{{ _e('Phone') }}</label>--}}
+{{--                <input type="text" id="phone" name="phone" class="form-control" value="{{ old('phone', isset($user) ? $user->phone : '') }}" required>--}}
+{{--                @if($errors->has('phone'))--}}
+{{--                    <em class="invalid-feedback">--}}
+{{--                        {{ $errors->first('phone') }}--}}
+{{--                    </em>--}}
+{{--                @endif--}}
+{{--            </div>--}}
 
             <div class="form-group {{ $errors->has('email') ? 'has-error' : '' }}">
                 <label for="email">{{ _e('Email') }}</label>
@@ -47,47 +47,47 @@
                 @endif
             </div>
 
-            <div class="form-group {{ $errors->has('club') ? 'has-error' : '' }}">
-                <label for="club">{{ _e('Club') }}</label>
-                <select name="club">
-                    @foreach($clubs as $club)
-                        <option value="{{ $club->id }}">{{ $club->name }}</option>
-                    @endforeach
-                </select>
-                @if($errors->has('club'))
-                    <em class="invalid-feedback">
-                        {{ $errors->first('club') }}
-                    </em>
-                @endif
-            </div>
+{{--            <div class="form-group {{ $errors->has('club') ? 'has-error' : '' }}">--}}
+{{--                <label for="club">{{ _e('Club') }}</label>--}}
+{{--                <select name="club">--}}
+{{--                    @foreach($clubs as $club)--}}
+{{--                        <option value="{{ $club->id }}">{{ $club->name }}</option>--}}
+{{--                    @endforeach--}}
+{{--                </select>--}}
+{{--                @if($errors->has('club'))--}}
+{{--                    <em class="invalid-feedback">--}}
+{{--                        {{ $errors->first('club') }}--}}
+{{--                    </em>--}}
+{{--                @endif--}}
+{{--            </div>--}}
 
-            <div class="form-group {{ $errors->has('race_category') ? 'has-error' : '' }}">
-                <label for="race_category">{{ _e('Race category') }}</label>
-                <select name="race_category">
-                    @foreach($race_categories as $category)
-                        <option value="{{ $category->name }}">{{ $category->name }}</option>
-                    @endforeach
-                </select>
-                @if($errors->has('race_category'))
-                    <em class="invalid-feedback">
-                        {{ $errors->first('race_category') }}
-                    </em>
-                @endif
-            </div>
+{{--            <div class="form-group {{ $errors->has('race_category') ? 'has-error' : '' }}">--}}
+{{--                <label for="race_category">{{ _e('Race category') }}</label>--}}
+{{--                <select name="race_category">--}}
+{{--                    @foreach($race_categories as $category)--}}
+{{--                        <option value="{{ $category->name }}">{{ $category->name }}</option>--}}
+{{--                    @endforeach--}}
+{{--                </select>--}}
+{{--                @if($errors->has('race_category'))--}}
+{{--                    <em class="invalid-feedback">--}}
+{{--                        {{ $errors->first('race_category') }}--}}
+{{--                    </em>--}}
+{{--                @endif--}}
+{{--            </div>--}}
 
-            <div class="form-group">
-                <label>{{ _e('Event to marshal') }}</label>
-                <select class="register_events" name="event[]" multiple>
-                    @foreach($races as $race)
-                        @if(!$race->max_marshals && $race->max_marshals > $race->users->count() || $race->min_marshals > $race->users->count() )
-                            <option value="{{ $race->id }}">{{ $race->name }}</option>
-                        @endif
-                    @endforeach
-                </select>
-                <div class="helper-block">
-                    {{ _e('Select 2 events to marshal') }}
-                </div>
-            </div>
+{{--            <div class="form-group">--}}
+{{--                <label>{{ _e('Event to marshal') }}</label>--}}
+{{--                <select class="register_events" name="event[]" multiple>--}}
+{{--                    @foreach($races as $race)--}}
+{{--                        @if(!$race->max_marshals && $race->max_marshals > $race->users->count() || $race->min_marshals > $race->users->count() )--}}
+{{--                            <option value="{{ $race->id }}">{{ $race->name }}</option>--}}
+{{--                        @endif--}}
+{{--                    @endforeach--}}
+{{--                </select>--}}
+{{--                <div class="helper-block">--}}
+{{--                    {{ _e('Select 2 events to marshal') }}--}}
+{{--                </div>--}}
+{{--            </div>--}}
 
             <div class="form-group {{ $errors->has('password') ? 'has-error' : '' }}">
                 <label for="password">{{ _e('Password') }}</label>

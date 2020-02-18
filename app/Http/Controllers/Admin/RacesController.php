@@ -168,7 +168,7 @@ class RacesController extends Controller
         if (! Gate::allows('races_manage') && ! Gate::allows('view_races') ) {
             return abort(401);
         }
-        $data = Races::all();
+        $data = Races::orderBy('date', 'asc')->get();
 
         $pdf = PDF::loadView('admin.races.races-pdf', compact('data'));
 
