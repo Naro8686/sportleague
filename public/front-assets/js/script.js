@@ -461,7 +461,7 @@
             dots: false,
             infinite: true,
             speed: 300,
-            slidesToShow: 5,
+            slidesToShow: 7,
             slidesToScroll: 4,
             responsive: [
                 {
@@ -584,7 +584,6 @@
             effect: 'coverflow',
             loop: true,
             centeredSlides: true,
-            slidesPerView: 'auto',
             slidesPerView: 3,
             initialSlide: 3,
             paginationClickable: true,

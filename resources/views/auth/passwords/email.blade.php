@@ -22,10 +22,16 @@
                 <a href="{{ route('home') }}"><img src="{{ asset('front-assets/img/logo-black.png') }}" alt="logo"></a>
             </div>
             <div class="panel-body">
+                @if (session('status'))
+                    <div class="alert alert-success">
+                        A link to reset your password has been sent to you. Please check your email
+                    </div>
+                @endif
+
                 <form method="POST" action="{{ route('password.email') }}">
                     {{ csrf_field() }}
                     <div class="form-group has-feedback">
-                        <input type="email" name="email" class="form-control" required="autofocus" placeholder="Email">
+                        <input type="email" name="email" class="form-control" placeholder="Email">
                         @if($errors->has('email'))
                             <em class="invalid-feedback">
                                 {{ $errors->first('email') }}

@@ -15,7 +15,7 @@ class TextsSeed extends Seeder
             ['key' => 'Copyright', 'value' => 'Copyright 2019. All rights reserved'],
             ['key' => 'Actions', 'value' => 'Actions'],
             ['key' => 'Add', 'value' => 'Add'],
-            ['key' => 'View', 'value' => 'View'],
+            ['key' => 'View', 'value' => 'View Details'],
             ['key' => 'Edit', 'value' => 'Edit'],
             ['key' => 'Delete', 'value' => 'Delete'],
             ['key' => 'Go to web', 'value' => 'Go to web'],
@@ -124,6 +124,12 @@ class TextsSeed extends Seeder
             ['key' => 'FAQ', 'value' => 'FAQ'],
             ['key' => 'Pages', 'value' => 'Pages'],
             ['key' => 'Cash', 'value' => 'Cash'],
+            ['key' => 'DATE REGISTERED', 'value' => 'DATE REGISTERED'],
+            ['key' => 'Your Receipt', 'value' => 'Your Receipt'],
+            ['key' => 'Welcome to your dashboard', 'value' => 'Welcome to your dashboard'],
+            ['key' => 'Export Race List', 'value' => 'Export Race List'],
+            ['key' => 'Export Marshal List', 'value' => 'Export Marshal List'],
+            ['key' => 'No. of marshals registered', 'value' => 'No. of marshals registered'],
             ['key' => 'Link', 'value' => 'Link'],
         ];
 

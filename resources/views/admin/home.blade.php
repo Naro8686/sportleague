@@ -10,10 +10,10 @@
                         <div class="mb-4 mb-md-3">
                             <h6 class="card-title mb-0">Hello {{ Auth::user()->first_name }}!</h6>
                             <div class="d-flex w-100 justify-content-between align-items-center">
-                                <p class="text-muted tx-13 my-3 mb-md-0">{{ _e('Welcome to dashboard') }}</p>
+                                <p class="text-muted tx-13 my-3 mb-md-0">{{ _e('Welcome to your dashboard') }}</p>
                                 @if(!is_null(Auth::user()->payment) && !is_null(Auth::user()->payment->invoice_url))
                                 <a href="{{ Auth::user()->payment->invoice_url }}" target="_blank">
-                                    <img src="{{ asset('pdf.png') }}" alt="Download PDF" width="40"> {{ _e('Receipt') }}
+                                    <img src="{{ asset('pdf.png') }}" alt="Download PDF" width="40"> {{ _e('Your Receipt') }}
                                 </a>
                                 @endif
                             </div>
@@ -40,7 +40,7 @@
                                 <th>{{ _e('Race name') }}</th>
                                 <th>{{ _e('Location') }}</th>
                                 <th>{{ _e('Start time') }}</th>
-                                <th>{{ _e('Register date') }}</th>
+                                <th>{{ _e('DATE REGISTERED') }}</th>
                             </tr>
                             </thead>
                             <tbody>
@@ -48,7 +48,13 @@
                                 <tr data-entry-id="{{ $item->id }}">
                                     <td>{{ date('Y.m.d', $item->date) ?? '' }}</td>
                                     <td>{{ $item->name ?? '' }}</td>
-                                    <td>{{ $item->location ?? '' }}</td>
+                                    <td>
+                                        @if($item->location_link != '')
+                                            <a href="{{ $item->location_link }}" target="_blank">{{ $item->location ?? '' }}</a>
+                                        @else
+                                            {{ $item->location ?? '' }}
+                                        @endif
+                                    </td>
                                     <td>{{ $item->start_time ?? '' }}</td>
                                     <td>{{ $item->pivot->created_at ?? '' }}</td>
                                 </tr>

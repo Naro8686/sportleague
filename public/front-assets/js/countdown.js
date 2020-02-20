@@ -2,10 +2,11 @@
             Countdown
         ---------------------*/
 //Countdown Timer
+console.log(123);
 const countdown = document.querySelector(".countdown");
 
 //Set Launch Date
-const launchDate = new Date("May 28, 2021 13:00:00").getTime();
+const launchDate = new Date("Feb 25, 2020 13:00:00").getTime();
 
 //Update every second
 const intvl = setInterval(function() {

@@ -143,7 +143,7 @@ class RacesController extends Controller
 
         $pdf = PDF::loadView('admin.races.marshals-pdf', compact('race'));
 
-        return $pdf->download('marshals.pdf');
+        return $pdf->download($race->name . '_Marshals.pdf');
     }
 
     public function present(Request $request){

@@ -11,7 +11,7 @@
         <div class="card-header w-100 d-flex justify-content-between align-items-center">
             Races list
             <a href="{{action('Admin\RacesController@races_pdf')}}">
-                <img src="{{ asset('pdf.png') }}" alt="Download PDF" width="40">
+                <img src="{{ asset('pdf.png') }}" alt="Download PDF" width="40">{{ _e('Export Race List') }}
             </a>
         </div>
 

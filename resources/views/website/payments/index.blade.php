@@ -11,7 +11,7 @@
 </head>
 <body>
 
-<script src="https://www.paypal.com/sdk/js?client-id=AXiFCJAVKRr8CkyUdX_exLrxJ9u_EWVGMSsX4YvdIMP_5hIJoObK7mJoH0pKEfBYA3i__KCW6XXCsX5J&currency=EUR"></script>
+<script src="https://www.paypal.com/sdk/js?client-id=AXiFCJAVKRr8CkyUdX_exLrxJ9u_EWVGMSsX4YvdIMP_5hIJoObK7mJoH0pKEfBYA3i__KCW6XXCsX5J&currency=EUR&buyer-country=IE&locale=en_IE"></script>
 
 <div class="signinup-area signup-area">
     <div class="content col-lg-6 col-md-6">
@@ -20,7 +20,7 @@
                 <a href="{{ route('home') }}"><img src="{{ asset('front-assets/img/logo.png') }}" alt="logo"></a>
             </div>
             <div class="panel-body">
-                <h2>Pay to continue</h2>
+                <h2>Please Complete Payment To Continue</h2>
                 <div id="paypal-buttons"></div>
             </div>
         </div>

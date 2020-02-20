@@ -17,11 +17,7 @@
                     </tr>
                     <tr>
                         <th>{{ _e('Location') }}</th>
-                        <td>{{ $race->location }}</td>
-                    </tr>
-                    <tr>
-                        <th>{{ _e('Location link') }}</th>
-                        <td><a href="{{ $item->location_link ?? '' }}" target="_blank">Link</a></td>
+                        <td><a href="{{ $item->location_link ?? '' }}" target="_blank">{{ $race->location }}</a></td>
                     </tr>
                     <tr>
                         <th>{{ _e('Start time') }}</th>
@@ -36,7 +32,7 @@
                         <td>{{ $race->max_marshals }}</td>
                     </tr>
                     <tr>
-                        <th>{{ _e('No. of marshals') }}</th>
+                        <th>{{ _e('No. of marshals registered') }}</th>
                         <td>{{ $race->users->count() }}</td>
                     </tr>
                     </tbody>
@@ -50,7 +46,7 @@
                 <div class="d-flex justify-content-between align-items-center">
                     <h4 class="my-3">Marshals ({{ $race->users->count() }})</h4>
                     <a href="{{ route('admin.marshals-pdf', $race->id)}}">
-                        <img src="{{ asset('pdf.png') }}" alt="Download PDF" width="40">
+                        <img src="{{ asset('pdf.png') }}" alt="Download PDF" width="40">{{ _e('Export Marshal List') }}
                     </a>
                 </div>
                 <div class="table-responsive">

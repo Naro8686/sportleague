@@ -68,24 +68,24 @@
                                 </div>
                                 <ul class="list-unstyled">
                                     <li class="">
-                                                        <span class="low-upper-case">
-                                                            <i class="fa fa-file-text" aria-hidden="true"></i>
-                                                        </span>&nbsp; 1 lowercase &amp; 1 uppercase
+                                        <span class="low-upper-case">
+                                            <i class="fa fa-file-text" aria-hidden="true"></i>
+                                        </span>&nbsp; 1 lowercase &amp; 1 uppercase
                                     </li>
                                     <li class="">
-                                                        <span class="one-number">
-                                                            <i class="fa fa-file-text" aria-hidden="true"></i>
-                                                        </span>&nbsp; 1 number (0-9)
+                                        <span class="one-number">
+                                            <i class="fa fa-file-text" aria-hidden="true"></i>
+                                        </span>&nbsp; 1 number (0-9)
                                     </li>
                                     <li class="">
-                                                        <span class="one-special-char">
-                                                            <i class="fa fa-file-text" aria-hidden="true"></i>
-                                                        </span>&nbsp; 1 Special Character (!@#$%^&*).
+                                        <span class="one-special-char">
+                                            <i class="fa fa-file-text" aria-hidden="true"></i>
+                                        </span>&nbsp; 1 Special Character (!@#$%^&*).
                                     </li>
                                     <li class="">
-                                                        <span class="eight-character">
-                                                            <i class="fa fa-file-text" aria-hidden="true"></i>
-                                                        </span>&nbsp; Atleast 8 Character
+                                        <span class="eight-character">
+                                            <i class="fa fa-file-text" aria-hidden="true"></i>
+                                        </span>&nbsp; Atleast 8 Character
                                     </li>
                                 </ul>
                             </div>
