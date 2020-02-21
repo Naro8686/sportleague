@@ -131,6 +131,8 @@ class TextsSeed extends Seeder
             ['key' => 'Export Marshal List', 'value' => 'Export Marshal List'],
             ['key' => 'No. of marshals registered', 'value' => 'No. of marshals registered'],
             ['key' => 'Link', 'value' => 'Link'],
+            ['key' => 'Yes', 'value' => 'Yes'],
+            ['key' => 'No', 'value' => 'No'],
         ];
 
         foreach($texts as $text){
