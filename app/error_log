@@ -1,0 +1,4 @@
+[20-Feb-2020 23:19:35 UTC] PHP Fatal error:  Uncaught Error: Class 'Illuminate\Foundation\Auth\User' not found in /home/wexcycling/public_html/app/User.php:22
+Stack trace:
+#0 {main}
+  thrown in /home/wexcycling/public_html/app/User.php on line 22
