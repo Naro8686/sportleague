@@ -22,7 +22,7 @@
                         <th>{{ _e('Race category') }}</th>
                         <th>{{ _e('Type') }}</th>
                         @canany('users_manage')
-                            <th>{{ _e('Type') }}</th>
+                            <th>{{ _e('Paid') }}</th>
                             <th>Actions</th>
                         @endcanany
                     </tr>
