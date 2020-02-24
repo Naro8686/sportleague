@@ -1,0 +1,16 @@
+[22-Feb-2020 10:11:15 UTC] PHP Fatal error:  Uncaught Error: Class 'Illuminate\Cookie\Middleware\EncryptCookies' not found in /home/wexcycling/public_html/app/Http/Middleware/EncryptCookies.php:7
+Stack trace:
+#0 {main}
+  thrown in /home/wexcycling/public_html/app/Http/Middleware/EncryptCookies.php on line 7
+[22-Feb-2020 10:11:20 UTC] PHP Fatal error:  Uncaught Error: Class 'Illuminate\Foundation\Http\Middleware\TrimStrings' not found in /home/wexcycling/public_html/app/Http/Middleware/TrimStrings.php:7
+Stack trace:
+#0 {main}
+  thrown in /home/wexcycling/public_html/app/Http/Middleware/TrimStrings.php on line 7
+[22-Feb-2020 10:11:22 UTC] PHP Fatal error:  Uncaught Error: Class 'Illuminate\Foundation\Http\Middleware\VerifyCsrfToken' not found in /home/wexcycling/public_html/app/Http/Middleware/VerifyCsrfToken.php:7
+Stack trace:
+#0 {main}
+  thrown in /home/wexcycling/public_html/app/Http/Middleware/VerifyCsrfToken.php on line 7
+[24-Feb-2020 04:41:18 UTC] PHP Fatal error:  Uncaught Error: Class 'Illuminate\Foundation\Http\Middleware\TrimStrings' not found in /home/wexcycling/public_html/app/Http/Middleware/TrimStrings.php:7
+Stack trace:
+#0 {main}
+  thrown in /home/wexcycling/public_html/app/Http/Middleware/TrimStrings.php on line 7

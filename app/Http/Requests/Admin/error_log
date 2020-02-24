@@ -1,0 +1,40 @@
+[22-Feb-2020 16:49:09 UTC] PHP Fatal error:  Uncaught Error: Class 'Illuminate\Foundation\Http\FormRequest' not found in /home/wexcycling/public_html/app/Http/Requests/Admin/StoreOrUpdateClubsRequest.php:6
+Stack trace:
+#0 {main}
+  thrown in /home/wexcycling/public_html/app/Http/Requests/Admin/StoreOrUpdateClubsRequest.php on line 6
+[22-Feb-2020 16:49:11 UTC] PHP Fatal error:  Uncaught Error: Class 'Illuminate\Foundation\Http\FormRequest' not found in /home/wexcycling/public_html/app/Http/Requests/Admin/StoreOrUpdatePermissionsRequest.php:6
+Stack trace:
+#0 {main}
+  thrown in /home/wexcycling/public_html/app/Http/Requests/Admin/StoreOrUpdatePermissionsRequest.php on line 6
+[22-Feb-2020 16:49:13 UTC] PHP Fatal error:  Uncaught Error: Class 'Illuminate\Foundation\Http\FormRequest' not found in /home/wexcycling/public_html/app/Http/Requests/Admin/StoreOrUpdateRaceCategoryRequest.php:6
+Stack trace:
+#0 {main}
+  thrown in /home/wexcycling/public_html/app/Http/Requests/Admin/StoreOrUpdateRaceCategoryRequest.php on line 6
+[22-Feb-2020 16:49:15 UTC] PHP Fatal error:  Uncaught Error: Class 'Illuminate\Foundation\Http\FormRequest' not found in /home/wexcycling/public_html/app/Http/Requests/Admin/StoreOrUpdateRacesRequest.php:6
+Stack trace:
+#0 {main}
+  thrown in /home/wexcycling/public_html/app/Http/Requests/Admin/StoreOrUpdateRacesRequest.php on line 6
+[22-Feb-2020 16:49:17 UTC] PHP Fatal error:  Uncaught Error: Class 'Illuminate\Foundation\Http\FormRequest' not found in /home/wexcycling/public_html/app/Http/Requests/Admin/StoreOrUpdateRolesRequest.php:6
+Stack trace:
+#0 {main}
+  thrown in /home/wexcycling/public_html/app/Http/Requests/Admin/StoreOrUpdateRolesRequest.php on line 6
+[22-Feb-2020 16:49:22 UTC] PHP Fatal error:  Uncaught Error: Class 'Illuminate\Foundation\Http\FormRequest' not found in /home/wexcycling/public_html/app/Http/Requests/Admin/StoreOrUpdateTextsRequest.php:6
+Stack trace:
+#0 {main}
+  thrown in /home/wexcycling/public_html/app/Http/Requests/Admin/StoreOrUpdateTextsRequest.php on line 6
+[22-Feb-2020 16:49:24 UTC] PHP Fatal error:  Uncaught Error: Class 'Illuminate\Foundation\Http\FormRequest' not found in /home/wexcycling/public_html/app/Http/Requests/Admin/StoreSelectRaceRequest.php:6
+Stack trace:
+#0 {main}
+  thrown in /home/wexcycling/public_html/app/Http/Requests/Admin/StoreSelectRaceRequest.php on line 6
+[22-Feb-2020 16:49:27 UTC] PHP Fatal error:  Uncaught Error: Class 'Illuminate\Foundation\Http\FormRequest' not found in /home/wexcycling/public_html/app/Http/Requests/Admin/StoreUsersRequest.php:6
+Stack trace:
+#0 {main}
+  thrown in /home/wexcycling/public_html/app/Http/Requests/Admin/StoreUsersRequest.php on line 6
+[22-Feb-2020 16:49:29 UTC] PHP Fatal error:  Uncaught Error: Class 'Illuminate\Foundation\Http\FormRequest' not found in /home/wexcycling/public_html/app/Http/Requests/Admin/UpdateLeagueRequest.php:7
+Stack trace:
+#0 {main}
+  thrown in /home/wexcycling/public_html/app/Http/Requests/Admin/UpdateLeagueRequest.php on line 7
+[22-Feb-2020 16:49:31 UTC] PHP Fatal error:  Uncaught Error: Class 'Illuminate\Foundation\Http\FormRequest' not found in /home/wexcycling/public_html/app/Http/Requests/Admin/UpdateUsersRequest.php:6
+Stack trace:
+#0 {main}
+  thrown in /home/wexcycling/public_html/app/Http/Requests/Admin/UpdateUsersRequest.php on line 6

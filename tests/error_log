@@ -1,0 +1,16 @@
+[21-Feb-2020 21:23:20 UTC] PHP Fatal error:  Uncaught Error: Class 'Illuminate\Foundation\Testing\TestCase' not found in /home/wexcycling/public_html/tests/TestCase.php:7
+Stack trace:
+#0 {main}
+  thrown in /home/wexcycling/public_html/tests/TestCase.php on line 7
+[22-Feb-2020 12:35:56 UTC] PHP Fatal error:  Uncaught Error: Class 'Illuminate\Foundation\Testing\TestCase' not found in /home/wexcycling/public_html/tests/TestCase.php:7
+Stack trace:
+#0 {main}
+  thrown in /home/wexcycling/public_html/tests/TestCase.php on line 7
+[22-Feb-2020 23:04:42 UTC] PHP Fatal error:  Uncaught Error: Class 'Illuminate\Foundation\Testing\TestCase' not found in /home/wexcycling/public_html/tests/TestCase.php:7
+Stack trace:
+#0 {main}
+  thrown in /home/wexcycling/public_html/tests/TestCase.php on line 7
+[22-Feb-2020 23:14:50 UTC] PHP Fatal error:  Uncaught Error: Class 'Illuminate\Foundation\Testing\TestCase' not found in /home/wexcycling/public_html/tests/TestCase.php:7
+Stack trace:
+#0 {main}
+  thrown in /home/wexcycling/public_html/tests/TestCase.php on line 7

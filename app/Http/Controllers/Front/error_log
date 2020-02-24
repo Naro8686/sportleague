@@ -1,0 +1,8 @@
+[22-Feb-2020 16:48:35 UTC] PHP Fatal error:  Uncaught Error: Class 'App\Http\Controllers\Controller' not found in /home/wexcycling/public_html/app/Http/Controllers/Front/PagesController.php:11
+Stack trace:
+#0 {main}
+  thrown in /home/wexcycling/public_html/app/Http/Controllers/Front/PagesController.php on line 11
+[22-Feb-2020 16:48:38 UTC] PHP Fatal error:  Uncaught Error: Class 'App\Http\Controllers\Controller' not found in /home/wexcycling/public_html/app/Http/Controllers/Front/PaymentController.php:22
+Stack trace:
+#0 {main}
+  thrown in /home/wexcycling/public_html/app/Http/Controllers/Front/PaymentController.php on line 22

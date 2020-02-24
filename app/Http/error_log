@@ -1,0 +1,12 @@
+[22-Feb-2020 04:01:16 UTC] PHP Fatal error:  Uncaught Error: Class 'Illuminate\Foundation\Http\Kernel' not found in /home/wexcycling/public_html/app/Http/Kernel.php:8
+Stack trace:
+#0 {main}
+  thrown in /home/wexcycling/public_html/app/Http/Kernel.php on line 8
+[22-Feb-2020 23:08:05 UTC] PHP Fatal error:  Uncaught Error: Class 'Illuminate\Foundation\Http\Kernel' not found in /home/wexcycling/public_html/app/Http/Kernel.php:8
+Stack trace:
+#0 {main}
+  thrown in /home/wexcycling/public_html/app/Http/Kernel.php on line 8
+[24-Feb-2020 04:37:40 UTC] PHP Fatal error:  Uncaught Error: Class 'Illuminate\Foundation\Http\Kernel' not found in /home/wexcycling/public_html/app/Http/Kernel.php:8
+Stack trace:
+#0 {main}
+  thrown in /home/wexcycling/public_html/app/Http/Kernel.php on line 8
