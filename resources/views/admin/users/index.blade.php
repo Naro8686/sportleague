@@ -21,8 +21,8 @@
                         <th>{{ _e('Club') }}</th>
                         <th>{{ _e('Race category') }}</th>
                         <th>{{ _e('Type') }}</th>
+                        <th>{{ _e('Paid') }}</th>
                         @canany('users_manage')
-                            <th>{{ _e('Paid') }}</th>
                             <th>Actions</th>
                         @endcanany
                     </tr>
@@ -44,14 +44,14 @@
                                     @endif
                                 @endforeach
                             </td>
+                            <td>
+                                @if($user->payment && $user->payment->status == 'success')
+                                    {{ _e('Yes') }}
+                                @else
+                                    {{ _e('No') }}
+                                @endif
+                            </td>
                             @canany('users_manage')
-                                <td>
-                                    @if($user->payment && $user->payment->status == 'success')
-                                        {{ _e('Yes') }}
-                                    @else
-                                        {{ _e('No') }}
-                                    @endif
-                                </td>
                                 <td>
                                     <a class="btn btn-xs btn-primary" href="{{ route('admin.users.show', $user->id) }}">
                                         {{ _e('View') }}

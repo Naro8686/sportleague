@@ -35,6 +35,7 @@
         <h3 class="mb-4">{{ _e('Registration details') }}</h3>
         <a href="{{action('Admin\ReportsController@registrationPDF')}}">
             <img src="{{ asset('pdf.png') }}" alt="Download PDF" width="40">
+            Export Registration Details
         </a>
     </div>
 

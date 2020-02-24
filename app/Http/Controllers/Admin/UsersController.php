@@ -134,7 +134,7 @@ class UsersController extends Controller
             $user->syncRoles($roles);
         }
 
-        if($data['club']){
+        if(isset($data['club'])){
             $user->club()->detach();
             $user->club()->attach([
                 'club_id' => $data['club']

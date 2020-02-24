@@ -46,11 +46,14 @@
                             <tbody>
                             @foreach(Auth::user()->races as $key => $item)
                                 <tr data-entry-id="{{ $item->id }}">
-                                    <td>{{ date('Y.m.d', $item->date) ?? '' }}</td>
+                                    <td>{{ date('d.m.Y', $item->date) ?? '' }}</td>
                                     <td>{{ $item->name ?? '' }}</td>
                                     <td>
                                         @if($item->location_link != '')
-                                            <a href="{{ $item->location_link }}" target="_blank">{{ $item->location ?? '' }}</a>
+                                            <a href="{{ $item->location_link }}" target="_blank">
+                                                {{ $item->location ?? '' }}
+                                                <img src="{{ asset('front-assets/img/ext_link.png') }}" class="ext_link">
+                                            </a>
                                         @else
                                             {{ $item->location ?? '' }}
                                         @endif

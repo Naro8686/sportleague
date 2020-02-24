@@ -23,7 +23,7 @@
             @if(Auth::user()->hasRole('administrator'))
                 <li class="nav_items {{ request()->is('admin/payments') ? 'active' : '' }}">
                     <a href="{{ route('admin.payments') }}" class="nav-link">
-                        <i class="link-icon" data-feather="eye"></i>
+                        <i class="link-icon" data-feather="shopping-cart"></i>
                         <span class="link-title">{{ _e('Payments') }}</span>
                     </a>
                 </li>
@@ -115,6 +115,15 @@
                     <a href="{{ route('admin.texts.index') }}" class="nav-link">
                         <i class="link-icon" data-feather="type"></i>
                         <span class="link-title">{{ _e('Texts') }}</span>
+                    </a>
+                </li>
+            @endcanany
+
+            @canany(['settings_manage'])
+                <li class="nav_items {{ request()->is('admin/settings') || request()->is('admin/settings/*') ? 'active' : '' }}">
+                    <a href="{{ route('admin.settings.index') }}" class="nav-link">
+                        <i class="link-icon" data-feather="settings"></i>
+                        <span class="link-title">{{ _e('Settings') }}</span>
                     </a>
                 </li>
             @endcanany
