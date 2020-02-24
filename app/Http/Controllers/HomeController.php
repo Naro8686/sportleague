@@ -29,13 +29,14 @@ class HomeController extends Controller
      */
     public function index()
     {
-        $league = League::first();
-        $races = Races::all();
-//        return view($this->view_path.'index', compact(['league', 'races']));
-
-        $coming_text = Settings::where('title', 'Coming Soon')->pluck('content')->first();
-        $coming_description = Settings::where('title', 'Coming Soon Description')->pluck('content')->first();
-        $coming_date = Settings::where('title', 'Coming Soon Date')->pluck('content')->first();
-        return view($this->view_path.'coming', compact(['coming_text', 'coming_description', 'coming_date']));
+        $coming = Settings::where('title', 'Coming Soon')->pluck('content')->first();
+        if(json_decode($coming, true)['show'] == 'true'){
+            $coming = json_decode($coming, true);
+            return view($this->view_path.'coming', compact(['coming']));
+        }else{
+            $league = League::first();
+            $races = Races::all();
+            return view($this->view_path.'index', compact(['league', 'races']));
+        }
     }
 }

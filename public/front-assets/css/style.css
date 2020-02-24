@@ -9184,3 +9184,6 @@ ul.wp-block-latest-posts.is-grid.alignwide {
 .reg_submit{
   color: #ffffff;
 }
+.event-left-content .content {
+  width: 100%;
+}

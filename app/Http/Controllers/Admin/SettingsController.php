@@ -7,6 +7,7 @@ use App\Http\Requests\Admin\StoreOrUpdateSettingsRequest;
 use App\Models\Settings;
 use Illuminate\Http\Response;
 use Illuminate\Support\Facades\Gate;
+use Illuminate\Http\Request;
 
 class SettingsController extends Controller
 {
@@ -109,5 +110,31 @@ class SettingsController extends Controller
         $data->delete();
 
         return redirect()->route($this->view_path.'index');
+    }
+
+    public function coming(){
+        if (! Gate::allows('settings_manage') ) {
+            return abort(401);
+        }
+        $setting = Settings::find(1);
+        $setting = json_decode($setting->content, true);
+
+        return view($this->view_path.'coming', compact('setting'));
+    }
+
+    public function updateComing(Request $request)
+    {
+        if (! Gate::allows('settings_manage') ) {
+            return abort(401);
+        }
+
+        $data = $request->only(['show', 'date', 'title', 'description']);
+
+        $text = Settings::findOrFail(1);
+        $text->update([
+            'content' => json_encode($data),
+        ]);
+
+        return redirect()->back();
     }
 }

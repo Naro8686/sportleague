@@ -29,6 +29,8 @@ Route::group(['middleware' => ['auth', 'profile'], 'prefix' => 'admin', 'as' => 
     Route::resource('clubs', 'Admin\ClubsController');
     Route::resource('texts', 'Admin\TextsController');
     Route::resource('settings', 'Admin\SettingsController');
+    Route::get('coming', 'Admin\SettingsController@coming')->name('coming');
+    Route::post('coming-update', 'Admin\SettingsController@updateComing')->name('coming-update');
     Route::resource('race-categories', 'Admin\RaceCategoryController');
     Route::resource('privacy-policy', 'Admin\PrivacyPolicyController');
 

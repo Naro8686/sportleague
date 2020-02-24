@@ -6,7 +6,7 @@
         </div>
     </div>
     <div class="card">
-        <div class="card-header">{{ _e('Texts list') }}</div>
+        <div class="card-header">{{ _e('Settings list') }}</div>
         <div class="card-body">
             <div class="table-responsive">
                 <table class=" table table-bordered table-striped table-hover datatable datatable_text">

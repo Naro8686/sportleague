@@ -50,9 +50,9 @@
                                     <td>{{ $item->name ?? '' }}</td>
                                     <td>
                                         @if($item->location_link != '')
-                                            <a href="{{ $item->location_link }}" target="_blank">
+                                            <a href="{{ $item->location_link }}" target="_blank" class="user_location">
                                                 {{ $item->location ?? '' }}
-                                                <img src="{{ asset('front-assets/img/ext_link.png') }}" class="ext_link">
+                                                <img src="{{ asset('admin-assets/assets/images/location.png') }}" class="ext_link">
                                             </a>
                                         @else
                                             {{ $item->location ?? '' }}

@@ -14,8 +14,8 @@
     <div class="content">
         <a href="{{ route('home') }}">
             <img src="{{ asset('front-assets/img/logo-black.png') }}" alt="logo"></a>
-        <h1>{{ $coming_text }}</h1>
-        <p>{{ $coming_description }}</p>
+        <h1>{{ $coming['title'] }}</h1>
+        <p>{{ $coming['description'] }}</p>
         <div class="countdown"></div>
     </div>
 </div>
@@ -29,7 +29,7 @@
     const countdown = document.querySelector(".countdown");
 
     //Set Launch Date
-    const launchDate = new Date("{{ $coming_date }}").getTime();
+    const launchDate = new Date("{{ $coming['date'] }}").getTime();
 
     //Update every second
     const intvl = setInterval(function() {
@@ -59,7 +59,7 @@
             clearInterval(intvl);
             //Style and ouput text
             countdown.style.color = "#17a2b8";
-            countdown.innerHTML = "Launched!";
+            countdown.innerHTML = "";
         }
     }, 1000);
 </script>

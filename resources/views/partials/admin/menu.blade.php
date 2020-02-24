@@ -120,8 +120,8 @@
             @endcanany
 
             @canany(['settings_manage'])
-                <li class="nav_items {{ request()->is('admin/settings') || request()->is('admin/settings/*') ? 'active' : '' }}">
-                    <a href="{{ route('admin.settings.index') }}" class="nav-link">
+                <li class="nav_items {{ request()->is('admin/coming') || request()->is('admin/coming/*') ? 'active' : '' }}">
+                    <a href="{{ route('admin.coming') }}" class="nav-link">
                         <i class="link-icon" data-feather="settings"></i>
                         <span class="link-title">{{ _e('Settings') }}</span>
                     </a>
