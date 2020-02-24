@@ -6,3 +6,191 @@ Stack trace:
 Stack trace:
 #0 {main}
   thrown in /home/wexcycling/public_html/config/database.php on line 16
+[21-Feb-2020 21:21:17 UTC] PHP Fatal error:  Uncaught Error: Call to undefined function env() in /home/wexcycling/public_html/config/app.php:28
+Stack trace:
+#0 {main}
+  thrown in /home/wexcycling/public_html/config/app.php on line 28
+[21-Feb-2020 21:21:22 UTC] PHP Fatal error:  Uncaught Error: Call to undefined function env() in /home/wexcycling/public_html/config/broadcasting.php:18
+Stack trace:
+#0 {main}
+  thrown in /home/wexcycling/public_html/config/broadcasting.php on line 18
+[21-Feb-2020 21:21:25 UTC] PHP Fatal error:  Uncaught Error: Call to undefined function env() in /home/wexcycling/public_html/config/cache.php:18
+Stack trace:
+#0 {main}
+  thrown in /home/wexcycling/public_html/config/cache.php on line 18
+[21-Feb-2020 21:21:27 UTC] PHP Fatal error:  Uncaught Error: Call to undefined function env() in /home/wexcycling/public_html/config/database.php:16
+Stack trace:
+#0 {main}
+  thrown in /home/wexcycling/public_html/config/database.php on line 16
+[21-Feb-2020 21:21:29 UTC] PHP Fatal error:  Uncaught Error: Call to undefined function storage_path() in /home/wexcycling/public_html/config/filesystems.php:48
+Stack trace:
+#0 {main}
+  thrown in /home/wexcycling/public_html/config/filesystems.php on line 48
+[21-Feb-2020 21:21:32 UTC] PHP Fatal error:  Uncaught Error: Call to undefined function env() in /home/wexcycling/public_html/config/laravellocalization.php:340
+Stack trace:
+#0 {main}
+  thrown in /home/wexcycling/public_html/config/laravellocalization.php on line 340
+[21-Feb-2020 21:21:36 UTC] PHP Fatal error:  Uncaught Error: Call to undefined function env() in /home/wexcycling/public_html/config/mail.php:19
+Stack trace:
+#0 {main}
+  thrown in /home/wexcycling/public_html/config/mail.php on line 19
+[21-Feb-2020 21:21:39 UTC] PHP Fatal error:  Uncaught Error: Call to undefined function env() in /home/wexcycling/public_html/config/paypal.php:8
+Stack trace:
+#0 {main}
+  thrown in /home/wexcycling/public_html/config/paypal.php on line 8
+[21-Feb-2020 21:21:44 UTC] PHP Fatal error:  Uncaught Error: Call to undefined function env() in /home/wexcycling/public_html/config/queue.php:18
+Stack trace:
+#0 {main}
+  thrown in /home/wexcycling/public_html/config/queue.php on line 18
+[21-Feb-2020 21:21:46 UTC] PHP Fatal error:  Uncaught Error: Call to undefined function env() in /home/wexcycling/public_html/config/services.php:18
+Stack trace:
+#0 {main}
+  thrown in /home/wexcycling/public_html/config/services.php on line 18
+[21-Feb-2020 21:21:49 UTC] PHP Fatal error:  Uncaught Error: Call to undefined function env() in /home/wexcycling/public_html/config/session.php:19
+Stack trace:
+#0 {main}
+  thrown in /home/wexcycling/public_html/config/session.php on line 19
+[21-Feb-2020 21:21:52 UTC] PHP Fatal error:  Uncaught Error: Call to undefined function resource_path() in /home/wexcycling/public_html/config/view.php:17
+Stack trace:
+#0 {main}
+  thrown in /home/wexcycling/public_html/config/view.php on line 17
+[22-Feb-2020 12:38:24 UTC] PHP Fatal error:  Uncaught Error: Call to undefined function env() in /home/wexcycling/public_html/config/app.php:28
+Stack trace:
+#0 {main}
+  thrown in /home/wexcycling/public_html/config/app.php on line 28
+[22-Feb-2020 12:42:16 UTC] PHP Fatal error:  Uncaught Error: Call to undefined function resource_path() in /home/wexcycling/public_html/config/view.php:17
+Stack trace:
+#0 {main}
+  thrown in /home/wexcycling/public_html/config/view.php on line 17
+[22-Feb-2020 12:43:28 UTC] PHP Fatal error:  Uncaught Error: Call to undefined function env() in /home/wexcycling/public_html/config/mail.php:19
+Stack trace:
+#0 {main}
+  thrown in /home/wexcycling/public_html/config/mail.php on line 19
+[22-Feb-2020 12:44:41 UTC] PHP Fatal error:  Uncaught Error: Call to undefined function env() in /home/wexcycling/public_html/config/cache.php:18
+Stack trace:
+#0 {main}
+  thrown in /home/wexcycling/public_html/config/cache.php on line 18
+[22-Feb-2020 19:34:40 UTC] PHP Fatal error:  Uncaught Error: Call to undefined function env() in /home/wexcycling/public_html/config/queue.php:18
+Stack trace:
+#0 {main}
+  thrown in /home/wexcycling/public_html/config/queue.php on line 18
+[22-Feb-2020 19:36:08 UTC] PHP Fatal error:  Uncaught Error: Call to undefined function env() in /home/wexcycling/public_html/config/paypal.php:8
+Stack trace:
+#0 {main}
+  thrown in /home/wexcycling/public_html/config/paypal.php on line 8
+[22-Feb-2020 19:37:22 UTC] PHP Fatal error:  Uncaught Error: Call to undefined function env() in /home/wexcycling/public_html/config/session.php:19
+Stack trace:
+#0 {main}
+  thrown in /home/wexcycling/public_html/config/session.php on line 19
+[22-Feb-2020 19:40:51 UTC] PHP Fatal error:  Uncaught Error: Call to undefined function env() in /home/wexcycling/public_html/config/services.php:18
+Stack trace:
+#0 {main}
+  thrown in /home/wexcycling/public_html/config/services.php on line 18
+[22-Feb-2020 19:42:36 UTC] PHP Fatal error:  Uncaught Error: Call to undefined function env() in /home/wexcycling/public_html/config/database.php:16
+Stack trace:
+#0 {main}
+  thrown in /home/wexcycling/public_html/config/database.php on line 16
+[22-Feb-2020 19:48:15 UTC] PHP Fatal error:  Uncaught Error: Call to undefined function storage_path() in /home/wexcycling/public_html/config/filesystems.php:48
+Stack trace:
+#0 {main}
+  thrown in /home/wexcycling/public_html/config/filesystems.php on line 48
+[22-Feb-2020 19:55:19 UTC] PHP Fatal error:  Uncaught Error: Call to undefined function env() in /home/wexcycling/public_html/config/broadcasting.php:18
+Stack trace:
+#0 {main}
+  thrown in /home/wexcycling/public_html/config/broadcasting.php on line 18
+[22-Feb-2020 22:09:55 UTC] PHP Fatal error:  Uncaught Error: Call to undefined function env() in /home/wexcycling/public_html/config/laravellocalization.php:340
+Stack trace:
+#0 {main}
+  thrown in /home/wexcycling/public_html/config/laravellocalization.php on line 340
+[22-Feb-2020 23:04:15 UTC] PHP Fatal error:  Uncaught Error: Call to undefined function env() in /home/wexcycling/public_html/config/app.php:28
+Stack trace:
+#0 {main}
+  thrown in /home/wexcycling/public_html/config/app.php on line 28
+[22-Feb-2020 23:04:16 UTC] PHP Fatal error:  Uncaught Error: Call to undefined function env() in /home/wexcycling/public_html/config/mail.php:19
+Stack trace:
+#0 {main}
+  thrown in /home/wexcycling/public_html/config/mail.php on line 19
+[22-Feb-2020 23:04:21 UTC] PHP Fatal error:  Uncaught Error: Call to undefined function env() in /home/wexcycling/public_html/config/cache.php:18
+Stack trace:
+#0 {main}
+  thrown in /home/wexcycling/public_html/config/cache.php on line 18
+[22-Feb-2020 23:04:28 UTC] PHP Fatal error:  Uncaught Error: Call to undefined function resource_path() in /home/wexcycling/public_html/config/view.php:17
+Stack trace:
+#0 {main}
+  thrown in /home/wexcycling/public_html/config/view.php on line 17
+[22-Feb-2020 23:04:34 UTC] PHP Fatal error:  Uncaught Error: Call to undefined function env() in /home/wexcycling/public_html/config/queue.php:18
+Stack trace:
+#0 {main}
+  thrown in /home/wexcycling/public_html/config/queue.php on line 18
+[22-Feb-2020 23:04:38 UTC] PHP Fatal error:  Uncaught Error: Call to undefined function env() in /home/wexcycling/public_html/config/paypal.php:8
+Stack trace:
+#0 {main}
+  thrown in /home/wexcycling/public_html/config/paypal.php on line 8
+[22-Feb-2020 23:04:47 UTC] PHP Fatal error:  Uncaught Error: Call to undefined function env() in /home/wexcycling/public_html/config/services.php:18
+Stack trace:
+#0 {main}
+  thrown in /home/wexcycling/public_html/config/services.php on line 18
+[22-Feb-2020 23:04:53 UTC] PHP Fatal error:  Uncaught Error: Call to undefined function env() in /home/wexcycling/public_html/config/session.php:19
+Stack trace:
+#0 {main}
+  thrown in /home/wexcycling/public_html/config/session.php on line 19
+[22-Feb-2020 23:04:56 UTC] PHP Fatal error:  Uncaught Error: Call to undefined function storage_path() in /home/wexcycling/public_html/config/filesystems.php:48
+Stack trace:
+#0 {main}
+  thrown in /home/wexcycling/public_html/config/filesystems.php on line 48
+[22-Feb-2020 23:05:02 UTC] PHP Fatal error:  Uncaught Error: Call to undefined function env() in /home/wexcycling/public_html/config/database.php:16
+Stack trace:
+#0 {main}
+  thrown in /home/wexcycling/public_html/config/database.php on line 16
+[22-Feb-2020 23:05:25 UTC] PHP Fatal error:  Uncaught Error: Call to undefined function env() in /home/wexcycling/public_html/config/broadcasting.php:18
+Stack trace:
+#0 {main}
+  thrown in /home/wexcycling/public_html/config/broadcasting.php on line 18
+[22-Feb-2020 23:05:35 UTC] PHP Fatal error:  Uncaught Error: Call to undefined function env() in /home/wexcycling/public_html/config/laravellocalization.php:340
+Stack trace:
+#0 {main}
+  thrown in /home/wexcycling/public_html/config/laravellocalization.php on line 340
+[22-Feb-2020 23:12:33 UTC] PHP Fatal error:  Uncaught Error: Call to undefined function resource_path() in /home/wexcycling/public_html/config/view.php:17
+Stack trace:
+#0 {main}
+  thrown in /home/wexcycling/public_html/config/view.php on line 17
+[22-Feb-2020 23:12:38 UTC] PHP Fatal error:  Uncaught Error: Call to undefined function env() in /home/wexcycling/public_html/config/paypal.php:8
+Stack trace:
+#0 {main}
+  thrown in /home/wexcycling/public_html/config/paypal.php on line 8
+[22-Feb-2020 23:14:44 UTC] PHP Fatal error:  Uncaught Error: Call to undefined function env() in /home/wexcycling/public_html/config/session.php:19
+Stack trace:
+#0 {main}
+  thrown in /home/wexcycling/public_html/config/session.php on line 19
+[22-Feb-2020 23:15:09 UTC] PHP Fatal error:  Uncaught Error: Call to undefined function env() in /home/wexcycling/public_html/config/database.php:16
+Stack trace:
+#0 {main}
+  thrown in /home/wexcycling/public_html/config/database.php on line 16
+[22-Feb-2020 23:15:16 UTC] PHP Fatal error:  Uncaught Error: Call to undefined function env() in /home/wexcycling/public_html/config/services.php:18
+Stack trace:
+#0 {main}
+  thrown in /home/wexcycling/public_html/config/services.php on line 18
+[22-Feb-2020 23:15:29 UTC] PHP Fatal error:  Uncaught Error: Call to undefined function storage_path() in /home/wexcycling/public_html/config/filesystems.php:48
+Stack trace:
+#0 {main}
+  thrown in /home/wexcycling/public_html/config/filesystems.php on line 48
+[22-Feb-2020 23:15:55 UTC] PHP Fatal error:  Uncaught Error: Call to undefined function env() in /home/wexcycling/public_html/config/laravellocalization.php:340
+Stack trace:
+#0 {main}
+  thrown in /home/wexcycling/public_html/config/laravellocalization.php on line 340
+[22-Feb-2020 23:16:01 UTC] PHP Fatal error:  Uncaught Error: Call to undefined function env() in /home/wexcycling/public_html/config/app.php:28
+Stack trace:
+#0 {main}
+  thrown in /home/wexcycling/public_html/config/app.php on line 28
+[22-Feb-2020 23:16:13 UTC] PHP Fatal error:  Uncaught Error: Call to undefined function env() in /home/wexcycling/public_html/config/mail.php:19
+Stack trace:
+#0 {main}
+  thrown in /home/wexcycling/public_html/config/mail.php on line 19
+[22-Feb-2020 23:16:39 UTC] PHP Fatal error:  Uncaught Error: Call to undefined function env() in /home/wexcycling/public_html/config/cache.php:18
+Stack trace:
+#0 {main}
+  thrown in /home/wexcycling/public_html/config/cache.php on line 18
+[23-Feb-2020 00:56:45 UTC] PHP Fatal error:  Uncaught Error: Call to undefined function env() in /home/wexcycling/public_html/config/broadcasting.php:18
+Stack trace:
+#0 {main}
+  thrown in /home/wexcycling/public_html/config/broadcasting.php on line 18

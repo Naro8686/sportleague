@@ -1,0 +1,100 @@
+[22-Feb-2020 04:04:24 UTC] PHP Fatal error:  Uncaught Error: Class 'Illuminate\Database\Migrations\Migration' not found in /home/wexcycling/public_html/database/migrations/2014_10_12_000000_create_users_table.php:6
+Stack trace:
+#0 {main}
+  thrown in /home/wexcycling/public_html/database/migrations/2014_10_12_000000_create_users_table.php on line 6
+[22-Feb-2020 04:04:27 UTC] PHP Fatal error:  Uncaught Error: Class 'Illuminate\Database\Migrations\Migration' not found in /home/wexcycling/public_html/database/migrations/2014_10_12_100000_create_password_resets_table.php:7
+Stack trace:
+#0 {main}
+  thrown in /home/wexcycling/public_html/database/migrations/2014_10_12_100000_create_password_resets_table.php on line 7
+[22-Feb-2020 04:04:29 UTC] PHP Fatal error:  Uncaught Error: Class 'Illuminate\Database\Migrations\Migration' not found in /home/wexcycling/public_html/database/migrations/2017_07_12_145959_create_permission_tables.php:6
+Stack trace:
+#0 {main}
+  thrown in /home/wexcycling/public_html/database/migrations/2017_07_12_145959_create_permission_tables.php on line 6
+[22-Feb-2020 04:04:31 UTC] PHP Fatal error:  Uncaught Error: Class 'Illuminate\Database\Migrations\Migration' not found in /home/wexcycling/public_html/database/migrations/2020_01_27_154459_create_leagues_table.php:7
+Stack trace:
+#0 {main}
+  thrown in /home/wexcycling/public_html/database/migrations/2020_01_27_154459_create_leagues_table.php on line 7
+[22-Feb-2020 04:04:34 UTC] PHP Fatal error:  Uncaught Error: Class 'Illuminate\Database\Migrations\Migration' not found in /home/wexcycling/public_html/database/migrations/2020_01_28_091613_create_clubs_table.php:7
+Stack trace:
+#0 {main}
+  thrown in /home/wexcycling/public_html/database/migrations/2020_01_28_091613_create_clubs_table.php on line 7
+[22-Feb-2020 04:04:36 UTC] PHP Fatal error:  Uncaught Error: Class 'Illuminate\Database\Migrations\Migration' not found in /home/wexcycling/public_html/database/migrations/2020_01_28_121653_create_races_table.php:7
+Stack trace:
+#0 {main}
+  thrown in /home/wexcycling/public_html/database/migrations/2020_01_28_121653_create_races_table.php on line 7
+[22-Feb-2020 04:04:41 UTC] PHP Fatal error:  Uncaught Error: Class 'Illuminate\Database\Migrations\Migration' not found in /home/wexcycling/public_html/database/migrations/2020_01_30_122439_create_user_clubs_table.php:7
+Stack trace:
+#0 {main}
+  thrown in /home/wexcycling/public_html/database/migrations/2020_01_30_122439_create_user_clubs_table.php on line 7
+[22-Feb-2020 04:04:43 UTC] PHP Fatal error:  Uncaught Error: Class 'Illuminate\Database\Migrations\Migration' not found in /home/wexcycling/public_html/database/migrations/2020_01_30_122541_create_user_races_table.php:7
+Stack trace:
+#0 {main}
+  thrown in /home/wexcycling/public_html/database/migrations/2020_01_30_122541_create_user_races_table.php on line 7
+[22-Feb-2020 04:04:46 UTC] PHP Fatal error:  Uncaught Error: Class 'Illuminate\Database\Migrations\Migration' not found in /home/wexcycling/public_html/database/migrations/2020_01_31_071118_create_privacy_policies_table.php:7
+Stack trace:
+#0 {main}
+  thrown in /home/wexcycling/public_html/database/migrations/2020_01_31_071118_create_privacy_policies_table.php on line 7
+[22-Feb-2020 04:04:48 UTC] PHP Fatal error:  Uncaught Error: Class 'Illuminate\Database\Migrations\Migration' not found in /home/wexcycling/public_html/database/migrations/2020_02_05_142424_create_race_categories_table.php:7
+Stack trace:
+#0 {main}
+  thrown in /home/wexcycling/public_html/database/migrations/2020_02_05_142424_create_race_categories_table.php on line 7
+[22-Feb-2020 04:04:50 UTC] PHP Fatal error:  Uncaught Error: Class 'Illuminate\Database\Migrations\Migration' not found in /home/wexcycling/public_html/database/migrations/2020_02_06_103049_create_texts_table.php:7
+Stack trace:
+#0 {main}
+  thrown in /home/wexcycling/public_html/database/migrations/2020_02_06_103049_create_texts_table.php on line 7
+[22-Feb-2020 04:04:53 UTC] PHP Fatal error:  Uncaught Error: Class 'Illuminate\Database\Migrations\Migration' not found in /home/wexcycling/public_html/database/migrations/2020_02_11_113715_create_payments_table.php:7
+Stack trace:
+#0 {main}
+  thrown in /home/wexcycling/public_html/database/migrations/2020_02_11_113715_create_payments_table.php on line 7
+[23-Feb-2020 07:05:57 UTC] PHP Fatal error:  Uncaught Error: Class 'Illuminate\Database\Migrations\Migration' not found in /home/wexcycling/public_html/database/migrations/2020_01_28_091613_create_clubs_table.php:7
+Stack trace:
+#0 {main}
+  thrown in /home/wexcycling/public_html/database/migrations/2020_01_28_091613_create_clubs_table.php on line 7
+[23-Feb-2020 07:15:25 UTC] PHP Fatal error:  Uncaught Error: Class 'Illuminate\Database\Migrations\Migration' not found in /home/wexcycling/public_html/database/migrations/2020_01_31_071118_create_privacy_policies_table.php:7
+Stack trace:
+#0 {main}
+  thrown in /home/wexcycling/public_html/database/migrations/2020_01_31_071118_create_privacy_policies_table.php on line 7
+[24-Feb-2020 04:36:56 UTC] PHP Fatal error:  Uncaught Error: Class 'Illuminate\Database\Migrations\Migration' not found in /home/wexcycling/public_html/database/migrations/2020_01_28_121653_create_races_table.php:7
+Stack trace:
+#0 {main}
+  thrown in /home/wexcycling/public_html/database/migrations/2020_01_28_121653_create_races_table.php on line 7
+[24-Feb-2020 04:37:29 UTC] PHP Fatal error:  Uncaught Error: Class 'Illuminate\Database\Migrations\Migration' not found in /home/wexcycling/public_html/database/migrations/2020_01_31_071118_create_privacy_policies_table.php:7
+Stack trace:
+#0 {main}
+  thrown in /home/wexcycling/public_html/database/migrations/2020_01_31_071118_create_privacy_policies_table.php on line 7
+[24-Feb-2020 04:37:52 UTC] PHP Fatal error:  Uncaught Error: Class 'Illuminate\Database\Migrations\Migration' not found in /home/wexcycling/public_html/database/migrations/2020_02_11_113715_create_payments_table.php:7
+Stack trace:
+#0 {main}
+  thrown in /home/wexcycling/public_html/database/migrations/2020_02_11_113715_create_payments_table.php on line 7
+[24-Feb-2020 04:38:33 UTC] PHP Fatal error:  Uncaught Error: Class 'Illuminate\Database\Migrations\Migration' not found in /home/wexcycling/public_html/database/migrations/2020_01_30_122541_create_user_races_table.php:7
+Stack trace:
+#0 {main}
+  thrown in /home/wexcycling/public_html/database/migrations/2020_01_30_122541_create_user_races_table.php on line 7
+[24-Feb-2020 04:40:14 UTC] PHP Fatal error:  Uncaught Error: Class 'Illuminate\Database\Migrations\Migration' not found in /home/wexcycling/public_html/database/migrations/2014_10_12_000000_create_users_table.php:6
+Stack trace:
+#0 {main}
+  thrown in /home/wexcycling/public_html/database/migrations/2014_10_12_000000_create_users_table.php on line 6
+[24-Feb-2020 04:40:29 UTC] PHP Fatal error:  Uncaught Error: Class 'Illuminate\Database\Migrations\Migration' not found in /home/wexcycling/public_html/database/migrations/2020_02_06_103049_create_texts_table.php:7
+Stack trace:
+#0 {main}
+  thrown in /home/wexcycling/public_html/database/migrations/2020_02_06_103049_create_texts_table.php on line 7
+[24-Feb-2020 04:40:33 UTC] PHP Fatal error:  Uncaught Error: Class 'Illuminate\Database\Migrations\Migration' not found in /home/wexcycling/public_html/database/migrations/2020_01_27_154459_create_leagues_table.php:7
+Stack trace:
+#0 {main}
+  thrown in /home/wexcycling/public_html/database/migrations/2020_01_27_154459_create_leagues_table.php on line 7
+[24-Feb-2020 04:40:53 UTC] PHP Fatal error:  Uncaught Error: Class 'Illuminate\Database\Migrations\Migration' not found in /home/wexcycling/public_html/database/migrations/2014_10_12_100000_create_password_resets_table.php:7
+Stack trace:
+#0 {main}
+  thrown in /home/wexcycling/public_html/database/migrations/2014_10_12_100000_create_password_resets_table.php on line 7
+[24-Feb-2020 04:41:42 UTC] PHP Fatal error:  Uncaught Error: Class 'Illuminate\Database\Migrations\Migration' not found in /home/wexcycling/public_html/database/migrations/2020_01_30_122439_create_user_clubs_table.php:7
+Stack trace:
+#0 {main}
+  thrown in /home/wexcycling/public_html/database/migrations/2020_01_30_122439_create_user_clubs_table.php on line 7
+[24-Feb-2020 04:42:32 UTC] PHP Fatal error:  Uncaught Error: Class 'Illuminate\Database\Migrations\Migration' not found in /home/wexcycling/public_html/database/migrations/2020_02_05_142424_create_race_categories_table.php:7
+Stack trace:
+#0 {main}
+  thrown in /home/wexcycling/public_html/database/migrations/2020_02_05_142424_create_race_categories_table.php on line 7
+[24-Feb-2020 04:45:17 UTC] PHP Fatal error:  Uncaught Error: Class 'Illuminate\Database\Migrations\Migration' not found in /home/wexcycling/public_html/database/migrations/2017_07_12_145959_create_permission_tables.php:6
+Stack trace:
+#0 {main}
+  thrown in /home/wexcycling/public_html/database/migrations/2017_07_12_145959_create_permission_tables.php on line 6

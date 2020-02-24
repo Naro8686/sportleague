@@ -1,0 +1,44 @@
+[22-Feb-2020 16:47:44 UTC] PHP Fatal error:  Uncaught Error: Class 'App\Http\Controllers\Controller' not found in /home/wexcycling/public_html/app/Http/Controllers/Admin/AdminController.php:16
+Stack trace:
+#0 {main}
+  thrown in /home/wexcycling/public_html/app/Http/Controllers/Admin/AdminController.php on line 16
+[22-Feb-2020 16:47:47 UTC] PHP Fatal error:  Uncaught Error: Class 'App\Http\Controllers\Controller' not found in /home/wexcycling/public_html/app/Http/Controllers/Admin/ClubsController.php:13
+Stack trace:
+#0 {main}
+  thrown in /home/wexcycling/public_html/app/Http/Controllers/Admin/ClubsController.php on line 13
+[22-Feb-2020 16:47:49 UTC] PHP Fatal error:  Uncaught Error: Class 'App\Http\Controllers\Controller' not found in /home/wexcycling/public_html/app/Http/Controllers/Admin/LeagueController.php:12
+Stack trace:
+#0 {main}
+  thrown in /home/wexcycling/public_html/app/Http/Controllers/Admin/LeagueController.php on line 12
+[22-Feb-2020 16:47:51 UTC] PHP Fatal error:  Uncaught Error: Class 'App\Http\Controllers\Controller' not found in /home/wexcycling/public_html/app/Http/Controllers/Admin/PermissionsController.php:14
+Stack trace:
+#0 {main}
+  thrown in /home/wexcycling/public_html/app/Http/Controllers/Admin/PermissionsController.php on line 14
+[22-Feb-2020 16:47:53 UTC] PHP Fatal error:  Uncaught Error: Class 'App\Http\Controllers\Controller' not found in /home/wexcycling/public_html/app/Http/Controllers/Admin/PrivacyPolicyController.php:11
+Stack trace:
+#0 {main}
+  thrown in /home/wexcycling/public_html/app/Http/Controllers/Admin/PrivacyPolicyController.php on line 11
+[22-Feb-2020 16:47:55 UTC] PHP Fatal error:  Uncaught Error: Class 'App\Http\Controllers\Controller' not found in /home/wexcycling/public_html/app/Http/Controllers/Admin/RaceCategoryController.php:12
+Stack trace:
+#0 {main}
+  thrown in /home/wexcycling/public_html/app/Http/Controllers/Admin/RaceCategoryController.php on line 12
+[22-Feb-2020 16:47:58 UTC] PHP Fatal error:  Uncaught Error: Class 'App\Http\Controllers\Controller' not found in /home/wexcycling/public_html/app/Http/Controllers/Admin/RacesController.php:19
+Stack trace:
+#0 {main}
+  thrown in /home/wexcycling/public_html/app/Http/Controllers/Admin/RacesController.php on line 19
+[22-Feb-2020 16:48:00 UTC] PHP Fatal error:  Uncaught Error: Class 'App\Http\Controllers\Controller' not found in /home/wexcycling/public_html/app/Http/Controllers/Admin/ReportsController.php:13
+Stack trace:
+#0 {main}
+  thrown in /home/wexcycling/public_html/app/Http/Controllers/Admin/ReportsController.php on line 13
+[22-Feb-2020 16:48:02 UTC] PHP Fatal error:  Uncaught Error: Class 'App\Http\Controllers\Controller' not found in /home/wexcycling/public_html/app/Http/Controllers/Admin/RolesController.php:13
+Stack trace:
+#0 {main}
+  thrown in /home/wexcycling/public_html/app/Http/Controllers/Admin/RolesController.php on line 13
+[22-Feb-2020 16:48:04 UTC] PHP Fatal error:  Uncaught Error: Class 'App\Http\Controllers\Controller' not found in /home/wexcycling/public_html/app/Http/Controllers/Admin/TextsController.php:12
+Stack trace:
+#0 {main}
+  thrown in /home/wexcycling/public_html/app/Http/Controllers/Admin/TextsController.php on line 12
+[22-Feb-2020 16:48:06 UTC] PHP Fatal error:  Uncaught Error: Class 'App\Http\Controllers\Controller' not found in /home/wexcycling/public_html/app/Http/Controllers/Admin/UsersController.php:19
+Stack trace:
+#0 {main}
+  thrown in /home/wexcycling/public_html/app/Http/Controllers/Admin/UsersController.php on line 19
