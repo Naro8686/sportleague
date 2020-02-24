@@ -28,6 +28,7 @@ Route::group(['middleware' => ['auth', 'profile'], 'prefix' => 'admin', 'as' => 
     Route::resource('league', 'Admin\LeagueController');
     Route::resource('clubs', 'Admin\ClubsController');
     Route::resource('texts', 'Admin\TextsController');
+    Route::resource('settings', 'Admin\SettingsController');
     Route::resource('race-categories', 'Admin\RaceCategoryController');
     Route::resource('privacy-policy', 'Admin\PrivacyPolicyController');
 

@@ -34,43 +34,7 @@
 
             <div class="form-group {{ $errors->has('new_password') ? 'has-error' : '' }}">
                 <label for="new_password">New password *</label>
-                <div>
-                    <input type="password" id="new_password" name="new_password" placeholder="Password"
-                           class="form-control {{ $errors->has('password') ? ' is-invalid' : '' }}"
-                           data-placement="bottom" data-toggle="popover" data-container="body"
-                           data-html="true" required>
-                    <div id="popover-password">
-                        <p>Password Strength: <span id="result"> </span></p>
-                        <div class="progress" style="height: 5px;">
-                            <div id="password-strength" class="progress-bar progress-bar-success"
-                                 role="progressbar" aria-valuenow="40" aria-valuemin="0" aria-valuemax="100"
-                                 style="width:0%">
-                            </div>
-                        </div>
-                        <ul class="list-unstyled">
-                            <li class="">
-                                <span class="low-upper-case">
-                                    <i class="fa fa-file-text" aria-hidden="true"></i>
-                                </span>&nbsp; 1 lowercase &amp; 1 uppercase
-                            </li>
-                            <li class="">
-                                <span class="one-number">
-                                    <i class="fa fa-file-text" aria-hidden="true"></i>
-                                </span>&nbsp; 1 number (0-9)
-                            </li>
-                            <li class="">
-                                <span class="one-special-char">
-                                    <i class="fa fa-file-text" aria-hidden="true"></i>
-                                </span>&nbsp; 1 Special Character (!@#$%^&*).
-                            </li>
-                            <li class="">
-                                <span class="eight-character">
-                                    <i class="fa fa-file-text" aria-hidden="true"></i>
-                                </span>&nbsp; Atleast 8 Character
-                            </li>
-                        </ul>
-                    </div>
-                </div>
+                <input type="password" id="new_password" name="new_password" placeholder="Password" class="form-control {{ $errors->has('password') ? ' is-invalid' : '' }}" data-placement="bottom" data-toggle="popover" data-container="body" data-html="true" required>
                 @if($errors->has('password'))
                     <div class="invalid-feedback">
                         {{ $errors->first('password') }}
@@ -81,6 +45,37 @@
             <div class="form-group {{ $errors->has('new_password_confirmation') ? 'has-error' : '' }}">
                 <label for="new_password_confirmation">New password confirmation *</label>
                 <input type="password" id="new_password_confirmation" name="new_password_confirmation" class="form-control" required>
+                <div id="popover-password">
+                    <p>Password Strength: <span id="result"> </span></p>
+                    <div class="progress" style="height: 5px;">
+                        <div id="password-strength" class="progress-bar progress-bar-success"
+                             role="progressbar" aria-valuenow="40" aria-valuemin="0" aria-valuemax="100"
+                             style="width:0%">
+                        </div>
+                    </div>
+                    <ul class="list-unstyled">
+                        <li class="">
+                                <span class="low-upper-case">
+                                    <i class="fa fa-file-text" aria-hidden="true"></i>
+                                </span>&nbsp; 1 lowercase &amp; 1 uppercase
+                        </li>
+                        <li class="">
+                                <span class="one-number">
+                                    <i class="fa fa-file-text" aria-hidden="true"></i>
+                                </span>&nbsp; 1 number (0-9)
+                        </li>
+                        <li class="">
+                                <span class="one-special-char">
+                                    <i class="fa fa-file-text" aria-hidden="true"></i>
+                                </span>&nbsp; 1 Special Character (!@#$%^&*).
+                        </li>
+                        <li class="">
+                                <span class="eight-character">
+                                    <i class="fa fa-file-text" aria-hidden="true"></i>
+                                </span>&nbsp; Atleast 8 Character
+                        </li>
+                    </ul>
+                </div>
                 @if($errors->has('new_password_confirmation'))
                     <em class="invalid-feedback">
                         {{ $errors->first('new_password_confirmation') }}

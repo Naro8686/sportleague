@@ -132,6 +132,11 @@ class TextsSeed extends Seeder
             ['key' => 'No. of marshals registered', 'value' => 'No. of marshals registered'],
             ['key' => 'Link', 'value' => 'Link'],
             ['key' => 'Yes', 'value' => 'Yes'],
+            ['key' => 'Add setting', 'value' => 'Add setting'],
+            ['key' => 'Content', 'value' => 'Content'],
+            ['key' => 'Create setting', 'value' => 'Create setting'],
+            ['key' => 'Edit setting', 'value' => 'Edit setting'],
+            ['key' => 'Settings', 'value' => 'Settings'],
             ['key' => 'No', 'value' => 'No'],
         ];
 
