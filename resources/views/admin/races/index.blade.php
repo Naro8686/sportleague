@@ -36,7 +36,7 @@
                             <td>{{ date('d.m.Y', $item->date) ?? '' }}</td>
                             <td>{{ $item->name ?? '' }}</td>
                             <td>{{ $item->club->name ?? '' }} ( Phone: {{ $item->club->phone ?? '' }} )</td>
-                            <td><a href="{{ $item->location_link ?? '' }}" target="_blank">{{ $item->location ?? '' }}</a></td>
+                            <td><a href="{{ $item->location_link ?? '' }}" target="_blank">{{ $item->location ?? '' }}<img src="{{ asset('admin-assets/assets/images/location.png') }}" class="ext_link"></a></td>
                             <td>{{ $item->start_time ?? '' }}</td>
                             <td>{{ $item->min_marshals ?? '' }} ( {{ $item->users->count() }} Registered )</td>
                             <td>{{ $item->max_marshals ?? '' }}</td>

@@ -12,7 +12,7 @@ class SettingsSeed extends Seeder
     public function run()
     {
         $texts = [
-            ['title' => 'Coming Soon', 'content' => '{"show":"true","date":"Feb 26, 2020 13:00:00","title":"WE\'RE COMING SOON","description":"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla sit amet semper augue. Maecenas gravida tortor sit amet enim venenatis tristique."}'],
+            ['title' => 'Coming Soon', 'content' => '{"show":"true","countdown":"true","date":"Feb 26, 2020 13:00:00","title":"WE\'RE COMING SOON","description":"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla sit amet semper augue. Maecenas gravida tortor sit amet enim venenatis tristique."}'],
         ];
 
         foreach($texts as $text){

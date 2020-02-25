@@ -57,7 +57,6 @@
                     <tr>
                         <th>{{ _e('Name') }}</th>
                         <th>{{ _e('Location') }}</th>
-                        <th>{{ _e('Location Link') }}</th>
                         <th>{{ _e('Start time') }}</th>
                         <th>{{ _e('Min marshals') }}</th>
                         <th>{{ _e('Max participants') }}</th>
@@ -67,8 +66,9 @@
                     @foreach($user->races as $race)
                         <tr data-entry-id="{{ $race->id }}">
                             <td>{{ $race->name ?? '' }}</td>
-                            <td>{{ $race->location ?? '' }}</td>
-                            <td><a href="{{ $race->location_link ?? '' }}">{{ _e('Link') }}</a></td>
+                            <td>
+                                <a href="{{ $race->location_link ?? '' }}" target="_blank">{{ $race->location }}<img src="{{ asset('admin-assets/assets/images/location.png') }}" class="ext_link">
+                            </td>
                             <td>{{ $race->start_time ?? '' }}</td>
                             <td>{{ $race->min_marshals ?? '' }} ( {{ $race->users->count() }} Registered )</td>
                             <td>{{ $race->max_marshals ?? '' }}</td>

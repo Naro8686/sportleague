@@ -17,7 +17,7 @@
                     </tr>
                     <tr>
                         <th>{{ _e('Location') }}</th>
-                        <td><a href="{{ $item->location_link ?? '' }}" target="_blank">{{ $race->location }}</a></td>
+                        <td><a href="{{ $item->location_link ?? '' }}" target="_blank">{{ $race->location }}<img src="{{ asset('admin-assets/assets/images/location.png') }}" class="ext_link"></a></td>
                     </tr>
                     <tr>
                         <th>{{ _e('Start time') }}</th>
