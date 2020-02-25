@@ -6,3 +6,7 @@ Stack trace:
 Stack trace:
 #0 {main}
   thrown in /home/wexcycling/public_html/tests/Unit/ExampleTest.php on line 9
+[24-Feb-2020 15:36:27 UTC] PHP Fatal error:  Uncaught Error: Class 'Tests\TestCase' not found in /home/wexcycling/public_html/tests/Unit/ExampleTest.php:9
+Stack trace:
+#0 {main}
+  thrown in /home/wexcycling/public_html/tests/Unit/ExampleTest.php on line 9

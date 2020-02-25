@@ -6,3 +6,11 @@ Stack trace:
 Stack trace:
 #0 {main}
   thrown in /home/wexcycling/public_html/app/Http/Controllers/HomeController.php on line 10
+[25-Feb-2020 08:31:14 UTC] PHP Fatal error:  Uncaught Error: Class 'Illuminate\Routing\Controller' not found in /home/wexcycling/public_html/app/Http/Controllers/Controller.php:10
+Stack trace:
+#0 {main}
+  thrown in /home/wexcycling/public_html/app/Http/Controllers/Controller.php on line 10
+[25-Feb-2020 10:48:02 UTC] PHP Fatal error:  Uncaught Error: Class 'App\Http\Controllers\Controller' not found in /home/wexcycling/public_html/app/Http/Controllers/HomeController.php:11
+Stack trace:
+#0 {main}
+  thrown in /home/wexcycling/public_html/app/Http/Controllers/HomeController.php on line 11

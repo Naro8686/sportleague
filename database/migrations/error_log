@@ -98,3 +98,47 @@ Stack trace:
 Stack trace:
 #0 {main}
   thrown in /home/wexcycling/public_html/database/migrations/2017_07_12_145959_create_permission_tables.php on line 6
+[24-Feb-2020 16:48:01 UTC] PHP Fatal error:  Uncaught Error: Class 'Illuminate\Database\Migrations\Migration' not found in /home/wexcycling/public_html/database/migrations/2020_01_28_091613_create_clubs_table.php:7
+Stack trace:
+#0 {main}
+  thrown in /home/wexcycling/public_html/database/migrations/2020_01_28_091613_create_clubs_table.php on line 7
+[24-Feb-2020 17:02:24 UTC] PHP Fatal error:  Uncaught Error: Class 'Illuminate\Database\Migrations\Migration' not found in /home/wexcycling/public_html/database/migrations/2014_10_12_000000_create_users_table.php:6
+Stack trace:
+#0 {main}
+  thrown in /home/wexcycling/public_html/database/migrations/2014_10_12_000000_create_users_table.php on line 6
+[24-Feb-2020 17:09:37 UTC] PHP Fatal error:  Uncaught Error: Class 'Illuminate\Database\Migrations\Migration' not found in /home/wexcycling/public_html/database/migrations/2020_02_06_103049_create_texts_table.php:7
+Stack trace:
+#0 {main}
+  thrown in /home/wexcycling/public_html/database/migrations/2020_02_06_103049_create_texts_table.php on line 7
+[24-Feb-2020 19:19:12 UTC] PHP Fatal error:  Uncaught Error: Class 'Illuminate\Database\Migrations\Migration' not found in /home/wexcycling/public_html/database/migrations/2020_01_30_122439_create_user_clubs_table.php:7
+Stack trace:
+#0 {main}
+  thrown in /home/wexcycling/public_html/database/migrations/2020_01_30_122439_create_user_clubs_table.php on line 7
+[24-Feb-2020 19:37:23 UTC] PHP Fatal error:  Uncaught Error: Class 'Illuminate\Database\Migrations\Migration' not found in /home/wexcycling/public_html/database/migrations/2020_01_30_122439_create_user_clubs_table.php:7
+Stack trace:
+#0 {main}
+  thrown in /home/wexcycling/public_html/database/migrations/2020_01_30_122439_create_user_clubs_table.php on line 7
+[24-Feb-2020 21:50:26 UTC] PHP Fatal error:  Uncaught Error: Class 'Illuminate\Database\Migrations\Migration' not found in /home/wexcycling/public_html/database/migrations/2020_01_31_071118_create_privacy_policies_table.php:7
+Stack trace:
+#0 {main}
+  thrown in /home/wexcycling/public_html/database/migrations/2020_01_31_071118_create_privacy_policies_table.php on line 7
+[24-Feb-2020 23:24:02 UTC] PHP Fatal error:  Uncaught Error: Class 'Illuminate\Database\Migrations\Migration' not found in /home/wexcycling/public_html/database/migrations/2020_01_28_121653_create_races_table.php:7
+Stack trace:
+#0 {main}
+  thrown in /home/wexcycling/public_html/database/migrations/2020_01_28_121653_create_races_table.php on line 7
+[25-Feb-2020 01:12:02 UTC] PHP Fatal error:  Uncaught Error: Class 'Illuminate\Database\Migrations\Migration' not found in /home/wexcycling/public_html/database/migrations/2020_01_27_154459_create_leagues_table.php:7
+Stack trace:
+#0 {main}
+  thrown in /home/wexcycling/public_html/database/migrations/2020_01_27_154459_create_leagues_table.php on line 7
+[25-Feb-2020 01:26:26 UTC] PHP Fatal error:  Uncaught Error: Class 'Illuminate\Database\Migrations\Migration' not found in /home/wexcycling/public_html/database/migrations/2020_02_11_113715_create_payments_table.php:7
+Stack trace:
+#0 {main}
+  thrown in /home/wexcycling/public_html/database/migrations/2020_02_11_113715_create_payments_table.php on line 7
+[25-Feb-2020 02:52:50 UTC] PHP Fatal error:  Uncaught Error: Class 'Illuminate\Database\Migrations\Migration' not found in /home/wexcycling/public_html/database/migrations/2020_01_30_122541_create_user_races_table.php:7
+Stack trace:
+#0 {main}
+  thrown in /home/wexcycling/public_html/database/migrations/2020_01_30_122541_create_user_races_table.php on line 7
+[25-Feb-2020 03:21:38 UTC] PHP Fatal error:  Uncaught Error: Class 'Illuminate\Database\Migrations\Migration' not found in /home/wexcycling/public_html/database/migrations/2017_07_12_145959_create_permission_tables.php:6
+Stack trace:
+#0 {main}
+  thrown in /home/wexcycling/public_html/database/migrations/2017_07_12_145959_create_permission_tables.php on line 6
