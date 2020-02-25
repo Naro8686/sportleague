@@ -127,8 +127,7 @@ class SettingsController extends Controller
         if (! Gate::allows('settings_manage') ) {
             return abort(401);
         }
-
-        $data = $request->only(['show', 'date', 'title', 'description']);
+        $data = $request->only(['show', 'countdown', 'date', 'title', 'description']);
 
         $text = Settings::findOrFail(1);
         $text->update([
