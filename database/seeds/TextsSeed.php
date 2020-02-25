@@ -139,6 +139,7 @@ class TextsSeed extends Seeder
             ['key' => 'Settings', 'value' => 'Settings'],
             ['key' => 'Settings list', 'value' => 'Settings list'],
             ['key' => 'Show/Hide', 'value' => 'Show/Hide'],
+            ['key' => 'Site status', 'value' => 'Site status'],
             ['key' => 'No', 'value' => 'No'],
         ];
 

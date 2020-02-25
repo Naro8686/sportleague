@@ -8,10 +8,14 @@
                 @csrf
 
                 <div class="form-group">
-                    <label for="content">{{ _e('Show/Hide') }}</label>
+                    <label for="content">{{ _e('Site status') }}</label>
                     <div class="d-flex align-items-center">
-                        <input type="radio" name="show" value="true" {{ ($setting['show'] == 'true') ? 'checked' : '' }}>Show
-                        <input type="radio" name="show" value="false" class="ml-2" {{ ($setting['show'] == 'false') ? 'checked' : '' }}>Hide
+                        <label>
+                            <input type="radio" name="show" value="true" {{ ($setting['show'] == 'true') ? 'checked' : '' }}>Coming soon
+                        </label>
+                        <label>
+                            <input type="radio" name="show" value="false" class="ml-2" {{ ($setting['show'] == 'false') ? 'checked' : '' }}>Live
+                        </label>
                     </div>
                 </div>
 
