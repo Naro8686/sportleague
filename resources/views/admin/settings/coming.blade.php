@@ -139,6 +139,79 @@
         </div>
     </div>
 
+    <div class="card mt-4">
+        <div class="card-header">Mail settings</div>
+
+        <div class="card-body">
+            <form action="{{ route("admin.mail-update") }}" method="POST" enctype="multipart/form-data">
+                @csrf
+
+                <div class="form-group is_countdown">
+                    <label for="driver">Driver</label>
+                    <input type="text" id="driver" name="driver" class="form-control" value="{{ _c('SMTP Driver') }}" required>
+                </div>
+
+                <div class="form-group is_countdown">
+                    <label for="host">Host</label>
+                    <input type="text" id="host" name="host" class="form-control" value="{{ _c('SMTP Host') }}" required>
+                </div>
+
+                <div class="form-group is_countdown">
+                    <label for="port">Port</label>
+                    <input type="text" id="port" name="port" class="form-control" value="{{ _c('SMTP Port') }}" required>
+                </div>
+
+                <div class="form-group is_countdown">
+                    <label for="from">From</label>
+                    <input type="text" id="from" name="from" class="form-control" value="{{ _c('SMTP From') }}" required>
+                </div>
+
+                <div class="form-group is_countdown">
+                    <label for="from_name">From name</label>
+                    <input type="text" id="from_name" name="from_name" class="form-control" value="{{ _c('SMTP From name') }}" required>
+                </div>
+
+                <div class="form-group is_countdown">
+                    <label for="username">Username</label>
+                    <input type="text" id="username" name="username" class="form-control" value="{{ _c('SMTP Username') }}" required>
+                </div>
+
+                <div class="form-group is_countdown">
+                    <label for="password">Password</label>
+                    <input type="text" id="password" name="password" class="form-control" value="{{ _c('SMTP Password') }}" required>
+                </div>
+
+                <div class="form-group is_countdown">
+                    <label for="encryption">Encryption</label>
+                    <input type="text" id="encryption" name="encryption" class="form-control" value="{{ _c('SMTP Encryption') }}" required>
+                </div>
+
+                <div>
+                    <input class="btn btn-danger" type="submit" value="{{ _e('Save') }}">
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <div class="card mt-4">
+        <div class="card-header">Paypal Settings</div>
+
+        <div class="card-body">
+            <form action="{{ route("admin.paypal-update") }}" method="POST" enctype="multipart/form-data">
+                @csrf
+
+                <div class="form-group is_countdown">
+                    <label for="client_id">Paypal Client ID</label>
+                    <input type="text" id="client_id" name="client_id" class="form-control" value="{{ _c('Paypal Client ID') }}" required>
+                </div>
+
+                <div>
+                    <input class="btn btn-danger" type="submit" value="{{ _e('Save') }}">
+                </div>
+            </form>
+        </div>
+    </div>
+
     <script>
         $(document).ready(function () {
             if($('input[type=radio][name=show]:checked').val() == 'false'){

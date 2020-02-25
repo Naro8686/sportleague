@@ -6,6 +6,7 @@ use App\Http\Controllers\Controller;
 use App\Http\Requests\Admin\StoreOrUpdateSettingsRequest;
 use App\Models\Settings;
 use Illuminate\Http\Response;
+use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Gate;
 use Illuminate\Http\Request;
 
@@ -133,6 +134,59 @@ class SettingsController extends Controller
         $text->update([
             'content' => json_encode($data),
         ]);
+
+        return redirect()->back();
+    }
+
+    public function updatePaypal(Request $request)
+    {
+        if (! Gate::allows('settings_manage') ) {
+            return abort(401);
+        }
+        $text = Settings::where('title', 'Paypal Client ID')->first();
+        $text->content = $request->client_id;
+        $text->save();
+
+        return redirect()->back();
+    }
+
+    public function updateMail(Request $request)
+    {
+        if (! Gate::allows('settings_manage') ) {
+            return abort(401);
+        }
+
+        $driver = Settings::where('title', 'SMTP Driver')->first();
+        $driver->content = $request->driver;
+        $driver->save();
+
+        $host = Settings::where('title', 'SMTP Host')->first();
+        $host->content = $request->host;
+        $host->save();
+
+        $port = Settings::where('title', 'SMTP Port')->first();
+        $port->content = $request->port;
+        $port->save();
+
+        $from = Settings::where('title', 'SMTP From')->first();
+        $from->content = $request->from;
+        $from->save();
+
+        $from_name = Settings::where('title', 'SMTP From name')->first();
+        $from_name->content = $request->from_name;
+        $from_name->save();
+
+        $encryption = Settings::where('title', 'SMTP Encryption')->first();
+        $encryption->content = $request->encryption;
+        $encryption->save();
+
+        $username = Settings::where('title', 'SMTP Username')->first();
+        $username->content = $request->username;
+        $username->save();
+
+        $password = Settings::where('title', 'SMTP Password')->first();
+        $password->content = $request->password;
+        $password->save();
 
         return redirect()->back();
     }
