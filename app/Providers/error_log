@@ -38,3 +38,23 @@ Stack trace:
 Stack trace:
 #0 {main}
   thrown in /home/wexcycling/public_html/app/Providers/RouteServiceProvider.php on line 8
+[24-Feb-2020 15:39:40 UTC] PHP Fatal error:  Uncaught Error: Class 'Illuminate\Foundation\Support\Providers\RouteServiceProvider' not found in /home/wexcycling/public_html/app/Providers/RouteServiceProvider.php:8
+Stack trace:
+#0 {main}
+  thrown in /home/wexcycling/public_html/app/Providers/RouteServiceProvider.php on line 8
+[24-Feb-2020 19:35:20 UTC] PHP Fatal error:  Uncaught Error: Class 'Illuminate\Support\ServiceProvider' not found in /home/wexcycling/public_html/app/Providers/AppServiceProvider.php:9
+Stack trace:
+#0 {main}
+  thrown in /home/wexcycling/public_html/app/Providers/AppServiceProvider.php on line 9
+[24-Feb-2020 19:39:28 UTC] PHP Fatal error:  Uncaught Error: Class 'Illuminate\Foundation\Support\Providers\AuthServiceProvider' not found in /home/wexcycling/public_html/app/Providers/AuthServiceProvider.php:10
+Stack trace:
+#0 {main}
+  thrown in /home/wexcycling/public_html/app/Providers/AuthServiceProvider.php on line 10
+[24-Feb-2020 20:24:02 UTC] PHP Fatal error:  Uncaught Error: Class 'Illuminate\Foundation\Support\Providers\EventServiceProvider' not found in /home/wexcycling/public_html/app/Providers/EventServiceProvider.php:8
+Stack trace:
+#0 {main}
+  thrown in /home/wexcycling/public_html/app/Providers/EventServiceProvider.php on line 8
+[24-Feb-2020 21:00:02 UTC] PHP Fatal error:  Uncaught Error: Class 'Illuminate\Support\ServiceProvider' not found in /home/wexcycling/public_html/app/Providers/BroadcastServiceProvider.php:8
+Stack trace:
+#0 {main}
+  thrown in /home/wexcycling/public_html/app/Providers/BroadcastServiceProvider.php on line 8

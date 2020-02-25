@@ -14,3 +14,15 @@ Stack trace:
 Stack trace:
 #0 {main}
   thrown in /home/wexcycling/public_html/app/Http/Middleware/TrimStrings.php on line 7
+[25-Feb-2020 07:04:51 UTC] PHP Fatal error:  Uncaught Error: Class 'Illuminate\Foundation\Http\Middleware\TrimStrings' not found in /home/wexcycling/public_html/app/Http/Middleware/TrimStrings.php:7
+Stack trace:
+#0 {main}
+  thrown in /home/wexcycling/public_html/app/Http/Middleware/TrimStrings.php on line 7
+[25-Feb-2020 10:26:26 UTC] PHP Fatal error:  Uncaught Error: Class 'Illuminate\Cookie\Middleware\EncryptCookies' not found in /home/wexcycling/public_html/app/Http/Middleware/EncryptCookies.php:7
+Stack trace:
+#0 {main}
+  thrown in /home/wexcycling/public_html/app/Http/Middleware/EncryptCookies.php on line 7
+[25-Feb-2020 11:09:38 UTC] PHP Fatal error:  Uncaught Error: Class 'Illuminate\Foundation\Http\Middleware\VerifyCsrfToken' not found in /home/wexcycling/public_html/app/Http/Middleware/VerifyCsrfToken.php:7
+Stack trace:
+#0 {main}
+  thrown in /home/wexcycling/public_html/app/Http/Middleware/VerifyCsrfToken.php on line 7
