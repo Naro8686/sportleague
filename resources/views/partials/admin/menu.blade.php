@@ -96,16 +96,22 @@
             @endif
 
             @canany(['privacy_manage'])
-                <li class="nav_items {{ request()->is('admin/privacy-policy') ? 'active' : '' }}">
+                <li class="nav_items {{ request()->is('admin/privacy-policy/1/edit') ? 'active' : '' }}">
                     <a href="{{ route('admin.privacy-policy.edit', 1) }}" class="nav-link">
                         <i class="link-icon" data-feather="alert-triangle"></i>
                         <span class="link-title">{{ _e('Privacy policy') }}</span>
                     </a>
                 </li>
-                <li class="nav_items {{ request()->is('admin/privacy-policy') ? 'active' : '' }}">
+                <li class="nav_items {{ request()->is('admin/privacy-policy/2/edit') ? 'active' : '' }}">
                     <a href="{{ route('admin.privacy-policy.edit', 2) }}" class="nav-link">
                         <i class="link-icon" data-feather="align-center"></i>
                         <span class="link-title">{{ _e('FAQ') }}</span>
+                    </a>
+                </li>
+                <li class="nav_items {{ request()->is('admin/privacy-policy/3/edit') ? 'active' : '' }}">
+                    <a href="{{ route('admin.privacy-policy.edit', 3) }}" class="nav-link">
+                        <i class="link-icon" data-feather="align-center"></i>
+                        <span class="link-title">{{ _e('Terms') }}</span>
                     </a>
                 </li>
             @endcanany

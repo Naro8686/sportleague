@@ -15,6 +15,11 @@ class PagesController extends Controller
         return view('website.faq.index', compact('faq'));
     }
 
+    public function terms() {
+        $terms = PrivacyPolicy::find(3);
+        return view('website.terms.index', compact('terms'));
+    }
+
     public function contact() {
         return view('website.contact.index');
     }

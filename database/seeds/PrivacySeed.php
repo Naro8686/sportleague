@@ -21,5 +21,10 @@ class PrivacySeed extends Seeder
             'title' => 'FAQ',
             'text' => 'FAQ Description',
         ]);
+
+        PrivacyPolicy::create([
+            'title' => 'Terms and conditions',
+            'text' => 'Terms and conditions Description',
+        ]);
     }
 }

@@ -4,6 +4,7 @@ Route::get('/', 'HomeController@index')->name('home');
 Route::get('privacy', 'Admin\PrivacyPolicyController@privacy_page')->name('privacy.page');
 Route::get('races', 'Front\PagesController@races')->name('races');
 Route::get('faq', 'Front\PagesController@faq')->name('faq');
+Route::get('terms', 'Front\PagesController@terms')->name('terms');
 Route::get('contact', 'Front\PagesController@contact')->name('contact');
 
 Auth::routes();

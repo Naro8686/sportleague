@@ -115,8 +115,7 @@
                                     <input name="agree" type="checkbox" id="agree" required/>
                                     I agree with&nbsp;
                                 </label>
-                                <a href="{{ route('privacy.page') }}" target="_blank" class="facebook">privacy
-                                    policy</a>
+                                <a href="{{ route('terms') }}" target="_blank" class="facebook">terms and conditions</a>
                             </p>
                         </div>
                         <div class="btn-wrapper desktop-right">
