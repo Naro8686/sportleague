@@ -27,19 +27,21 @@ class MailConfigServiceProvider extends ServiceProvider
     public function register()
     {
         $smtp = DB::table('settings')->where('title', 'SMTP')->first();
-        $smtp = json_decode($smtp->content);
+        if(!is_null($smtp)){
+            $smtp = json_decode($smtp->content);
 
-        $config = array(
-            'driver' => $smtp->driver,
-            'host' => $smtp->host,
-            'port' => $smtp->port,
-            'from' => array('address' => $smtp->from, 'name' => $smtp->from_name),
-            'encryption' => $smtp->encryption,
-            'username' => $smtp->username,
-            'password' => $smtp->password,
-            'sendmail' => '/usr/sbin/sendmail -bs',
-            'pretend' => false,
-        );
-        Config::set('mail', $config);
+            $config = array(
+                'driver' => $smtp->driver,
+                'host' => $smtp->host,
+                'port' => $smtp->port,
+                'from' => array('address' => $smtp->from, 'name' => $smtp->from_name),
+                'encryption' => $smtp->encryption,
+                'username' => $smtp->username,
+                'password' => $smtp->password,
+                'sendmail' => '/usr/sbin/sendmail -bs',
+                'pretend' => false,
+            );
+            Config::set('mail', $config);
+        }
     }
 }
