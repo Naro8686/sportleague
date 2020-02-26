@@ -121,8 +121,10 @@ class SettingsController extends Controller
         $setting = json_decode($setting->content, true);
         $smtp = Settings::where('title', 'SMTP')->pluck('content')->first();
         $smtp = json_decode($smtp, true);
+        $reset = Settings::where('title', 'Reset')->pluck('content')->first();
+        $reset = json_decode($reset, true);
 
-        return view($this->view_path.'coming', compact(['setting', 'smtp']));
+        return view($this->view_path.'coming', compact(['setting', 'smtp', 'reset']));
     }
 
     public function updateComing(Request $request)
@@ -162,6 +164,20 @@ class SettingsController extends Controller
 
         $data = Settings::where('title', 'SMTP')->first();
         $data->content = json_encode($smtp);
+        $data->save();
+
+        return redirect()->back();
+    }
+
+    public function updateReset(Request $request)
+    {
+        if (! Gate::allows('settings_manage') ) {
+            return abort(401);
+        }
+
+        $reset = $request->only('hello', 'second', 'button', 'bottom', 'regards', 'manager');
+        $data = Settings::where('title', 'Reset')->first();
+        $data->content = json_encode($reset);
         $data->save();
 
         return redirect()->back();

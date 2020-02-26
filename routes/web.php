@@ -34,6 +34,7 @@ Route::group(['middleware' => ['auth', 'profile'], 'prefix' => 'admin', 'as' => 
     Route::post('coming-update', 'Admin\SettingsController@updateComing')->name('coming-update');
     Route::post('mail-update', 'Admin\SettingsController@updateMail')->name('mail-update');
     Route::post('paypal-update', 'Admin\SettingsController@updatePaypal')->name('paypal-update');
+    Route::post('reset-update', 'Admin\SettingsController@updateReset')->name('reset-update');
     Route::resource('race-categories', 'Admin\RaceCategoryController');
     Route::resource('privacy-policy', 'Admin\PrivacyPolicyController');
 

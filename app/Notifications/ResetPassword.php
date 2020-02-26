@@ -2,6 +2,7 @@
 
 namespace App\Notifications;
 
+use App\Models\Settings;
 use Illuminate\Bus\Queueable;
 use Illuminate\Contracts\Queue\ShouldQueue;
 use Illuminate\Notifications\Messages\MailMessage;
@@ -47,9 +48,11 @@ class ResetPassword extends Notification
      */
     public function toMail($notifiable)
     {
+        $reset = Settings::where('title', 'Reset')->pluck('content')->first();
+        $reset = json_decode($reset, true);
         return (new MailMessage)
-            ->line(_e('You are receiving this email because we received a password reset request for your account.'))
-            ->action(_e('Reset Password'), url('password/reset', $this->token))
-            ->line(_e('If you did not request a password reset, no further action is required.'));
+            ->line($reset['second'])
+            ->action($reset['button'], url('password/reset', $this->token))
+            ->line($reset['bottom']);
     }
 }

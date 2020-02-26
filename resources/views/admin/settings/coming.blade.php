@@ -84,6 +84,7 @@
             <a class="nav-item nav-link active" id="nav-home-tab" data-toggle="tab" href="#nav-version" role="tab" aria-controls="nav-home" aria-selected="true">Version</a>
             <a class="nav-item nav-link" id="nav-profile-tab" data-toggle="tab" href="#nav-mail" role="tab" aria-controls="nav-profile" aria-selected="false">Mail</a>
             <a class="nav-item nav-link" id="nav-contact-tab" data-toggle="tab" href="#nav-payment" role="tab" aria-controls="nav-contact" aria-selected="false">Payment</a>
+            <a class="nav-item nav-link" id="nav-contact-tab" data-toggle="tab" href="#nav-reset" role="tab" aria-controls="nav-contact" aria-selected="false">Reset</a>
         </div>
     </nav>
     <div class="tab-content" id="nav-tabContent">
@@ -214,6 +215,51 @@
                         <div class="form-group is_countdown">
                             <label for="client_id">Paypal Client ID</label>
                             <input type="text" id="client_id" name="client_id" class="form-control" value="{{ _c('Paypal Client ID') }}" required>
+                        </div>
+
+                        <div>
+                            <input class="btn btn-danger" type="submit" value="{{ _e('Save') }}">
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+        <div class="tab-pane fade" id="nav-reset" role="tabpanel" aria-labelledby="nav-contact-tab">
+            <div class="card">
+                <div class="card-header">Reset Password Settings</div>
+
+                <div class="card-body">
+                    <form action="{{ route("admin.reset-update") }}" method="POST" enctype="multipart/form-data">
+                        @csrf
+
+                        <div class="form-group is_countdown">
+                            <label for="hello">Reset Hello</label>
+                            <input type="text" id="hello" name="hello" class="form-control" value="{{ $reset['hello'] }}" required>
+                        </div>
+
+                        <div class="form-group is_countdown">
+                            <label for="second">Second text</label>
+                            <input type="text" id="second" name="second" class="form-control" value="{{ $reset['second'] }}" required>
+                        </div>
+
+                        <div class="form-group is_countdown">
+                            <label for="button">Button text</label>
+                            <input type="text" id="button" name="button" class="form-control" value="{{ $reset['button'] }}" required>
+                        </div>
+
+                        <div class="form-group is_countdown">
+                            <label for="bottom">Bottom</label>
+                            <input type="text" id="bottom" name="bottom" class="form-control" value="{{ $reset['bottom'] }}" required>
+                        </div>
+
+                        <div class="form-group is_countdown">
+                            <label for="regards">Regards</label>
+                            <input type="text" id="regards" name="regards" class="form-control" value="{{ $reset['regards'] }}" required>
+                        </div>
+
+                        <div class="form-group is_countdown">
+                            <label for="manager">League Manager</label>
+                            <input type="text" id="manager" name="manager" class="form-control" value="{{ $reset['manager'] }}" required>
                         </div>
 
                         <div>

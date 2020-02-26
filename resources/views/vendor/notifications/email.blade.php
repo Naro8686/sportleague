@@ -1,4 +1,9 @@
 @component('mail::message')
+@php
+    use App\Models\Settings;
+    $reset = Settings::where('title', 'Reset')->pluck('content')->first();
+    $reset = json_decode($reset, true);
+@endphp
 {{-- Greeting --}}
 @if (! empty($greeting))
 # {{ $greeting }}
@@ -6,7 +11,7 @@
 @if ($level === 'error')
 # @lang('Whoops!')
 @else
-# @lang('Hello!')
+# {{ $reset['hello'] }}
 @endif
 @endif
 
@@ -43,8 +48,8 @@
 @if (! empty($salutation))
 {{ $salutation }}
 @else
-@lang('Regards'),<br>
-{{ config('app.name') }}
+{{ $reset['regards'] }},<br>
+{{ $reset['manager'] }}
 @endif
 
 {{-- Subcopy --}}

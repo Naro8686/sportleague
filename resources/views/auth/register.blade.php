@@ -122,8 +122,7 @@
                             <button type="submit" class="btn sm-btn reg_submit" disabled>Next step</button>
                         </div>
                     </div>
-                    <p class="bottom">Already Have An Account Please <a class="signup" href="{{ route('login') }}">Sign
-                            In </a> Now</p>
+                    <p class="bottom">Already Have An Account Please <a class="signup" href="{{ route('login') }}">Sign In </a> Now</p>
                 </form>
             </div>
         </div>
