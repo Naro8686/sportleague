@@ -79,136 +79,149 @@
         }
     </style>
 
-    <div class="card">
-        <div class="card-header">{{ _e('Edit setting') }}</div>
+    <nav>
+        <div class="nav nav-tabs" id="nav-tab" role="tablist">
+            <a class="nav-item nav-link active" id="nav-home-tab" data-toggle="tab" href="#nav-version" role="tab" aria-controls="nav-home" aria-selected="true">Version</a>
+            <a class="nav-item nav-link" id="nav-profile-tab" data-toggle="tab" href="#nav-mail" role="tab" aria-controls="nav-profile" aria-selected="false">Mail</a>
+            <a class="nav-item nav-link" id="nav-contact-tab" data-toggle="tab" href="#nav-payment" role="tab" aria-controls="nav-contact" aria-selected="false">Payment</a>
+        </div>
+    </nav>
+    <div class="tab-content" id="nav-tabContent">
+        <div class="tab-pane fade show active" id="nav-version" role="tabpanel" aria-labelledby="nav-home-tab">
+            <div class="card">
+                <div class="card-header">{{ _e('Version settings') }}</div>
 
-        <div class="card-body">
-            <form action="{{ route("admin.coming-update") }}" method="POST" enctype="multipart/form-data">
-                @csrf
+                <div class="card-body">
+                    <form action="{{ route("admin.coming-update") }}" method="POST" enctype="multipart/form-data">
+                        @csrf
 
-                <div class="mb-4">
-                    <label for="content" class="d-block mb-3">{{ _e('Site version') }}</label>
-                    <div class="switch switch--horizontal">
-                        <input id="radio-a" class="change_version" type="radio" name="show" value="true" {{ ($setting['show'] == 'true') ? 'checked' : '' }}/>
-                        <label for="radio-a">{{ _e('Coming soon') }}</label>
-                        <input id="radio-b" class="change_version" type="radio" name="show" value="false" {{ ($setting['show'] == 'false') ? 'checked' : '' }}>/>
-                        <label for="radio-b">{{ _e('Live Version') }}</label>
-                        <span class="toggle-outside">
+                        <div class="mb-4">
+                            <label for="content" class="d-block mb-3">{{ _e('Site version') }}</label>
+                            <div class="switch switch--horizontal">
+                                <input id="radio-a" class="change_version" type="radio" name="show" value="true" {{ ($setting['show'] == 'true') ? 'checked' : '' }}/>
+                                <label for="radio-a">{{ _e('Coming soon') }}</label>
+                                <input id="radio-b" class="change_version" type="radio" name="show" value="false" {{ ($setting['show'] == 'false') ? 'checked' : '' }}>/>
+                                <label for="radio-b">{{ _e('Live Version') }}</label>
+                                <span class="toggle-outside">
                             <span class="toggle-inside"></span>
                         </span>
-                    </div>
-                </div>
-
-                <div class="is_coming">
-                    <div class="form-group">
-                        <label class="d-block">{{ _e('Countdown') }}</label>
-                        <div class="form-check form-check-inline">
-                            <label class="form-check-label">
-                                <input type="radio" class="form-check-input" name="countdown" id="optionsRadios5" value="true" {{ ($setting['countdown'] == 'true') ? 'checked' : '' }}>
-                                {{ _e('Show') }}
-                                <i class="input-frame"></i></label>
+                            </div>
                         </div>
-                        <div class="form-check form-check-inline">
-                            <label class="form-check-label">
-                                <input type="radio" class="form-check-input" name="countdown" id="optionsRadios6" value="false" {{ ($setting['countdown'] == 'false') ? 'checked' : '' }}>
-                                {{ _e('Hide') }}
-                                <i class="input-frame"></i></label>
+
+                        <div class="is_coming">
+                            <div class="form-group">
+                                <label class="d-block">{{ _e('Countdown') }}</label>
+                                <div class="form-check form-check-inline">
+                                    <label class="form-check-label">
+                                        <input type="radio" class="form-check-input" name="countdown" id="optionsRadios5" value="true" {{ ($setting['countdown'] == 'true') ? 'checked' : '' }}>
+                                        {{ _e('Show') }}
+                                        <i class="input-frame"></i></label>
+                                </div>
+                                <div class="form-check form-check-inline">
+                                    <label class="form-check-label">
+                                        <input type="radio" class="form-check-input" name="countdown" id="optionsRadios6" value="false" {{ ($setting['countdown'] == 'false') ? 'checked' : '' }}>
+                                        {{ _e('Hide') }}
+                                        <i class="input-frame"></i></label>
+                                </div>
+                            </div>
+
+                            <div class="form-group is_countdown">
+                                <label for="coming_date">{{ _e('Date') }}</label>
+                                <input type="text" id="coming_date" name="date" class="form-control" value="{{ $setting['date'] }}" required>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="title">{{ _e('Text') }}</label>
+                                <input type="text" id="title" name="title" class="form-control" value="{{ $setting['title'] }}" required>
+                            </div>
+
+                            <div class="form-group {{ $errors->has('content') ? 'has-error' : '' }}">
+                                <label for="description">{{ _e('Content') }}</label>
+                                <input type="text" id="description" name="description" class="form-control" value="{{ $setting['description'] }}" required>
+                            </div>
                         </div>
-                    </div>
 
-                    <div class="form-group is_countdown">
-                        <label for="coming_date">{{ _e('Date') }}</label>
-                        <input type="text" id="coming_date" name="date" class="form-control" value="{{ $setting['date'] }}" required>
-                    </div>
-
-                    <div class="form-group">
-                        <label for="title">{{ _e('Text') }}</label>
-                        <input type="text" id="title" name="title" class="form-control" value="{{ $setting['title'] }}" required>
-                    </div>
-
-                    <div class="form-group {{ $errors->has('content') ? 'has-error' : '' }}">
-                        <label for="description">{{ _e('Content') }}</label>
-                        <input type="text" id="description" name="description" class="form-control" value="{{ $setting['description'] }}" required>
-                    </div>
+                        <div>
+                            <input class="btn btn-danger" type="submit" value="{{ _e('Save') }}">
+                        </div>
+                    </form>
                 </div>
-
-                <div>
-                    <input class="btn btn-danger" type="submit" value="{{ _e('Save') }}">
-                </div>
-            </form>
+            </div>
         </div>
-    </div>
+        <div class="tab-pane fade" id="nav-mail" role="tabpanel" aria-labelledby="nav-profile-tab">
+            <div class="card">
+                <div class="card-header">Mail settings</div>
 
-    <div class="card mt-4">
-        <div class="card-header">Mail settings</div>
+                <div class="card-body">
+                    <form action="{{ route("admin.mail-update") }}" method="POST" enctype="multipart/form-data">
+                        @csrf
 
-        <div class="card-body">
-            <form action="{{ route("admin.mail-update") }}" method="POST" enctype="multipart/form-data">
-                @csrf
+                        <div class="form-group is_countdown">
+                            <label for="driver">Driver</label>
+                            <input type="text" id="driver" name="driver" class="form-control" value="{{ $smtp['driver'] }}" required>
+                        </div>
 
-                <div class="form-group is_countdown">
-                    <label for="driver">Driver</label>
-                    <input type="text" id="driver" name="driver" class="form-control" value="{{ _c('SMTP Driver') }}" required>
+                        <div class="form-group is_countdown">
+                            <label for="host">Host</label>
+                            <input type="text" id="host" name="host" class="form-control" value="{{ $smtp['host'] }}" required>
+                        </div>
+
+                        <div class="form-group is_countdown">
+                            <label for="port">Port</label>
+                            <input type="text" id="port" name="port" class="form-control" value="{{ $smtp['port'] }}" required>
+                        </div>
+
+                        <div class="form-group is_countdown">
+                            <label for="from">From</label>
+                            <input type="text" id="from" name="from" class="form-control" value="{{ $smtp['from'] }}" required>
+                        </div>
+
+                        <div class="form-group is_countdown">
+                            <label for="from_name">From name</label>
+                            <input type="text" id="from_name" name="from_name" class="form-control" value="{{ $smtp['from_name'] }}" required>
+                        </div>
+
+                        <div class="form-group is_countdown">
+                            <label for="username">Username</label>
+                            <input type="text" id="username" name="username" class="form-control" value="{{ $smtp['username'] }}" required>
+                        </div>
+
+                        <div class="form-group is_countdown">
+                            <label for="password">Password</label>
+                            <input type="text" id="password" name="password" class="form-control" value="{{ $smtp['password'] }}" required>
+                        </div>
+
+                        <div class="form-group is_countdown">
+                            <label for="encryption">Encryption</label>
+                            <input type="text" id="encryption" name="encryption" class="form-control" value="{{ $smtp['encryption'] }}" required>
+                        </div>
+
+                        <div>
+                            <input class="btn btn-danger" type="submit" value="{{ _e('Save') }}">
+                        </div>
+                    </form>
                 </div>
-
-                <div class="form-group is_countdown">
-                    <label for="host">Host</label>
-                    <input type="text" id="host" name="host" class="form-control" value="{{ _c('SMTP Host') }}" required>
-                </div>
-
-                <div class="form-group is_countdown">
-                    <label for="port">Port</label>
-                    <input type="text" id="port" name="port" class="form-control" value="{{ _c('SMTP Port') }}" required>
-                </div>
-
-                <div class="form-group is_countdown">
-                    <label for="from">From</label>
-                    <input type="text" id="from" name="from" class="form-control" value="{{ _c('SMTP From') }}" required>
-                </div>
-
-                <div class="form-group is_countdown">
-                    <label for="from_name">From name</label>
-                    <input type="text" id="from_name" name="from_name" class="form-control" value="{{ _c('SMTP From name') }}" required>
-                </div>
-
-                <div class="form-group is_countdown">
-                    <label for="username">Username</label>
-                    <input type="text" id="username" name="username" class="form-control" value="{{ _c('SMTP Username') }}" required>
-                </div>
-
-                <div class="form-group is_countdown">
-                    <label for="password">Password</label>
-                    <input type="text" id="password" name="password" class="form-control" value="{{ _c('SMTP Password') }}" required>
-                </div>
-
-                <div class="form-group is_countdown">
-                    <label for="encryption">Encryption</label>
-                    <input type="text" id="encryption" name="encryption" class="form-control" value="{{ _c('SMTP Encryption') }}" required>
-                </div>
-
-                <div>
-                    <input class="btn btn-danger" type="submit" value="{{ _e('Save') }}">
-                </div>
-            </form>
+            </div>
         </div>
-    </div>
+        <div class="tab-pane fade" id="nav-payment" role="tabpanel" aria-labelledby="nav-contact-tab">
+            <div class="card">
+                <div class="card-header">Paypal Settings</div>
 
-    <div class="card mt-4">
-        <div class="card-header">Paypal Settings</div>
+                <div class="card-body">
+                    <form action="{{ route("admin.paypal-update") }}" method="POST" enctype="multipart/form-data">
+                        @csrf
 
-        <div class="card-body">
-            <form action="{{ route("admin.paypal-update") }}" method="POST" enctype="multipart/form-data">
-                @csrf
+                        <div class="form-group is_countdown">
+                            <label for="client_id">Paypal Client ID</label>
+                            <input type="text" id="client_id" name="client_id" class="form-control" value="{{ _c('Paypal Client ID') }}" required>
+                        </div>
 
-                <div class="form-group is_countdown">
-                    <label for="client_id">Paypal Client ID</label>
-                    <input type="text" id="client_id" name="client_id" class="form-control" value="{{ _c('Paypal Client ID') }}" required>
+                        <div>
+                            <input class="btn btn-danger" type="submit" value="{{ _e('Save') }}">
+                        </div>
+                    </form>
                 </div>
-
-                <div>
-                    <input class="btn btn-danger" type="submit" value="{{ _e('Save') }}">
-                </div>
-            </form>
+            </div>
         </div>
     </div>
 

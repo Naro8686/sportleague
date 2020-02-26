@@ -119,8 +119,10 @@ class SettingsController extends Controller
         }
         $setting = Settings::find(1);
         $setting = json_decode($setting->content, true);
+        $smtp = Settings::where('title', 'SMTP')->pluck('content')->first();
+        $smtp = json_decode($smtp, true);
 
-        return view($this->view_path.'coming', compact('setting'));
+        return view($this->view_path.'coming', compact(['setting', 'smtp']));
     }
 
     public function updateComing(Request $request)
@@ -156,37 +158,11 @@ class SettingsController extends Controller
             return abort(401);
         }
 
-        $driver = Settings::where('title', 'SMTP Driver')->first();
-        $driver->content = $request->driver;
-        $driver->save();
+        $smtp = $request->only('driver', 'host', 'port', 'from', 'from_name', 'username', 'password', 'encryption');
 
-        $host = Settings::where('title', 'SMTP Host')->first();
-        $host->content = $request->host;
-        $host->save();
-
-        $port = Settings::where('title', 'SMTP Port')->first();
-        $port->content = $request->port;
-        $port->save();
-
-        $from = Settings::where('title', 'SMTP From')->first();
-        $from->content = $request->from;
-        $from->save();
-
-        $from_name = Settings::where('title', 'SMTP From name')->first();
-        $from_name->content = $request->from_name;
-        $from_name->save();
-
-        $encryption = Settings::where('title', 'SMTP Encryption')->first();
-        $encryption->content = $request->encryption;
-        $encryption->save();
-
-        $username = Settings::where('title', 'SMTP Username')->first();
-        $username->content = $request->username;
-        $username->save();
-
-        $password = Settings::where('title', 'SMTP Password')->first();
-        $password->content = $request->password;
-        $password->save();
+        $data = Settings::where('title', 'SMTP')->first();
+        $data->content = json_encode($smtp);
+        $data->save();
 
         return redirect()->back();
     }

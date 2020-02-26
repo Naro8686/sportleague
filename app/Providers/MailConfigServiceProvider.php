@@ -26,23 +26,17 @@ class MailConfigServiceProvider extends ServiceProvider
      */
     public function register()
     {
-        $driver = DB::table('settings')->where('title', 'SMTP Driver')->first();
-        $host = DB::table('settings')->where('title', 'SMTP Host')->first();
-        $port = DB::table('settings')->where('title', 'SMTP Port')->first();
-        $from = DB::table('settings')->where('title', 'SMTP From')->first();
-        $from_name = DB::table('settings')->where('title', 'SMTP From name')->first();
-        $encryption = DB::table('settings')->where('title', 'SMTP Encryption')->first();
-        $username = DB::table('settings')->where('title', 'SMTP Username')->first();
-        $password = DB::table('settings')->where('title', 'SMTP Password')->first();
+        $smtp = DB::table('settings')->where('title', 'SMTP')->first();
+        $smtp = json_decode($smtp->content);
 
         $config = array(
-            'driver' => $driver->content,
-            'host' => $host->content,
-            'port' => $port->content,
-            'from' => array('address' => $from->content, 'name' => $from_name->content),
-            'encryption' => $encryption->content,
-            'username' => $username->content,
-            'password' => $password->content,
+            'driver' => $smtp->driver,
+            'host' => $smtp->host,
+            'port' => $smtp->port,
+            'from' => array('address' => $smtp->from, 'name' => $smtp->from_name),
+            'encryption' => $smtp->encryption,
+            'username' => $smtp->username,
+            'password' => $smtp->password,
             'sendmail' => '/usr/sbin/sendmail -bs',
             'pretend' => false,
         );

@@ -146,6 +146,10 @@ class TextsSeed extends Seeder
             ['key' => 'Countdown', 'value' => 'Countdown'],
             ['key' => 'Hide', 'value' => 'Hide'],
             ['key' => 'Show', 'value' => 'Show'],
+            ['key' => 'Reset Password', 'value' => 'Reset Password'],
+            ['key' => 'You are receiving this email because we received a password reset request for your account.', 'value' => 'You are receiving this email because we received a password reset request for your account.'],
+            ['key' => 'If you did not request a password reset, no further action is required.', 'value' => 'If you did not request a password reset, no further action is required.'],
+            ['key' => 'Version settings', 'value' => 'Version settings'],
             ['key' => 'No', 'value' => 'No'],
         ];
 
