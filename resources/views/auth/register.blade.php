@@ -115,7 +115,7 @@
                                     <input name="agree" type="checkbox" id="agree" required/>
                                     I agree with&nbsp;
                                 </label>
-                                <a href="{{ route('terms') }}" target="_blank" class="facebook">terms and conditions</a>
+                                <a href="{{ route('terms') }}" target="_blank" class="facebook">Terms and Conditions</a>
                             </p>
                         </div>
                         <div class="btn-wrapper desktop-right">
