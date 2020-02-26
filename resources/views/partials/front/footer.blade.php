@@ -57,6 +57,7 @@
                             <li><a href="{{ route('register') }}">Register</a></li>
                             @endif
                             <li><a href="{{ route('privacy.page') }}">Privacy policy</a></li>
+                            <li><a href="{{ route('terms') }}">Terms and conditions</a></li>
                         </ul>
                     </div>
                 </div>
