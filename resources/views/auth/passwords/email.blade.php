@@ -45,7 +45,7 @@
                             </button>
                         </div>
                     </div>
-                    <p class="bottom">Don't Have An Account Please <a class="signup" href="{{ route('register') }}">Sign up </a> Now</p>
+                    <p class="bottom">Don't Have An Account? Please <a class="signup" href="{{ route('register') }}">Register </a> Here</p>
                 </form>
             </div>
         </div>

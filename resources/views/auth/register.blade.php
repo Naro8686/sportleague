@@ -113,7 +113,7 @@
                             <p>
                                 <label class="form-check-label">
                                     <input name="agree" type="checkbox" id="agree" required/>
-                                    I agree with&nbsp;
+                                    I agree with the
                                 </label>
                                 <a href="{{ route('terms') }}" target="_blank" class="facebook">Terms and Conditions</a>
                             </p>
@@ -122,7 +122,7 @@
                             <button type="submit" class="btn sm-btn reg_submit" disabled>Next step</button>
                         </div>
                     </div>
-                    <p class="bottom">Already Have An Account Please <a class="signup" href="{{ route('login') }}">Sign In </a> Now</p>
+                    <p class="bottom">Already Have An Account? Please <a class="signup" href="{{ route('login') }}">Sign In </a> Here</p>
                 </form>
             </div>
         </div>
