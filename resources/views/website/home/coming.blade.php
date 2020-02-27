@@ -13,7 +13,7 @@
 <div class="coming-soon-area">
     <div class="content">
         <a href="{{ route('home') }}">
-            <img src="{{ asset('front-assets/img/logo-black.png') }}" alt="logo"></a>
+            <img src="{{ asset('front-assets/img/logo/'. _c('black_logo')) }}" alt="logo"></a>
         <h1>{{ $coming['title'] }}</h1>
         <p>{{ $coming['description'] }}</p>
         <div class="countdown"></div>

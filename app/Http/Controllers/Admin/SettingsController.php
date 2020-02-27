@@ -182,4 +182,36 @@ class SettingsController extends Controller
 
         return redirect()->back();
     }
+
+    public function updateLogo(Request $request)
+    {
+        if (! Gate::allows('settings_manage') ) {
+            return abort(401);
+        }
+
+        if($request->logo){
+            $fileName = 'white_logo'. time().'.'.$request->logo->extension();
+
+            $request->logo->move(public_path('front-assets/img/logo'), $fileName);
+            $logo = Settings::where('title','logo')->first();
+            @unlink('front-assets/img/logo/'.$logo->content);
+            $logo->update([
+                'content' => $fileName
+            ]);
+        }
+
+        if($request->black_logo){
+            $fileName = 'black_logo'. time().'.'.$request->black_logo->extension();
+
+            $request->black_logo->move(public_path('front-assets/img/logo'), $fileName);
+            $logo = Settings::where('title','black_logo')->first();
+            @unlink('front-assets/img/logo/'.$logo->content);
+            $logo->update([
+                'content' => $fileName
+            ]);
+        }
+
+
+        return redirect()->back();
+    }
 }
