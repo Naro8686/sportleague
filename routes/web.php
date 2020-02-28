@@ -6,6 +6,7 @@ Route::get('races', 'Front\PagesController@races')->name('races');
 Route::get('faq', 'Front\PagesController@faq')->name('faq');
 Route::get('terms', 'Front\PagesController@terms')->name('terms');
 Route::get('contact', 'Front\PagesController@contact')->name('contact');
+Route::post('send-mail', 'Front\MailController@sendMessage')->name('send-mail');
 
 Auth::routes();
 Route::get('register', 'Auth\RegisterController@registerPage')->name('register');
@@ -35,6 +36,7 @@ Route::group(['middleware' => ['auth', 'profile'], 'prefix' => 'admin', 'as' => 
     Route::post('mail-update', 'Admin\SettingsController@updateMail')->name('mail-update');
     Route::post('paypal-update', 'Admin\SettingsController@updatePaypal')->name('paypal-update');
     Route::post('reset-update', 'Admin\SettingsController@updateReset')->name('reset-update');
+    Route::post('logo-update', 'Admin\SettingsController@updateLogo')->name('logo-update');
     Route::resource('race-categories', 'Admin\RaceCategoryController');
     Route::resource('privacy-policy', 'Admin\PrivacyPolicyController');
 

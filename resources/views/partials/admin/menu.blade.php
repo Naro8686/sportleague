@@ -96,6 +96,12 @@
             @endif
 
             @canany(['privacy_manage'])
+                <li class="nav_items {{ request()->is('admin/privacy-policy/4/edit') ? 'active' : '' }}">
+                    <a href="{{ route('admin.privacy-policy.edit', 4) }}" class="nav-link">
+                        <i class="link-icon" data-feather="home"></i>
+                        <span class="link-title">{{ _e('Home') }}</span>
+                    </a>
+                </li>
                 <li class="nav_items {{ request()->is('admin/privacy-policy/1/edit') ? 'active' : '' }}">
                     <a href="{{ route('admin.privacy-policy.edit', 1) }}" class="nav-link">
                         <i class="link-icon" data-feather="alert-triangle"></i>
@@ -112,6 +118,12 @@
                     <a href="{{ route('admin.privacy-policy.edit', 3) }}" class="nav-link">
                         <i class="link-icon" data-feather="align-center"></i>
                         <span class="link-title">{{ _e('Terms') }}</span>
+                    </a>
+                </li>
+                <li class="nav_items {{ request()->is('admin/privacy-policy/5/edit') ? 'active' : '' }}">
+                    <a href="{{ route('admin.privacy-policy.edit', 5) }}" class="nav-link">
+                        <i class="link-icon" data-feather="mail"></i>
+                        <span class="link-title">{{ _e('Contact') }}</span>
                     </a>
                 </li>
             @endcanany

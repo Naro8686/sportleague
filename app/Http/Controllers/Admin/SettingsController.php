@@ -160,6 +160,8 @@ class SettingsController extends Controller
             return abort(401);
         }
 
+        Settings::where('title', 'contact_mail')->update(['content' => $request->contact_mail]);
+
         $smtp = $request->only('driver', 'host', 'port', 'from', 'from_name', 'username', 'password', 'encryption');
 
         $data = Settings::where('title', 'SMTP')->first();
@@ -179,6 +181,38 @@ class SettingsController extends Controller
         $data = Settings::where('title', 'Reset')->first();
         $data->content = json_encode($reset);
         $data->save();
+
+        return redirect()->back();
+    }
+
+    public function updateLogo(Request $request)
+    {
+        if (! Gate::allows('settings_manage') ) {
+            return abort(401);
+        }
+
+        if($request->logo){
+            $fileName = 'white_logo'. time().'.'.$request->logo->extension();
+
+            $request->logo->move(public_path('front-assets/img/logo'), $fileName);
+            $logo = Settings::where('title','logo')->first();
+            @unlink('front-assets/img/logo/'.$logo->content);
+            $logo->update([
+                'content' => $fileName
+            ]);
+        }
+
+        if($request->black_logo){
+            $fileName = 'black_logo'. time().'.'.$request->black_logo->extension();
+
+            $request->black_logo->move(public_path('front-assets/img/logo'), $fileName);
+            $logo = Settings::where('title','black_logo')->first();
+            @unlink('front-assets/img/logo/'.$logo->content);
+            $logo->update([
+                'content' => $fileName
+            ]);
+        }
+
 
         return redirect()->back();
     }

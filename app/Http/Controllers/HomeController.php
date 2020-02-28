@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Http\Requests;
 use App\Models\League;
+use App\Models\PrivacyPolicy;
 use App\Models\Races;
 use App\Models\Settings;
 use Illuminate\Http\Request;
@@ -36,7 +37,8 @@ class HomeController extends Controller
         }else{
             $league = League::first();
             $races = Races::all();
-            return view($this->view_path.'index', compact(['league', 'races']));
+            $home = PrivacyPolicy::find(4);
+            return view($this->view_path.'index', compact(['league', 'races', 'home']));
         }
     }
 }

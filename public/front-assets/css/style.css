@@ -83,7 +83,7 @@ Version: 1.0.0
   font-style: normal; }
 
 :root {
-  --main-color: #E3051A;
+  --main-color: #FF9D00;
   --secondary-color: #30373f;
   --heading-color: #242424;
   --paragraph-color: #343434;
@@ -3834,7 +3834,7 @@ ul.wp-block-latest-posts.is-grid.alignwide {
   /* the slides */
   /* the parent */ }
   .home-about .about-title {
-    font-size: 100px;
+    font-size: 70px;
     font-weight: 900;
     color: var(--heading-color);
     margin-top: 82px;

@@ -30,8 +30,6 @@
 <script src="{{ asset('front-assets/js/isotope.pkgd.min.js') }}"></script>
 <!-- rProgressbar -->
 <script src="{{ asset('front-assets/js/jQuery.rProgressbar.min.js') }}"></script>
-<!-- contact form -->
-<script src="{{ asset('front-assets/js/contact.js') }}"></script>
 <!-- main js -->
 <script src="{{ asset('front-assets/js/script.js') }}"></script>
 <script src="{{ asset('front-assets/js/main.js') }}"></script>

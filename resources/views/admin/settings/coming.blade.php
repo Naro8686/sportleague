@@ -82,13 +82,14 @@
     <nav>
         <div class="nav nav-tabs" id="nav-tab" role="tablist">
             <a class="nav-item nav-link active" id="nav-home-tab" data-toggle="tab" href="#nav-version" role="tab" aria-controls="nav-home" aria-selected="true">Version</a>
+            <a class="nav-item nav-link" id="nav-profile-tab" data-toggle="tab" href="#nav-logo" role="tab" aria-controls="nav-profile" aria-selected="false">Logos</a>
             <a class="nav-item nav-link" id="nav-profile-tab" data-toggle="tab" href="#nav-mail" role="tab" aria-controls="nav-profile" aria-selected="false">Mail</a>
             <a class="nav-item nav-link" id="nav-contact-tab" data-toggle="tab" href="#nav-payment" role="tab" aria-controls="nav-contact" aria-selected="false">Payment</a>
             <a class="nav-item nav-link" id="nav-contact-tab" data-toggle="tab" href="#nav-reset" role="tab" aria-controls="nav-contact" aria-selected="false">Reset</a>
         </div>
     </nav>
     <div class="tab-content" id="nav-tabContent">
-        <div class="tab-pane fade show active" id="nav-version" role="tabpanel" aria-labelledby="nav-home-tab">
+        <div class="tab-pane fade show active" id="nav-version" role="tabpanel" aria-labelledby="nav-version-tab">
             <div class="card">
                 <div class="card-header">{{ _e('Version settings') }}</div>
 
@@ -149,13 +150,49 @@
                 </div>
             </div>
         </div>
-        <div class="tab-pane fade" id="nav-mail" role="tabpanel" aria-labelledby="nav-profile-tab">
+        <div class="tab-pane fade" id="nav-logo" role="tabpanel" aria-labelledby="nav-logo-tab">
+            <div class="card">
+                <div class="card-header">Logo Settings</div>
+
+                <div class="card-body">
+                    <form action="{{ route("admin.logo-update") }}" method="POST" enctype="multipart/form-data">
+                        @csrf
+
+                        <label for="logo">
+                            <img src="{{ asset('front-assets/img/logo/'. _c('logo')) }}">
+                        </label>
+                        <div class="form-group is_countdown">
+                            <label for="logo">White logo</label>
+                            <input type="file" name="logo" id="logo" class="form-control">
+                        </div>
+
+                        <label for="logo">
+                            <img src="{{ asset('front-assets/img/logo/'. _c('black_logo')) }}">
+                        </label>
+                        <div class="form-group is_countdown">
+                            <label for="black_logo">Black logo</label>
+                            <input type="file" name="black_logo" id="black_logo" class="form-control">
+                        </div>
+
+                        <div>
+                            <input class="btn btn-danger" type="submit" value="{{ _e('Save') }}">
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+        <div class="tab-pane fade" id="nav-mail" role="tabpanel" aria-labelledby="nav-mail-tab">
             <div class="card">
                 <div class="card-header">Mail settings</div>
 
                 <div class="card-body">
                     <form action="{{ route("admin.mail-update") }}" method="POST" enctype="multipart/form-data">
                         @csrf
+
+                        <div class="form-group is_countdown">
+                            <label for="contact_mail">Contact Mail</label>
+                            <input type="text" id="contact_mail" name="contact_mail" class="form-control" value="{{ _c('contact_mail') }}" required>
+                        </div>
 
                         <div class="form-group is_countdown">
                             <label for="driver">Driver</label>
@@ -204,7 +241,7 @@
                 </div>
             </div>
         </div>
-        <div class="tab-pane fade" id="nav-payment" role="tabpanel" aria-labelledby="nav-contact-tab">
+        <div class="tab-pane fade" id="nav-payment" role="tabpanel" aria-labelledby="nav-payment-tab">
             <div class="card">
                 <div class="card-header">Paypal Settings</div>
 
@@ -224,7 +261,7 @@
                 </div>
             </div>
         </div>
-        <div class="tab-pane fade" id="nav-reset" role="tabpanel" aria-labelledby="nav-contact-tab">
+        <div class="tab-pane fade" id="nav-reset" role="tabpanel" aria-labelledby="nav-reset-tab">
             <div class="card">
                 <div class="card-header">Reset Password Settings</div>
 

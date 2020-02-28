@@ -19,7 +19,9 @@
     <div class="content col-lg-6 col-md-6">
         <div class="login-panel">
             <div class="panel-heading">
-                <a href="{{ route('home') }}"><img src="{{ asset('front-assets/img/logo-black.png') }}" alt="logo"></a>
+                <a href="{{ route('home') }}">
+                    <img src="{{ asset('front-assets/img/logo/'. _c('black_logo')) }}" alt="logo">
+                </a>
             </div>
             <div class="panel-body">
                 @if (session('status'))
