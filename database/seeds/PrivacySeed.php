@@ -26,5 +26,15 @@ class PrivacySeed extends Seeder
             'title' => 'Terms and conditions',
             'text' => 'Terms and conditions Description',
         ]);
+
+        PrivacyPolicy::create([
+            'title' => 'Wexford Cycling',
+            'text' => 'As Wexford cycling met over the winter, it became apparent that concerns grew over the need of help to run open and league races within the county.<br>The charge is a flat fee of €15. For those who have paid they will be allowed free entry into the county championships, entry to the Counties will be at least €15 per person, so in affect your registration is free if you support the counties. We have changed also the profile to include your club and Race Category.<br>We have over 20 events this year within the county alone for those who want to race, asking each rider to give up two of them really isn’t a big ask considering the trojan work that is done by all behind the scenes all we ask if some help.',
+        ]);
+
+        PrivacyPolicy::create([
+            'title' => 'Contact',
+            'text' => 'Contact description',
+        ]);
     }
 }

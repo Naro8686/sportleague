@@ -151,6 +151,10 @@ class TextsSeed extends Seeder
             ['key' => 'If you did not request a password reset, no further action is required.', 'value' => 'If you did not request a password reset, no further action is required.'],
             ['key' => 'Version settings', 'value' => 'Version settings'],
             ['key' => 'Terms', 'value' => 'Terms'],
+            ['key' => 'Home', 'value' => 'Home'],
+            ['key' => 'Contact', 'value' => 'Contact'],
+            ['key' => 'Message', 'value' => 'Message'],
+            ['key' => 'Send Us a Message', 'value' => 'Send Us a Message'],
             ['key' => 'No', 'value' => 'No'],
         ];
 

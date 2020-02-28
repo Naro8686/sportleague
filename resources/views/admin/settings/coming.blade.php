@@ -190,6 +190,11 @@
                         @csrf
 
                         <div class="form-group is_countdown">
+                            <label for="contact_mail">Contact Mail</label>
+                            <input type="text" id="contact_mail" name="contact_mail" class="form-control" value="{{ _c('contact_mail') }}" required>
+                        </div>
+
+                        <div class="form-group is_countdown">
                             <label for="driver">Driver</label>
                             <input type="text" id="driver" name="driver" class="form-control" value="{{ $smtp['driver'] }}" required>
                         </div>

@@ -6,6 +6,7 @@ Route::get('races', 'Front\PagesController@races')->name('races');
 Route::get('faq', 'Front\PagesController@faq')->name('faq');
 Route::get('terms', 'Front\PagesController@terms')->name('terms');
 Route::get('contact', 'Front\PagesController@contact')->name('contact');
+Route::post('send-mail', 'Front\MailController@sendMessage')->name('send-mail');
 
 Auth::routes();
 Route::get('register', 'Auth\RegisterController@registerPage')->name('register');

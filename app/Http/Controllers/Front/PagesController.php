@@ -21,7 +21,8 @@ class PagesController extends Controller
     }
 
     public function contact() {
-        return view('website.contact.index');
+        $contact = PrivacyPolicy::find(5);
+        return view('website.contact.index', compact('contact'));
     }
 
     public function races() {

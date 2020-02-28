@@ -160,6 +160,8 @@ class SettingsController extends Controller
             return abort(401);
         }
 
+        Settings::where('title', 'contact_mail')->update(['content' => $request->contact_mail]);
+
         $smtp = $request->only('driver', 'host', 'port', 'from', 'from_name', 'username', 'password', 'encryption');
 
         $data = Settings::where('title', 'SMTP')->first();
