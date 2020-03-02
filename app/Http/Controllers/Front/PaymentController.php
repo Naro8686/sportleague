@@ -129,6 +129,18 @@ class PaymentController extends Controller
     {
         $user = Auth::user();
         $league = League::find(1);
+
+        foreach ($request['event'] as $event){
+            $race = Races::find($event);
+            if($race->users->count() < $race->max_marshals){
+                $race->users()->attach([
+                    'user_id' => Auth::user()->id
+                ]);
+            }else{
+                return redirect()->back()->withErrors([_e('On the race had already registered the maximum number of participants')]);
+            }
+        }
+
         $user->club()->detach();
         $user->club()->attach([
             'club_id' => $request->club
@@ -137,13 +149,6 @@ class PaymentController extends Controller
             'race_category' => $request->race_category,
             'phone' => $request->phone,
         ]);
-
-        foreach ($request['event'] as $event){
-            $race = Races::find($event);
-            $race->users()->attach([
-                'user_id' => Auth::user()->id
-            ]);
-        }
 
         $clientId = 'AXiFCJAVKRr8CkyUdX_exLrxJ9u_EWVGMSsX4YvdIMP_5hIJoObK7mJoH0pKEfBYA3i__KCW6XXCsX5J';
         $clientSecret = 'ECKVG6Iv5FiXfqaeJBOhHk5hTh-jpPKFABwIJ0g12bXB6pIVrgu_-Rhoel4cBtnEK9EAFDH5z--K_Oyf';

@@ -7,7 +7,7 @@
                     <div class="row">
                         <div class="col-md-12 pl-md-0">
                             <div class="auth-form-wrapper px-4 py-5">
-                                <a href="#" class="noble-ui-logo d-block mb-2">{{ _e('Your payment was successfully.') }}</a>
+                                <p class="noble-ui-logo d-block mb-2">{{ _e('Your payment was successfully.') }}</p>
                                 <h5 class="text-muted font-weight-normal mb-4">{{ _e('Select 2 events to finish registration') }}</h5>
                                 <form class="forms-sample" method="POST" action="{{ route('select-races') }}">
                                     @csrf
