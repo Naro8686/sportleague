@@ -51,13 +51,13 @@
                 <div class="col-lg-10 col-md-10">
                     <div class="footer-widget widget widget_nav_menu">
                         <ul>
-                            <li><a href="{{ route('home') }}">Home</a></li>
+                            <li><a href="{{ route('home') }}">{{ _e('Home') }}</a></li>
                             @if(!Auth::check())
-                            <li><a href="{{ route('login') }}">Login</a></li>
-                            <li><a href="{{ route('register') }}">Register</a></li>
+                            <li><a href="{{ route('login') }}">{{ _e('Login') }}</a></li>
+                            <li><a href="{{ route('register') }}">{{ _e('Register') }}</a></li>
                             @endif
-                            <li><a href="{{ route('privacy.page') }}">Privacy policy</a></li>
-                            <li><a href="{{ route('terms') }}">Terms and Conditions</a></li>
+                            <li><a href="{{ route('privacy.page') }}">{{ _e('Privacy policy') }}</a></li>
+                            <li><a href="{{ route('terms') }}">{{ _e('Terms and Conditions') }}</a></li>
                         </ul>
                     </div>
                 </div>
@@ -69,7 +69,7 @@
             <div class="row">
                 <div class="col-lg-12">
                     <div class="copyright-area-inner">
-                        © 2020 Wexford Cycling League. All rights reserved
+                        {{ _e('© 2020 Wexford Cycling League. All rights reserved') }}
                     </div>
                 </div>
             </div>

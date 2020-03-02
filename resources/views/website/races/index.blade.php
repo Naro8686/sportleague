@@ -25,8 +25,8 @@
                                         </div>
                                         <div class="col-lg-6 offset-lg-1 d-flex align-items-center">
                                             <div class="content">
-                                                <h3>Race: {{ $race->name }}</h3>
-                                                <h4>Location: <a href="{{ $race->location_link }}" target="_blank"> {{ $race->location }} <img src="{{ asset('admin-assets/assets/images/location.png') }}" width="25" alt=""></a></h4>
+                                                <h3>{{ _e('Race') }}: {{ $race->name }}</h3>
+                                                <h4>{{ _e('Location') }}: <a href="{{ $race->location_link }}" target="_blank"> {{ $race->location }} <img src="{{ asset('admin-assets/assets/images/location.png') }}" width="25" alt=""></a></h4>
                                             </div>
                                         </div>
                                     </div>

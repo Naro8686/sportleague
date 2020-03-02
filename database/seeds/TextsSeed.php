@@ -157,6 +157,16 @@ class TextsSeed extends Seeder
             ['key' => 'Send Us a Message', 'value' => 'Send Us a Message'],
             ['key' => 'Site title', 'value' => 'Wexford Cycling League'],
             ['key' => 'On the race had already registered the maximum number of participants', 'value' => 'On the race had already registered the maximum number of participants'],
+            ['key' => '© 2020 Wexford Cycling League. All rights reserved', 'value' => '© 2020 Wexford Cycling League. All rights reserved'],
+            ['key' => 'Race', 'value' => 'Race'],
+            ['key' => 'Please Complete Payment To Continue', 'value' => 'Please Complete Payment To Continue'],
+            ['key' => 'Transferring back to Wexford Cycling League Website', 'value' => 'Transferring back to Wexford Cycling League Website'],
+            ['key' => 'Powered by Wexford Cycling League', 'value' => 'Powered by Wexford Cycling League'],
+            ['key' => 'Register', 'value' => 'Register'],
+            ['key' => 'Login', 'value' => 'Login'],
+            ['key' => 'Terms and Conditions', 'value' => 'Terms and Conditions'],
+            ['key' => 'Sign In', 'value' => 'Sign In'],
+            ['key' => 'Sign Up', 'value' => 'Sign Up'],
             ['key' => 'No', 'value' => 'No'],
         ];
 

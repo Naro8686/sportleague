@@ -195,6 +195,11 @@
                         </div>
 
                         <div class="form-group is_countdown">
+                            <label for="bcc_mail">BCC Mail</label>
+                            <input type="text" id="bcc_mail" name="bcc_mail" class="form-control" value="{{ _c('bcc_mail') }}" required>
+                        </div>
+
+                        <div class="form-group is_countdown">
                             <label for="driver">Driver</label>
                             <input type="text" id="driver" name="driver" class="form-control" value="{{ $smtp['driver'] }}" required>
                         </div>

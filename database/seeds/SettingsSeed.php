@@ -19,6 +19,7 @@ class SettingsSeed extends Seeder
             ['title' => 'logo', 'content' => 'default_white.png'],
             ['title' => 'black_logo', 'content' => 'default_black.png'],
             ['title' => 'contact_mail', 'content' => 'hello@leaguemanager.cc'],
+            ['title' => 'bcc_mail', 'content' => 'test@gmail.com'],
         ];
 
         foreach($texts as $text){

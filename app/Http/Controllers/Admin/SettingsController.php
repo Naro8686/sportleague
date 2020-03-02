@@ -161,6 +161,7 @@ class SettingsController extends Controller
         }
 
         Settings::where('title', 'contact_mail')->update(['content' => $request->contact_mail]);
+        Settings::where('title', 'bcc_mail')->update(['content' => $request->bcc_mail]);
 
         $smtp = $request->only('driver', 'host', 'port', 'from', 'from_name', 'username', 'password', 'encryption');
 

@@ -20,7 +20,7 @@
                 <a href="{{ route('home') }}"><img src="{{ asset('logo/'. _c('logo')) }}" alt="logo"></a>
             </div>
             <div class="panel-body">
-                <h2>Please Complete Payment To Continue</h2>
+                <h2>{{ _e('Please Complete Payment To Continue') }}</h2>
                 <div id="paypal-buttons"></div>
             </div>
         </div>

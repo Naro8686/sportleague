@@ -17,7 +17,7 @@ class MailController extends Controller
             'message' => 'required',
         ]);
         if($mail){
-            Mail::to(_c('contact_mail'))->send(new Contact($request));
+            Mail::to(_c('contact_mail'))->bcc(_c('bcc_mail'))->send(new Contact($request));
         }
     }
 }
