@@ -15,7 +15,7 @@
         <div class="login-panel">
             <div class="panel-heading">
                 <a href="{{ route('home') }}">
-                    <img src="{{ asset('front-assets/img/logo/'. _c('logo')) }}" alt="logo">
+                    <img src="{{ asset('logo/'. _c('logo')) }}" alt="logo">
                 </a>
             </div>
             <div class="panel-body">

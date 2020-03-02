@@ -24,7 +24,7 @@
         </div>
         <div class="logo">
             <a href="{{ route('home') }}">
-                <img src="{{ asset('front-assets/img/logo/'. _c('logo')) }}" alt="logo">
+                <img src="{{ asset('logo/'. _c('logo')) }}" alt="logo">
             </a>
         </div>
         <div class="collapse navbar-collapse" id="billatrail_main_menu">

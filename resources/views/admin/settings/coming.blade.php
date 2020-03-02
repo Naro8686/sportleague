@@ -159,7 +159,7 @@
                         @csrf
 
                         <label for="logo">
-                            <img src="{{ asset('front-assets/img/logo/'. _c('logo')) }}">
+                            <img src="{{ asset('logo/'. _c('logo')) }}">
                         </label>
                         <div class="form-group is_countdown">
                             <label for="logo">White logo</label>
@@ -167,7 +167,7 @@
                         </div>
 
                         <label for="logo">
-                            <img src="{{ asset('front-assets/img/logo/'. _c('black_logo')) }}">
+                            <img src="{{ asset('logo/'. _c('black_logo')) }}">
                         </label>
                         <div class="form-group is_countdown">
                             <label for="black_logo">Black logo</label>

@@ -194,9 +194,11 @@ class SettingsController extends Controller
         if($request->logo){
             $fileName = 'white_logo'. time().'.'.$request->logo->extension();
 
-            $request->logo->move(public_path('front-assets/img/logo'), $fileName);
+            $request->logo->move(public_path('logo'), $fileName);
             $logo = Settings::where('title','logo')->first();
-            @unlink('front-assets/img/logo/'.$logo->content);
+            if($logo->content != 'default_white.png'){
+                @unlink('logo/'.$logo->content);
+            }
             $logo->update([
                 'content' => $fileName
             ]);
@@ -205,9 +207,11 @@ class SettingsController extends Controller
         if($request->black_logo){
             $fileName = 'black_logo'. time().'.'.$request->black_logo->extension();
 
-            $request->black_logo->move(public_path('front-assets/img/logo'), $fileName);
+            $request->black_logo->move(public_path('logo'), $fileName);
             $logo = Settings::where('title','black_logo')->first();
-            @unlink('front-assets/img/logo/'.$logo->content);
+            if($logo->content != 'default_black.png'){
+                @unlink('logo/'.$logo->content);
+            }
             $logo->update([
                 'content' => $fileName
             ]);
