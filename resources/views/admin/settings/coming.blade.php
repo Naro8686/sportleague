@@ -295,7 +295,7 @@
                         </div>
 
                         <div class="form-group is_countdown">
-                            <label for="manager">League Manager</label>
+                            <label for="manager">{{ _e('Site title') }}</label>
                             <input type="text" id="manager" name="manager" class="form-control" value="{{ $reset['manager'] }}" required>
                         </div>
 

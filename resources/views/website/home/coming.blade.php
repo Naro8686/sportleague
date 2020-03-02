@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Sport League - Coming soon</title>
+    <title>{{ _e('Site title') }} - Coming soon</title>
     @include('partials.front.head')
 </head>
 <body>
@@ -25,21 +25,15 @@
     /*--------------------
             Countdown
         ---------------------*/
-    //Countdown Timer
     const countdown = document.querySelector(".countdown");
 
-    //Set Launch Date
     const launchDate = new Date("{{ $coming['date'] }}").getTime();
 
-    //Update every second
     const intvl = setInterval(function() {
-        //Get todays date and time (ms)
         const now = new Date().getTime();
 
-        //Distance from now to the launch date
         const distance = launchDate - now;
 
-        //Time calculation
         const days = Math.floor(distance / (1000 * 60 * 60 * 24));
         const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
         const mins = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
@@ -53,11 +47,8 @@
         <div class="countdown__item"><h2 class="countdown__lg-text">${sec}</h2><span class="countdown__sm-text">Seconds</span></div>
     `;
 
-        //If launch date passed
         if (distance < 0) {
-            //Stop countdown
             clearInterval(intvl);
-            //Style and ouput text
             countdown.style.color = "#17a2b8";
             countdown.innerHTML = "";
         }

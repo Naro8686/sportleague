@@ -46,7 +46,7 @@
             onApprove: function(data, actions) {
                 let timerInterval
                 Swal.fire({
-                    title: 'Transferring you back to League Manager',
+                    title: 'Transferring back to Wexford Cycling League Website',
                     html: 'Thank you for your payment.<br> Please wait while we transfer you back',
                     timer: 20000,
                     timerProgressBar: true,

@@ -61,16 +61,6 @@
                         </ul>
                     </div>
                 </div>
-{{--                <div class="col-lg-3 col-md-4">--}}
-{{--                    <div class="footer-widget widget widget_nav_menu">--}}
-{{--                        <ul>--}}
-{{--                            <li><a href="#" target="_blank"><i class="fa fa-facebook-f"></i></a></li>--}}
-{{--                            <li><a href="#" target="_blank"><i class="fa fa-twitter"></i></a></li>--}}
-{{--                            <li><a href="#" target="_blank"><i class="fa fa-instagram"></i></a></li>--}}
-{{--                            <li><a href="#" target="_blank"><i class="fa fa-youtube"></i></a></li>--}}
-{{--                        </ul>--}}
-{{--                    </div>--}}
-{{--                </div>--}}
             </div>
         </div>
     </div>
@@ -79,7 +69,7 @@
             <div class="row">
                 <div class="col-lg-12">
                     <div class="copyright-area-inner">
-{{--                        © 2020 All rights reserved. Powered with <i class="fa fa-heart"></i> by <a href="#" target="_blank">......</a>--}}
+                        © 2020 Wexford Cycling League. All rights reserved
                     </div>
                 </div>
             </div>

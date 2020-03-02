@@ -155,6 +155,7 @@ class TextsSeed extends Seeder
             ['key' => 'Contact', 'value' => 'Contact'],
             ['key' => 'Message', 'value' => 'Message'],
             ['key' => 'Send Us a Message', 'value' => 'Send Us a Message'],
+            ['key' => 'Site title', 'value' => 'Wexford Cycling League'],
             ['key' => 'No', 'value' => 'No'],
         ];
 

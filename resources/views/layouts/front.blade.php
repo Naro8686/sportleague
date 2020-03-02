@@ -6,7 +6,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <meta name="csrf-token" content="{{ csrf_token() }}">
-    <title>League Manager</title>
+    <title>{{ _e('Site title') }}</title>
     @include('partials.front.head')
 </head>
 <body>

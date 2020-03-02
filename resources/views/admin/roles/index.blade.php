@@ -17,20 +17,28 @@
             <table class=" table table-bordered table-striped table-hover datatable datatable-Role">
                 <thead>
                     <tr>
-                        <th>ID</th>
                         <th>Title</th>
                         <th>Permissions</th>
+                        <th>{{ _e('Actions') }}</th>
                     </tr>
                 </thead>
                 <tbody>
                     @foreach($roles as $key => $role)
                         <tr data-entry-id="{{ $role->id }}">
-                            <td>{{ $role->id ?? '' }}</td>
                             <td>{{ $role->name ?? '' }}</td>
                             <td>
                                 @foreach($role->permissions()->pluck('name') as $permission)
                                     <span class="badge badge-info">{{ $permission }}</span>
                                 @endforeach
+                            </td>
+                            <td>
+                                <a class="btn btn-xs btn-primary"
+                                   href="{{ route('admin.roles.show', $role->id) }}">
+                                    {{ _e('View') }}
+                                </a>
+                                <a class="btn btn-xs btn-info" href="{{ route('admin.roles.edit', $role->id) }}">
+                                    {{ _e('Edit') }}
+                                </a>
                             </td>
                         </tr>
                     @endforeach
