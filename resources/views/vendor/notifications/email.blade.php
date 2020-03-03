@@ -1,4 +1,4 @@
-@component('mail::message')
+@component('vendor.mail.html.message')
 @php
     use App\Models\Settings;
     $reset = Settings::where('title', 'Reset')->pluck('content')->first();
