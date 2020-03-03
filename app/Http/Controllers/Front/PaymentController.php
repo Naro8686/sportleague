@@ -127,6 +127,9 @@ class PaymentController extends Controller
      */
     public function selectRaces(StoreSelectRaceRequest $request)
     {
+        $validatedData = $request->validate([
+            'phone' => 'numeric'
+        ]);
         $user = Auth::user();
         $league = League::find(1);
 

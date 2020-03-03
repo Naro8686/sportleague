@@ -127,9 +127,9 @@
 <script>
     $(document).ready(function () {
         $('#password').keyup(function () {
-            let password = $('#password').val();
-            if (checkStrength(password) == false) {
-                $('#sign-up').attr('disabled', true);
+            let password = $(this).val();
+            if (checkStrength(password) !== 'Strong') {
+                $('.reset_pass').attr('disabled', true);
             }
         });
 

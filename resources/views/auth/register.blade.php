@@ -159,8 +159,8 @@
     $(document).ready(function () {
         $('#password').keyup(function () {
             let password = $('#password').val();
-            if (checkStrength(password) == false) {
-                $('#sign-up').attr('disabled', true);
+            if (checkStrength(password) !== 'Strong') {
+                $('.reg_submit').attr('disabled', true);
             }
         });
 
